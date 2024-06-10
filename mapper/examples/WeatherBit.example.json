@@ -1,0 +1,51 @@
+{
+    "data": [
+      {
+        "rh": 80,
+        "max_temp": 30.0,
+        "min_temp": 25.0,
+        "temp": 27.5,
+        "pres": 1013.0,
+        "precip": 5.0,
+        "datetime": "2021-01-01",
+        "weather": {
+          "icon": "r01d",
+          "code": "500",
+          "description": "light rain"
+        }
+      },
+      {
+        "rh": 78,
+        "max_temp": 31.0,
+        "min_temp": 26.0,
+        "temp": 28.0,
+        "pres": 1012.0,
+        "precip": 2.0,
+        "datetime": "2021-01-02",
+        "weather": {
+          "icon": "c01d",
+          "code": "800",
+          "description": "clear sky"
+        }
+      },
+      {
+        "rh": 77,
+        "max_temp": 32.0,
+        "min_temp": 27.0,
+        "temp": 29.0,
+        "pres": 1011.0,
+        "precip": 0.0,
+        "datetime": "2021-01-03",
+        "weather": {
+          "icon": "c01d",
+          "code": "800",
+          "description": "clear sky"
+        }
+      }
+    ],
+    "city_name": "Mumbai",
+    "lat": "19.0760",
+    "lon": "72.8777",
+    "timezone": "Asia/Kolkata"
+  }
+  

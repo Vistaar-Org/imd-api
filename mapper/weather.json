@@ -1,0 +1,54 @@
+
+{
+    "context": {
+      "domain": "string",
+      "country": "string",
+      "city": "string",
+      "action": "search",
+      "core_version": "string",
+      "bap_id": "string",
+      "bap_uri": "string",
+      "bpp_id": "string",
+      "bpp_uri": "string",
+      "transaction_id": "string",
+      "message_id": "string",
+      "timestamp": "2024-06-03T15:27:11.378Z",
+      "key": "string",
+      "ttl": "string"
+    },
+    "message": {
+        "catalog": {
+            "categories": {
+                "descriptor": {
+                    "name": "OUAT.crops_data.name",
+                    "long_desc": "OUAT.crops_data.advisory"
+                }
+            },
+           "providers": {
+                "items": [
+                        {
+                        "time": {
+                            "label": "IMD.Date"
+                        },
+                        "location_id": "IMD.Station_Code",
+                        "tags": {
+                            "rainfall": "OUAT.rainfall, IMD.Past_24_hrs_Rainfall",
+                            "t_max": "OUAT.t_max, IMD.Today_Max_temp",
+                            "t_min": "OUAT.t_min, IMD.Today_Min_temp",
+                            "rh_max": "OUAT.rh_max, IMD.Relative_Humidity_at_0830",
+                            "rh_min": "OUAT.rh_min, IMD.Relative_Humidity_at_1730",
+                            "wind_speed": "OUAT.wind_speed",
+                            "wind_direction": "OUAT.wind_direction",
+                            "cloud_cover": "OUAT.cloud_cover",
+                            "Sunset_time": "IMD.Sunset_time",
+                            "Sunrise_time": "IMD.Sunrise_time",
+                            "Moonset_time": "IMD.Moonset_time",
+                            "Moonrise_time": "IMD.Moonrise_time",
+                            "forecast": "IMD.forecast"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

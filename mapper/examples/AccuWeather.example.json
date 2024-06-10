@@ -1,0 +1,47 @@
+[
+    {
+      "LocalObservationDateTime": "2021-01-01T00:00:00+05:30",
+      "EpochTime": 1609459200,
+      "WeatherText": "Cloudy", 
+      "WeatherIcon": 7,
+      "Temperature": {
+        "Metric": {
+          "Value": 27.0,
+          "Unit": "C",
+          "UnitType": 17
+        }
+      },
+      "PrecipitationSummary": {
+        "Precipitation": {
+          "Metric": {
+            "Value": 0.0,
+            "Unit": "mm",
+            "UnitType": 3
+          }
+        }
+      }
+    },
+    {
+      "LocalObservationDateTime": "2021-01-02T00:00:00+05:30",
+      "EpochTime": 1609545600,
+      "WeatherText": "Clear",
+      "WeatherIcon": 1,
+      "Temperature": {
+        "Metric": {
+          "Value": 28.0,
+          "Unit": "C",
+          "UnitType": 17
+        }
+      },
+      "PrecipitationSummary": {
+        "Precipitation": {
+          "Metric": {
+            "Value": 0.0,
+            "Unit": "mm",
+            "UnitType": 3
+          }
+        }
+      }
+    }
+  ]
+  

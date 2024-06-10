@@ -1,0 +1,37 @@
+{
+  "location": {
+    "name": "OpenWeatherMap.city.name, Weatherbit.city_name, AccuWeather.City, WeatherAPI.location.name, IMD.Station_Name",
+    "lat": "OpenWeatherMap.city.coord.lat, Weatherbit.lat, AccuWeather.GeoPosition.Latitude, WeatherAPI.location.lat",
+    "lon": "OpenWeatherMap.city.coord.lon, Weatherbit.lon, AccuWeather.GeoPosition.Longitude, WeatherAPI.location.lon",
+    "timezone": "OpenWeatherMap.city.timezone, Weatherbit.timezone, AccuWeather.TimeZone.Name, WeatherAPI.location.tz_id"
+  },
+    "weather": [
+      {
+        "date": "OpenWeatherMap.dt_txt, Weatherbit.datetime, AccuWeather.LocalObservationDateTime, WeatherAPI.date, IMD.Date, OUAT.weather_details.date",
+        "temperature": {
+          "max": "OpenWeatherMap.main.temp_max, Weatherbit.max_temp, AccuWeather.Temperature.Metric.Value (max), WeatherAPI.day.maxtemp_c, IMD.Today_Max_temp, OUAT.weather_details.t_max",
+          "min": "OpenWeatherMap.main.temp_min, Weatherbit.min_temp, AccuWeather.Temperature.Metric.Value (min), WeatherAPI.day.mintemp_c, IMD.Today_Min_temp, OUAT.weather_details.t_min",
+          "avg": "OpenWeatherMap.main.temp (avg), Weatherbit.temp, AccuWeather.Temperature.Metric.Value (avg), WeatherAPI.day.avgtemp_c"
+        },
+        "humidity": "OpenWeatherMap.main.humidity, Weatherbit.rh, AccuWeather.RelativeHumidity, WeatherAPI.day.avghumidity, IMD.Relative_Humidity_at_0830, IMD.Relative_Humidity_at_1730, OUAT.weather_details.rh_max, OUAT.weather_details.rh_min",
+        "pressure": "OpenWeatherMap.main.pressure, Weatherbit.pres, AccuWeather.Pressure.Metric.Value, WeatherAPI.day.pressure_mb",
+        "precipitation": "OpenWeatherMap.rain.1h, Weatherbit.precip, AccuWeather.PrecipitationSummary.Precipitation.Metric.Value, WeatherAPI.day.totalprecip_mm, IMD.Past_24_hrs_Rainfall, OUAT.weather_details.rainfall",
+        "forecast": {
+          "description": "OpenWeatherMap.weather[0].description, Weatherbit.weather.description, AccuWeather.WeatherText, WeatherAPI.day.condition.text, IMD.Todays_Forecast",
+          "icon": "OpenWeatherMap.weather[0].icon, Weatherbit.weather.icon, AccuWeather.WeatherIcon, WeatherAPI.day.condition.icon"
+        },
+        "wind": {
+          "speed": "OpenWeatherMap.wind.speed, Weatherbit.wind_spd, AccuWeather.Wind.Speed.Metric.Value, WeatherAPI.day.maxwind_kph, OUAT.weather_details.wind_speed",
+          "direction": "OpenWeatherMap.wind.deg, Weatherbit.wind_dir, AccuWeather.Wind.Direction.Degrees, WeatherAPI.day.wind_dir, OUAT.weather_details.wind_direction"
+        },
+        "solar": {
+        "Sunset_time": "IMD.Sunrise_time",
+        "Sunrise_time": "IMD.Sunset_time"
+        },
+        "lunar": {
+        "Moonrise_time": "IMD.Moonrise_time",
+        "Moonset_time": "IMD.Moonset_time"
+        }
+      }
+    ]
+  }
