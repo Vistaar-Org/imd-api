@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    ports: 
+    - ${PORT}:3000
+    environment:
+      GEOIP_BASE_URL: ${GEOIP_BASE_URL}
+      IMD_BASE_URL: ${IMD_BASE_URL}
+      IMD_MIN_STATION_DISTANCE: ${IMD_MIN_STATION_DISTANCE}
+      OUAT_ENABLE_OLD: ${OUAT_ENABLE_OLD}
+      OUAT_BASE_URL: ${OUAT_BASE_URL}
+      UPCAR_BASE_URL: ${UPCAR_BASE_URL}
