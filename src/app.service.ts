@@ -11,7 +11,7 @@ import {
   mapAdvisoryData,
   mapOUATWeather,
 } from './app.utils';
-import { firstValueFrom } from 'rxjs';
+import { firstValueFrom, map } from 'rxjs';
 import { generateContext } from './beckn.utils';
 
 @Injectable()
@@ -45,8 +45,6 @@ export class AppService {
     // fetching data from OUAT
     const ouatBaseURL = this.configService.get<string>('OUAT_BASE_URL');
     const enableOld = this.configService.get<string>('OUAT_ENABLE_OLD');
-    console.log('enable old: ', enableOld);
-    console.log('typeof enableOld', typeof enableOld);
     if (enableOld.trim() == 'true') {
       const ouatData = await this.httpService.axiosRef.get(
         ouatBaseURL + `/history/31-05-2024_${district}.json`,
@@ -105,6 +103,20 @@ export class AppService {
     }
   }
 
+  async getHindiAdvisoryFromUpcar() {
+    const upcarBaseURL = this.configService.get<string>('UPCAR_BASE_URL');
+
+    try {
+      const upcarData = await this.httpService.axiosRef.get(
+        upcarBaseURL + '/latest_hindi.json',
+      );
+
+      return upcarData.data;
+    } catch (err) {
+      this.logger.error('Error while fetching advisory data from UPCAR', err);
+    }
+  }
+
   async getWeather(lat: string, long: string) {
     let imdItems = undefined,
       upcarItems = undefined,
@@ -120,6 +132,16 @@ export class AppService {
     try {
       const upcarData = await this.getAdvisoryFromUpcar();
       upcarItems = mapAdvisoryData(upcarData, 'upcar');
+      const upcarHindiData = await this.getHindiAdvisoryFromUpcar();
+      const upcarHindiProvider = mapAdvisoryData(upcarHindiData, 'upcar');
+      const hindiItems = upcarHindiProvider.items.map((item) => {
+        item.category_ids.push('hi_translated');
+        return item;
+      });
+      upcarItems.items.push(...hindiItems);
+      upcarItems.categories.push({
+        id: 'hi_translated',
+      });
     } catch (err) {
       this.logger.error('Error fetching advisory data from UPCAR', err);
     }
