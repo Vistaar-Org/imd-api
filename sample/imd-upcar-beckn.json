@@ -1,0 +1,302 @@
+{
+  "context": {
+    "domain": "string",
+    "country": "string",
+    "city": "string",
+    "action": "search",
+    "core_version": "string",
+    "bap_id": "string",
+    "bap_uri": "string",
+    "bpp_id": "string",
+    "bpp_uri": "string",
+    "transaction_id": "string",
+    "message_id": "string",
+    "timestamp": "2024-06-12T06:32:45.790Z",
+    "key": "string",
+    "ttl": "string"
+  },
+  "message": {
+    "catalog": {
+      "providers": [
+        {
+          "id": "imd",
+          "category_id": "weather_provider",
+          "categories": [
+            { "id": "current_weather" },
+            { "id": "future_weather" }
+          ],
+          "items": [
+            {
+              "time": {
+                "label": "Date of Observation",
+                "timestamp": "2024-06-12"
+              },
+              "location_ids": ["Adilabad"],
+              "category_ids": ["current_weather"],
+              "tags": {
+                "conditions": "Generally cloudy sky with Light rain",
+                "temp": "28.8",
+                "humidity": "71",
+                "winddir": "320",
+                "windspeed": "5.6",
+                "rainfall": "NIL",
+                "temp_max": null,
+                "temp_min": "27.2",
+                "rh_max": "71",
+                "rh_min": null,
+                "cloud_cover": "NA",
+                "Sunset_time": "18:54",
+                "Sunrise_time": "05:36",
+                "Moonset_time": "23:43",
+                "Moonrise_time": "10:43",
+                "forecast": "Generally cloudy sky with Light rain"
+              }
+            },
+            {
+              "time": {
+                "label": "Future Date of Forecast",
+                "timestamp": "2024-06-13"
+              },
+              "location_ids": ["Adilabad\r\n"],
+              "category_ids": ["future_weather"],
+              "tags": {
+                "rainfall": "NA",
+                "temp_max": "38.0",
+                "temp_min": "24.0",
+                "conditions": "NA",
+                "temp": "NA",
+                "humidity": "NA",
+                "winddir": "NA",
+                "windspeed": "NA",
+                "rh_max": "NA",
+                "rh_min": "NA",
+                "wind_speed": "NA",
+                "wind_direction": "NA",
+                "cloud_cover": "NA",
+                "forecast": "Generally cloudy sky with Light rain"
+              }
+            },
+            {
+              "time": {
+                "label": "Future Date of Forecast",
+                "timestamp": "2024-06-14"
+              },
+              "location_ids": ["Adilabad\r\n"],
+              "category_ids": ["future_weather"],
+              "tags": {
+                "rainfall": "NA",
+                "temp_max": "37.0",
+                "temp_min": "24.0",
+                "conditions": "NA",
+                "temp": "NA",
+                "humidity": "NA",
+                "winddir": "NA",
+                "windspeed": "NA",
+                "rh_max": "NA",
+                "rh_min": "NA",
+                "wind_speed": "NA",
+                "wind_direction": "NA",
+                "cloud_cover": "NA",
+                "forecast": "Generally cloudy sky with one or two spells of rain or thundershowers"
+              }
+            },
+            {
+              "time": {
+                "label": "Future Date of Forecast",
+                "timestamp": "2024-06-15"
+              },
+              "location_ids": ["Adilabad\r\n"],
+              "category_ids": ["future_weather"],
+              "tags": {
+                "rainfall": "NA",
+                "temp_max": "37.0",
+                "temp_min": "25.0",
+                "conditions": "NA",
+                "temp": "NA",
+                "humidity": "NA",
+                "winddir": "NA",
+                "windspeed": "NA",
+                "rh_max": "NA",
+                "rh_min": "NA",
+                "wind_speed": "NA",
+                "wind_direction": "NA",
+                "cloud_cover": "NA",
+                "forecast": "Generally cloudy sky with one or two spells of rain or thundershowers"
+              }
+            },
+            {
+              "time": {
+                "label": "Future Date of Forecast",
+                "timestamp": "2024-06-16"
+              },
+              "location_ids": ["Adilabad\r\n"],
+              "category_ids": ["future_weather"],
+              "tags": {
+                "rainfall": "NA",
+                "temp_max": "38.0",
+                "temp_min": "24.0",
+                "conditions": "NA",
+                "temp": "NA",
+                "humidity": "NA",
+                "winddir": "NA",
+                "windspeed": "NA",
+                "rh_max": "NA",
+                "rh_min": "NA",
+                "wind_speed": "NA",
+                "wind_direction": "NA",
+                "cloud_cover": "NA",
+                "forecast": "Generally cloudy sky with Light rain"
+              }
+            },
+            {
+              "time": {
+                "label": "Future Date of Forecast",
+                "timestamp": "2024-06-17"
+              },
+              "location_ids": ["Adilabad\r\n"],
+              "category_ids": ["future_weather"],
+              "tags": {
+                "rainfall": "NA",
+                "temp_max": "37.0",
+                "temp_min": "23.0",
+                "conditions": "NA",
+                "temp": "NA",
+                "humidity": "NA",
+                "winddir": "NA",
+                "windspeed": "NA",
+                "rh_max": "NA",
+                "rh_min": "NA",
+                "wind_speed": "NA",
+                "wind_direction": "NA",
+                "cloud_cover": "NA",
+                "forecast": "Generally cloudy sky with possibility of rain or Thunderstorm"
+              }
+            },
+            {
+              "time": {
+                "label": "Future Date of Forecast",
+                "timestamp": "2024-06-18"
+              },
+              "location_ids": ["Adilabad\r\n"],
+              "category_ids": ["future_weather"],
+              "tags": {
+                "rainfall": "NA",
+                "temp_max": "37.0",
+                "temp_min": "23.0",
+                "conditions": "NA",
+                "temp": "NA",
+                "humidity": "NA",
+                "winddir": "NA",
+                "windspeed": "NA",
+                "rh_max": "NA",
+                "rh_min": "NA",
+                "wind_speed": "NA",
+                "wind_direction": "NA",
+                "cloud_cover": "NA",
+                "forecast": "Generally cloudy sky with possibility of rain or Thunderstorm"
+              }
+            }
+          ]
+        },
+        {
+          "id": "upcar",
+          "category_id": "crop_advisory_provider",
+          "categories": [
+            { "id": "general_advisory" },
+            { "id": "crop_specific_advisory" }
+          ],
+          "items": [
+            {
+              "category_ids": ["general_advisory"],
+              "code": "general",
+              "descriptor": {
+                "name": "General Crop Advisory",
+                "long_desc": "In the current scenario of weather in the state, farmers have to manage their agriculture for the next two weeks. The following recommendations are made: - In order to conserve the environment and nutrients, farmers should never burn the crop residue after harvesting wheat but should increase the fertility of the soil by decomposing it in the field. To decompose the wheat residue, apply cow dung manure at the rate of 5 tonnes / ha on a priority basis. If cow dung manure is not available, it is 20 kg. /. Additional nitrogen or 2.5 kg. Mix Trichoderma birdii with soil or sand and put it in the field before ploughing. Deep ploughing of the field in summer. Get a soil test done and use fertilizers only as recommended. In rice-planting areas, sow henna or hancha for hati compost as early as possible. Paddy seeds are available at the Agriculture Department godowns in all the districts. For protection against soil-borne diseases like stem rot, root rot, scorch, brown spot, acne, bacterial scorch, yeast, etc., Trichordia baviridi is sold at 4% WP or Trichordaria 2% WP for 2.5 kg. It is per. 65-75 kg. Preventing diseases like sheath blight, false bollworm, etc. can be done by spraying light water mixed with rotten cow dung manure and keeping it in shade for 8-40 days and then adding it to the soil at the last ploughing before sowing. Vuberia baesiana for protection against termites, white girders, nematodes, root rot, cutworms, etc. 2.5 kg of Percentage W, P. kg from 65-75 at the rate of / he. After spraying light water mixed with cow dung manure and keeping it in shade for 8 to 40 days, the land should be treated by mixing it in the fields at the time of last ploughing. Continue to irrigate urad, moong, and sugarcane crops and lychee and mango orchards as needed to retain sufficient moisture. Ensure seeding for long duration varieties of paddy from 20th May."
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory"],
+              "code": "wheat",
+              "descriptor": {
+                "name": "advisory on crop wheat",
+                "long_desc": "In order to conserve the environment and nutrients, farmers should never burn the crop residue after harvesting wheat but should increase the fertility of the soil by decomposing it in the field.\nTo decompose the wheat residue, apply cow dung manure at the rate of 5 tonnes / ha on a priority basis.\nIf cow dung manure is not available, it is 20 kg. /. Additional nitrogen or 2.5 kg.\nMix Trichoderma birdii with soil or sand and put it in the field before ploughing."
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory"],
+              "code": "maize",
+              "descriptor": {
+                "name": "advisory on crop maize",
+                "long_desc": "To get good yield, arrange and sow the seeds of late maturing hybrid varieties of maize like Ganga-7, Sartaj, HQ, PM-5, HQ, PM-8, Pro-36 (4640), Bio-968, Y-402, PSC-740, NMH-920, Seedtech-740, NMH-713 and complex variety Prabhat etc.\nIf the seed is not treated, before sowing, the first 4 kg of seed should be treated with 2. 5 gm. Therum or 2 g of carbondazim should be treated with 50 wp and subsequently the seed should be treated with imidacloprid 2 g. Seeds should be treated with / kg."
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory"],
+              "code": "zaid crops",
+              "descriptor": {
+                "name": "advisory on crop zaid crops",
+                "long_desc": "The mung bean crop is witnessing the invasion of black-winged white-colored moths. Black spots can be seen on each segment of its body.\nFor crop protection, make a solution of 5% neem oil and spray it on the crop 2 times in a week or 2 times in the evening at an interval of 2-45 days by mixing 5% gram quantity of Immactin Bezoate 5% SG in 2 litres of water.\nAs soon as the yellow mosaic disease appears in the urad / moong crop, the affected plants should be carefully uprooted and destroyed (burnt / buried)."
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory"],
+              "code": "sugarcane",
+              "descriptor": {
+                "name": "advisory on crop sugarcane",
+                "long_desc": "The farmer must irrigate the sugarcane at 72-75 day intervals.\nWhen the oats come out after irrigation, first topdress them with nitrogen and knead them.\nFor nitrogen topdressing, apply at the rate of 425 kg urea / ha near the sugarcane rows in case of sufficient moisture."
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory"],
+              "code": "pulses",
+              "descriptor": {
+                "name": "advisory on crop pulses",
+                "long_desc": "Vaccinate large animals with the HS vaccine for the prevention of whooping cough and the BQ vaccine for the prevention of whooping cough. This facility is available free of cost at all veterinary clinics.\nThe swine fever vaccine is available free of charge at all veterinary clinics.\nTo protect the animals from the sun, tie them in a shady place in the afternoon and let them graze only in the morning and evening."
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory"],
+              "code": "vegetables",
+              "descriptor": {
+                "name": "advisory on crop vegetables",
+                "long_desc": "Azadi Shactin (Neem Oil) 0. 15% EC 2.50 L on the outbreak of fruit fly in leguminous vegetables. The quantity was taken from 500 to 600. Dissolve in water and spray at intervals of 10 to 45 days as needed.\nThe Cu-Lure pheromone trap is 8 to 0 traps per to protect leguminous crops from fruit flies. Apply at the rate of.\nChillies are more prone to foliage loss and mosaic virus disease."
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory"],
+              "code": "horticulture",
+              "descriptor": {
+                "name": "advisory on crop horticulture",
+                "long_desc": "Keep the mango and litchi gardens moist as needed.\nFor the protection of fungal / fungal pests in mango, 4 to 2 ml of insecticide named Igridachloropid 30. 5% SC is used. Spray the foil by making a solution in liters of water.\nFor the control of internal rotting disease of mango make a solution of 6 to 8 grams amount of borax element in water and spray the first drop."
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory"],
+              "code": "animal husbandry",
+              "descriptor": {
+                "name": "advisory on crop animal husbandry",
+                "long_desc": "Vaccinate large animals with the HS vaccine for the prevention of whooping cough and the BQ vaccine for the prevention of whooping cough. This facility is available free of cost at all veterinary clinics.\nThe swine fever vaccine is available free of charge at all veterinary clinics.\nTo protect the animals from the sun, tie them in a shady place in the afternoon and let them graze only in the morning and evening."
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory"],
+              "code": "poultry",
+              "descriptor": {
+                "name": "advisory on crop poultry",
+                "long_desc": "Vaccinate large animals with the HS vaccine for the prevention of whooping cough and the BQ vaccine for the prevention of whooping cough. This facility is available free of cost at all veterinary clinics.\nThe swine fever vaccine is available free of charge at all veterinary clinics.\nTo protect the animals from the sun, tie them in a shady place in the afternoon and let them graze only in the morning and evening."
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory"],
+              "code": "fisheries",
+              "descriptor": {
+                "name": "advisory on crop fisheries",
+                "long_desc": "The water level of the ponds should be maintained from 5 to 5. 5 feet.\nFor fish growth, supplements should be used at 4 to 2 percent of the weight of the fish.\nBreeders fear in view of breeding of common carp fishes) should be isolated and their special nutrition should be ensured."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

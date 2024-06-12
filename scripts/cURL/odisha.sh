@@ -1,0 +1,1 @@
+curl 'http://localhost:3000/weather?latitude=20.8409&longitude=85.1019'

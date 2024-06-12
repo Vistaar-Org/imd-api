@@ -1,0 +1,13 @@
+{
+  "general_advisory": [
+    {
+      "code": "general",
+      "description": "general advisory"
+    }
+  ],
+  "crop_specific_advisory": [
+    {
+      "code": "wheat"
+    }
+  ]
+}

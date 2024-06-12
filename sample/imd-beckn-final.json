@@ -1,0 +1,204 @@
+{
+  "context": {
+    "domain": "string",
+    "country": "string",
+    "city": "string",
+    "action": "search",
+    "core_version": "string",
+    "bap_id": "string",
+    "bap_uri": "string",
+    "bpp_id": "string",
+    "bpp_uri": "string",
+    "transaction_id": "string",
+    "message_id": "string",
+    "timestamp": "2024-06-12T06:07:02.906Z",
+    "key": "string",
+    "ttl": "string"
+  },
+  "message": {
+    "catalog": {
+      "providers": [
+        {
+          "id": "imd",
+          "category_id": "weather_provider",
+          "categories": [
+            { "id": "current_weather" },
+            { "id": "future_weather" }
+          ],
+          "items": [
+            {
+              "time": {
+                "label": "Date of Observation",
+                "timestamp": "2024-06-12"
+              },
+              "location_ids": ["Adilabad"],
+              "category_ids": ["current_weather"],
+              "tags": {
+                "conditions": "Generally cloudy sky with Light rain",
+                "temp": "28.8",
+                "humidity": "71",
+                "winddir": "320",
+                "windspeed": "5.6",
+                "rainfall": "NIL",
+                "temp_max": null,
+                "temp_min": "27.2",
+                "rh_max": "71",
+                "rh_min": null,
+                "cloud_cover": "NA",
+                "Sunset_time": "18:54",
+                "Sunrise_time": "05:36",
+                "Moonset_time": "23:43",
+                "Moonrise_time": "10:43",
+                "forecast": "Generally cloudy sky with Light rain"
+              }
+            },
+            {
+              "time": {
+                "label": "Future Date of Forecast",
+                "timestamp": "2024-06-13"
+              },
+              "location_ids": ["43025"],
+              "category_ids": ["future_weather"],
+              "tags": {
+                "rainfall": "NA",
+                "temp_max": "38.0",
+                "temp_min": "24.0",
+                "conditions": "NA",
+                "temp": "NA",
+                "humidity": "NA",
+                "winddir": "NA",
+                "windspeed": "NA",
+                "rh_max": "NA",
+                "rh_min": "NA",
+                "wind_speed": "NA",
+                "wind_direction": "NA",
+                "cloud_cover": "NA",
+                "forecast": "Generally cloudy sky with Light rain"
+              }
+            },
+            {
+              "time": {
+                "label": "Future Date of Forecast",
+                "timestamp": "2024-06-14"
+              },
+              "location_ids": ["43025"],
+              "category_ids": ["future_weather"],
+              "tags": {
+                "rainfall": "NA",
+                "temp_max": "37.0",
+                "temp_min": "24.0",
+                "conditions": "NA",
+                "temp": "NA",
+                "humidity": "NA",
+                "winddir": "NA",
+                "windspeed": "NA",
+                "rh_max": "NA",
+                "rh_min": "NA",
+                "wind_speed": "NA",
+                "wind_direction": "NA",
+                "cloud_cover": "NA",
+                "forecast": "Generally cloudy sky with one or two spells of rain or thundershowers"
+              }
+            },
+            {
+              "time": {
+                "label": "Future Date of Forecast",
+                "timestamp": "2024-06-15"
+              },
+              "location_ids": ["43025"],
+              "category_ids": ["future_weather"],
+              "tags": {
+                "rainfall": "NA",
+                "temp_max": "37.0",
+                "temp_min": "25.0",
+                "conditions": "NA",
+                "temp": "NA",
+                "humidity": "NA",
+                "winddir": "NA",
+                "windspeed": "NA",
+                "rh_max": "NA",
+                "rh_min": "NA",
+                "wind_speed": "NA",
+                "wind_direction": "NA",
+                "cloud_cover": "NA",
+                "forecast": "Generally cloudy sky with one or two spells of rain or thundershowers"
+              }
+            },
+            {
+              "time": {
+                "label": "Future Date of Forecast",
+                "timestamp": "2024-06-16"
+              },
+              "location_ids": ["43025"],
+              "category_ids": ["future_weather"],
+              "tags": {
+                "rainfall": "NA",
+                "temp_max": "38.0",
+                "temp_min": "24.0",
+                "conditions": "NA",
+                "temp": "NA",
+                "humidity": "NA",
+                "winddir": "NA",
+                "windspeed": "NA",
+                "rh_max": "NA",
+                "rh_min": "NA",
+                "wind_speed": "NA",
+                "wind_direction": "NA",
+                "cloud_cover": "NA",
+                "forecast": "Generally cloudy sky with Light rain"
+              }
+            },
+            {
+              "time": {
+                "label": "Future Date of Forecast",
+                "timestamp": "2024-06-17"
+              },
+              "location_ids": ["43025"],
+              "category_ids": ["future_weather"],
+              "tags": {
+                "rainfall": "NA",
+                "temp_max": "37.0",
+                "temp_min": "23.0",
+                "conditions": "NA",
+                "temp": "NA",
+                "humidity": "NA",
+                "winddir": "NA",
+                "windspeed": "NA",
+                "rh_max": "NA",
+                "rh_min": "NA",
+                "wind_speed": "NA",
+                "wind_direction": "NA",
+                "cloud_cover": "NA",
+                "forecast": "Generally cloudy sky with possibility of rain or Thunderstorm"
+              }
+            },
+            {
+              "time": {
+                "label": "Future Date of Forecast",
+                "timestamp": "2024-06-18"
+              },
+              "location_ids": ["43025"],
+              "category_ids": ["future_weather"],
+              "tags": {
+                "rainfall": "NA",
+                "temp_max": "37.0",
+                "temp_min": "23.0",
+                "conditions": "NA",
+                "temp": "NA",
+                "humidity": "NA",
+                "winddir": "NA",
+                "windspeed": "NA",
+                "rh_max": "NA",
+                "rh_min": "NA",
+                "wind_speed": "NA",
+                "wind_direction": "NA",
+                "cloud_cover": "NA",
+                "forecast": "Generally cloudy sky with possibility of rain or Thunderstorm"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
