@@ -1,0 +1,499 @@
+{
+  "context": {
+    "domain": "string",
+    "country": "string",
+    "city": "string",
+    "action": "search",
+    "core_version": "string",
+    "bap_id": "string",
+    "bap_uri": "string",
+    "bpp_id": "string",
+    "bpp_uri": "string",
+    "transaction_id": "string",
+    "message_id": "string",
+    "timestamp": "2024-06-12T09:12:13.302Z",
+    "key": "string",
+    "ttl": "string"
+  },
+  "message": {
+    "catalog": {
+      "providers": [
+        {
+          "id": "imd",
+          "category_id": "weather_provider",
+          "categories": [
+            {
+              "id": "current_weather"
+            },
+            {
+              "id": "future_weather"
+            }
+          ],
+          "items": [
+            {
+              "time": {
+                "label": "Date of Observation",
+                "timestamp": "2024-06-12"
+              },
+              "location_ids": ["Sambalpur"],
+              "category_ids": ["current_weather"],
+              "tags": {
+                "conditions": "Partly cloudy sky with possibility of development of thunder lightning",
+                "temp": "37.6",
+                "humidity": "49",
+                "winddir": 0,
+                "windspeed": 0,
+                "rainfall": "NIL",
+                "temp_max": null,
+                "temp_min": "26.9",
+                "rh_max": "66",
+                "rh_min": null,
+                "cloud_cover": "NA",
+                "Sunset_time": "18:36",
+                "Sunrise_time": "05:11",
+                "Moonset_time": "23:23",
+                "Moonrise_time": "10:18",
+                "forecast": "Partly cloudy sky with possibility of development of thunder lightning"
+              }
+            },
+            {
+              "time": {
+                "label": "Future Date of Forecast",
+                "timestamp": "2024-06-13"
+              },
+              "location_ids": ["Sambalpur"],
+              "category_ids": ["future_weather"],
+              "tags": {
+                "rainfall": "NA",
+                "temp_max": "41.0",
+                "temp_min": "26.0",
+                "conditions": "NA",
+                "temp": "NA",
+                "humidity": "NA",
+                "winddir": "NA",
+                "windspeed": "NA",
+                "rh_max": "NA",
+                "rh_min": "NA",
+                "cloud_cover": "NA",
+                "forecast": "Partly cloudy sky with possibility of development of thunder lightning"
+              }
+            },
+            {
+              "time": {
+                "label": "Future Date of Forecast",
+                "timestamp": "2024-06-14"
+              },
+              "location_ids": ["Sambalpur"],
+              "category_ids": ["future_weather"],
+              "tags": {
+                "rainfall": "NA",
+                "temp_max": "39.0",
+                "temp_min": "26.0",
+                "conditions": "NA",
+                "temp": "NA",
+                "humidity": "NA",
+                "winddir": "NA",
+                "windspeed": "NA",
+                "rh_max": "NA",
+                "rh_min": "NA",
+                "cloud_cover": "NA",
+                "forecast": "Partly cloudy sky with one or two spells of rain or thundershowers"
+              }
+            },
+            {
+              "time": {
+                "label": "Future Date of Forecast",
+                "timestamp": "2024-06-15"
+              },
+              "location_ids": ["Sambalpur"],
+              "category_ids": ["future_weather"],
+              "tags": {
+                "rainfall": "NA",
+                "temp_max": "39.0",
+                "temp_min": "25.0",
+                "conditions": "NA",
+                "temp": "NA",
+                "humidity": "NA",
+                "winddir": "NA",
+                "windspeed": "NA",
+                "rh_max": "NA",
+                "rh_min": "NA",
+                "cloud_cover": "NA",
+                "forecast": "Partly cloudy sky with one or two spells of rain or thundershowers"
+              }
+            },
+            {
+              "time": {
+                "label": "Future Date of Forecast",
+                "timestamp": "2024-06-16"
+              },
+              "location_ids": ["Sambalpur"],
+              "category_ids": ["future_weather"],
+              "tags": {
+                "rainfall": "NA",
+                "temp_max": "38.0",
+                "temp_min": "25.0",
+                "conditions": "NA",
+                "temp": "NA",
+                "humidity": "NA",
+                "winddir": "NA",
+                "windspeed": "NA",
+                "rh_max": "NA",
+                "rh_min": "NA",
+                "cloud_cover": "NA",
+                "forecast": "Partly cloudy sky with possibility of moderate rain or Thunderstorm"
+              }
+            },
+            {
+              "time": {
+                "label": "Future Date of Forecast",
+                "timestamp": "2024-06-17"
+              },
+              "location_ids": ["Sambalpur"],
+              "category_ids": ["future_weather"],
+              "tags": {
+                "rainfall": "NA",
+                "temp_max": "38.0",
+                "temp_min": "24.0",
+                "conditions": "NA",
+                "temp": "NA",
+                "humidity": "NA",
+                "winddir": "NA",
+                "windspeed": "NA",
+                "rh_max": "NA",
+                "rh_min": "NA",
+                "cloud_cover": "NA",
+                "forecast": "Partly cloudy sky with possibility of rain or Thunderstorm"
+              }
+            },
+            {
+              "time": {
+                "label": "Future Date of Forecast",
+                "timestamp": "2024-06-18"
+              },
+              "location_ids": ["Sambalpur"],
+              "category_ids": ["future_weather"],
+              "tags": {
+                "rainfall": "NA",
+                "temp_max": "38.0",
+                "temp_min": "24.0",
+                "conditions": "NA",
+                "temp": "NA",
+                "humidity": "NA",
+                "winddir": "NA",
+                "windspeed": "NA",
+                "rh_max": "NA",
+                "rh_min": "NA",
+                "cloud_cover": "NA",
+                "forecast": "Partly cloudy sky with possibility of rain or Thunderstorm"
+              }
+            }
+          ]
+        },
+        {
+          "id": "OUAT",
+          "category_id": "weather_provider",
+          "categories": [
+            {
+              "id": "future_weather"
+            }
+          ],
+          "items": [
+            {
+              "time": {
+                "label": "Future Date of Forecast",
+                "timestamp": "2024-01-06"
+              },
+              "location_ids": [null],
+              "category_ids": ["future_weather"],
+              "tags": {
+                "rainfall": 0,
+                "temp_max": 45,
+                "temp_min": 31,
+                "conditions": "NA",
+                "temp": "NA",
+                "humidity": "NA",
+                "winddir": 135,
+                "windspeed": 12,
+                "rh_max": 79,
+                "rh_min": 19,
+                "wind_speed": "NA",
+                "wind_direction": "NA",
+                "cloud_cover": 5,
+                "forecast": "NA"
+              }
+            },
+            {
+              "time": {
+                "label": "Future Date of Forecast",
+                "timestamp": "2024-02-06"
+              },
+              "location_ids": [null],
+              "category_ids": ["future_weather"],
+              "tags": {
+                "rainfall": 4,
+                "temp_max": 43,
+                "temp_min": 30,
+                "conditions": "NA",
+                "temp": "NA",
+                "humidity": "NA",
+                "winddir": 158,
+                "windspeed": 12,
+                "rh_max": 64,
+                "rh_min": 21,
+                "wind_speed": "NA",
+                "wind_direction": "NA",
+                "cloud_cover": 6,
+                "forecast": "NA"
+              }
+            },
+            {
+              "time": {
+                "label": "Future Date of Forecast",
+                "timestamp": "2024-03-06"
+              },
+              "location_ids": [null],
+              "category_ids": ["future_weather"],
+              "tags": {
+                "rainfall": 5,
+                "temp_max": 42,
+                "temp_min": 29,
+                "conditions": "NA",
+                "temp": "NA",
+                "humidity": "NA",
+                "winddir": 158,
+                "windspeed": 11,
+                "rh_max": 65,
+                "rh_min": 17,
+                "wind_speed": "NA",
+                "wind_direction": "NA",
+                "cloud_cover": 6,
+                "forecast": "NA"
+              }
+            },
+            {
+              "time": {
+                "label": "Future Date of Forecast",
+                "timestamp": "2024-04-06"
+              },
+              "location_ids": [null],
+              "category_ids": ["future_weather"],
+              "tags": {
+                "rainfall": 0,
+                "temp_max": 41,
+                "temp_min": 28,
+                "conditions": "NA",
+                "temp": "NA",
+                "humidity": "NA",
+                "winddir": 243,
+                "windspeed": 13,
+                "rh_max": 35,
+                "rh_min": 15,
+                "wind_speed": "NA",
+                "wind_direction": "NA",
+                "cloud_cover": 4,
+                "forecast": "NA"
+              }
+            },
+            {
+              "time": {
+                "label": "Future Date of Forecast",
+                "timestamp": "2024-05-06"
+              },
+              "location_ids": [null],
+              "category_ids": ["future_weather"],
+              "tags": {
+                "rainfall": 0,
+                "temp_max": 40,
+                "temp_min": 27,
+                "conditions": "NA",
+                "temp": "NA",
+                "humidity": "NA",
+                "winddir": 248,
+                "windspeed": 12,
+                "rh_max": 34,
+                "rh_min": 13,
+                "wind_speed": "NA",
+                "wind_direction": "NA",
+                "cloud_cover": 3,
+                "forecast": "NA"
+              }
+            }
+          ]
+        },
+        {
+          "id": "upcar",
+          "category_id": "crop_advisory_provider",
+          "categories": [
+            {
+              "id": "general_advisory"
+            },
+            {
+              "id": "crop_specific_advisory"
+            }
+          ],
+          "items": [
+            {
+              "category_ids": ["general_advisory"],
+              "code": "general",
+              "descriptor": {
+                "name": "General Crop Advisory",
+                "long_desc": "In the current scenario of weather in the state, farmers have to manage their agriculture for the next two weeks. The following recommendations are made: - In order to conserve the environment and nutrients, farmers should never burn the crop residue after harvesting wheat but should increase the fertility of the soil by decomposing it in the field. To decompose the wheat residue, apply cow dung manure at the rate of 5 tonnes / ha on a priority basis. If cow dung manure is not available, it is 20 kg. /. Additional nitrogen or 2.5 kg. Mix Trichoderma birdii with soil or sand and put it in the field before ploughing. Deep ploughing of the field in summer. Get a soil test done and use fertilizers only as recommended. In rice-planting areas, sow henna or hancha for hati compost as early as possible. Paddy seeds are available at the Agriculture Department godowns in all the districts. For protection against soil-borne diseases like stem rot, root rot, scorch, brown spot, acne, bacterial scorch, yeast, etc., Trichordia baviridi is sold at 4% WP or Trichordaria 2% WP for 2.5 kg. It is per. 65-75 kg. Preventing diseases like sheath blight, false bollworm, etc. can be done by spraying light water mixed with rotten cow dung manure and keeping it in shade for 8-40 days and then adding it to the soil at the last ploughing before sowing. Vuberia baesiana for protection against termites, white girders, nematodes, root rot, cutworms, etc. 2.5 kg of Percentage W, P. kg from 65-75 at the rate of / he. After spraying light water mixed with cow dung manure and keeping it in shade for 8 to 40 days, the land should be treated by mixing it in the fields at the time of last ploughing. Continue to irrigate urad, moong, and sugarcane crops and lychee and mango orchards as needed to retain sufficient moisture. Ensure seeding for long duration varieties of paddy from 20th May."
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory"],
+              "code": "wheat",
+              "descriptor": {
+                "name": "advisory on crop wheat",
+                "long_desc": "In order to conserve the environment and nutrients, farmers should never burn the crop residue after harvesting wheat but should increase the fertility of the soil by decomposing it in the field.\nTo decompose the wheat residue, apply cow dung manure at the rate of 5 tonnes / ha on a priority basis.\nIf cow dung manure is not available, it is 20 kg. /. Additional nitrogen or 2.5 kg.\nMix Trichoderma birdii with soil or sand and put it in the field before ploughing."
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory"],
+              "code": "maize",
+              "descriptor": {
+                "name": "advisory on crop maize",
+                "long_desc": "To get good yield, arrange and sow the seeds of late maturing hybrid varieties of maize like Ganga-7, Sartaj, HQ, PM-5, HQ, PM-8, Pro-36 (4640), Bio-968, Y-402, PSC-740, NMH-920, Seedtech-740, NMH-713 and complex variety Prabhat etc.\nIf the seed is not treated, before sowing, the first 4 kg of seed should be treated with 2. 5 gm. Therum or 2 g of carbondazim should be treated with 50 wp and subsequently the seed should be treated with imidacloprid 2 g. Seeds should be treated with / kg."
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory"],
+              "code": "zaid crops",
+              "descriptor": {
+                "name": "advisory on crop zaid crops",
+                "long_desc": "The mung bean crop is witnessing the invasion of black-winged white-colored moths. Black spots can be seen on each segment of its body.\nFor crop protection, make a solution of 5% neem oil and spray it on the crop 2 times in a week or 2 times in the evening at an interval of 2-45 days by mixing 5% gram quantity of Immactin Bezoate 5% SG in 2 litres of water.\nAs soon as the yellow mosaic disease appears in the urad / moong crop, the affected plants should be carefully uprooted and destroyed (burnt / buried)."
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory"],
+              "code": "sugarcane",
+              "descriptor": {
+                "name": "advisory on crop sugarcane",
+                "long_desc": "The farmer must irrigate the sugarcane at 72-75 day intervals.\nWhen the oats come out after irrigation, first topdress them with nitrogen and knead them.\nFor nitrogen topdressing, apply at the rate of 425 kg urea / ha near the sugarcane rows in case of sufficient moisture."
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory"],
+              "code": "pulses",
+              "descriptor": {
+                "name": "advisory on crop pulses",
+                "long_desc": "Vaccinate large animals with the HS vaccine for the prevention of whooping cough and the BQ vaccine for the prevention of whooping cough. This facility is available free of cost at all veterinary clinics.\nThe swine fever vaccine is available free of charge at all veterinary clinics.\nTo protect the animals from the sun, tie them in a shady place in the afternoon and let them graze only in the morning and evening."
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory"],
+              "code": "vegetables",
+              "descriptor": {
+                "name": "advisory on crop vegetables",
+                "long_desc": "Azadi Shactin (Neem Oil) 0. 15% EC 2.50 L on the outbreak of fruit fly in leguminous vegetables. The quantity was taken from 500 to 600. Dissolve in water and spray at intervals of 10 to 45 days as needed.\nThe Cu-Lure pheromone trap is 8 to 0 traps per to protect leguminous crops from fruit flies. Apply at the rate of.\nChillies are more prone to foliage loss and mosaic virus disease."
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory"],
+              "code": "horticulture",
+              "descriptor": {
+                "name": "advisory on crop horticulture",
+                "long_desc": "Keep the mango and litchi gardens moist as needed.\nFor the protection of fungal / fungal pests in mango, 4 to 2 ml of insecticide named Igridachloropid 30. 5% SC is used. Spray the foil by making a solution in liters of water.\nFor the control of internal rotting disease of mango make a solution of 6 to 8 grams amount of borax element in water and spray the first drop."
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory"],
+              "code": "animal husbandry",
+              "descriptor": {
+                "name": "advisory on crop animal husbandry",
+                "long_desc": "Vaccinate large animals with the HS vaccine for the prevention of whooping cough and the BQ vaccine for the prevention of whooping cough. This facility is available free of cost at all veterinary clinics.\nThe swine fever vaccine is available free of charge at all veterinary clinics.\nTo protect the animals from the sun, tie them in a shady place in the afternoon and let them graze only in the morning and evening."
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory"],
+              "code": "poultry",
+              "descriptor": {
+                "name": "advisory on crop poultry",
+                "long_desc": "Vaccinate large animals with the HS vaccine for the prevention of whooping cough and the BQ vaccine for the prevention of whooping cough. This facility is available free of cost at all veterinary clinics.\nThe swine fever vaccine is available free of charge at all veterinary clinics.\nTo protect the animals from the sun, tie them in a shady place in the afternoon and let them graze only in the morning and evening."
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory"],
+              "code": "fisheries",
+              "descriptor": {
+                "name": "advisory on crop fisheries",
+                "long_desc": "The water level of the ponds should be maintained from 5 to 5. 5 feet.\nFor fish growth, supplements should be used at 4 to 2 percent of the weight of the fish.\nBreeders fear in view of breeding of common carp fishes) should be isolated and their special nutrition should be ensured."
+              }
+            }
+          ]
+        },
+        {
+          "id": "ouat",
+          "category_id": "crop_advisory_provider",
+          "categories": [
+            {
+              "id": "general_advisory"
+            },
+            {
+              "id": "crop_specific_advisory"
+            }
+          ],
+          "items": [
+            {
+              "category_ids": ["general_advisory"],
+              "code": "general",
+              "descriptor": {
+                "name": "General Crop Advisory",
+                "long_desc": "To protect the crop and animal from increasing temperature/heat wave or heat stress farmers should take some protective measures like applying light and frequent irrigation to the standing crops, increase the frequency of irrigation at critical growth stages, irrigate only during the evening or early morning and use sprinkler irrigation if possible. Mulching should be done with crop residue, straw/polythene to conserve soil moisture as well as maintain soil temperature. Avoid grazing of animal during noon hours in open place. Farmers those are already harvested their paddy crops are advised to go for one deep summer ploughing to control insect and pest population and start preparation of field for kharif crop cultivation."
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory"],
+              "code": "summer rice",
+              "descriptor": {
+                "name": "advisory on crop summer rice",
+                "long_desc": "As there is very less chance of occurrence rainfall in upcoming week, farmers are advised to start harvesting of crop as soon as possible and store the crop in safe place after proper sun drying."
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory"],
+              "code": "kharif rice",
+              "descriptor": {
+                "name": "advisory on crop kharif rice",
+                "long_desc": "Preparation of field for kharif crop production should be started with a deep summer ploughing after harvesting of summer rice or in fallow land and leave as such for direct exposure of sunlight which helps in minimizing weed flora and insect attack."
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory"],
+              "code": "mango",
+              "descriptor": {
+                "name": "advisory on crop mango",
+                "long_desc": "Presently, most of the Mango fruits are at its physiological maturity stage so harvesting of mango fruits should be advised through hand picking or plucking with a harvester. To control fruit fly attack, use of fruit fly trap should be advised. For control of black tip and internal necrosis, spraying of borax (1%) should be advised."
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory"],
+              "code": "vegetable crops",
+              "descriptor": {
+                "name": "advisory on crop vegetable crops",
+                "long_desc": "Prevailing weather condition is favourable for increasing the sucking insect pest population in vegetable crops so its regular monitoring should be advised. If attack of those insects is noticed, then spraying of Thiamethoxam 25% WG @ 0.2-0.3g or Imidacloprid 17.8% SL @ 0.3ml per liter of water should be advised. To control fruit and shoot borer/fruit borer attack in Tomato, Brinjal and Okra spraying of Emamectin Benzoate @ 0.4 g per liter of water should be advised under clear weather."
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory"],
+              "code": "cow/buffalo",
+              "descriptor": {
+                "name": "advisory on crop cow/buffalo",
+                "long_desc": "To protect the animal from heat wave, farmers should make provision to provide fresh clean and cold drinking water to the animal along with green grass, protein-fat bypass supplement, mineral mixture and salt. Keep animals in shade and don’t make them work between 11 am to 4 pm. Deworming and vaccination of animal should be ensured before commencement of monsoon to avoid spreading of diseases during rainy season."
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory"],
+              "code": "poultry",
+              "descriptor": {
+                "name": "advisory on crop poultry",
+                "long_desc": "During heat wave period covering the window with wet gunny bag and thatching of roof with straw and make provision to ensure proper ventilation and cooling of poultry shed. Feeding will be continued with supplement of vitamin E and C with water till the end of heat wave. Deworming and vaccination of poultry birds against ranikhet disease must be ensured."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

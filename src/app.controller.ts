@@ -14,7 +14,7 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Get('weather')
+  @Get('advisory')
   async getWeather(
     @Query('latitude') latiude: string,
     @Query('longitude') longitude: string,

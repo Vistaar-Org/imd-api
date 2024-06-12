@@ -4,7 +4,7 @@ FROM node:18
 # Set the working directory in the container
 WORKDIR /usr/src/app
 
-RUN npm install -g yarn
+# RUN npm install -g yarn
 # Copy the package.json and package-lock.json files to the container
 COPY package*.json ./
 
