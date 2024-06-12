@@ -85,7 +85,6 @@ export const mapIMDItems = (imdJSON) => {
           Sunrise_time: sevenDay?.Sunrise_time,
           Moonset_time: sevenDay?.Moonset_time,
           Moonrise_time: sevenDay?.Moonrise_time,
-          forecast: sevenDay?.Todays_Forecast,
         },
       });
     });
@@ -124,7 +123,7 @@ export const mapIMDFutureItems = (station) => {
           rainfall: 'NA', // Not available in IMD data
           temp_max: station[dayKeyMax],
           temp_min: station[dayKeyMin],
-          conditions: 'NA', // Not available in IMD data
+          conditions: station[dayKeyForecast], // Not available in IMD data
           temp: 'NA', // Not available in IMD data
           humidity: 'NA', // Not available in IMD data
           winddir: 'NA', // Not available in IMD data
@@ -132,7 +131,6 @@ export const mapIMDFutureItems = (station) => {
           rh_max: 'NA', // Not available in IMD data
           rh_min: 'NA', // Not available in IMD data
           cloud_cover: 'NA', // Not available in IMD data
-          forecast: station[dayKeyForecast],
         },
       });
     }
@@ -206,13 +204,12 @@ export const mapOUATWeather = (ouatWeatherData) => {
         wind_speed: 'NA', // Not available in OUAT data
         wind_direction: 'NA', // Not available in OUAT data
         cloud_cover: station.cloud_cover, // Not available in OUAT data
-        forecast: 'NA',
       },
     });
   });
 
   return {
-    id: 'OUAT', // TODO: Turn this into an enum,
+    id: 'ouat', // TODO: Turn this into an enum,
     category_id: 'weather_provider',
     categories: [
       {
