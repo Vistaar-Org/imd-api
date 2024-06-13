@@ -223,7 +223,9 @@ export const mapAdvisoryData = (upcarData, provider) => {
       long_desc: upcarData.general_advisory,
       images: [
         {
-          url: CROP_IMAGES['general_advisory'],
+          url: CROP_IMAGES['general_advisory']
+            ? CROP_IMAGES['general_advisory']
+            : CROP_IMAGES['wheat'],
         },
       ],
     },
@@ -238,7 +240,9 @@ export const mapAdvisoryData = (upcarData, provider) => {
         long_desc: upcarData.crops_data[key].advisory.join('\n'),
         images: [
           {
-            url: CROP_IMAGES[key.toLowerCase()],
+            url: CROP_IMAGES[key.toLowerCase()]
+              ? CROP_IMAGES[key.toLowerCase()]
+              : CROP_IMAGES['wheat'],
           },
         ],
       },
