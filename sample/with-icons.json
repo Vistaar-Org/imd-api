@@ -1,0 +1,498 @@
+{
+  "context": {
+    "domain": "string",
+    "country": "string",
+    "city": "string",
+    "action": "search",
+    "core_version": "string",
+    "bap_id": "string",
+    "bap_uri": "string",
+    "bpp_id": "string",
+    "bpp_uri": "string",
+    "transaction_id": "string",
+    "message_id": "string",
+    "timestamp": "2024-06-13T14:55:42.747Z",
+    "key": "string",
+    "ttl": "string"
+  },
+  "message": {
+    "catalog": {
+      "providers": [
+        {
+          "id": "imd",
+          "category_id": "weather_provider",
+          "categories": [
+            { "id": "current_weather" },
+            { "id": "future_weather" }
+          ],
+          "items": [
+            {
+              "descriptor": {
+                "images": [
+                  {
+                    "url": "https://drive.google.com/file/d/1xXnS4W7jsNW0Aw8H9pBfMQuKRgowFQag/view?usp=drive_link",
+                    "type": "image_day"
+                  },
+                  {
+                    "url": "https://drive.google.com/file/d/1GhADFWBYL932OJe74hpzVUFGUNotBPvd/view?usp=drive_link",
+                    "type": "image_night"
+                  },
+                  {
+                    "url": "https://drive.google.com/file/d/1NEWAIOJcocPYnR7qxwmAtxkc25kYldM_/view?usp=drive_link",
+                    "type": "icon"
+                  }
+                ]
+              },
+              "time": {
+                "label": "Date of Observation",
+                "timestamp": "2024-06-13"
+              },
+              "location_ids": ["Adilabad"],
+              "category_ids": ["current_weather"],
+              "tags": {
+                "conditions": "sunny",
+                "conditions_hi": "धूप",
+                "conditions_or": "ସୂର୍ଯ୍ୟ ପ୍ରକାଶିତ",
+                "temp": "38.6",
+                "humidity": "40",
+                "winddir": "320",
+                "windspeed": "3.7",
+                "rainfall": "NIL",
+                "temp_max": "39.3",
+                "temp_min": "27.7",
+                "rh_max": "65",
+                "rh_min": "40",
+                "cloud_cover": "NA",
+                "Sunset_time": "18:55",
+                "Sunrise_time": "05:36",
+                "Moonset_time": "--:--",
+                "Moonrise_time": "11:33"
+              }
+            },
+            {
+              "descriptor": {
+                "images": [
+                  {
+                    "url": "https://drive.google.com/file/d/1xXnS4W7jsNW0Aw8H9pBfMQuKRgowFQag/view?usp=drive_link",
+                    "type": "image_day"
+                  },
+                  {
+                    "url": "https://drive.google.com/file/d/1GhADFWBYL932OJe74hpzVUFGUNotBPvd/view?usp=drive_link",
+                    "type": "image_night"
+                  },
+                  {
+                    "url": "https://drive.google.com/file/d/1NEWAIOJcocPYnR7qxwmAtxkc25kYldM_/view?usp=drive_link",
+                    "type": "icon"
+                  }
+                ]
+              },
+              "time": {
+                "label": "Future Date of Forecast",
+                "timestamp": "2024-06-14"
+              },
+              "location_ids": ["Adilabad\r\n"],
+              "category_ids": ["future_weather"],
+              "tags": {
+                "rainfall": "NA",
+                "temp_max": "37.0",
+                "temp_min": "27.0",
+                "conditions_hi": "धूप",
+                "conditions_or": "ସୂର୍ଯ୍ୟ ପ୍ରକାଶିତ",
+                "conditions": "Generally cloudy sky with one or two spells of rain or thundershowers",
+                "temp": "NA",
+                "humidity": "NA",
+                "winddir": "NA",
+                "windspeed": "NA",
+                "rh_max": "NA",
+                "rh_min": "NA",
+                "cloud_cover": "NA"
+              }
+            },
+            {
+              "descriptor": {
+                "images": [
+                  {
+                    "url": "https://drive.google.com/file/d/1xXnS4W7jsNW0Aw8H9pBfMQuKRgowFQag/view?usp=drive_link",
+                    "type": "image_day"
+                  },
+                  {
+                    "url": "https://drive.google.com/file/d/1GhADFWBYL932OJe74hpzVUFGUNotBPvd/view?usp=drive_link",
+                    "type": "image_night"
+                  },
+                  {
+                    "url": "https://drive.google.com/file/d/1NEWAIOJcocPYnR7qxwmAtxkc25kYldM_/view?usp=drive_link",
+                    "type": "icon"
+                  }
+                ]
+              },
+              "time": {
+                "label": "Future Date of Forecast",
+                "timestamp": "2024-06-15"
+              },
+              "location_ids": ["Adilabad\r\n"],
+              "category_ids": ["future_weather"],
+              "tags": {
+                "rainfall": "NA",
+                "temp_max": "37.0",
+                "temp_min": "27.0",
+                "conditions_hi": "धूप",
+                "conditions_or": "ସୂର୍ଯ୍ୟ ପ୍ରକାଶିତ",
+                "conditions": "Generally cloudy sky with intermittent rain",
+                "temp": "NA",
+                "humidity": "NA",
+                "winddir": "NA",
+                "windspeed": "NA",
+                "rh_max": "NA",
+                "rh_min": "NA",
+                "cloud_cover": "NA"
+              }
+            },
+            {
+              "descriptor": {
+                "images": [
+                  {
+                    "url": "https://drive.google.com/file/d/1xXnS4W7jsNW0Aw8H9pBfMQuKRgowFQag/view?usp=drive_link",
+                    "type": "image_day"
+                  },
+                  {
+                    "url": "https://drive.google.com/file/d/1GhADFWBYL932OJe74hpzVUFGUNotBPvd/view?usp=drive_link",
+                    "type": "image_night"
+                  },
+                  {
+                    "url": "https://drive.google.com/file/d/1NEWAIOJcocPYnR7qxwmAtxkc25kYldM_/view?usp=drive_link",
+                    "type": "icon"
+                  }
+                ]
+              },
+              "time": {
+                "label": "Future Date of Forecast",
+                "timestamp": "2024-06-16"
+              },
+              "location_ids": ["Adilabad\r\n"],
+              "category_ids": ["future_weather"],
+              "tags": {
+                "rainfall": "NA",
+                "temp_max": "37.0",
+                "temp_min": "28.0",
+                "conditions_hi": "धूप",
+                "conditions_or": "ସୂର୍ଯ୍ୟ ପ୍ରକାଶିତ",
+                "conditions": "Generally cloudy sky with intermittent rain",
+                "temp": "NA",
+                "humidity": "NA",
+                "winddir": "NA",
+                "windspeed": "NA",
+                "rh_max": "NA",
+                "rh_min": "NA",
+                "cloud_cover": "NA"
+              }
+            },
+            {
+              "descriptor": {
+                "images": [
+                  {
+                    "url": "https://drive.google.com/file/d/1xXnS4W7jsNW0Aw8H9pBfMQuKRgowFQag/view?usp=drive_link",
+                    "type": "image_day"
+                  },
+                  {
+                    "url": "https://drive.google.com/file/d/1GhADFWBYL932OJe74hpzVUFGUNotBPvd/view?usp=drive_link",
+                    "type": "image_night"
+                  },
+                  {
+                    "url": "https://drive.google.com/file/d/1NEWAIOJcocPYnR7qxwmAtxkc25kYldM_/view?usp=drive_link",
+                    "type": "icon"
+                  }
+                ]
+              },
+              "time": {
+                "label": "Future Date of Forecast",
+                "timestamp": "2024-06-17"
+              },
+              "location_ids": ["Adilabad\r\n"],
+              "category_ids": ["future_weather"],
+              "tags": {
+                "rainfall": "NA",
+                "temp_max": "36.0",
+                "temp_min": "27.0",
+                "conditions_hi": "धूप",
+                "conditions_or": "ସୂର୍ଯ୍ୟ ପ୍ରକାଶିତ",
+                "conditions": "Generally cloudy sky with intermittent rain",
+                "temp": "NA",
+                "humidity": "NA",
+                "winddir": "NA",
+                "windspeed": "NA",
+                "rh_max": "NA",
+                "rh_min": "NA",
+                "cloud_cover": "NA"
+              }
+            },
+            {
+              "descriptor": {
+                "images": [
+                  {
+                    "url": "https://drive.google.com/file/d/1xXnS4W7jsNW0Aw8H9pBfMQuKRgowFQag/view?usp=drive_link",
+                    "type": "image_day"
+                  },
+                  {
+                    "url": "https://drive.google.com/file/d/1GhADFWBYL932OJe74hpzVUFGUNotBPvd/view?usp=drive_link",
+                    "type": "image_night"
+                  },
+                  {
+                    "url": "https://drive.google.com/file/d/1NEWAIOJcocPYnR7qxwmAtxkc25kYldM_/view?usp=drive_link",
+                    "type": "icon"
+                  }
+                ]
+              },
+              "time": {
+                "label": "Future Date of Forecast",
+                "timestamp": "2024-06-18"
+              },
+              "location_ids": ["Adilabad\r\n"],
+              "category_ids": ["future_weather"],
+              "tags": {
+                "rainfall": "NA",
+                "temp_max": "36.0",
+                "temp_min": "27.0",
+                "conditions_hi": "धूप",
+                "conditions_or": "ସୂର୍ଯ୍ୟ ପ୍ରକାଶିତ",
+                "conditions": "Generally cloudy sky with possibility of rain or Thunderstorm",
+                "temp": "NA",
+                "humidity": "NA",
+                "winddir": "NA",
+                "windspeed": "NA",
+                "rh_max": "NA",
+                "rh_min": "NA",
+                "cloud_cover": "NA"
+              }
+            },
+            {
+              "descriptor": {
+                "images": [
+                  {
+                    "url": "https://drive.google.com/file/d/1xXnS4W7jsNW0Aw8H9pBfMQuKRgowFQag/view?usp=drive_link",
+                    "type": "image_day"
+                  },
+                  {
+                    "url": "https://drive.google.com/file/d/1GhADFWBYL932OJe74hpzVUFGUNotBPvd/view?usp=drive_link",
+                    "type": "image_night"
+                  },
+                  {
+                    "url": "https://drive.google.com/file/d/1NEWAIOJcocPYnR7qxwmAtxkc25kYldM_/view?usp=drive_link",
+                    "type": "icon"
+                  }
+                ]
+              },
+              "time": {
+                "label": "Future Date of Forecast",
+                "timestamp": "2024-06-19"
+              },
+              "location_ids": ["Adilabad\r\n"],
+              "category_ids": ["future_weather"],
+              "tags": {
+                "rainfall": "NA",
+                "temp_max": "37.0",
+                "temp_min": "26.0",
+                "conditions_hi": "धूप",
+                "conditions_or": "ସୂର୍ଯ୍ୟ ପ୍ରକାଶିତ",
+                "conditions": "Generally cloudy sky with possibility of rain or Thunderstorm",
+                "temp": "NA",
+                "humidity": "NA",
+                "winddir": "NA",
+                "windspeed": "NA",
+                "rh_max": "NA",
+                "rh_min": "NA",
+                "cloud_cover": "NA"
+              }
+            }
+          ]
+        },
+        {
+          "id": "upcar",
+          "category_id": "crop_advisory_provider",
+          "categories": [
+            { "id": "general_advisory" },
+            { "id": "crop_specific_advisory" },
+            { "id": "hi_translated" }
+          ],
+          "items": [
+            {
+              "category_ids": ["general_advisory"],
+              "code": "general",
+              "descriptor": {
+                "name": "General Crop Advisory",
+                "long_desc": "In the current scenario of weather in the state, farmers have to manage their agriculture for the next two weeks. The following recommendations are made: - In order to conserve the environment and nutrients, farmers should never burn the crop residue after harvesting wheat but should increase the fertility of the soil by decomposing it in the field. To decompose the wheat residue, apply cow dung manure at the rate of 5 tonnes / ha on a priority basis. If cow dung manure is not available, it is 20 kg. /. Additional nitrogen or 2.5 kg. Mix Trichoderma birdii with soil or sand and put it in the field before ploughing. Deep ploughing of the field in summer. Get a soil test done and use fertilizers only as recommended. In rice-planting areas, sow henna or hancha for hati compost as early as possible. Paddy seeds are available at the Agriculture Department godowns in all the districts. For protection against soil-borne diseases like stem rot, root rot, scorch, brown spot, acne, bacterial scorch, yeast, etc., Trichordia baviridi is sold at 4% WP or Trichordaria 2% WP for 2.5 kg. It is per. 65-75 kg. Preventing diseases like sheath blight, false bollworm, etc. can be done by spraying light water mixed with rotten cow dung manure and keeping it in shade for 8-40 days and then adding it to the soil at the last ploughing before sowing. Vuberia baesiana for protection against termites, white girders, nematodes, root rot, cutworms, etc. 2.5 kg of Percentage W, P. kg from 65-75 at the rate of / he. After spraying light water mixed with cow dung manure and keeping it in shade for 8 to 40 days, the land should be treated by mixing it in the fields at the time of last ploughing. Continue to irrigate urad, moong, and sugarcane crops and lychee and mango orchards as needed to retain sufficient moisture. Ensure seeding for long duration varieties of paddy from 20th May."
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory"],
+              "code": "wheat",
+              "descriptor": {
+                "name": "advisory on crop wheat",
+                "long_desc": "In order to conserve the environment and nutrients, farmers should never burn the crop residue after harvesting wheat but should increase the fertility of the soil by decomposing it in the field.\nTo decompose the wheat residue, apply cow dung manure at the rate of 5 tonnes / ha on a priority basis.\nIf cow dung manure is not available, it is 20 kg. /. Additional nitrogen or 2.5 kg.\nMix Trichoderma birdii with soil or sand and put it in the field before ploughing."
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory"],
+              "code": "maize",
+              "descriptor": {
+                "name": "advisory on crop maize",
+                "long_desc": "To get good yield, arrange and sow the seeds of late maturing hybrid varieties of maize like Ganga-7, Sartaj, HQ, PM-5, HQ, PM-8, Pro-36 (4640), Bio-968, Y-402, PSC-740, NMH-920, Seedtech-740, NMH-713 and complex variety Prabhat etc.\nIf the seed is not treated, before sowing, the first 4 kg of seed should be treated with 2. 5 gm. Therum or 2 g of carbondazim should be treated with 50 wp and subsequently the seed should be treated with imidacloprid 2 g. Seeds should be treated with / kg."
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory"],
+              "code": "zaid crops",
+              "descriptor": {
+                "name": "advisory on crop zaid crops",
+                "long_desc": "The mung bean crop is witnessing the invasion of black-winged white-colored moths. Black spots can be seen on each segment of its body.\nFor crop protection, make a solution of 5% neem oil and spray it on the crop 2 times in a week or 2 times in the evening at an interval of 2-45 days by mixing 5% gram quantity of Immactin Bezoate 5% SG in 2 litres of water.\nAs soon as the yellow mosaic disease appears in the urad / moong crop, the affected plants should be carefully uprooted and destroyed (burnt / buried)."
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory"],
+              "code": "sugarcane",
+              "descriptor": {
+                "name": "advisory on crop sugarcane",
+                "long_desc": "The farmer must irrigate the sugarcane at 72-75 day intervals.\nWhen the oats come out after irrigation, first topdress them with nitrogen and knead them.\nFor nitrogen topdressing, apply at the rate of 425 kg urea / ha near the sugarcane rows in case of sufficient moisture."
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory"],
+              "code": "pulses",
+              "descriptor": {
+                "name": "advisory on crop pulses",
+                "long_desc": "Vaccinate large animals with the HS vaccine for the prevention of whooping cough and the BQ vaccine for the prevention of whooping cough. This facility is available free of cost at all veterinary clinics.\nThe swine fever vaccine is available free of charge at all veterinary clinics.\nTo protect the animals from the sun, tie them in a shady place in the afternoon and let them graze only in the morning and evening."
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory"],
+              "code": "vegetables",
+              "descriptor": {
+                "name": "advisory on crop vegetables",
+                "long_desc": "Azadi Shactin (Neem Oil) 0. 15% EC 2.50 L on the outbreak of fruit fly in leguminous vegetables. The quantity was taken from 500 to 600. Dissolve in water and spray at intervals of 10 to 45 days as needed.\nThe Cu-Lure pheromone trap is 8 to 0 traps per to protect leguminous crops from fruit flies. Apply at the rate of.\nChillies are more prone to foliage loss and mosaic virus disease."
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory"],
+              "code": "horticulture",
+              "descriptor": {
+                "name": "advisory on crop horticulture",
+                "long_desc": "Keep the mango and litchi gardens moist as needed.\nFor the protection of fungal / fungal pests in mango, 4 to 2 ml of insecticide named Igridachloropid 30. 5% SC is used. Spray the foil by making a solution in liters of water.\nFor the control of internal rotting disease of mango make a solution of 6 to 8 grams amount of borax element in water and spray the first drop."
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory"],
+              "code": "animal husbandry",
+              "descriptor": {
+                "name": "advisory on crop animal husbandry",
+                "long_desc": "Vaccinate large animals with the HS vaccine for the prevention of whooping cough and the BQ vaccine for the prevention of whooping cough. This facility is available free of cost at all veterinary clinics.\nThe swine fever vaccine is available free of charge at all veterinary clinics.\nTo protect the animals from the sun, tie them in a shady place in the afternoon and let them graze only in the morning and evening."
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory"],
+              "code": "poultry",
+              "descriptor": {
+                "name": "advisory on crop poultry",
+                "long_desc": "Vaccinate large animals with the HS vaccine for the prevention of whooping cough and the BQ vaccine for the prevention of whooping cough. This facility is available free of cost at all veterinary clinics.\nThe swine fever vaccine is available free of charge at all veterinary clinics.\nTo protect the animals from the sun, tie them in a shady place in the afternoon and let them graze only in the morning and evening."
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory"],
+              "code": "fisheries",
+              "descriptor": {
+                "name": "advisory on crop fisheries",
+                "long_desc": "The water level of the ponds should be maintained from 5 to 5. 5 feet.\nFor fish growth, supplements should be used at 4 to 2 percent of the weight of the fish.\nBreeders fear in view of breeding of common carp fishes) should be isolated and their special nutrition should be ensured."
+              }
+            },
+            {
+              "category_ids": ["general_advisory", "hi_translated"],
+              "code": "general",
+              "descriptor": {
+                "name": "General Crop Advisory",
+                "long_desc": "राज्य में वर्तमान मौसम की स्थिति में, किसानों को अगले दो हफ्तों के लिए अपनी कृषि प्रबंधन करनी होगी। निम्नलिखित सिफारिशें की जाती हैं: - पर्यावरण और पोषक तत्वों को संरक्षित करने के लिए, किसानों को गेहूं की कटाई के बाद फसल अवशेष को कभी भी नहीं जलाना चाहिए बल्कि इसे खेत में अपघटित करके मिट्टी की उर्वरता बढ़ानी चाहिए। गेहूं के अवशेष को अपघटित करने के लिए, 5 टन प्रति हेक्टेयर की दर से गोबर की खाद का प्राथमिकता के आधार पर प्रयोग करें। यदि गोबर की खाद उपलब्ध नहीं है, तो 20 किग्रा। /. अतिरिक्त नाइट्रोजन या 2.5 किग्रा। मिट्टी या रेत के साथ ट्राइकोडर्मा बिरडी मिलाएं और जुताई से पहले इसे खेत में डालें। गर्मियों में खेत की गहरी जुताई करें। मिट्टी का परीक्षण कराएं और केवल सिफारिश के अनुसार उर्वरकों का उपयोग करें। धान रोपण क्षेत्रों में, जितनी जल्दी हो सके हांछा या हेनना को हाती खाद के लिए बोएं। कृषि विभाग के गोदामों में सभी जिलों में धान के बीज उपलब्ध हैं। तने का सड़ना, जड़ का सड़ना, जलना, भूरे धब्बे, मुँहासे, जीवाणु जलना, खमीर आदि जैसी मृदा-जनित बीमारियों से सुरक्षा के लिए, ट्राइकोर्डिया बविरिडी 4% डब्ल्यूपी या ट्राइकोर्डरिया 2% डब्ल्यूपी 2.5 किग्रा पर बेची जाती है। यह प्रति 65-75 किग्रा। शिट ब्लाइट, झूठे बॉलवर्म आदि जैसी बीमारियों की रोकथाम को सड़े हुए गोबर की खाद के साथ हल्के पानी के मिश्रण को छिड़ककर और इसे 8-40 दिनों तक छाया में रखकर और फिर बुवाई से पहले अंतिम जुताई पर मिट्टी में मिलाकर किया जा सकता है। दीमक, सफेद गिर्द, निमेटोड्स, जड़ सड़न, कटवर्म आदि से बचाव के लिए वुबेरिया बेसियाना 2.5 किग्रा प्रतिशत डब्ल्यूपी है। 65-75 की दर से किग्रा / हे। गोबर की खाद के साथ हल्के पानी के मिश्रण को छिड़कने और इसे 8 से 40 दिनों तक छाया में रखने के बाद, अंतिम जुताई के समय खेतों में मिलाकर भूमि का उपचार करना चाहिए। पर्याप्त नमी बनाए रखने के लिए उरद, मूंग, और गन्ने की फसलों और लीची और आम के बागों की आवश्यकता के अनुसार सिंचाई जारी रखें। 20 मई से धान की लंबी अवधि वाली किस्मों के लिए बीज बोना सुनिश्चित करें।"
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory", "hi_translated"],
+              "code": "wheat",
+              "descriptor": {
+                "name": "advisory on crop wheat",
+                "long_desc": "पर्यावरण और पोषक तत्वों को संरक्षित करने के लिए, किसानों को गेहूं की फसल की कटाई के बाद अवशेषों को जलाना नहीं चाहिए बल्कि उसे खेत में सड़ाकर मिट्टी की उर्वरता बढ़ानी चाहिए।\nगेहूं के अवशेषों को सड़ाने के लिए, प्राथमिकता के आधार पर 5 टन/हेक्टेयर की दर से गोबर की खाद डालें।\nयदि गोबर की खाद उपलब्ध नहीं है, तो 20 किग्रा अतिरिक्त नाइट्रोजन या 2.5 किग्रा का उपयोग करें।\nट्राइकोडर्मा बर्डी को मिट्टी या रेत के साथ मिलाएं और जुताई से पहले इसे खेत में डालें।"
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory", "hi_translated"],
+              "code": "maize",
+              "descriptor": {
+                "name": "advisory on crop maize",
+                "long_desc": "अच्छी उपज प्राप्त करने के लिए, मक्का की देर से पकने वाली संकर किस्मों जैसे गंगा-7, सरताज, HQ, PM-5, HQ, PM-8, प्रो-36 (4640), बायो-968, Y-402, PSC-740, NMH-920, सीडटेक-740, NMH-713 और मिश्रित किस्म प्रभात आदि के बीजों का प्रबंध कर बोना चाहिए।\nयदि बीज का उपचार नहीं हुआ है, तो बोने से पहले पहले 4 किग्रा बीज को 2.5 ग्राम थिरम या 2 ग्राम कार्बेंडाजिम 50 WP के साथ उपचारित करना चाहिए और इसके बाद बीज को इमिडाक्लोप्रिड 2 ग्राम/किग्रा के साथ उपचारित करना चाहिए।"
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory", "hi_translated"],
+              "code": "zaid crops",
+              "descriptor": {
+                "name": "advisory on crop zaid crops",
+                "long_desc": "मूंग की फसल पर काले पंखों वाले सफेद रंग के पतंगे का आक्रमण देखा जा रहा है। इसके शरीर के प्रत्येक खंड पर काले धब्बे देखे जा सकते हैं।\nफसल की सुरक्षा के लिए, 5% नीम के तेल का घोल बनाएं और इसे सप्ताह में 2 बार या 2-45 दिनों के अंतराल पर शाम को 2 बार फसल पर छिड़कें। इसमें 5% इमामेक्टिन बेंज़ोएट 5% SG की 5% ग्राम मात्रा को 2 लीटर पानी में मिलाएं।\nजैसे ही उड़द/मूंग की फसल में पीला मोज़ेक रोग दिखाई दे, प्रभावित पौधों को सावधानीपूर्वक उखाड़कर नष्ट (जला/दफना) देना चाहिए।"
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory", "hi_translated"],
+              "code": "sugarcane",
+              "descriptor": {
+                "name": "advisory on crop sugarcane",
+                "long_desc": "किसान को गन्ने की सिंचाई 72-75 दिन के अंतराल पर करनी चाहिए।\nसिंचाई के बाद जब जई निकल आए, तो सबसे पहले उन्हें नाइट्रोजन से टॉपड्रेस करें और गूंथ लें।\nनाइट्रोजन टॉपड्रेसिंग के लिए, पर्याप्त नमी की स्थिति में गन्ने की कतारों के पास 425 किग्रा यूरिया/हेक्टेयर की दर से लगाएं।"
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory", "hi_translated"],
+              "code": "pulses",
+              "descriptor": {
+                "name": "advisory on crop pulses",
+                "long_desc": "बड़े जानवरों को काली खांसी की रोकथाम के लिए HS वैक्सीन और काली खांसी की रोकथाम के लिए BQ वैक्सीन से टीका लगवाएं। यह सुविधा सभी पशु चिकित्सालयों में निःशुल्क उपलब्ध है।\nसुअर बुखार का टीका सभी पशु चिकित्सालयों में निःशुल्क उपलब्ध है।\nजानवरों को धूप से बचाने के लिए उन्हें दोपहर में छायादार जगह पर बांधें और केवल सुबह और शाम को चरने दें।"
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory", "hi_translated"],
+              "code": "vegetables",
+              "descriptor": {
+                "name": "advisory on crop vegetables",
+                "long_desc": "शाकीय सब्जियों में फल मक्खी के प्रकोप पर आजादी शक्ति (नीम का तेल) 0.15% EC 2.50 लीटर का उपयोग करें। 500 से 600 की मात्रा को पानी में घोलकर 10 से 45 दिनों के अंतराल पर आवश्यकता अनुसार छिड़काव करें।\nफल मक्खियों से शाकीय फसलों की रक्षा के लिए क्यू-लुर फेरोमोन ट्रैप को 8 से 10 ट्रैप प्रति हेक्टेयर की दर से लगाएं।\nमिर्च में पत्तियों के झड़ने और मोज़ेक वायरस रोग की संभावना अधिक होती है।"
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory", "hi_translated"],
+              "code": "horticulture",
+              "descriptor": {
+                "name": "advisory on crop horticulture",
+                "long_desc": "आवश्यकतानुसार आम और लीची के बगीचों को नम रखें।\nआम में फंगल/फफूंद कीटों की रोकथाम के लिए, इमिडाक्लोप्रिड 30.5% SC नामक कीटनाशक की 4 से 2 मिलीलीटर मात्रा का उपयोग करें। पानी में घोल बनाकर पत्तियों पर छिड़काव करें।\nआम की आंतरिक सड़न रोग को नियंत्रित करने के लिए, 6 से 8 ग्राम बोरेक्स तत्व की मात्रा को पानी में घोल बनाकर पहले छिड़काव करें।"
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory", "hi_translated"],
+              "code": "animal husbandry",
+              "descriptor": {
+                "name": "advisory on crop animal husbandry",
+                "long_desc": "बड़े जानवरों को खुरपका-मुंहपका रोग की रोकथाम के लिए HS वैक्सीन और गलघोटू की रोकथाम के लिए BQ वैक्सीन से टीका लगवाएं। यह सुविधा सभी पशु चिकित्सालयों में निःशुल्क उपलब्ध है।\nसुअर बुखार का टीका सभी पशु चिकित्सालयों में निःशुल्क उपलब्ध है।\nजानवरों को धूप से बचाने के लिए, उन्हें दोपहर में छायादार जगह पर बांधें और केवल सुबह और शाम को चरने दें।"
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory", "hi_translated"],
+              "code": "poultry",
+              "descriptor": {
+                "name": "advisory on crop poultry",
+                "long_desc": "खुरपका-मुंहपका रोग की रोकथाम के लिए बड़े जानवरों को HS वैक्सीन और गलघोटू की रोकथाम के लिए BQ वैक्सीन से टीका लगवाएं। यह सुविधा सभी पशु चिकित्सालयों में निःशुल्क उपलब्ध है।\nसुअर बुखार का टीका सभी पशु चिकित्सालयों में निःशुल्क उपलब्ध है।\nजानवरों को धूप से बचाने के लिए, उन्हें दोपहर में छायादार जगह पर बांधें और केवल सुबह और शाम को चरने दें।"
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory", "hi_translated"],
+              "code": "fisheries",
+              "descriptor": {
+                "name": "advisory on crop fisheries",
+                "long_desc": "तालाबों का जल स्तर 5 से 5.5 फीट तक बनाए रखना चाहिए।\nमछली के विकास के लिए, प्रोत्साहक का मछली के वजन के 4 से 2 प्रतिशत का उपयोग किया जाना चाहिए।\nजातियों (सामान्य कार्प मछलियों के प्रजनन के दृष्टिकोण में डर) को अलग किया जाना चाहिए और उनका विशेष पोषण सुनिश्चित किया जाना चाहिए।"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

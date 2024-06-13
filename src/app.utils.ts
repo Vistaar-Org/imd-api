@@ -3,6 +3,20 @@ import * as path from 'path';
 import { format, addDays } from 'date-fns';
 import { BadRequestException } from '@nestjs/common';
 
+enum CONDITIONS {
+  SUNNY = 'sunny',
+  CLOUDY = 'cloudy',
+  LIGHT_RAIN = 'light_rain',
+  HEAVY_RAIN = 'heavy_rain',
+  THUNDERSTORM = 'thunderstorm',
+}
+
+const WEATHER_DATA = JSON.parse(
+  fs.readFileSync(path.join(__dirname + '/conditions.json'), {
+    encoding: 'utf-8',
+  }),
+);
+
 export const calculateDate = (baseDate: string, daysToAdd: number): string => {
   const date = new Date(baseDate);
   const newDate = addDays(date, daysToAdd);
@@ -55,6 +69,20 @@ export const getStationId = (
   return code;
 };
 
+export const calculateWeatherConditions = (
+  cloudCover = 0,
+  windSpeed = 0,
+  rainfall = 0,
+) => {
+  // classify
+  let weather = CONDITIONS.SUNNY;
+  // if (cloudCover == 0 && windSpeed == 0 && rainfall == 0) {
+  //   weather = CONDITIONS.SUNNY;
+  // } else if (cloudCover > 2 && rainfall == 0) {
+  // }
+  return weather;
+};
+
 export const mapIMDItems = (imdJSON) => {
   let { sevenDay, current } = imdJSON;
   sevenDay = sevenDay[0];
@@ -62,7 +90,25 @@ export const mapIMDItems = (imdJSON) => {
 
   if (typeof current !== typeof 'string') {
     current.forEach((item) => {
+      // get conditions here
+      const conditions = calculateWeatherConditions();
       items.push({
+        descriptor: {
+          images: [
+            {
+              url: WEATHER_DATA[conditions].image_day,
+              type: 'image_day',
+            },
+            {
+              url: WEATHER_DATA[conditions].image_night,
+              type: 'image_night',
+            },
+            {
+              url: WEATHER_DATA[conditions].icon,
+              type: 'icon',
+            },
+          ],
+        },
         time: {
           label: 'Date of Observation',
           timestamp: item['Date of Observation'],
@@ -70,7 +116,9 @@ export const mapIMDItems = (imdJSON) => {
         location_ids: [item['Station']],
         category_ids: ['current_weather'], //TODO: turn this into an ENUM
         tags: {
-          conditions: sevenDay['Todays_Forecast'],
+          conditions: conditions,
+          conditions_hi: WEATHER_DATA[conditions].hi_translated,
+          conditions_or: WEATHER_DATA[conditions].or_translated,
           temp: item['Temperature'],
           humidity: item['Humidity'],
           winddir: item['Wind Direction'],
@@ -115,7 +163,24 @@ export const mapIMDFutureItems = (station) => {
 
     if (station[dayKeyMax] && station[dayKeyMin] && station[dayKeyForecast]) {
       const newDate = calculateDate(baseDate, dayOffset - 1);
+      const conditions = calculateWeatherConditions();
       items.push({
+        descriptor: {
+          images: [
+            {
+              url: WEATHER_DATA[conditions].image_day,
+              type: 'image_day',
+            },
+            {
+              url: WEATHER_DATA[conditions].image_night,
+              type: 'image_night',
+            },
+            {
+              url: WEATHER_DATA[conditions].icon,
+              type: 'icon',
+            },
+          ],
+        },
         time: { label: 'Future Date of Forecast', timestamp: newDate },
         location_ids: [station.Station_Name],
         category_ids: ['future_weather'], // TODO: Turn this into an enum
@@ -123,6 +188,8 @@ export const mapIMDFutureItems = (station) => {
           rainfall: 'NA', // Not available in IMD data
           temp_max: station[dayKeyMax],
           temp_min: station[dayKeyMin],
+          conditions_hi: WEATHER_DATA[conditions].hi_translated,
+          conditions_or: WEATHER_DATA[conditions].or_translated,
           conditions: station[dayKeyForecast], // Not available in IMD data
           temp: 'NA', // Not available in IMD data
           humidity: 'NA', // Not available in IMD data
@@ -182,8 +249,24 @@ export const mapOUATWeather = (ouatWeatherData) => {
   const weatherDetails = ouatWeatherData['weather_details'];
   Object.keys(weatherDetails).forEach((date) => {
     const station = weatherDetails[date];
-
+    const conditions = calculateWeatherConditions();
     items.push({
+      descriptor: {
+        images: [
+          {
+            url: WEATHER_DATA[conditions].image_day,
+            type: 'image_day',
+          },
+          {
+            url: WEATHER_DATA[conditions].image_night,
+            type: 'image_night',
+          },
+          {
+            url: WEATHER_DATA[conditions].icon,
+            type: 'icon',
+          },
+        ],
+      },
       time: {
         label: 'Future Date of Forecast',
         timestamp: format(date, 'yyyy-MM-dd'),
@@ -194,6 +277,8 @@ export const mapOUATWeather = (ouatWeatherData) => {
         rainfall: station.rainfall,
         temp_max: station.t_max,
         temp_min: station.t_min,
+        conditions_hi: WEATHER_DATA[conditions].hi_translated,
+        conditions_or: WEATHER_DATA[conditions].or_translated,
         conditions: 'NA', // Not available in OUAT data
         temp: 'NA', // Not available in OUAT data
         humidity: 'NA', // Not available in OUAT data

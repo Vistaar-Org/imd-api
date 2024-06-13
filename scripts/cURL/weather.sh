@@ -1,1 +1,1 @@
-curl 'http://localhost:3000/weather?latitude=19.6500&longitude=78.5333'
+curl 'http://localhost:3000/advisory?latitude=19.6500&longitude=78.5333'
