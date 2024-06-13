@@ -17,6 +17,12 @@ const WEATHER_DATA = JSON.parse(
   }),
 );
 
+const CROP_IMAGES = JSON.parse(
+  fs.readFileSync(path.join(__dirname + '/crops.json'), {
+    encoding: 'utf-8',
+  }),
+);
+
 export const calculateDate = (baseDate: string, daysToAdd: number): string => {
   const date = new Date(baseDate);
   const newDate = addDays(date, daysToAdd);
@@ -215,6 +221,11 @@ export const mapAdvisoryData = (upcarData, provider) => {
     descriptor: {
       name: 'General Crop Advisory',
       long_desc: upcarData.general_advisory,
+      images: [
+        {
+          url: CROP_IMAGES['general_advisory'],
+        },
+      ],
     },
   });
   // map crop specific stuff
@@ -225,6 +236,11 @@ export const mapAdvisoryData = (upcarData, provider) => {
       descriptor: {
         name: `advisory on crop ${key}`,
         long_desc: upcarData.crops_data[key].advisory.join('\n'),
+        images: [
+          {
+            url: CROP_IMAGES[key.toLowerCase()],
+          },
+        ],
       },
     });
   });

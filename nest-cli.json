@@ -12,6 +12,10 @@
       {
         "include": "conditions.json",
         "outDir": "dist"
+      },
+      {
+        "include": "crops.json",
+        "outDir": "dist"
       }
     ]
   }
