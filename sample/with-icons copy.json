@@ -11,13 +11,469 @@
     "bpp_uri": "string",
     "transaction_id": "string",
     "message_id": "string",
-    "timestamp": "2024-06-14T09:41:19.095Z",
+    "timestamp": "2024-06-14T09:46:56.918Z",
     "key": "string",
     "ttl": "string"
   },
   "message": {
     "catalog": {
       "providers": [
+        {
+          "id": "imd",
+          "category_id": "weather_provider",
+          "categories": [
+            { "id": "current_weather" },
+            { "id": "future_weather" }
+          ],
+          "items": [
+            {
+              "descriptor": {
+                "images": [
+                  {
+                    "url": "https://drive.google.com/file/d/1xXnS4W7jsNW0Aw8H9pBfMQuKRgowFQag/view?usp=drive_link",
+                    "type": "image_day"
+                  },
+                  {
+                    "url": "https://drive.google.com/file/d/1GhADFWBYL932OJe74hpzVUFGUNotBPvd/view?usp=drive_link",
+                    "type": "image_night"
+                  },
+                  {
+                    "url": "https://drive.google.com/file/d/1NEWAIOJcocPYnR7qxwmAtxkc25kYldM_/view?usp=drive_link",
+                    "type": "icon"
+                  }
+                ]
+              },
+              "time": {
+                "label": "Future Date of Forecast",
+                "timestamp": "2024-06-15"
+              },
+              "location_ids": ["Angul"],
+              "category_ids": ["future_weather"],
+              "tags": {
+                "rainfall": "NA",
+                "temp_max": "39.0",
+                "temp_min": "24.0",
+                "conditions_hi": "धूप",
+                "conditions_or": "ସୂର୍ଯ୍ୟ ପ୍ରକାଶିତ",
+                "conditions": "Partly cloudy sky with possibility of development of thunder lightning",
+                "temp": "NA",
+                "humidity": "NA",
+                "winddir": "NA",
+                "windspeed": "NA",
+                "rh_max": "NA",
+                "rh_min": "NA",
+                "cloud_cover": "NA"
+              }
+            },
+            {
+              "descriptor": {
+                "images": [
+                  {
+                    "url": "https://drive.google.com/file/d/1xXnS4W7jsNW0Aw8H9pBfMQuKRgowFQag/view?usp=drive_link",
+                    "type": "image_day"
+                  },
+                  {
+                    "url": "https://drive.google.com/file/d/1GhADFWBYL932OJe74hpzVUFGUNotBPvd/view?usp=drive_link",
+                    "type": "image_night"
+                  },
+                  {
+                    "url": "https://drive.google.com/file/d/1NEWAIOJcocPYnR7qxwmAtxkc25kYldM_/view?usp=drive_link",
+                    "type": "icon"
+                  }
+                ]
+              },
+              "time": {
+                "label": "Future Date of Forecast",
+                "timestamp": "2024-06-16"
+              },
+              "location_ids": ["Angul"],
+              "category_ids": ["future_weather"],
+              "tags": {
+                "rainfall": "NA",
+                "temp_max": "39.0",
+                "temp_min": "24.0",
+                "conditions_hi": "धूप",
+                "conditions_or": "ସୂର୍ଯ୍ୟ ପ୍ରକାଶିତ",
+                "conditions": "Partly cloudy sky with possibility of development of thunder lightning",
+                "temp": "NA",
+                "humidity": "NA",
+                "winddir": "NA",
+                "windspeed": "NA",
+                "rh_max": "NA",
+                "rh_min": "NA",
+                "cloud_cover": "NA"
+              }
+            },
+            {
+              "descriptor": {
+                "images": [
+                  {
+                    "url": "https://drive.google.com/file/d/1xXnS4W7jsNW0Aw8H9pBfMQuKRgowFQag/view?usp=drive_link",
+                    "type": "image_day"
+                  },
+                  {
+                    "url": "https://drive.google.com/file/d/1GhADFWBYL932OJe74hpzVUFGUNotBPvd/view?usp=drive_link",
+                    "type": "image_night"
+                  },
+                  {
+                    "url": "https://drive.google.com/file/d/1NEWAIOJcocPYnR7qxwmAtxkc25kYldM_/view?usp=drive_link",
+                    "type": "icon"
+                  }
+                ]
+              },
+              "time": {
+                "label": "Future Date of Forecast",
+                "timestamp": "2024-06-17"
+              },
+              "location_ids": ["Angul"],
+              "category_ids": ["future_weather"],
+              "tags": {
+                "rainfall": "NA",
+                "temp_max": "38.0",
+                "temp_min": "24.0",
+                "conditions_hi": "धूप",
+                "conditions_or": "ସୂର୍ଯ୍ୟ ପ୍ରକାଶିତ",
+                "conditions": "Partly cloudy sky with one or two spells of rain or thundershowers",
+                "temp": "NA",
+                "humidity": "NA",
+                "winddir": "NA",
+                "windspeed": "NA",
+                "rh_max": "NA",
+                "rh_min": "NA",
+                "cloud_cover": "NA"
+              }
+            },
+            {
+              "descriptor": {
+                "images": [
+                  {
+                    "url": "https://drive.google.com/file/d/1xXnS4W7jsNW0Aw8H9pBfMQuKRgowFQag/view?usp=drive_link",
+                    "type": "image_day"
+                  },
+                  {
+                    "url": "https://drive.google.com/file/d/1GhADFWBYL932OJe74hpzVUFGUNotBPvd/view?usp=drive_link",
+                    "type": "image_night"
+                  },
+                  {
+                    "url": "https://drive.google.com/file/d/1NEWAIOJcocPYnR7qxwmAtxkc25kYldM_/view?usp=drive_link",
+                    "type": "icon"
+                  }
+                ]
+              },
+              "time": {
+                "label": "Future Date of Forecast",
+                "timestamp": "2024-06-18"
+              },
+              "location_ids": ["Angul"],
+              "category_ids": ["future_weather"],
+              "tags": {
+                "rainfall": "NA",
+                "temp_max": "37.0",
+                "temp_min": "23.0",
+                "conditions_hi": "धूप",
+                "conditions_or": "ସୂର୍ଯ୍ୟ ପ୍ରକାଶିତ",
+                "conditions": "Partly cloudy sky with possibility of moderate rain or Thunderstorm",
+                "temp": "NA",
+                "humidity": "NA",
+                "winddir": "NA",
+                "windspeed": "NA",
+                "rh_max": "NA",
+                "rh_min": "NA",
+                "cloud_cover": "NA"
+              }
+            },
+            {
+              "descriptor": {
+                "images": [
+                  {
+                    "url": "https://drive.google.com/file/d/1xXnS4W7jsNW0Aw8H9pBfMQuKRgowFQag/view?usp=drive_link",
+                    "type": "image_day"
+                  },
+                  {
+                    "url": "https://drive.google.com/file/d/1GhADFWBYL932OJe74hpzVUFGUNotBPvd/view?usp=drive_link",
+                    "type": "image_night"
+                  },
+                  {
+                    "url": "https://drive.google.com/file/d/1NEWAIOJcocPYnR7qxwmAtxkc25kYldM_/view?usp=drive_link",
+                    "type": "icon"
+                  }
+                ]
+              },
+              "time": {
+                "label": "Future Date of Forecast",
+                "timestamp": "2024-06-19"
+              },
+              "location_ids": ["Angul"],
+              "category_ids": ["future_weather"],
+              "tags": {
+                "rainfall": "NA",
+                "temp_max": "35.0",
+                "temp_min": "22.0",
+                "conditions_hi": "धूप",
+                "conditions_or": "ସୂର୍ଯ୍ୟ ପ୍ରକାଶିତ",
+                "conditions": "Partly cloudy sky with Thundery development",
+                "temp": "NA",
+                "humidity": "NA",
+                "winddir": "NA",
+                "windspeed": "NA",
+                "rh_max": "NA",
+                "rh_min": "NA",
+                "cloud_cover": "NA"
+              }
+            },
+            {
+              "descriptor": {
+                "images": [
+                  {
+                    "url": "https://drive.google.com/file/d/1xXnS4W7jsNW0Aw8H9pBfMQuKRgowFQag/view?usp=drive_link",
+                    "type": "image_day"
+                  },
+                  {
+                    "url": "https://drive.google.com/file/d/1GhADFWBYL932OJe74hpzVUFGUNotBPvd/view?usp=drive_link",
+                    "type": "image_night"
+                  },
+                  {
+                    "url": "https://drive.google.com/file/d/1NEWAIOJcocPYnR7qxwmAtxkc25kYldM_/view?usp=drive_link",
+                    "type": "icon"
+                  }
+                ]
+              },
+              "time": {
+                "label": "Future Date of Forecast",
+                "timestamp": "2024-06-20"
+              },
+              "location_ids": ["Angul"],
+              "category_ids": ["future_weather"],
+              "tags": {
+                "rainfall": "NA",
+                "temp_max": "35.0",
+                "temp_min": "22.0",
+                "conditions_hi": "धूप",
+                "conditions_or": "ସୂର୍ଯ୍ୟ ପ୍ରକାଶିତ",
+                "conditions": "Partly cloudy sky with Thundery development",
+                "temp": "NA",
+                "humidity": "NA",
+                "winddir": "NA",
+                "windspeed": "NA",
+                "rh_max": "NA",
+                "rh_min": "NA",
+                "cloud_cover": "NA"
+              }
+            }
+          ]
+        },
+        {
+          "id": "ouat",
+          "category_id": "weather_provider",
+          "categories": [{ "id": "future_weather" }],
+          "items": [
+            {
+              "descriptor": {
+                "images": [
+                  {
+                    "url": "https://drive.google.com/file/d/1X1qywMHCPXOaHTPU2K5zqhHOhLFOXbHG/view?usp=drive_link",
+                    "type": "image_day"
+                  },
+                  {
+                    "url": "https://drive.google.com/file/d/1GhADFWBYL932OJe74hpzVUFGUNotBPvd/view?usp=drive_link",
+                    "type": "image_night"
+                  },
+                  {
+                    "url": "https://drive.google.com/file/d/1QSCy2b3SGxfK73AfUOcxmwzH4QmYAUDR/view?usp=drive_link",
+                    "type": "icon"
+                  }
+                ]
+              },
+              "time": {
+                "label": "Future Date of Forecast",
+                "timestamp": "2024-06-01"
+              },
+              "location_ids": ["anugul"],
+              "category_ids": ["future_weather"],
+              "tags": {
+                "rainfall": 2,
+                "temp_max": 41,
+                "temp_min": 26,
+                "conditions_hi": "हल्की बारिश",
+                "conditions_or": "ହଲୁକ ବର୍ଷା",
+                "conditions": "light_rain",
+                "temp": 33.5,
+                "humidity": "NA",
+                "winddir": 135,
+                "windspeed": 13,
+                "rh_max": 84,
+                "rh_min": 30,
+                "wind_speed": "NA",
+                "wind_direction": "NA",
+                "cloud_cover": 5
+              }
+            },
+            {
+              "descriptor": {
+                "images": [
+                  {
+                    "url": "https://drive.google.com/file/d/1X1qywMHCPXOaHTPU2K5zqhHOhLFOXbHG/view?usp=drive_link",
+                    "type": "image_day"
+                  },
+                  {
+                    "url": "https://drive.google.com/file/d/1GhADFWBYL932OJe74hpzVUFGUNotBPvd/view?usp=drive_link",
+                    "type": "image_night"
+                  },
+                  {
+                    "url": "https://drive.google.com/file/d/1QSCy2b3SGxfK73AfUOcxmwzH4QmYAUDR/view?usp=drive_link",
+                    "type": "icon"
+                  }
+                ]
+              },
+              "time": {
+                "label": "Future Date of Forecast",
+                "timestamp": "2024-06-02"
+              },
+              "location_ids": ["anugul"],
+              "category_ids": ["future_weather"],
+              "tags": {
+                "rainfall": 2,
+                "temp_max": 40,
+                "temp_min": 26,
+                "conditions_hi": "हल्की बारिश",
+                "conditions_or": "ହଲୁକ ବର୍ଷା",
+                "conditions": "light_rain",
+                "temp": 33,
+                "humidity": "NA",
+                "winddir": 163,
+                "windspeed": 9,
+                "rh_max": 78,
+                "rh_min": 37,
+                "wind_speed": "NA",
+                "wind_direction": "NA",
+                "cloud_cover": 5
+              }
+            },
+            {
+              "descriptor": {
+                "images": [
+                  {
+                    "url": "https://drive.google.com/file/d/1X1qywMHCPXOaHTPU2K5zqhHOhLFOXbHG/view?usp=drive_link",
+                    "type": "image_day"
+                  },
+                  {
+                    "url": "https://drive.google.com/file/d/1GhADFWBYL932OJe74hpzVUFGUNotBPvd/view?usp=drive_link",
+                    "type": "image_night"
+                  },
+                  {
+                    "url": "https://drive.google.com/file/d/1QSCy2b3SGxfK73AfUOcxmwzH4QmYAUDR/view?usp=drive_link",
+                    "type": "icon"
+                  }
+                ]
+              },
+              "time": {
+                "label": "Future Date of Forecast",
+                "timestamp": "2024-06-03"
+              },
+              "location_ids": ["anugul"],
+              "category_ids": ["future_weather"],
+              "tags": {
+                "rainfall": 5,
+                "temp_max": 39,
+                "temp_min": 26,
+                "conditions_hi": "हल्की बारिश",
+                "conditions_or": "ହଲୁକ ବର୍ଷା",
+                "conditions": "light_rain",
+                "temp": 32.5,
+                "humidity": "NA",
+                "winddir": 124,
+                "windspeed": 11,
+                "rh_max": 79,
+                "rh_min": 18,
+                "wind_speed": "NA",
+                "wind_direction": "NA",
+                "cloud_cover": 6
+              }
+            },
+            {
+              "descriptor": {
+                "images": [
+                  {
+                    "url": "https://drive.google.com/file/d/1X1qywMHCPXOaHTPU2K5zqhHOhLFOXbHG/view?usp=drive_link",
+                    "type": "image_day"
+                  },
+                  {
+                    "url": "https://drive.google.com/file/d/1GhADFWBYL932OJe74hpzVUFGUNotBPvd/view?usp=drive_link",
+                    "type": "image_night"
+                  },
+                  {
+                    "url": "https://drive.google.com/file/d/1QSCy2b3SGxfK73AfUOcxmwzH4QmYAUDR/view?usp=drive_link",
+                    "type": "icon"
+                  }
+                ]
+              },
+              "time": {
+                "label": "Future Date of Forecast",
+                "timestamp": "2024-06-04"
+              },
+              "location_ids": ["anugul"],
+              "category_ids": ["future_weather"],
+              "tags": {
+                "rainfall": 4,
+                "temp_max": 39,
+                "temp_min": 26,
+                "conditions_hi": "हल्की बारिश",
+                "conditions_or": "ହଲୁକ ବର୍ଷା",
+                "conditions": "light_rain",
+                "temp": 32.5,
+                "humidity": "NA",
+                "winddir": 225,
+                "windspeed": 12,
+                "rh_max": 41,
+                "rh_min": 15,
+                "wind_speed": "NA",
+                "wind_direction": "NA",
+                "cloud_cover": 2
+              }
+            },
+            {
+              "descriptor": {
+                "images": [
+                  {
+                    "url": "https://drive.google.com/file/d/13CNetgLmdY1yTLI15XuVhGMCj-IzTQZi/view?usp=drive_link",
+                    "type": "image_day"
+                  },
+                  {
+                    "url": "https://drive.google.com/file/d/1GhADFWBYL932OJe74hpzVUFGUNotBPvd/view?usp=drive_link",
+                    "type": "image_night"
+                  },
+                  {
+                    "url": "https://drive.google.com/file/d/1Q6zYkdCDlZf3LValUVOWFlAuGQ67_vtk/view?usp=drive_link",
+                    "type": "icon"
+                  }
+                ]
+              },
+              "time": {
+                "label": "Future Date of Forecast",
+                "timestamp": "2024-06-05"
+              },
+              "location_ids": ["anugul"],
+              "category_ids": ["future_weather"],
+              "tags": {
+                "rainfall": 0,
+                "temp_max": 38,
+                "temp_min": 25,
+                "conditions_hi": "बादल",
+                "conditions_or": "ମେଘାଚ୍ଛନ୍ନ",
+                "conditions": "cloudy",
+                "temp": 31.5,
+                "humidity": "NA",
+                "winddir": 216,
+                "windspeed": 13,
+                "rh_max": 61,
+                "rh_min": 16,
+                "wind_speed": "NA",
+                "wind_direction": "NA",
+                "cloud_cover": 4
+              }
+            }
+          ]
+        },
         {
           "id": "upcar",
           "category_id": "crop_advisory_provider",
@@ -309,6 +765,55 @@
                 "images": [
                   {
                     "url": "https://drive.google.com/file/d/1bpgRj-hiuDZMkKdlPI8N5LTIuwPoSkGd/view?usp=drive_link"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "ouat",
+          "category_id": "crop_advisory_provider",
+          "categories": [
+            { "id": "general_advisory" },
+            { "id": "crop_specific_advisory" }
+          ],
+          "items": [
+            {
+              "category_ids": ["general_advisory"],
+              "code": "general",
+              "descriptor": {
+                "name": "General Crop Advisory",
+                "long_desc": "The district likely to get thunderstorm with 40-50 kmph wind on Friday, give staking in creeping vegetables. Withhold irrigation and Pesticide, Insecticide, application due to upcoming rainy weather. For planting of fruit crops in July and August go for digging of pits before onset of monsoon to effect solarisation of soils removed from the pits for killing the hibernated insects and their eggs. The Angul district is likely to receive light rainfall in the coming two days, make sure to conserve rainwater in view of forecasted less monsoon rainfall in the month of June. The bunds of the fields must be strengthened.",
+                "images": [
+                  {
+                    "url": "https://drive.google.com/file/d/1Jf9FBO9MxyIuADmwTMxtWDP7HB4PolsZ/view?usp=drive_link"
+                  }
+                ]
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory"],
+              "code": "brinjal",
+              "descriptor": {
+                "name": "advisory on crop brinjal",
+                "long_desc": "Due increased temperature and suitable humidity fruit and shoot borer might affect brinjal crop. In case brinjal crop is infested with fruit borer install pheromone trap @ 25 / ha, spray spinsad 7ml/ 15 litres of water. Go for application after cessation of rainfall.",
+                "images": [
+                  {
+                    "url": "https://drive.google.com/open?id=1O3pFFMxJcrnb9m1uA1GXx6IqyriOwTun&usp=drive_copy"
+                  }
+                ]
+              }
+            },
+            {
+              "category_ids": ["crop_specific_advisory"],
+              "code": "common fish",
+              "descriptor": {
+                "name": "advisory on crop common fish",
+                "long_desc": "Remove the predatory and unwanted fishes from the pond for better culture practices. Pond should be dried and properly ploughed with application of lime @250kg/ha. Inside embankment of pond dykes should be cleaned with free from any aquatic weeds.",
+                "images": [
+                  {
+                    "url": "https://drive.google.com/open?id=1f2Za5Kc1VGUU8UgQV2Om1JbCOZtW-he6&usp=drive_copy"
                   }
                 ]
               }

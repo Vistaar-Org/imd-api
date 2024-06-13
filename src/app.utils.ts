@@ -4,11 +4,13 @@ import { format, addDays } from 'date-fns';
 import { BadRequestException } from '@nestjs/common';
 
 enum CONDITIONS {
+  DEFAULT = 'deafult',
   SUNNY = 'sunny',
   CLOUDY = 'cloudy',
   LIGHT_RAIN = 'light_rain',
   HEAVY_RAIN = 'heavy_rain',
   THUNDERSTORM = 'thunderstorm',
+  WINDY = 'windy',
 }
 
 const WEATHER_DATA = JSON.parse(
@@ -81,11 +83,18 @@ export const calculateWeatherConditions = (
   rainfall = 0,
 ) => {
   // classify
-  let weather = CONDITIONS.SUNNY;
-  // if (cloudCover == 0 && windSpeed == 0 && rainfall == 0) {
-  //   weather = CONDITIONS.SUNNY;
-  // } else if (cloudCover > 2 && rainfall == 0) {
-  // }
+  let weather = CONDITIONS.DEFAULT;
+  if (cloudCover == 0 && windSpeed == 0 && rainfall == 0) {
+    weather = CONDITIONS.SUNNY;
+  } else if (cloudCover > 2 && rainfall == 0) {
+    weather = CONDITIONS.CLOUDY;
+  } else if (rainfall > 0) {
+    weather = CONDITIONS.LIGHT_RAIN;
+  } else if (windSpeed > 30) {
+    weather = CONDITIONS.WINDY;
+  } else if (windSpeed > 45) {
+    weather = CONDITIONS.THUNDERSTORM;
+  }
   return weather;
 };
 
@@ -97,7 +106,16 @@ export const mapIMDItems = (imdJSON) => {
   if (typeof current !== typeof 'string') {
     current.forEach((item) => {
       // get conditions here
-      const conditions = calculateWeatherConditions();
+      const cloudCover = parseFloat(item['Nebulosity']);
+      const windSpeed = parseFloat(item['Wind Speed KMPH']);
+      const rainfall = parseFloat(sevenDay?.Past_24_hrs_Rainfall);
+
+      const conditions = calculateWeatherConditions(
+        cloudCover,
+        windSpeed,
+        rainfall,
+      );
+
       items.push({
         descriptor: {
           images: [
@@ -129,16 +147,16 @@ export const mapIMDItems = (imdJSON) => {
           humidity: item['Humidity'],
           winddir: item['Wind Direction'],
           windspeed: item['Wind Speed KMPH'],
-          rainfall: sevenDay?.Past_24_hrs_Rainfall,
+          rainfall: item['Last 24 hrs Rainfall'],
           temp_max: sevenDay?.Today_Max_temp,
           temp_min: sevenDay?.Today_Min_temp,
           rh_max: sevenDay?.Relative_Humidity_at_0830,
           rh_min: sevenDay?.Relative_Humidity_at_1730,
-          cloud_cover: 'NA', // Not available in IMD data
-          Sunset_time: sevenDay?.Sunset_time,
-          Sunrise_time: sevenDay?.Sunrise_time,
-          Moonset_time: sevenDay?.Moonset_time,
-          Moonrise_time: sevenDay?.Moonrise_time,
+          cloud_cover: item['Nebulosity'], // Not available in IMD data
+          Sunset_time: item['Sunset'],
+          Sunrise_time: item['Sunrise'],
+          Moonset_time: item['Moonset'],
+          Moonrise_time: item['Moonrise'],
         },
       });
     });
@@ -223,7 +241,9 @@ export const mapAdvisoryData = (upcarData, provider) => {
       long_desc: upcarData.general_advisory,
       images: [
         {
-          url: CROP_IMAGES['general_advisory'],
+          url: CROP_IMAGES['general_advisory']
+            ? CROP_IMAGES['general_advisory']
+            : CROP_IMAGES['wheat'],
         },
       ],
     },
@@ -238,7 +258,9 @@ export const mapAdvisoryData = (upcarData, provider) => {
         long_desc: upcarData.crops_data[key].advisory.join('\n'),
         images: [
           {
-            url: CROP_IMAGES[key.toLowerCase()],
+            url: CROP_IMAGES[key.toLowerCase()]
+              ? CROP_IMAGES[key.toLowerCase()]
+              : CROP_IMAGES['wheat'],
           },
         ],
       },
@@ -265,7 +287,11 @@ export const mapOUATWeather = (ouatWeatherData) => {
   const weatherDetails = ouatWeatherData['weather_details'];
   Object.keys(weatherDetails).forEach((date) => {
     const station = weatherDetails[date];
-    const conditions = calculateWeatherConditions();
+
+    const cloudCover = parseFloat(station.cloud_cover);
+    const rainfall = parseFloat(station.rainfall);
+    const conditions = calculateWeatherConditions(cloudCover, 0, rainfall);
+
     items.push({
       descriptor: {
         images: [
@@ -287,7 +313,7 @@ export const mapOUATWeather = (ouatWeatherData) => {
         label: 'Future Date of Forecast',
         timestamp: format(date, 'yyyy-MM-dd'),
       },
-      location_ids: [station.district],
+      location_ids: [ouatWeatherData.district],
       category_ids: ['future_weather'], // TODO: Turn this into an enum
       tags: {
         rainfall: station.rainfall,
@@ -295,8 +321,8 @@ export const mapOUATWeather = (ouatWeatherData) => {
         temp_min: station.t_min,
         conditions_hi: WEATHER_DATA[conditions].hi_translated,
         conditions_or: WEATHER_DATA[conditions].or_translated,
-        conditions: 'NA', // Not available in OUAT data
-        temp: 'NA', // Not available in OUAT data
+        conditions: conditions, // Not available in OUAT data
+        temp: (parseFloat(station.t_max) + parseFloat(station.t_min)) / 2, // Not available in OUAT data
         humidity: 'NA', // Not available in OUAT data
         winddir: station.wind_direction, // Not available in OUAT data
         windspeed: station.wind_speed, // Not available in OUAT data

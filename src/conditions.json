@@ -38,5 +38,12 @@
     "hi_translated": "तूफान",
     "or_translated": "ତୁଫାନ",
     "en_translated": "Thunderstorm"
+  },
+  "windy": {
+    "image_day": "https://drive.google.com/file/d/1DHa7HbAN_JHOYtVVfltBtqHShgZDX9ww/view?usp=drive_link",
+    "icon": "https://drive.google.com/file/d/1DHa7HbAN_JHOYtVVfltBtqHShgZDX9ww/view?usp=drive_link",
+    "image_night": "https://drive.google.com/file/d/1DHa7HbAN_JHOYtVVfltBtqHShgZDX9ww/view?usp=drive_link",
+    "hi_translated": "तेज हवाएं",
+    "or_translated": "ବେଗବାନ ପବନ"
   }
 }

@@ -50,6 +50,7 @@ export class AppService {
         ouatBaseURL + `/history/31-05-2024_${district}.json`,
       );
 
+      ouatData.data['district'] = district;
       return ouatData.data;
     } else {
       const ouatData = await this.httpService.axiosRef.get(
