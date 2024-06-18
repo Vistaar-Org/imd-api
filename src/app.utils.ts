@@ -215,7 +215,7 @@ export const mapIMDFutureItems = (station) => {
           conditions_hi: WEATHER_DATA[conditions].hi_translated,
           conditions_or: WEATHER_DATA[conditions].or_translated,
           conditions: station[dayKeyForecast], // Not available in IMD data
-          temp: 'NA', // Not available in IMD data
+          temp: (parseFloat(station.t_max) + parseFloat(station.t_min)) / 2, // Not available in IMD data
           humidity: 'NA', // Not available in IMD data
           winddir: 'NA', // Not available in IMD data
           windspeed: 'NA', // Not available in IMD data
