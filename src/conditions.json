@@ -1,4 +1,12 @@
 {
+  "default": {
+    "image_day": "https://drive.google.com/file/d/1xXnS4W7jsNW0Aw8H9pBfMQuKRgowFQag/view?usp=drive_link",
+    "image_night": "https://drive.google.com/file/d/1AONivlXOtU39QGuEfcG-FVt-caBrRZ2b/view?usp=drive_link",
+    "icon": "https://drive.google.com/file/d/1NEWAIOJcocPYnR7qxwmAtxkc25kYldM_/view?usp=drive_link",
+    "hi_translated": "धूप",
+    "or_translated": "ସୂର୍ଯ୍ୟ ପ୍ରକାଶିତ",
+    "en_translated": "Sunny"
+  },
   "sunny": {
     "image_day": "https://drive.google.com/file/d/1xXnS4W7jsNW0Aw8H9pBfMQuKRgowFQag/view?usp=drive_link",
     "image_night": "https://drive.google.com/file/d/1AONivlXOtU39QGuEfcG-FVt-caBrRZ2b/view?usp=drive_link",

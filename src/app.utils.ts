@@ -4,7 +4,7 @@ import { format, addDays } from 'date-fns';
 import { BadRequestException } from '@nestjs/common';
 
 enum CONDITIONS {
-  DEFAULT = 'deafult',
+  DEFAULT = 'default',
   SUNNY = 'sunny',
   CLOUDY = 'cloudy',
   LIGHT_RAIN = 'light_rain',
