@@ -83,7 +83,7 @@ export const calculateWeatherConditions = (
   rainfall = 0,
 ) => {
   // classify
-  let weather = CONDITIONS.DEFAULT;
+  let weather = CONDITIONS.SUNNY;
   if (cloudCover == 0 && windSpeed == 0 && rainfall == 0) {
     weather = CONDITIONS.SUNNY;
   } else if (cloudCover > 2 && rainfall == 0) {
