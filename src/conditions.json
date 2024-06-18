@@ -1,7 +1,7 @@
 {
   "sunny": {
     "image_day": "https://drive.google.com/file/d/1xXnS4W7jsNW0Aw8H9pBfMQuKRgowFQag/view?usp=drive_link",
-    "image_night": "https://drive.google.com/file/d/1GhADFWBYL932OJe74hpzVUFGUNotBPvd/view?usp=drive_link",
+    "image_night": "https://drive.google.com/file/d/1AONivlXOtU39QGuEfcG-FVt-caBrRZ2b/view?usp=drive_link",
     "icon": "https://drive.google.com/file/d/1NEWAIOJcocPYnR7qxwmAtxkc25kYldM_/view?usp=drive_link",
     "hi_translated": "धूप",
     "or_translated": "ସୂର୍ଯ୍ୟ ପ୍ରକାଶିତ",
@@ -9,7 +9,7 @@
   },
   "cloudy": {
     "image_day": "https://drive.google.com/file/d/13CNetgLmdY1yTLI15XuVhGMCj-IzTQZi/view?usp=drive_link",
-    "image_night": "https://drive.google.com/file/d/1GhADFWBYL932OJe74hpzVUFGUNotBPvd/view?usp=drive_link",
+    "image_night": "https://drive.google.com/file/d/1AONivlXOtU39QGuEfcG-FVt-caBrRZ2b/view?usp=drive_link",
     "icon": "https://drive.google.com/file/d/1Q6zYkdCDlZf3LValUVOWFlAuGQ67_vtk/view?usp=drive_link",
     "hi_translated": "बादल",
     "or_translated": "ମେଘାଚ୍ଛନ୍ନ",
@@ -17,7 +17,7 @@
   },
   "light_rain": {
     "image_day": "https://drive.google.com/file/d/1X1qywMHCPXOaHTPU2K5zqhHOhLFOXbHG/view?usp=drive_link",
-    "image_night": "https://drive.google.com/file/d/1GhADFWBYL932OJe74hpzVUFGUNotBPvd/view?usp=drive_link",
+    "image_night": "https://drive.google.com/file/d/1AONivlXOtU39QGuEfcG-FVt-caBrRZ2b/view?usp=drive_link",
     "icon": "https://drive.google.com/file/d/1QSCy2b3SGxfK73AfUOcxmwzH4QmYAUDR/view?usp=drive_link",
     "hi_translated": "हल्की बारिश",
     "or_translated": "ହଲୁକ ବର୍ଷା",
@@ -25,23 +25,23 @@
   },
   "heavy_rain": {
     "image_day": "https://drive.google.com/file/d/1X1qywMHCPXOaHTPU2K5zqhHOhLFOXbHG/view?usp=drive_link",
-    "image_night": "https://drive.google.com/file/d/1GhADFWBYL932OJe74hpzVUFGUNotBPvd/view?usp=drive_link",
+    "image_night": "https://drive.google.com/file/d/1AONivlXOtU39QGuEfcG-FVt-caBrRZ2b/view?usp=drive_link",
     "icon": "https://drive.google.com/file/d/1-OSO_Jd1hrI8APDvyijqKKxZ_sKartHP/view?usp=drive_link",
     "hi_translated": "भारी बारिश",
     "or_translated": "ଭାରି ବର୍ଷା",
     "en_translated": "heavy_rain"
   },
   "thunderstorm": {
-    "image_day": "https://drive.google.com/file/d/1DHa7HbAN_JHOYtVVfltBtqHShgZDX9ww/view?usp=drive_link",
-    "image_night": "https://drive.google.com/file/d/1GhADFWBYL932OJe74hpzVUFGUNotBPvd/view?usp=drive_link",
+    "image_day": "https://drive.google.com/file/d/1NU-5I5x2ukzLnbPzgwJJgkLDXHoc1ZGZ/view?usp=drive_link",
+    "image_night": "https://drive.google.com/file/d/1NU-5I5x2ukzLnbPzgwJJgkLDXHoc1ZGZ/view?usp=drive_link",
     "icon": "https://drive.google.com/file/d/1PXODWt9IaKF3DXdrAHWofbEKhmkdc6EU/view?usp=drive_link",
     "hi_translated": "तूफान",
     "or_translated": "ତୁଫାନ",
     "en_translated": "Thunderstorm"
   },
   "windy": {
-    "image_day": "https://drive.google.com/file/d/1DHa7HbAN_JHOYtVVfltBtqHShgZDX9ww/view?usp=drive_link",
-    "icon": "https://drive.google.com/file/d/1DHa7HbAN_JHOYtVVfltBtqHShgZDX9ww/view?usp=drive_link",
+    "image_day": "https://drive.google.com/file/d/1NU-5I5x2ukzLnbPzgwJJgkLDXHoc1ZGZ/view?usp=drive_link",
+    "icon": "https://drive.google.com/file/d/1NU-5I5x2ukzLnbPzgwJJgkLDXHoc1ZGZ/view?usp=drive_link",
     "image_night": "https://drive.google.com/file/d/1DHa7HbAN_JHOYtVVfltBtqHShgZDX9ww/view?usp=drive_link",
     "hi_translated": "तेज हवाएं",
     "or_translated": "ବେଗବାନ ପବନ"
