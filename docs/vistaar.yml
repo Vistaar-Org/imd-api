@@ -858,8 +858,6 @@ components:
       properties:
         descriptor:
           $ref: '#/components/schemas/Descriptor'
-        forecast:
-          $ref: '#/components/schemas/MeterologicalForecast'
         fulfillments:
           description: Fulfillment modes offered at the BPP level. This is used when a BPP itself offers fulfillments on behalf of the providers it has onboarded.
           type: array
@@ -1819,6 +1817,10 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Item'
+        forecast:
+          type: array
+          items:
+            $ref: '#/components/schemas/MeterologicalObservations'
         exp:
           type: string
           description: Time after which catalog has to be refreshed
@@ -2164,7 +2166,7 @@ components:
         required:
           description: Indicates whether the form data is mandatorily required by the BPP to confirm the order.
           type: boolean
-    MeterologicalForecast:
+    MeterologicalObservations:
       description: 'Contains meterological information such as weather forecasts.'
       type: object
       properties:
