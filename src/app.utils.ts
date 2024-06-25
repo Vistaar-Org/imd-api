@@ -98,8 +98,10 @@ export const calculateWeatherConditions = (
   return weather;
 };
 
+export const mapVisualCrossingItems = (visualCrossingData) => {};
+
 export const mapIMDItems = (imdJSON) => {
-  let { sevenDay, current } = imdJSON;
+  let { sevenDay, current, visualCrossing } = imdJSON;
   sevenDay = sevenDay[0];
   const items = [];
 
@@ -143,7 +145,13 @@ export const mapIMDItems = (imdJSON) => {
           conditions: conditions,
           conditions_hi: WEATHER_DATA[conditions].hi_translated,
           conditions_or: WEATHER_DATA[conditions].or_translated,
-          temp: item['Temperature'],
+          temp:
+            item['Temperature'].trim() === 'NA'
+              ? (
+                  (sevenDay?.Today_Max_temp + sevenDay?.Today_Min_temp) /
+                  2
+                ).toString()
+              : item['Temperature'],
           humidity: item['Humidity'],
           winddir: item['Wind Direction'],
           windspeed: item['Wind Speed KMPH'],
@@ -157,6 +165,70 @@ export const mapIMDItems = (imdJSON) => {
           Sunrise_time: item['Sunrise'],
           Moonset_time: item['Moonset'],
           Moonrise_time: item['Moonrise'],
+        },
+      });
+    });
+  } else {
+    const val = visualCrossing.days;
+    val.forEach((item) => {
+      // get conditions here
+      const cloudCover = parseFloat(item['cloudcover']);
+      const windSpeed = parseFloat(item['windspeed']);
+      const rainfall = parseFloat(item['precip']);
+
+      const conditions = calculateWeatherConditions(
+        cloudCover,
+        windSpeed,
+        rainfall,
+      );
+
+      items.push({
+        descriptor: {
+          images: [
+            {
+              url: WEATHER_DATA[conditions].image_day,
+              type: 'image_day',
+            },
+            {
+              url: WEATHER_DATA[conditions].image_night,
+              type: 'image_night',
+            },
+            {
+              url: WEATHER_DATA[conditions].icon,
+              type: 'icon',
+            },
+          ],
+        },
+        time: {
+          label: 'Date of Observation',
+          timestamp: item['datetime'],
+        },
+        location_ids: [sevenDay['Station_Name']],
+        category_ids: ['current_weather'], //TODO: turn this into an ENUM
+        tags: {
+          conditions: conditions,
+          conditions_hi: WEATHER_DATA[conditions].hi_translated,
+          conditions_or: WEATHER_DATA[conditions].or_translated,
+          temp:
+            item['temp'].toString().trim() === 'NA'
+              ? (
+                  (sevenDay?.Today_Max_temp + sevenDay?.Today_Min_temp) /
+                  2
+                ).toString()
+              : item['temp'],
+          humidity: item['humidity'],
+          winddir: item['winddir'],
+          windspeed: item['windspeed'],
+          rainfall: item['precip'],
+          temp_max: sevenDay?.Today_Max_temp,
+          temp_min: sevenDay?.Today_Min_temp,
+          rh_max: sevenDay?.Relative_Humidity_at_0830,
+          rh_min: sevenDay?.Relative_Humidity_at_1730,
+          cloud_cover: item['cloudcover'], // Not available in IMD data
+          Sunset_time: item['sunset'],
+          Sunrise_time: item['sunrise'],
+          Moonset_time: 'NA',
+          Moonrise_time: 'NA',
         },
       });
     });
