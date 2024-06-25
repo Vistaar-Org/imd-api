@@ -2,10 +2,10 @@
 
 VISTAAR is a domain specification based on top of Beckn to add support for weather and crop advisory related data.
 
-This domain specification adds the following `MeterologicalForecast` object in the schemas to represent and exchange meterological information as a first class citizen using a Beckn-like communication protocol between the provider and the BPP or client and BAP. This Beckn-like protocol/specification also called the domain specification will then be mapped to the core Beckn specification when the communication happens between the core open network nodes.
+This domain specification adds the following `MeterologicalObservation` object in the schemas to represent and exchange meterological information as a first class citizen using a Beckn-like communication protocol between the provider and the BPP or client and BAP. This Beckn-like protocol/specification also called the domain specification will then be mapped to the core Beckn specification when the communication happens between the core open network nodes.
 
 ```yml
-MeterologicalForecast:
+MeterologicalObservation:
   description: 'Contains meterological information such as weather forecasts.'
   type: object
   properties:
@@ -60,41 +60,66 @@ MeterologicalForecast:
       type: string
 ```
 
-The `Catalog` object has been updated to include the above `MeterologicalForecast` object.
+The `Provider` object has been updated to include the above `MeterologicalObservation` object.
 
 ```diff 
-Catalog:
-  description: 'Describes the products or services offered by a BPP. This is typically sent as the response to a search intent from a BAP. The payment terms, offers and terms of fulfillment supported by the BPP can also be included here. The BPP can show hierarchical nature of products/services in its catalog using the parent_category_id in categories. The BPP can also send a ttl (time to live) in the context which is the duration for which a BAP can cache the catalog and use the cached catalog.  <br>This has properties like bbp/descriptor,bbp/categories,bbp/fulfillments,bbp/payments,bbp/offers,bbp/providers and exp<br>This is used in the following situations.<br><ul><li>This is typically used in the discovery stage when the BPP sends the details of the products and services it offers as response to a search intent from the BAP. </li></ul>'
-  type: object
-  properties:
-    descriptor:
-      $ref: '#/components/schemas/Descriptor'
-+    forecast: 
-+      $ref: '#/components/schemas/MeterologicalForecast'
-    fulfillments:
-      description: Fulfillment modes offered at the BPP level. This is used when a BPP itself offers fulfillments on behalf of the providers it has onboarded.
-      type: array
-      items:
-        $ref: '#/components/schemas/Fulfillment'
-    payments:
-      description: Payment terms offered by the BPP for all transactions. This can be overriden at the provider level.
-      type: array
-      items:
-        $ref: '#/components/schemas/Payment'
-    offers:
-      description: Offers at the BPP-level. This is common across all providers onboarded by the BPP.
-      type: array
-      items:
-        $ref: '#/components/schemas/Offer'
-    providers:
-      type: array
-      items:
-        $ref: '#/components/schemas/Provider'
-    exp:
-      description: Timestamp after which catalog will expire
-      type: string
-      format: date-time
-    ttl:
-      description: Duration in seconds after which this catalog will expire
-      type: string
+ Provider:
+       description: Describes the catalog of a business.
+       type: object
+       properties:
+         id:
+           type: string
+           description: Id of the provider
+         descriptor:
+           $ref: '#/components/schemas/Descriptor'
+         category_id:
+           type: string
+           description: Category Id of the provider at the BPP-level catalog
+         rating:
+           $ref: '#/components/schemas/Rating/properties/value'
+         time:
+           $ref: '#/components/schemas/Time'
+         categories:
+           type: array
+           items:
+             $ref: '#/components/schemas/Category'
+         fulfillments:
+           type: array
+           items:
+             $ref: '#/components/schemas/Fulfillment'
+         payments:
+           type: array
+           items:
+             $ref: '#/components/schemas/Payment'
+         locations:
+           type: array
+           items:
+             $ref: '#/components/schemas/Location'
+         offers:
+           type: array
+           items:
+             $ref: '#/components/schemas/Offer'
+         items:
+           type: array
+           items:
+             $ref: '#/components/schemas/Item'
++        forecast:
++          type: array
++          items:
++            $ref: '#/components/schemas/MeterologicalObservations'
+         exp:
+           type: string
+           description: Time after which catalog has to be refreshed
+           format: date-time
+         rateable:
+           description: Whether this provider can be rated or not
+           type: boolean
+         ttl:
+           description: 'The time-to-live in seconds, for this object. This can be overriden at deeper levels. A value of -1 indicates that this object is not cacheable.'
+           type: integer
+           minimum: -1
+         tags:
+           type: array
+           items:
+             $ref: '#/components/schemas/TagGroup'
 ```
