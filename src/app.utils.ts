@@ -169,7 +169,8 @@ export const mapIMDItems = (imdJSON) => {
       });
     });
   } else {
-    const val = visualCrossing.days;
+    let val = visualCrossing.days;
+    val = [val[0]];
     val.forEach((item) => {
       // get conditions here
       const cloudCover = parseFloat(item['cloudcover']);
