@@ -5,12 +5,12 @@ import { BadRequestException } from '@nestjs/common';
 
 enum CONDITIONS {
   DEFAULT = 'default',
-  SUNNY = 'sunny',
-  CLOUDY = 'cloudy',
-  LIGHT_RAIN = 'light_rain',
-  HEAVY_RAIN = 'heavy_rain',
-  THUNDERSTORM = 'thunderstorm',
-  WINDY = 'windy',
+  SUNNY = 'Sunny',
+  CLOUDY = 'Cloudy',
+  LIGHT_RAIN = 'Light Rain',
+  HEAVY_RAIN = 'Heavy Rain',
+  THUNDERSTORM = 'Thunderstorm',
+  WINDY = 'Windy',
 }
 
 const WEATHER_DATA = JSON.parse(
