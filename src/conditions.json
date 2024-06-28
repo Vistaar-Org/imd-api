@@ -7,7 +7,7 @@
     "or_translated": "ସ୍ୱଚ୍ଛ ଆକାଶ",
     "en_translated": "Clear Sky"
   },
-  "sunny": {
+  "Sunny": {
     "image_day": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Sunny.svg",
     "image_night": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Weather card ( Night ).svg",
     "icon": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/sun.svg",
@@ -15,7 +15,7 @@
     "or_translated": "ସ୍ୱଚ୍ଛ ଆକାଶ",
     "en_translated": "Clear Sky"
   },
-  "cloudy": {
+  "Cloudy": {
     "image_day": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/CLOUDY.svg",
     "image_night": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Weather card ( Night ).svg",
     "icon": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/cloud.svg",
@@ -23,7 +23,7 @@
     "or_translated": "ମେଘାଚ୍ଛନ୍ନ",
     "en_translated": "Cloudy"
   },
-  "light_rain": {
+  "Light Rain": {
     "image_day": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/rainy.svg",
     "image_night": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Weather card ( Night ).svg",
     "icon": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/LRain.svg",
@@ -31,7 +31,7 @@
     "or_translated": "ହଲୁକ ବର୍ଷା",
     "en_translated": "Light Rain"
   },
-  "heavy_rain": {
+  "Heavy Rain": {
     "image_day": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/heavyrain.svg",
     "image_night": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Weather card ( Night ).svg",
     "icon": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/HRain.svg",
@@ -39,7 +39,7 @@
     "or_translated": "ଭାରି ବର୍ଷା",
     "en_translated": "heavy_rain"
   },
-  "thunderstorm": {
+  "Thunderstorm": {
     "image_day": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/thunder.svg",
     "image_night": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/thunder.svg",
     "icon": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Thndr.svg",
@@ -47,7 +47,7 @@
     "or_translated": "ତୁଫାନ",
     "en_translated": "Thunderstorm"
   },
-  "windy": {
+  "Windy": {
     "image_day": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/thunder.svg",
     "icon": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/thunder.svg",
     "image_night": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Thndr.svg",

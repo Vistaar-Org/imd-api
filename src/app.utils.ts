@@ -98,8 +98,6 @@ export const calculateWeatherConditions = (
   return weather;
 };
 
-export const mapVisualCrossingItems = (visualCrossingData) => {};
-
 export const mapIMDItems = (imdJSON) => {
   let { sevenDay, current, visualCrossing } = imdJSON;
   sevenDay = sevenDay[0];
