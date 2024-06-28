@@ -1,42 +1,57 @@
 {
+  "default": {
+    "image_day": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Sunny.svg",
+    "image_night": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Weather card ( Night ).svg",
+    "icon": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/sun.svg",
+    "hi_translated": "साफ़ आसमान",
+    "or_translated": "ସ୍ୱଚ୍ଛ ଆକାଶ",
+    "en_translated": "Clear Sky"
+  },
   "sunny": {
-    "image_day": "https://drive.google.com/file/d/1xXnS4W7jsNW0Aw8H9pBfMQuKRgowFQag/view?usp=drive_link",
-    "image_night": "https://drive.google.com/file/d/1GhADFWBYL932OJe74hpzVUFGUNotBPvd/view?usp=drive_link",
-    "icon": "https://drive.google.com/file/d/1NEWAIOJcocPYnR7qxwmAtxkc25kYldM_/view?usp=drive_link",
-    "hi_translated": "धूप",
-    "or_translated": "ସୂର୍ଯ୍ୟ ପ୍ରକାଶିତ",
-    "en_translated": "Sunny"
+    "image_day": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Sunny.svg",
+    "image_night": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Weather card ( Night ).svg",
+    "icon": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/sun.svg",
+    "hi_translated": "साफ़ आसमान",
+    "or_translated": "ସ୍ୱଚ୍ଛ ଆକାଶ",
+    "en_translated": "Clear Sky"
   },
   "cloudy": {
-    "image_day": "https://drive.google.com/file/d/13CNetgLmdY1yTLI15XuVhGMCj-IzTQZi/view?usp=drive_link",
-    "image_night": "https://drive.google.com/file/d/1GhADFWBYL932OJe74hpzVUFGUNotBPvd/view?usp=drive_link",
-    "icon": "https://drive.google.com/file/d/1Q6zYkdCDlZf3LValUVOWFlAuGQ67_vtk/view?usp=drive_link",
+    "image_day": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/CLOUDY.svg",
+    "image_night": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Weather card ( Night ).svg",
+    "icon": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/cloud.svg",
     "hi_translated": "बादल",
     "or_translated": "ମେଘାଚ୍ଛନ୍ନ",
     "en_translated": "Cloudy"
   },
   "light_rain": {
-    "image_day": "https://drive.google.com/file/d/1X1qywMHCPXOaHTPU2K5zqhHOhLFOXbHG/view?usp=drive_link",
-    "image_night": "https://drive.google.com/file/d/1GhADFWBYL932OJe74hpzVUFGUNotBPvd/view?usp=drive_link",
-    "icon": "https://drive.google.com/file/d/1QSCy2b3SGxfK73AfUOcxmwzH4QmYAUDR/view?usp=drive_link",
+    "image_day": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/rainy.svg",
+    "image_night": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Weather card ( Night ).svg",
+    "icon": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/LRain.svg",
     "hi_translated": "हल्की बारिश",
     "or_translated": "ହଲୁକ ବର୍ଷା",
     "en_translated": "Light Rain"
   },
   "heavy_rain": {
-    "image_day": "https://drive.google.com/file/d/1X1qywMHCPXOaHTPU2K5zqhHOhLFOXbHG/view?usp=drive_link",
-    "image_night": "https://drive.google.com/file/d/1GhADFWBYL932OJe74hpzVUFGUNotBPvd/view?usp=drive_link",
-    "icon": "https://drive.google.com/file/d/1-OSO_Jd1hrI8APDvyijqKKxZ_sKartHP/view?usp=drive_link",
+    "image_day": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/heavyrain.svg",
+    "image_night": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Weather card ( Night ).svg",
+    "icon": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/HRain.svg",
     "hi_translated": "भारी बारिश",
     "or_translated": "ଭାରି ବର୍ଷା",
     "en_translated": "heavy_rain"
   },
   "thunderstorm": {
-    "image_day": "https://drive.google.com/file/d/1DHa7HbAN_JHOYtVVfltBtqHShgZDX9ww/view?usp=drive_link",
-    "image_night": "https://drive.google.com/file/d/1GhADFWBYL932OJe74hpzVUFGUNotBPvd/view?usp=drive_link",
-    "icon": "https://drive.google.com/file/d/1PXODWt9IaKF3DXdrAHWofbEKhmkdc6EU/view?usp=drive_link",
+    "image_day": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/thunder.svg",
+    "image_night": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/thunder.svg",
+    "icon": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Thndr.svg",
     "hi_translated": "तूफान",
     "or_translated": "ତୁଫାନ",
     "en_translated": "Thunderstorm"
+  },
+  "windy": {
+    "image_day": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/thunder.svg",
+    "icon": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/thunder.svg",
+    "image_night": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Thndr.svg",
+    "hi_translated": "तेज हवाएं",
+    "or_translated": "ବେଗବାନ ପବନ"
   }
 }

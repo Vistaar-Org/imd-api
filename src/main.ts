@@ -6,8 +6,9 @@ async function bootstrap() {
   const port: any = process.env.PORT || 3000;
 
   app.enableCors();
-  await app.listen(3000, () => {
+  await app.listen(3000, '0.0.0.0', () => {
     console.log(`Server is running on http://localhost:${port}`);
   });
 }
+
 bootstrap();
