@@ -145,14 +145,20 @@ export const mapIMDItems = (imdJSON) => {
           conditions_or: WEATHER_DATA[conditions].or_translated,
           temp:
             item['Temperature'].trim() === 'NA'
-              ? (
-                  (sevenDay?.Today_Max_temp + sevenDay?.Today_Min_temp) /
-                  2
-                ).toString()
+              ? visualCrossing.days[0].temp
               : item['Temperature'],
-          humidity: item['Humidity'],
-          winddir: item['Wind Direction'],
-          windspeed: item['Wind Speed KMPH'],
+          humidity:
+            item['Humidity'] === 'NA'
+              ? visualCrossing.days[0].humidity
+              : item['Humidity'],
+          winddir:
+            item['Wind Direction'] === 'NA'
+              ? visualCrossing.days[0].winddir
+              : item['Wind Direction'],
+          windspeed:
+            item['Wind Speed KMPH'] === 'NA'
+              ? visualCrossing.days[0].windspeed
+              : item['Wind Speed KMPH'],
           rainfall: item['Last 24 hrs Rainfall'],
           temp_max: sevenDay?.Today_Max_temp,
           temp_min: sevenDay?.Today_Min_temp,
