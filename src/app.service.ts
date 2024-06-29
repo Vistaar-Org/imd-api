@@ -5,13 +5,9 @@ import {
   Logger,
 } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import {
-  getStationId,
-  mapIMDItems,
-  mapAdvisoryData,
-  mapOUATWeather,
-} from './app.utils';
-import { firstValueFrom, map } from 'rxjs';
+import { getStationId } from './app.utils';
+import { mapIMDItems, mapAdvisoryData, mapOUATWeather } from './beckn.utils';
+import { firstValueFrom } from 'rxjs';
 import { generateContext } from './beckn.utils';
 
 @Injectable()
@@ -21,7 +17,7 @@ export class AppService {
     private readonly configService: ConfigService,
     private readonly httpService: HttpService,
   ) {
-    this.logger = new Logger();
+    this.logger = new Logger(AppService.name);
   }
 
   getHello(): string {
@@ -73,7 +69,7 @@ export class AppService {
       const baseURL = this.configService.get<string>('IMD_BASE_URL');
       const urls = [
         `${baseURL}/api/cityweather_loc.php?id=${stationId}`,
-        `${baseURL}/api/current_wx_api.php?id=${stationId}`,
+        // `${baseURL}/api/current_wx_api.php?id=${stationId}`,
         `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${long}?unitGroup=metric&key=UFQNJT8FL927DT7HNQME9HWSL&contentType=json`,
       ];
 
@@ -90,18 +86,6 @@ export class AppService {
       };
     } catch (err) {
       this.logger.error('Error resolving API Calls', err);
-    }
-  }
-
-  private async getWeatherFromVisualCrossing(lat: string, long: string) {
-    // TODO: Turn this into a proper provider
-    try {
-      const visualCrossingURL = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${long}?unitGroup=metric&key=UFQNJT8FL927DT7HNQME9HWSL&contentType=json`;
-      const data = await this.httpService.axiosRef.get(visualCrossingURL);
-      console.log('data', data);
-      return data;
-    } catch (err) {
-      this.logger.error('error fetching data from visual crossing ', err);
     }
   }
 
@@ -141,20 +125,12 @@ export class AppService {
     // IMD Data
     try {
       const imdData = await this.getWeatherFromIMD(lat, long);
-      console.log('imdData: ', imdData);
+      // console.log('imdData: ', imdData);
       imdItems = mapIMDItems(imdData);
     } catch (err) {
       this.logger.error('Error fetching weather data from IMD', err);
     }
-    // VISUAL CROSSING
-    // try {
-    //   const visualCrossingData = await this.getWeatherFromVisualCrossing(
-    //     lat,
-    //     long,
-    //   );
-    // } catch (err) {
-    //   this.logger.error('error mapping data from visual crossing', err);
-    // }
+
     try {
       const upcarData = await this.getAdvisoryFromUpcar();
       upcarItems = mapAdvisoryData(upcarData, 'upcar');
