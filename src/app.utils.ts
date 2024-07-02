@@ -1,7 +1,11 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { format, addDays } from 'date-fns';
+import { cropsMapping as cropMappings } from './cropsMapping';
 import { BadRequestException } from '@nestjs/common';
+
+console.log(cropMappings);
+
 
 enum CONDITIONS {
   DEFAULT = 'default',
@@ -12,6 +16,94 @@ enum CONDITIONS {
   THUNDERSTORM = 'Thunderstorm',
   WINDY = 'Windy',
 }
+
+const windDirections = {
+  0: {
+    en: 'Calm',
+    hi: 'शांत',
+    or: 'ସାନ୍ତ',
+  },
+  20: {
+    en: 'North-northeasterly',
+    hi: 'उत्तर-पूर्वोत्तर',
+    or: 'ଉତ୍ତର-ପୂର୍ବ ଉତ୍ତର',
+  },
+  50: {
+    en: 'Northeasterly',
+    hi: 'पूर्वोत्तर',
+    or: 'ପୂର୍ବ ଉତ୍ତର',
+  },
+  70: {
+    en: 'East-northeasterly',
+    hi: 'पूर्व-पूर्वोत्तर',
+    or: 'ପୂର୍ବ-ପୂର୍ବ ଉତ୍ତର',
+  },
+  90: {
+    en: 'Easterly',
+    hi: 'पूर्वी',
+    or: 'ପୂର୍ବ',
+  },
+  110: {
+    en: 'East-southeasterly',
+    hi: 'पूर्व-दक्षिणपूर्व',
+    or: 'ପୂର୍ବ-ଦକ୍ଷିଣପୂର୍ବ',
+  },
+  140: {
+    en: 'Southeasterly',
+    hi: 'दक्षिणपूर्व',
+    or: 'ଦକ୍ଷିଣପୂର୍ବ',
+  },
+  160: {
+    en: 'South-southeasterly',
+    hi: 'दक्षिण-दक्षिणपूर्व',
+    or: 'ଦକ୍ଷିଣ-ଦକ୍ଷିଣ ପୂର୍ବ',
+  },
+  180: {
+    en: 'Southerly',
+    hi: 'दक्षिणी',
+    or: 'ଦକ୍ଷିଣ',
+  },
+  200: {
+    en: 'South-southwesterly',
+    hi: 'दक्षिण-दक्षिणपश्चिम',
+    or: 'ଦକ୍ଷିଣ-ଦକ୍ଷିଣ ପଶ୍ଚିମ',
+  },
+  230: {
+    en: 'Southwesterly',
+    hi: 'दक्षिणपश्चिम',
+    or: 'ଦକ୍ଷିଣ ପଶ୍ଚିମ',
+  },
+  250: {
+    en: 'West-southwesterly',
+    hi: 'पश्चिम-दक्षिणपश्चिम',
+    or: 'ପଶ୍ଚିମ-ଦକ୍ଷିଣ ପଶ୍ଚିମ',
+  },
+  270: {
+    en: 'Westerly',
+    hi: 'पश्चिमी',
+    or: 'ପଶ୍ଚିମ',
+  },
+  290: {
+    en: 'West-northwesterly',
+    hi: 'पश्चिम-उत्तरपश्चिम',
+    or: 'ପଶ୍ଚିମ-ଉତ୍ତର ପଶ୍ଚିମ',
+  },
+  320: {
+    en: 'Northwesterly',
+    hi: 'उत्तरपश्चिम',
+    or: 'ଉତ୍ତର ପଶ୍ଚିମ',
+  },
+  340: {
+    en: 'North-northwesterly',
+    hi: 'उत्तर-उत्तरपश्चिम',
+    or: 'ଉତ୍ତର-ଉତ୍ତର ପଶ୍ଚିମ',
+  },
+  360: {
+    en: 'Northerly',
+    hi: 'उत्तरी',
+    or: 'ଉତ୍ତର',
+  },
+};
 
 const WEATHER_DATA = JSON.parse(
   fs.readFileSync(path.join(__dirname + '/conditions.json'), {
@@ -98,6 +190,24 @@ export const calculateWeatherConditions = (
   return weather;
 };
 
+// This function will take wind direction in degrees and language and return the translated string
+export const getWindDirection = (windDirection: number, lang: string) => {
+  // windDirection value may not be present in the windDirections object, let say 30
+  // so we need to find the nearest value to the given windDirection
+  const keys = Object.keys(windDirections); // [0, 20, 50, 70, 90, 110, 140, 160, 180, 200, 230, 250, 270, 290, 320, 340, 360]
+  let nearestKey = keys[0]; // 0
+  let minDiff = Math.abs(windDirection - parseInt(nearestKey)); // 30
+  keys.forEach((key) => {
+    const diff = Math.abs(windDirection - parseInt(key));
+    if (diff < minDiff) {
+      minDiff = diff;
+      nearestKey = key;
+    }
+  });
+  windDirection = parseInt(nearestKey); // 20
+  return windDirections[windDirection][lang];
+};
+
 export const mapIMDItems = (imdJSON) => {
   let { sevenDay, current, visualCrossing } = imdJSON;
   sevenDay = sevenDay[0];
@@ -153,8 +263,10 @@ export const mapIMDItems = (imdJSON) => {
               : item['Humidity'],
           winddir:
             item['Wind Direction'] === 'NA'
-              ? visualCrossing.days[0].winddir
+              ? getWindDirection(visualCrossing.days[0].winddir, 'en')
               : item['Wind Direction'],
+          winddir_hi: getWindDirection(visualCrossing.days[0].winddir, 'hi'),
+          winddir_or: getWindDirection(visualCrossing.days[0].winddir, 'or'),
           windspeed:
             item['Wind Speed KMPH'] === 'NA'
               ? visualCrossing.days[0].windspeed
@@ -223,6 +335,9 @@ export const mapIMDItems = (imdJSON) => {
               : item['temp'],
           humidity: item['humidity'],
           winddir: item['winddir'],
+          // winddir: getWindDirection(item['winddir'], 'en'),
+          // winddir_hi: getWindDirection(item['winddir'], 'hi'),
+          // winddir_or: getWindDirection(item['winddir'], 'or'),
           windspeed: item['windspeed'],
           rainfall: item['precip'],
           temp_max: sevenDay?.Today_Max_temp,
@@ -355,7 +470,7 @@ export const mapAdvisoryData = (upcarData, provider) => {
   Object.keys(upcarData.crops_data).forEach((key) => {
     items.push({
       category_ids: ['crop_specific_advisory'],
-      code: key,
+      code: `${key}-${cropMappings[key].hi}-${cropMappings[key].or}`,
       descriptor: {
         name: `advisory on crop ${key}`,
         long_desc: upcarData.crops_data[key].advisory.join('\n'),
