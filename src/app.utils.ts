@@ -254,6 +254,30 @@ export const mapIMDItems = (imdJSON) => {
   };
 };
 
+// This function will match the forecast string words with enum CONDITIONS and return the matching condition
+export const deduceWeatherCondition = (forecast: string): string => {
+	// forecast = "Generally cloudy sky with possibility of rain or Thunderstorm"
+
+	forecast = forecast.toLowerCase();
+	const keys: string[] = Object.keys(CONDITIONS);
+	const values: string[] = Object.values(CONDITIONS);
+
+	let condition: string = CONDITIONS.DEFAULT;
+
+	for (let i = 0; i < keys.length; i++) {
+		// string to match in forecast
+		const conditionString = values[i].toLowerCase();
+		// create a regex to match the condition string in a case-insensitive manner
+		const regex = new RegExp(conditionString, "gi");
+		// check if the forecast contains the condition
+		if (regex.test(forecast)) {
+			condition = values[i];
+		}
+	}
+	return condition; // Thunderstorm
+	// If CONDITIONS enum is prioritiwise ordered, then the last matching condition will be returned
+};
+
 export const mapIMDFutureItems = (station) => {
   const baseDate = station.Date;
   const items = [];
@@ -291,7 +315,7 @@ export const mapIMDFutureItems = (station) => {
           temp_min: station[dayKeyMin],
           conditions_hi: WEATHER_DATA[conditions].hi_translated,
           conditions_or: WEATHER_DATA[conditions].or_translated,
-          conditions: station[dayKeyForecast], // Not available in IMD data
+          conditions: station[deduceWeatherCondition(dayKeyForecast)], // Not available in IMD data
           temp: (parseFloat(station.t_max) + parseFloat(station.t_min)) / 2, // Not available in IMD data
           humidity: 'NA', // Not available in IMD data
           winddir: 'NA', // Not available in IMD data
