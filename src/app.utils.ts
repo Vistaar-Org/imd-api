@@ -3,6 +3,359 @@ import * as path from 'path';
 import { format, addDays } from 'date-fns';
 import { BadRequestException } from '@nestjs/common';
 
+const cropMappings = {
+  horticulture: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Horticulture.png',
+    hi: 'बागवानी',
+    or: 'ବାଗାନ୍ତିକ',
+  },
+  prawn: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/PRAWN.jpeg',
+    hi: 'झींगा',
+    or: 'ଚିଙ୍ଗୁଡ଼',
+  },
+  sheep: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/sheep.jpeg',
+    hi: 'भेड़',
+    or: 'ଛେଳି',
+  },
+  vegetables: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Vegetables.jpg',
+    hi: 'सब्जियां',
+    or: 'ଶାକସବଜି',
+  },
+  'zaid crops': {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Zaid crops.jpg',
+    hi: 'जायद फसलें',
+    or: 'ଜାଏଦ ଫସଲ',
+  },
+  barjra: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Barjra.jpeg',
+    hi: 'बाजरा',
+    or: 'ବାଜରା',
+  },
+  bottlegourd: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/BottleGourd.jpeg',
+    hi: 'लौकी',
+    or: 'ଲାଉ',
+  },
+  chillies: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/CHILLIES.jpeg',
+    hi: 'मिर्च',
+    or: 'ଲଙ୍କା',
+  },
+  'pome- granate': {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/POME- GRANATE.jpeg',
+    hi: 'अनार',
+    or: 'ଡାଲିମା',
+  },
+  freshwater: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/freshwater.jpeg',
+    hi: 'ताजे पानी',
+    or: 'ମିଠା ପାଣି',
+  },
+  'general advisory': {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/General advisory.webp',
+    hi: 'सामान्य सलाह',
+    or: 'ସାଧାରଣ ପରାମର୍ଶ',
+  },
+  turmeric: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/TURMERIC.jpeg',
+    hi: 'हल्दी',
+    or: 'ହଳଦୀ',
+  },
+  soybean: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/SOYBEAN.jpeg',
+    hi: 'सोयाबीन',
+    or: 'ସୋୟାବିନ',
+  },
+  beans: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Beans.jpeg',
+    hi: 'सेम',
+    or: 'ବିନ',
+  },
+  sunflower: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/SUNFLOWER.jpeg',
+    hi: 'सूरजमुखी',
+    or: 'ସୂର୍ଯ୍ୟମୁଖୀ',
+  },
+  pig: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/pig.jpeg',
+    hi: 'सुअर',
+    or: 'ଘୁଷୁରି',
+  },
+  tapioca: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/TAPIOCA.jpeg',
+    hi: 'साबूदाना',
+    or: 'ପାଳୁଅ',
+  },
+  mustard: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/MUSTARD.jpeg',
+    hi: 'सरसों',
+    or: 'ସୋରିଷ',
+  },
+  'cow pea': {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/COW PEA.jpeg',
+    hi: 'लोबिया',
+    or: 'ଝୁଡଙ୍ଗ',
+  },
+  litchi: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/LITCHi.jpeg',
+    hi: 'लीची',
+    or: 'ଲିଚୁ',
+  },
+  ragi: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/RAGI.jpeg',
+    hi: 'रागी',
+    or: 'ମାଣ୍ଡିଆ',
+  },
+  mesta: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/MESTA.jpeg',
+    hi: 'मेंस्ता',
+    or: 'ଛଣି',
+  },
+  groundnut: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/GROUNDNUT.jpeg',
+    hi: 'मूंगफली',
+    or: 'ଚିନାବାଦାମ',
+  },
+  'green gram': {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/GREEN GRAM.jpeg',
+    hi: 'मूंग',
+    or: 'ମୁଗ',
+  },
+  masoor: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Masoor.jpeg',
+    hi: 'मसूर',
+    or: 'ମସୁର',
+  },
+  peas: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Peas.jpeg',
+    hi: 'मटर',
+    or: 'ମଟର',
+  },
+  fish: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/fish.jpeg',
+    hi: 'मछली',
+    or: 'ମତ୍ସ୍ଯ',
+  },
+  maize: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/MAIZE.jpeg',
+    hi: 'मक्का',
+    or: 'ମକା',
+  },
+  buffalo: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/BUFFALO.jpeg',
+    hi: 'भैंस',
+    or: 'ମଇଁଷି',
+  },
+  okra: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/okra.jpg',
+    hi: 'भिंडी',
+    or: 'ଭେଣ୍ଡି',
+  },
+  brinjal: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Brinjal.jpeg',
+    hi: 'बैंगन',
+    or: 'ବାଇଗଣ',
+  },
+  ber: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Ber.jpeg',
+    hi: 'बेर',
+    or: 'ବେର',
+  },
+  'pearl millet': {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Pearl millet.jpeg',
+    hi: 'बाजरा',
+    or: 'ବାଜରା',
+  },
+  duck: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/duck.jpeg',
+    hi: 'बतख',
+    or: 'ବତକ',
+  },
+  goat: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/goat.jpeg',
+    hi: 'बकरी',
+    or: 'ଛେଳି',
+  },
+  'french bean': {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/FRENCH BEAN.jpeg',
+    hi: 'फ्रेंच बीन',
+    or: 'ବିନ',
+  },
+  cauliflower: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/CAULIFLOWER.jpeg',
+    hi: 'फूलगोभी',
+    or: 'ଫୁଲକୋବି',
+  },
+  onion: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/ONION.jpeg',
+    hi: 'प्याज',
+    or: 'ପିଆଜ',
+  },
+  mint: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Mint.jpeg',
+    hi: 'पुदीना/मेंथा',
+    or: 'ପୋଦିନା',
+  },
+  papaya: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/PAPAYA.jpeg',
+    hi: 'पपीता',
+    or: 'ଅମୃତଭଣ୍ଡା',
+  },
+  cabbage: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Cabbage.jpeg',
+    hi: 'पत्ता गोभी',
+    or: 'ବନ୍ଧାକୋବି',
+  },
+  coconut: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/COCONUT.jpeg',
+    hi: 'नारियल',
+    or: 'ନଡିଆ',
+  },
+  paddy: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/PADDY.jpeg',
+    hi: 'धान',
+    or: 'ଧାନ',
+  },
+  seasame: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/SEASAME.jpeg',
+    hi: 'तिल',
+    or: 'ରାଶି',
+  },
+  tomato: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/TOMATO.jpeg',
+    hi: 'टमाटर',
+    or: 'ଟମାଟୋ',
+  },
+  jowar: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/JOWAR.jpeg',
+    hi: 'ज्वार',
+    or: 'ଜୱାର',
+  },
+  jute: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/JUTE.jpeg',
+    hi: 'जूट',
+    or: 'ନଳିତା',
+  },
+  cumin: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/CUMIN.jpeg',
+    hi: 'जीरा',
+    or: 'ଜୀରା',
+  },
+  'bengal gram': {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Bengal Gram.jpeg',
+    hi: 'चना',
+    or: 'କାବୁଲି ବୁଟ',
+  },
+  'cluster beans': {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/CLUSTER BEANS.jpeg',
+    hi: 'ग्वार फली',
+    or: 'ଗୁଆଁର',
+  },
+  wheat: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/WHEAT.jpeg',
+    hi: 'गेहूँ',
+    or: 'ଗହମ',
+  },
+  cow: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/cow.jpg',
+    hi: 'गाय',
+    or: 'ଗାଈ',
+  },
+  sugarcane: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/SUGARCANE.jpeg',
+    hi: 'गन्ना',
+    or: 'ଆଖୁ',
+  },
+  cucumber: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/CUCUMBER.jpeg',
+    hi: 'खीरा',
+    or: 'କାକୁଡି',
+  },
+  citrus: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/CITRUS.jpeg',
+    hi: 'खट्टे फल',
+    or: 'ଲେମ୍ବୁ ଜାତୀୟ',
+  },
+  banana: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/banana.jpeg',
+    hi: 'केला',
+    or: 'କଦଳୀ',
+  },
+  'chick pea': {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/CHICK PEA.jpeg',
+    hi: 'काबुली चना',
+    or: 'କାବୁଲି ବୁଟ',
+  },
+  cashew: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Cashew.jpeg',
+    hi: 'काजू',
+    or: 'କାଜୁବାଦାମ',
+  },
+  'bitter gourd': {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Bitter Gourd.jpeg',
+    hi: 'करेला',
+    or: 'କଲରା',
+  },
+  cotton: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/COTTON.jpeg',
+    hi: 'कपास',
+    or: 'କପା',
+  },
+  cucurbits: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/CUCURBITS.jpeg',
+    hi: 'कद्दूवर्गीय फल',
+    or: 'କଖାରୁ ଜାତୀୟ',
+  },
+  urad: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Urad.jpeg',
+    hi: 'उड़द',
+    or: 'ହରଡ',
+  },
+  'black gram': {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Black Gram.jpeg',
+    hi: 'उड़द',
+    or: 'ବିରି ଓ ମୁଗ',
+  },
+  potato: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/POTATO.jpeg',
+    hi: 'आलू',
+    or: 'ଆଳୁ',
+  },
+  mango: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/MANGO.jpeg',
+    hi: 'आम',
+    or: 'ଆମ୍ବ',
+  },
+  flaxseed: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Flaxseed.jpeg',
+    hi: 'अलसी',
+    or: 'ପେଶୀ',
+  },
+  'pigeon pea': {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/PIGEON PEA.jpeg',
+    hi: 'अरहर',
+    or: 'ହରଡ ଡାଲି',
+  },
+  arhar: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Arhar.jpeg',
+    hi: 'अरहर',
+    or: 'ହରଡ ଡାଲି',
+  },
+  guava: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/GUAVA.jpeg',
+    hi: 'अमरूद',
+    or: 'ପିଜୁଳି',
+  },
+  hen: {
+    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/HEN.jpeg',
+    hi: 'मुर्गी',
+    or: 'କୁକୁଡ଼',
+  },
+};
+
 enum CONDITIONS {
   DEFAULT = 'default',
   SUNNY = 'Sunny',
@@ -12,6 +365,94 @@ enum CONDITIONS {
   THUNDERSTORM = 'Thunderstorm',
   WINDY = 'Windy',
 }
+
+const windDirections = {
+  0: {
+    en: 'Calm',
+    hi: 'शांत',
+    or: 'ସାନ୍ତ',
+  },
+  20: {
+    en: 'North-northeasterly',
+    hi: 'उत्तर-पूर्वोत्तर',
+    or: 'ଉତ୍ତର-ପୂର୍ବ ଉତ୍ତର',
+  },
+  50: {
+    en: 'Northeasterly',
+    hi: 'पूर्वोत्तर',
+    or: 'ପୂର୍ବ ଉତ୍ତର',
+  },
+  70: {
+    en: 'East-northeasterly',
+    hi: 'पूर्व-पूर्वोत्तर',
+    or: 'ପୂର୍ବ-ପୂର୍ବ ଉତ୍ତର',
+  },
+  90: {
+    en: 'Easterly',
+    hi: 'पूर्वी',
+    or: 'ପୂର୍ବ',
+  },
+  110: {
+    en: 'East-southeasterly',
+    hi: 'पूर्व-दक्षिणपूर्व',
+    or: 'ପୂର୍ବ-ଦକ୍ଷିଣପୂର୍ବ',
+  },
+  140: {
+    en: 'Southeasterly',
+    hi: 'दक्षिणपूर्व',
+    or: 'ଦକ୍ଷିଣପୂର୍ବ',
+  },
+  160: {
+    en: 'South-southeasterly',
+    hi: 'दक्षिण-दक्षिणपूर्व',
+    or: 'ଦକ୍ଷିଣ-ଦକ୍ଷିଣ ପୂର୍ବ',
+  },
+  180: {
+    en: 'Southerly',
+    hi: 'दक्षिणी',
+    or: 'ଦକ୍ଷିଣ',
+  },
+  200: {
+    en: 'South-southwesterly',
+    hi: 'दक्षिण-दक्षिणपश्चिम',
+    or: 'ଦକ୍ଷିଣ-ଦକ୍ଷିଣ ପଶ୍ଚିମ',
+  },
+  230: {
+    en: 'Southwesterly',
+    hi: 'दक्षिणपश्चिम',
+    or: 'ଦକ୍ଷିଣ ପଶ୍ଚିମ',
+  },
+  250: {
+    en: 'West-southwesterly',
+    hi: 'पश्चिम-दक्षिणपश्चिम',
+    or: 'ପଶ୍ଚିମ-ଦକ୍ଷିଣ ପଶ୍ଚିମ',
+  },
+  270: {
+    en: 'Westerly',
+    hi: 'पश्चिमी',
+    or: 'ପଶ୍ଚିମ',
+  },
+  290: {
+    en: 'West-northwesterly',
+    hi: 'पश्चिम-उत्तरपश्चिम',
+    or: 'ପଶ୍ଚିମ-ଉତ୍ତର ପଶ୍ଚିମ',
+  },
+  320: {
+    en: 'Northwesterly',
+    hi: 'उत्तरपश्चिम',
+    or: 'ଉତ୍ତର ପଶ୍ଚିମ',
+  },
+  340: {
+    en: 'North-northwesterly',
+    hi: 'उत्तर-उत्तरपश्चिम',
+    or: 'ଉତ୍ତର-ଉତ୍ତର ପଶ୍ଚିମ',
+  },
+  360: {
+    en: 'Northerly',
+    hi: 'उत्तरी',
+    or: 'ଉତ୍ତର',
+  },
+};
 
 const WEATHER_DATA = JSON.parse(
   fs.readFileSync(path.join(__dirname + '/conditions.json'), {
@@ -98,6 +539,24 @@ export const calculateWeatherConditions = (
   return weather;
 };
 
+// This function will take wind direction in degrees and language and return the translated string
+export const getWindDirection = (windDirection: number, lang: string) => {
+  // windDirection value may not be present in the windDirections object, let say 30
+  // so we need to find the nearest value to the given windDirection
+  const keys = Object.keys(windDirections); // [0, 20, 50, 70, 90, 110, 140, 160, 180, 200, 230, 250, 270, 290, 320, 340, 360]
+  let nearestKey = keys[0]; // 0
+  let minDiff = Math.abs(windDirection - parseInt(nearestKey)); // 30
+  keys.forEach((key) => {
+    const diff = Math.abs(windDirection - parseInt(key));
+    if (diff < minDiff) {
+      minDiff = diff;
+      nearestKey = key;
+    }
+  });
+  windDirection = parseInt(nearestKey); // 20
+  return windDirections[windDirection][lang];
+};
+
 export const mapIMDItems = (imdJSON) => {
   let { sevenDay, current, visualCrossing } = imdJSON;
   sevenDay = sevenDay[0];
@@ -153,8 +612,10 @@ export const mapIMDItems = (imdJSON) => {
               : item['Humidity'],
           winddir:
             item['Wind Direction'] === 'NA'
-              ? visualCrossing.days[0].winddir
+              ? getWindDirection(visualCrossing.days[0].winddir, 'en')
               : item['Wind Direction'],
+          winddir_hi: getWindDirection(visualCrossing.days[0].winddir, 'hi'),
+          winddir_or: getWindDirection(visualCrossing.days[0].winddir, 'or'),
           windspeed:
             item['Wind Speed KMPH'] === 'NA'
               ? visualCrossing.days[0].windspeed
@@ -223,6 +684,9 @@ export const mapIMDItems = (imdJSON) => {
               : item['temp'],
           humidity: item['humidity'],
           winddir: item['winddir'],
+          // winddir: getWindDirection(item['winddir'], 'en'),
+          // winddir_hi: getWindDirection(item['winddir'], 'hi'),
+          // winddir_or: getWindDirection(item['winddir'], 'or'),
           windspeed: item['windspeed'],
           rainfall: item['precip'],
           temp_max: sevenDay?.Today_Max_temp,
@@ -252,6 +716,30 @@ export const mapIMDItems = (imdJSON) => {
     ],
     items: items.concat(mapIMDFutureItems(sevenDay)),
   };
+};
+
+// This function will match the forecast string words with enum CONDITIONS and return the matching condition
+export const deduceWeatherCondition = (forecast: string): string => {
+  // forecast = "Generally cloudy sky with possibility of rain or Thunderstorm"
+
+  forecast = forecast.toLowerCase();
+  const keys: string[] = Object.keys(CONDITIONS);
+  const values: string[] = Object.values(CONDITIONS);
+
+  let condition: string = CONDITIONS.DEFAULT;
+
+  for (let i = 0; i < keys.length; i++) {
+    // string to match in forecast
+    const conditionString = values[i].toLowerCase();
+    // create a regex to match the condition string in a case-insensitive manner
+    const regex = new RegExp(conditionString, 'gi');
+    // check if the forecast contains the condition
+    if (regex.test(forecast)) {
+      condition = values[i];
+    }
+  }
+  return condition; // Thunderstorm
+  // If CONDITIONS enum is prioritiwise ordered, then the last matching condition will be returned
 };
 
 export const mapIMDFutureItems = (station) => {
@@ -289,9 +777,11 @@ export const mapIMDFutureItems = (station) => {
           rainfall: 'NA', // Not available in IMD data
           temp_max: station[dayKeyMax],
           temp_min: station[dayKeyMin],
-          conditions_hi: WEATHER_DATA[conditions].hi_translated,
-          conditions_or: WEATHER_DATA[conditions].or_translated,
-          conditions: station[dayKeyForecast], // Not available in IMD data
+          conditions_hi:
+            WEATHER_DATA[deduceWeatherCondition(dayKeyForecast)].hi_translated,
+          conditions_or:
+            WEATHER_DATA[deduceWeatherCondition(dayKeyForecast)].or_translated,
+          conditions: station[deduceWeatherCondition(dayKeyForecast)], // Not available in IMD data
           temp: (parseFloat(station.t_max) + parseFloat(station.t_min)) / 2, // Not available in IMD data
           humidity: 'NA', // Not available in IMD data
           winddir: 'NA', // Not available in IMD data
@@ -329,7 +819,7 @@ export const mapAdvisoryData = (upcarData, provider) => {
   Object.keys(upcarData.crops_data).forEach((key) => {
     items.push({
       category_ids: ['crop_specific_advisory'],
-      code: key,
+      code: `${key}-${cropMappings[key].hi}-${cropMappings[key].or}`,
       descriptor: {
         name: `advisory on crop ${key}`,
         long_desc: upcarData.crops_data[key].advisory.join('\n'),
