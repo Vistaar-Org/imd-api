@@ -98,7 +98,28 @@ export const calculateWeatherConditions = (
   return weather;
 };
 
-export function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
+/**
+ * @description This function cleans out the IMD data and adds visual crossing as a fallback
+ * in case the data is absent
+ *
+ * Fields of Relevance in Current Day data:
+ * 1. Current Temp - Get from Visual crossing - temp
+ * 2. Cloud Cover - Get from visual crossing - cloudcover
+ * 3. Humidity - Get from IMD - Relative_Humidity_at_0830
+ * 4. Wind Speed - Get from Visual Crossing - windspeed
+ * 5. Wind Direction - Get from Visual Crossing - winddir
+ *
+ * Fields of relevance in future data:
+ * 1. Max Temp - Get from IMD -
+ * 2. Min Temp - Get from IMD -
+ * 3. Forecast - Get from IMD -
+ */
+const sanitizeIMDWeather = (data) => {
+  const { sevenDay, visualCrossing } = data;
+  // extract fields of relevance from this data.
+};
+
+export const getDistanceFromLatLonInKm = (lat1, lon1, lat2, lon2) => {
   const R = 6371; // Radius of the earth in km
   const dLat = deg2rad(lat2 - lat1);
   const dLon = deg2rad(lon2 - lon1);
@@ -111,8 +132,8 @@ export function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
   const d = R * c; // Distance in km
   return d;
-}
+};
 
-function deg2rad(deg) {
+const deg2rad = (deg) => {
   return deg * (Math.PI / 180);
-}
+};

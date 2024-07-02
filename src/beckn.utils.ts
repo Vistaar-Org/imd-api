@@ -140,7 +140,7 @@ export const mapIMDItems = (imdJSON) => {
         conditions_hi: WEATHER_DATA[conditions].hi_translated,
         conditions_or: WEATHER_DATA[conditions].or_translated,
         temp:
-          item['temp'].toString().trim() === 'NA'
+          item['temp'] && item['temp'].toString().trim() === 'NA'
             ? (
                 (sevenDay?.Today_Max_temp + sevenDay?.Today_Min_temp) /
                 2

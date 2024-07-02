@@ -69,7 +69,6 @@ export class AppService {
       const baseURL = this.configService.get<string>('IMD_BASE_URL');
       const urls = [
         `${baseURL}/api/cityweather_loc.php?id=${stationId}`,
-        // `${baseURL}/api/current_wx_api.php?id=${stationId}`,
         `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${long}?unitGroup=metric&key=UFQNJT8FL927DT7HNQME9HWSL&contentType=json`,
       ];
 
@@ -77,11 +76,9 @@ export class AppService {
         return firstValueFrom(this.httpService.get(url));
       });
 
-      const [forecastData, currentData, visualCrossing] =
-        await Promise.all(apiCalls);
+      const [forecastData, visualCrossing] = await Promise.all(apiCalls);
       return {
         sevenDay: forecastData.data,
-        current: currentData.data,
         visualCrossing: visualCrossing.data,
       };
     } catch (err) {
