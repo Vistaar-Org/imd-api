@@ -1,0 +1,46 @@
+export type VisualCrossingAPIResponse = {
+  queryCost: number;
+  latitude: number;
+  longitude: number;
+  resolvedAddress: string;
+  address: string;
+  timezone: string;
+  tzoffset: number;
+  description: string;
+  days: any[];
+  alerts: any;
+  stations: any;
+  currentConditions: VisualCrossingCurrentConditionsObject;
+};
+
+export type VisualCrossingCurrentConditionsObject = {
+  datetime: string;
+  datetimeEpoch: number;
+  temp: number;
+  feelslike: number;
+  humidity: number;
+  dew: number;
+  precip: null;
+  precipprob: number;
+  snow: number;
+  snowdepth: number;
+  preciptype: number;
+  windgust: number;
+  windspeed: number;
+  winddir: number;
+  pressure: number;
+  visibility: number;
+  cloudcover: number;
+  solarradiation: number;
+  solarenergy: number;
+  uvindex: number;
+  conditions: number;
+  icon: number;
+  stations: ReadonlyArray<string>;
+  source: number;
+  sunrise: string;
+  sunriseEpoch: number;
+  sunset: string;
+  sunsetEpoch: number;
+  moonphase: number;
+};

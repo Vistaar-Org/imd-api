@@ -1,363 +1,27 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { format, addDays } from 'date-fns';
+import { format, addDays, parse } from 'date-fns';
 import { BadRequestException } from '@nestjs/common';
+import { IMDCityWeatherAPIObject } from './types/imd.types';
+import {
+  IMDFutureWeatherDetails,
+  SanitizedIMDWeather,
+} from './types/app.types';
+import { VisualCrossingCurrentConditionsObject } from './types/visual-crossing.types';
 
-const cropMappings = {
-  horticulture: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Horticulture.png',
-    hi: 'बागवानी',
-    or: 'ବାଗାନ୍ତିକ',
-  },
-  prawn: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/PRAWN.jpeg',
-    hi: 'झींगा',
-    or: 'ଚିଙ୍ଗୁଡ଼',
-  },
-  sheep: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/sheep.jpeg',
-    hi: 'भेड़',
-    or: 'ଛେଳି',
-  },
-  vegetables: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Vegetables.jpg',
-    hi: 'सब्जियां',
-    or: 'ଶାକସବଜି',
-  },
-  'zaid crops': {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Zaid crops.jpg',
-    hi: 'जायद फसलें',
-    or: 'ଜାଏଦ ଫସଲ',
-  },
-  barjra: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Barjra.jpeg',
-    hi: 'बाजरा',
-    or: 'ବାଜରା',
-  },
-  bottlegourd: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/BottleGourd.jpeg',
-    hi: 'लौकी',
-    or: 'ଲାଉ',
-  },
-  chillies: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/CHILLIES.jpeg',
-    hi: 'मिर्च',
-    or: 'ଲଙ୍କା',
-  },
-  'pome- granate': {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/POME- GRANATE.jpeg',
-    hi: 'अनार',
-    or: 'ଡାଲିମା',
-  },
-  freshwater: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/freshwater.jpeg',
-    hi: 'ताजे पानी',
-    or: 'ମିଠା ପାଣି',
-  },
-  'general advisory': {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/General advisory.webp',
-    hi: 'सामान्य सलाह',
-    or: 'ସାଧାରଣ ପରାମର୍ଶ',
-  },
-  turmeric: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/TURMERIC.jpeg',
-    hi: 'हल्दी',
-    or: 'ହଳଦୀ',
-  },
-  soybean: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/SOYBEAN.jpeg',
-    hi: 'सोयाबीन',
-    or: 'ସୋୟାବିନ',
-  },
-  beans: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Beans.jpeg',
-    hi: 'सेम',
-    or: 'ବିନ',
-  },
-  sunflower: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/SUNFLOWER.jpeg',
-    hi: 'सूरजमुखी',
-    or: 'ସୂର୍ଯ୍ୟମୁଖୀ',
-  },
-  pig: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/pig.jpeg',
-    hi: 'सुअर',
-    or: 'ଘୁଷୁରି',
-  },
-  tapioca: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/TAPIOCA.jpeg',
-    hi: 'साबूदाना',
-    or: 'ପାଳୁଅ',
-  },
-  mustard: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/MUSTARD.jpeg',
-    hi: 'सरसों',
-    or: 'ସୋରିଷ',
-  },
-  'cow pea': {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/COW PEA.jpeg',
-    hi: 'लोबिया',
-    or: 'ଝୁଡଙ୍ଗ',
-  },
-  litchi: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/LITCHi.jpeg',
-    hi: 'लीची',
-    or: 'ଲିଚୁ',
-  },
-  ragi: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/RAGI.jpeg',
-    hi: 'रागी',
-    or: 'ମାଣ୍ଡିଆ',
-  },
-  mesta: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/MESTA.jpeg',
-    hi: 'मेंस्ता',
-    or: 'ଛଣି',
-  },
-  groundnut: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/GROUNDNUT.jpeg',
-    hi: 'मूंगफली',
-    or: 'ଚିନାବାଦାମ',
-  },
-  'green gram': {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/GREEN GRAM.jpeg',
-    hi: 'मूंग',
-    or: 'ମୁଗ',
-  },
-  masoor: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Masoor.jpeg',
-    hi: 'मसूर',
-    or: 'ମସୁର',
-  },
-  peas: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Peas.jpeg',
-    hi: 'मटर',
-    or: 'ମଟର',
-  },
-  fish: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/fish.jpeg',
-    hi: 'मछली',
-    or: 'ମତ୍ସ୍ଯ',
-  },
-  maize: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/MAIZE.jpeg',
-    hi: 'मक्का',
-    or: 'ମକା',
-  },
-  buffalo: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/BUFFALO.jpeg',
-    hi: 'भैंस',
-    or: 'ମଇଁଷି',
-  },
-  okra: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/okra.jpg',
-    hi: 'भिंडी',
-    or: 'ଭେଣ୍ଡି',
-  },
-  brinjal: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Brinjal.jpeg',
-    hi: 'बैंगन',
-    or: 'ବାଇଗଣ',
-  },
-  ber: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Ber.jpeg',
-    hi: 'बेर',
-    or: 'ବେର',
-  },
-  'pearl millet': {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Pearl millet.jpeg',
-    hi: 'बाजरा',
-    or: 'ବାଜରା',
-  },
-  duck: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/duck.jpeg',
-    hi: 'बतख',
-    or: 'ବତକ',
-  },
-  goat: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/goat.jpeg',
-    hi: 'बकरी',
-    or: 'ଛେଳି',
-  },
-  'french bean': {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/FRENCH BEAN.jpeg',
-    hi: 'फ्रेंच बीन',
-    or: 'ବିନ',
-  },
-  cauliflower: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/CAULIFLOWER.jpeg',
-    hi: 'फूलगोभी',
-    or: 'ଫୁଲକୋବି',
-  },
-  onion: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/ONION.jpeg',
-    hi: 'प्याज',
-    or: 'ପିଆଜ',
-  },
-  mint: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Mint.jpeg',
-    hi: 'पुदीना/मेंथा',
-    or: 'ପୋଦିନା',
-  },
-  papaya: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/PAPAYA.jpeg',
-    hi: 'पपीता',
-    or: 'ଅମୃତଭଣ୍ଡା',
-  },
-  cabbage: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Cabbage.jpeg',
-    hi: 'पत्ता गोभी',
-    or: 'ବନ୍ଧାକୋବି',
-  },
-  coconut: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/COCONUT.jpeg',
-    hi: 'नारियल',
-    or: 'ନଡିଆ',
-  },
-  paddy: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/PADDY.jpeg',
-    hi: 'धान',
-    or: 'ଧାନ',
-  },
-  seasame: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/SEASAME.jpeg',
-    hi: 'तिल',
-    or: 'ରାଶି',
-  },
-  tomato: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/TOMATO.jpeg',
-    hi: 'टमाटर',
-    or: 'ଟମାଟୋ',
-  },
-  jowar: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/JOWAR.jpeg',
-    hi: 'ज्वार',
-    or: 'ଜୱାର',
-  },
-  jute: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/JUTE.jpeg',
-    hi: 'जूट',
-    or: 'ନଳିତା',
-  },
-  cumin: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/CUMIN.jpeg',
-    hi: 'जीरा',
-    or: 'ଜୀରା',
-  },
-  'bengal gram': {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Bengal Gram.jpeg',
-    hi: 'चना',
-    or: 'କାବୁଲି ବୁଟ',
-  },
-  'cluster beans': {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/CLUSTER BEANS.jpeg',
-    hi: 'ग्वार फली',
-    or: 'ଗୁଆଁର',
-  },
-  wheat: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/WHEAT.jpeg',
-    hi: 'गेहूँ',
-    or: 'ଗହମ',
-  },
-  cow: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/cow.jpg',
-    hi: 'गाय',
-    or: 'ଗାଈ',
-  },
-  sugarcane: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/SUGARCANE.jpeg',
-    hi: 'गन्ना',
-    or: 'ଆଖୁ',
-  },
-  cucumber: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/CUCUMBER.jpeg',
-    hi: 'खीरा',
-    or: 'କାକୁଡି',
-  },
-  citrus: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/CITRUS.jpeg',
-    hi: 'खट्टे फल',
-    or: 'ଲେମ୍ବୁ ଜାତୀୟ',
-  },
-  banana: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/banana.jpeg',
-    hi: 'केला',
-    or: 'କଦଳୀ',
-  },
-  'chick pea': {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/CHICK PEA.jpeg',
-    hi: 'काबुली चना',
-    or: 'କାବୁଲି ବୁଟ',
-  },
-  cashew: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Cashew.jpeg',
-    hi: 'काजू',
-    or: 'କାଜୁବାଦାମ',
-  },
-  'bitter gourd': {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Bitter Gourd.jpeg',
-    hi: 'करेला',
-    or: 'କଲରା',
-  },
-  cotton: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/COTTON.jpeg',
-    hi: 'कपास',
-    or: 'କପା',
-  },
-  cucurbits: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/CUCURBITS.jpeg',
-    hi: 'कद्दूवर्गीय फल',
-    or: 'କଖାରୁ ଜାତୀୟ',
-  },
-  urad: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Urad.jpeg',
-    hi: 'उड़द',
-    or: 'ହରଡ',
-  },
-  'black gram': {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Black Gram.jpeg',
-    hi: 'उड़द',
-    or: 'ବିରି ଓ ମୁଗ',
-  },
-  potato: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/POTATO.jpeg',
-    hi: 'आलू',
-    or: 'ଆଳୁ',
-  },
-  mango: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/MANGO.jpeg',
-    hi: 'आम',
-    or: 'ଆମ୍ବ',
-  },
-  flaxseed: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Flaxseed.jpeg',
-    hi: 'अलसी',
-    or: 'ପେଶୀ',
-  },
-  'pigeon pea': {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/PIGEON PEA.jpeg',
-    hi: 'अरहर',
-    or: 'ହରଡ ଡାଲି',
-  },
-  arhar: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Arhar.jpeg',
-    hi: 'अरहर',
-    or: 'ହରଡ ଡାଲି',
-  },
-  guava: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/GUAVA.jpeg',
-    hi: 'अमरूद',
-    or: 'ପିଜୁଳି',
-  },
-  hen: {
-    link: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/HEN.jpeg',
-    hi: 'मुर्गी',
-    or: 'କୁକୁଡ଼',
-  },
-};
+export const WIND_DIRECTIONS = JSON.parse(
+  fs.readFileSync(path.join(__dirname, '/db/wind-directions.json'), {
+    encoding: 'utf-8',
+  }),
+);
 
-enum CONDITIONS {
-  DEFAULT = 'default',
+export const CROP_MAPPINGS = JSON.parse(
+  fs.readFileSync(path.join(__dirname, '/db/crop-translations.json'), {
+    encoding: 'utf-8',
+  }),
+);
+
+export enum CONDITIONS {
   SUNNY = 'Sunny',
   CLOUDY = 'Cloudy',
   LIGHT_RAIN = 'Light Rain',
@@ -366,102 +30,14 @@ enum CONDITIONS {
   WINDY = 'Windy',
 }
 
-const windDirections = {
-  0: {
-    en: 'Calm',
-    hi: 'शांत',
-    or: 'ସାନ୍ତ',
-  },
-  20: {
-    en: 'North-northeasterly',
-    hi: 'उत्तर-पूर्वोत्तर',
-    or: 'ଉତ୍ତର-ପୂର୍ବ ଉତ୍ତର',
-  },
-  50: {
-    en: 'Northeasterly',
-    hi: 'पूर्वोत्तर',
-    or: 'ପୂର୍ବ ଉତ୍ତର',
-  },
-  70: {
-    en: 'East-northeasterly',
-    hi: 'पूर्व-पूर्वोत्तर',
-    or: 'ପୂର୍ବ-ପୂର୍ବ ଉତ୍ତର',
-  },
-  90: {
-    en: 'Easterly',
-    hi: 'पूर्वी',
-    or: 'ପୂର୍ବ',
-  },
-  110: {
-    en: 'East-southeasterly',
-    hi: 'पूर्व-दक्षिणपूर्व',
-    or: 'ପୂର୍ବ-ଦକ୍ଷିଣପୂର୍ବ',
-  },
-  140: {
-    en: 'Southeasterly',
-    hi: 'दक्षिणपूर्व',
-    or: 'ଦକ୍ଷିଣପୂର୍ବ',
-  },
-  160: {
-    en: 'South-southeasterly',
-    hi: 'दक्षिण-दक्षिणपूर्व',
-    or: 'ଦକ୍ଷିଣ-ଦକ୍ଷିଣ ପୂର୍ବ',
-  },
-  180: {
-    en: 'Southerly',
-    hi: 'दक्षिणी',
-    or: 'ଦକ୍ଷିଣ',
-  },
-  200: {
-    en: 'South-southwesterly',
-    hi: 'दक्षिण-दक्षिणपश्चिम',
-    or: 'ଦକ୍ଷିଣ-ଦକ୍ଷିଣ ପଶ୍ଚିମ',
-  },
-  230: {
-    en: 'Southwesterly',
-    hi: 'दक्षिणपश्चिम',
-    or: 'ଦକ୍ଷିଣ ପଶ୍ଚିମ',
-  },
-  250: {
-    en: 'West-southwesterly',
-    hi: 'पश्चिम-दक्षिणपश्चिम',
-    or: 'ପଶ୍ଚିମ-ଦକ୍ଷିଣ ପଶ୍ଚିମ',
-  },
-  270: {
-    en: 'Westerly',
-    hi: 'पश्चिमी',
-    or: 'ପଶ୍ଚିମ',
-  },
-  290: {
-    en: 'West-northwesterly',
-    hi: 'पश्चिम-उत्तरपश्चिम',
-    or: 'ପଶ୍ଚିମ-ଉତ୍ତର ପଶ୍ଚିମ',
-  },
-  320: {
-    en: 'Northwesterly',
-    hi: 'उत्तरपश्चिम',
-    or: 'ଉତ୍ତର ପଶ୍ଚିମ',
-  },
-  340: {
-    en: 'North-northwesterly',
-    hi: 'उत्तर-उत्तरपश्चिम',
-    or: 'ଉତ୍ତର-ଉତ୍ତର ପଶ୍ଚିମ',
-  },
-  360: {
-    en: 'Northerly',
-    hi: 'उत्तरी',
-    or: 'ଉତ୍ତର',
-  },
-};
-
-const WEATHER_DATA = JSON.parse(
-  fs.readFileSync(path.join(__dirname + '/conditions.json'), {
+export const WEATHER_DATA = JSON.parse(
+  fs.readFileSync(path.join(__dirname + '/db/conditions.json'), {
     encoding: 'utf-8',
   }),
 );
 
-const CROP_IMAGES = JSON.parse(
-  fs.readFileSync(path.join(__dirname + '/crops.json'), {
+export const CROP_IMAGES = JSON.parse(
+  fs.readFileSync(path.join(__dirname + '/db/crops.json'), {
     encoding: 'utf-8',
   }),
 );
@@ -493,7 +69,7 @@ export const getStationId = (
   dist: number,
 ): string => {
   const map = JSON.parse(
-    fs.readFileSync(path.join(__dirname + '/base.json'), {
+    fs.readFileSync(path.join(__dirname + '/db/base.json'), {
       encoding: 'utf-8',
     }),
   );
@@ -508,10 +84,10 @@ export const getStationId = (
       const [keyLat, keyLong] = pair.split('-');
       const dist = getDistanceFromLatLonInKm(lat, long, keyLat, keyLong);
       if (dist < minDist) {
-        console.log('dist: ', dist);
+        // console.log('dist: ', dist);
         minDist = dist;
         code = map[pair].code;
-        console.log('code: ', code);
+        // console.log('code: ', code);
       }
     });
   }
@@ -541,9 +117,9 @@ export const calculateWeatherConditions = (
 
 // This function will take wind direction in degrees and language and return the translated string
 export const getWindDirection = (windDirection: number, lang: string) => {
-  // windDirection value may not be present in the windDirections object, let say 30
+  // windDirection value may not be present in the WIND_DIRECTIONS object, let say 30
   // so we need to find the nearest value to the given windDirection
-  const keys = Object.keys(windDirections); // [0, 20, 50, 70, 90, 110, 140, 160, 180, 200, 230, 250, 270, 290, 320, 340, 360]
+  const keys = Object.keys(WIND_DIRECTIONS); // [0, 20, 50, 70, 90, 110, 140, 160, 180, 200, 230, 250, 270, 290, 320, 340, 360]
   let nearestKey = keys[0]; // 0
   let minDiff = Math.abs(windDirection - parseInt(nearestKey)); // 30
   keys.forEach((key) => {
@@ -554,171 +130,9 @@ export const getWindDirection = (windDirection: number, lang: string) => {
     }
   });
   windDirection = parseInt(nearestKey); // 20
-  return windDirections[windDirection][lang];
+  return WIND_DIRECTIONS[windDirection][lang];
 };
 
-export const mapIMDItems = (imdJSON) => {
-  let { sevenDay, current, visualCrossing } = imdJSON;
-  sevenDay = sevenDay[0];
-  const items = [];
-
-  if (typeof current !== typeof 'string') {
-    current.forEach((item) => {
-      // get conditions here
-      const cloudCover = parseFloat(item['Nebulosity']);
-      const windSpeed = parseFloat(item['Wind Speed KMPH']);
-      const rainfall = parseFloat(sevenDay?.Past_24_hrs_Rainfall);
-
-      const conditions = calculateWeatherConditions(
-        cloudCover,
-        windSpeed,
-        rainfall,
-      );
-
-      items.push({
-        descriptor: {
-          images: [
-            {
-              url: WEATHER_DATA[conditions].image_day,
-              type: 'image_day',
-            },
-            {
-              url: WEATHER_DATA[conditions].image_night,
-              type: 'image_night',
-            },
-            {
-              url: WEATHER_DATA[conditions].icon,
-              type: 'icon',
-            },
-          ],
-        },
-        time: {
-          label: 'Date of Observation',
-          timestamp: item['Date of Observation'],
-        },
-        location_ids: [item['Station']],
-        category_ids: ['current_weather'], //TODO: turn this into an ENUM
-        tags: {
-          conditions: conditions,
-          conditions_hi: WEATHER_DATA[conditions].hi_translated,
-          conditions_or: WEATHER_DATA[conditions].or_translated,
-          temp:
-            item['Temperature'].trim() === 'NA'
-              ? visualCrossing.days[0].temp
-              : item['Temperature'],
-          humidity:
-            item['Humidity'] === 'NA'
-              ? visualCrossing.days[0].humidity
-              : item['Humidity'],
-          winddir:
-            item['Wind Direction'] === 'NA'
-              ? getWindDirection(visualCrossing.days[0].winddir, 'en')
-              : item['Wind Direction'],
-          winddir_hi: getWindDirection(visualCrossing.days[0].winddir, 'hi'),
-          winddir_or: getWindDirection(visualCrossing.days[0].winddir, 'or'),
-          windspeed:
-            item['Wind Speed KMPH'] === 'NA'
-              ? visualCrossing.days[0].windspeed
-              : item['Wind Speed KMPH'],
-          rainfall: item['Last 24 hrs Rainfall'],
-          temp_max: sevenDay?.Today_Max_temp,
-          temp_min: sevenDay?.Today_Min_temp,
-          rh_max: sevenDay?.Relative_Humidity_at_0830,
-          rh_min: sevenDay?.Relative_Humidity_at_1730,
-          cloud_cover: item['Nebulosity'], // Not available in IMD data
-          Sunset_time: item['Sunset'],
-          Sunrise_time: item['Sunrise'],
-          Moonset_time: item['Moonset'],
-          Moonrise_time: item['Moonrise'],
-        },
-      });
-    });
-  } else {
-    let val = visualCrossing.days;
-    val = [val[0]];
-    val.forEach((item) => {
-      // get conditions here
-      const cloudCover = parseFloat(item['cloudcover']);
-      const windSpeed = parseFloat(item['windspeed']);
-      const rainfall = parseFloat(item['precip']);
-
-      const conditions = calculateWeatherConditions(
-        cloudCover,
-        windSpeed,
-        rainfall,
-      );
-
-      items.push({
-        descriptor: {
-          images: [
-            {
-              url: WEATHER_DATA[conditions].image_day,
-              type: 'image_day',
-            },
-            {
-              url: WEATHER_DATA[conditions].image_night,
-              type: 'image_night',
-            },
-            {
-              url: WEATHER_DATA[conditions].icon,
-              type: 'icon',
-            },
-          ],
-        },
-        time: {
-          label: 'Date of Observation',
-          timestamp: item['datetime'],
-        },
-        location_ids: [sevenDay['Station_Name']],
-        category_ids: ['current_weather'], //TODO: turn this into an ENUM
-        tags: {
-          conditions: conditions,
-          conditions_hi: WEATHER_DATA[conditions].hi_translated,
-          conditions_or: WEATHER_DATA[conditions].or_translated,
-          temp:
-            item['temp'].toString().trim() === 'NA'
-              ? (
-                  (sevenDay?.Today_Max_temp + sevenDay?.Today_Min_temp) /
-                  2
-                ).toString()
-              : item['temp'],
-          humidity: item['humidity'],
-          winddir: item['winddir'],
-          // winddir: getWindDirection(item['winddir'], 'en'),
-          // winddir_hi: getWindDirection(item['winddir'], 'hi'),
-          // winddir_or: getWindDirection(item['winddir'], 'or'),
-          windspeed: item['windspeed'],
-          rainfall: item['precip'],
-          temp_max: sevenDay?.Today_Max_temp,
-          temp_min: sevenDay?.Today_Min_temp,
-          rh_max: sevenDay?.Relative_Humidity_at_0830,
-          rh_min: sevenDay?.Relative_Humidity_at_1730,
-          cloud_cover: item['cloudcover'], // Not available in IMD data
-          Sunset_time: item['sunset'],
-          Sunrise_time: item['sunrise'],
-          Moonset_time: 'NA',
-          Moonrise_time: 'NA',
-        },
-      });
-    });
-  }
-
-  return {
-    id: 'imd', // TODO: Turn this into an enum,
-    category_id: 'weather_provider',
-    categories: [
-      {
-        id: 'current_weather',
-      },
-      {
-        id: 'future_weather',
-      },
-    ],
-    items: items.concat(mapIMDFutureItems(sevenDay)),
-  };
-};
-
-// This function will match the forecast string words with enum CONDITIONS and return the matching condition
 export const deduceWeatherCondition = (forecast: string): string => {
   // forecast = "Generally cloudy sky with possibility of rain or Thunderstorm"
 
@@ -726,7 +140,7 @@ export const deduceWeatherCondition = (forecast: string): string => {
   const keys: string[] = Object.keys(CONDITIONS);
   const values: string[] = Object.values(CONDITIONS);
 
-  let condition: string = CONDITIONS.DEFAULT;
+  let condition: string = CONDITIONS.SUNNY;
 
   for (let i = 0; i < keys.length; i++) {
     // string to match in forecast
@@ -742,7 +156,55 @@ export const deduceWeatherCondition = (forecast: string): string => {
   // If CONDITIONS enum is prioritiwise ordered, then the last matching condition will be returned
 };
 
-export const mapIMDFutureItems = (station) => {
+/**
+ * @description This function cleans out the IMD data and adds visual crossing as a fallback
+ * in case the data is absent
+ *
+ * Fields of Relevance in Current Day data:
+ * 1. Current Temp - Get from Visual crossing - temp
+ * 2. Cloud Cover - Get from visual crossing - cloudcover
+ * 3. Humidity - Get from IMD - Relative_Humidity_at_0830
+ * 4. Wind Speed - Get from Visual Crossing - windspeed
+ * 5. Wind Direction - Get from Visual Crossing - winddir
+ *
+ * Fields of relevance in future data:
+ * 1. Max Temp - Get from IMD -
+ * 2. Min Temp - Get from IMD -
+ * 3. Forecast - Get from IMD -
+ */
+export const sanitizeIMDWeather = (data: {
+  imd: IMDCityWeatherAPIObject;
+  visualCrossing: VisualCrossingCurrentConditionsObject;
+}): SanitizedIMDWeather => {
+  const { imd, visualCrossing } = data;
+  // extract fields of relevance from visual crossing.
+  const sanitizedWeatherInfo: SanitizedIMDWeather = {
+    general: {
+      station: imd.Station_Name,
+      date: imd.Date,
+    },
+    current: {
+      temp: visualCrossing.temp,
+      cloudCover: visualCrossing.cloudcover,
+      humidity: imd.Relative_Humidity_at_0830,
+      windSpeed: visualCrossing.windspeed,
+      windDirection: visualCrossing.winddir,
+      conditions: imd.Todays_Forecast,
+    },
+    future: parseIMDFutureItems(imd),
+  };
+
+  return sanitizedWeatherInfo;
+};
+
+/**
+ * @description This function takes in the IMD `cityweather_loc` API input and parse it for future information
+ * @param station
+ * @returns
+ */
+export const parseIMDFutureItems = (
+  station: IMDCityWeatherAPIObject,
+): ReadonlyArray<IMDFutureWeatherDetails> => {
   const baseDate = station.Date;
   const items = [];
   for (let dayOffset = 2; dayOffset <= 7; dayOffset++) {
@@ -752,44 +214,12 @@ export const mapIMDFutureItems = (station) => {
 
     if (station[dayKeyMax] && station[dayKeyMin] && station[dayKeyForecast]) {
       const newDate = calculateDate(baseDate, dayOffset - 1);
-      const conditions = calculateWeatherConditions();
+      const conditions = deduceWeatherCondition(station[dayKeyForecast]);
       items.push({
-        descriptor: {
-          images: [
-            {
-              url: WEATHER_DATA[conditions].image_day,
-              type: 'image_day',
-            },
-            {
-              url: WEATHER_DATA[conditions].image_night,
-              type: 'image_night',
-            },
-            {
-              url: WEATHER_DATA[conditions].icon,
-              type: 'icon',
-            },
-          ],
-        },
-        time: { label: 'Future Date of Forecast', timestamp: newDate },
-        location_ids: [station.Station_Name],
-        category_ids: ['future_weather'], // TODO: Turn this into an enum
-        tags: {
-          rainfall: 'NA', // Not available in IMD data
-          temp_max: station[dayKeyMax],
-          temp_min: station[dayKeyMin],
-          conditions_hi:
-            WEATHER_DATA[deduceWeatherCondition(dayKeyForecast)].hi_translated,
-          conditions_or:
-            WEATHER_DATA[deduceWeatherCondition(dayKeyForecast)].or_translated,
-          conditions: station[deduceWeatherCondition(dayKeyForecast)], // Not available in IMD data
-          temp: (parseFloat(station.t_max) + parseFloat(station.t_min)) / 2, // Not available in IMD data
-          humidity: 'NA', // Not available in IMD data
-          winddir: 'NA', // Not available in IMD data
-          windspeed: 'NA', // Not available in IMD data
-          rh_max: 'NA', // Not available in IMD data
-          rh_min: 'NA', // Not available in IMD data
-          cloud_cover: 'NA', // Not available in IMD data
-        },
+        date: newDate,
+        conditions,
+        temp_max: station[dayKeyMax],
+        temp_min: station[dayKeyMin],
       });
     }
   }
@@ -797,124 +227,7 @@ export const mapIMDFutureItems = (station) => {
   return items;
 };
 
-export const mapAdvisoryData = (upcarData, provider) => {
-  const items = [];
-  // map general advisory
-  items.push({
-    category_ids: ['general_advisory'],
-    code: 'general',
-    descriptor: {
-      name: 'General Crop Advisory',
-      long_desc: upcarData.general_advisory,
-      images: [
-        {
-          url: CROP_IMAGES['general_advisory']
-            ? CROP_IMAGES['general_advisory']
-            : CROP_IMAGES['wheat'],
-        },
-      ],
-    },
-  });
-  // map crop specific stuff
-  Object.keys(upcarData.crops_data).forEach((key) => {
-    items.push({
-      category_ids: ['crop_specific_advisory'],
-      code: `${key}-${cropMappings[key].hi}-${cropMappings[key].or}`,
-      descriptor: {
-        name: `advisory on crop ${key}`,
-        long_desc: upcarData.crops_data[key].advisory.join('\n'),
-        images: [
-          {
-            url: CROP_IMAGES[key.toLowerCase()]
-              ? CROP_IMAGES[key.toLowerCase()]
-              : CROP_IMAGES['wheat'],
-          },
-        ],
-      },
-    });
-  });
-
-  return {
-    id: provider, // TODO: Turn this into an enum,
-    category_id: 'crop_advisory_provider',
-    categories: [
-      {
-        id: 'general_advisory',
-      },
-      {
-        id: 'crop_specific_advisory',
-      },
-    ],
-    items: items,
-  };
-};
-
-export const mapOUATWeather = (ouatWeatherData) => {
-  const items = [];
-  const weatherDetails = ouatWeatherData['weather_details'];
-  Object.keys(weatherDetails).forEach((date) => {
-    const station = weatherDetails[date];
-
-    const cloudCover = parseFloat(station.cloud_cover);
-    const rainfall = parseFloat(station.rainfall);
-    const conditions = calculateWeatherConditions(cloudCover, 0, rainfall);
-
-    items.push({
-      descriptor: {
-        images: [
-          {
-            url: WEATHER_DATA[conditions].image_day,
-            type: 'image_day',
-          },
-          {
-            url: WEATHER_DATA[conditions].image_night,
-            type: 'image_night',
-          },
-          {
-            url: WEATHER_DATA[conditions].icon,
-            type: 'icon',
-          },
-        ],
-      },
-      time: {
-        label: 'Future Date of Forecast',
-        timestamp: format(date, 'yyyy-MM-dd'),
-      },
-      location_ids: [ouatWeatherData.district],
-      category_ids: ['future_weather'], // TODO: Turn this into an enum
-      tags: {
-        rainfall: station.rainfall,
-        temp_max: station.t_max,
-        temp_min: station.t_min,
-        conditions_hi: WEATHER_DATA[conditions].hi_translated,
-        conditions_or: WEATHER_DATA[conditions].or_translated,
-        conditions: conditions, // Not available in OUAT data
-        temp: (parseFloat(station.t_max) + parseFloat(station.t_min)) / 2, // Not available in OUAT data
-        humidity: 'NA', // Not available in OUAT data
-        winddir: station.wind_direction, // Not available in OUAT data
-        windspeed: station.wind_speed, // Not available in OUAT data
-        rh_max: station.rh_max, // Not available in OUAT data
-        rh_min: station.rh_min, // Not available in OUAT data
-        wind_speed: 'NA', // Not available in OUAT data
-        wind_direction: 'NA', // Not available in OUAT data
-        cloud_cover: station.cloud_cover, // Not available in OUAT data
-      },
-    });
-  });
-
-  return {
-    id: 'ouat', // TODO: Turn this into an enum,
-    category_id: 'weather_provider',
-    categories: [
-      {
-        id: 'future_weather',
-      },
-    ],
-    items: items,
-  };
-};
-
-export function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
+export const getDistanceFromLatLonInKm = (lat1, lon1, lat2, lon2) => {
   const R = 6371; // Radius of the earth in km
   const dLat = deg2rad(lat2 - lat1);
   const dLon = deg2rad(lon2 - lon1);
@@ -927,8 +240,27 @@ export function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
   const d = R * c; // Distance in km
   return d;
-}
+};
 
-function deg2rad(deg) {
+const deg2rad = (deg) => {
   return deg * (Math.PI / 180);
-}
+};
+
+export const getParsedDate = (date) => {
+  const dateRegexes = [
+    /^\d{2}-\d{2}-\d{4}$/, // dd-mm-yyyy
+    /^\d{2}\/\d{2}\/\d{4}$/, // dd/mm/yyyy
+    /^\d{4}-\d{2}-\d{2}$/, // yyyy-mm-dd
+    /^\d{4}\/\d{2}\/\d{2}$/, // yyyy/mm/dd
+  ];
+
+  if (dateRegexes[0].test(date)) {
+    return parse(date, 'dd-mm-yyyy', new Date());
+  } else if (dateRegexes[1].test(date)) {
+    return parse(date, 'dd/mm/yyyy', new Date());
+  } else if (dateRegexes[2].test(date)) {
+    return parse(date, 'yyyy-mm-dd', new Date());
+  } else if (dateRegexes[3].test(date)) {
+    return parse(date, 'yyyy/mm/dd', new Date());
+  }
+};

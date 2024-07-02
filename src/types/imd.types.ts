@@ -1,0 +1,45 @@
+export type IMDCityWeatherLocAPIResponse =
+  ReadonlyArray<IMDCityWeatherAPIObject>;
+
+export type IMDCityWeatherAPIObject = {
+  Date: string;
+  Station_Code: string;
+  Station_Name: string;
+  Today_Max_temp: string;
+  Today_Max_Departure_from_Normal: string;
+  Previous_Day_Max_temp: string;
+  Previous_Day_Max_Departure_from_Normal: string;
+  Today_Min_temp: string;
+  Today_Min_Departure_from_Normal: string;
+  Past_24_hrs_Rainfall: string;
+  Relative_Humidity_at_0830: string;
+  Relative_Humidity_at_1730: string;
+  Previous_Day_Relative_Humidity_at_1730: string;
+  Sunset_time: string;
+  Sunrise_time: string;
+  Moonset_time: string;
+  Moonrise_time: string;
+  Todays_Forecast_Max_Temp: string;
+  Todays_Forecast_Min_temp: string;
+  Todays_Forecast: string;
+  Day_2_Max_Temp: string;
+  Day_2_Min_temp: string;
+  Day_2_Forecast: string;
+  Day_3_Max_Temp: string;
+  Day_3_Min_temp: string;
+  Day_3_Forecast: string;
+  Day_4_Max_Temp: string;
+  Day_4_Min_temp: string;
+  Day_4_Forecast: string;
+  Day_5_Max_Temp: string;
+  Day_5_Min_temp: string;
+  Day_5_Forecast: string;
+  Day_6_Max_Temp: string;
+  Day_6_Min_temp: string;
+  Day_6_Forecast: string;
+  Day_7_Max_Temp: string;
+  Day_7_Min_temp: string;
+  Day_7_Forecast: string;
+  Latitude: string;
+  Longitude: string;
+};
