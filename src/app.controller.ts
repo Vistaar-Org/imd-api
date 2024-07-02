@@ -18,6 +18,7 @@ export class AppController {
   async getWeather(
     @Query('latitude') latiude: string,
     @Query('longitude') longitude: string,
+    @Query('provider') provider: string,
   ) {
     this.logger.log(
       `Received latitude: ${latiude} and longitude: ${longitude}`,
@@ -31,6 +32,6 @@ export class AppController {
       `Sanitized latitude: ${latiude} and longitude: ${longitude}`,
     );
 
-    return await this.appService.getWeather(latiude, longitude);
+    return await this.appService.getWeather(latiude, longitude, provider);
   }
 }

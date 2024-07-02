@@ -1,0 +1,352 @@
+{
+  "horticulture": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Horticulture.png",
+    "hi": "बागवानी",
+    "or": "ବାଗାନ୍ତିକ"
+  },
+  "prawn": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/PRAWN.jpeg",
+    "hi": "झींगा",
+    "or": "ଚିଙ୍ଗୁଡ଼"
+  },
+  "sheep": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/sheep.jpeg",
+    "hi": "भेड़",
+    "or": "ଛେଳି"
+  },
+  "vegetables": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Vegetables.jpg",
+    "hi": "सब्जियां",
+    "or": "ଶାକସବଜି"
+  },
+  "zaid crops": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Zaid crops.jpg",
+    "hi": "जायद फसलें",
+    "or": "ଜାଏଦ ଫସଲ"
+  },
+  "barjra": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Barjra.jpeg",
+    "hi": "बाजरा",
+    "or": "ବାଜରା"
+  },
+  "bottlegourd": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/BottleGourd.jpeg",
+    "hi": "लौकी",
+    "or": "ଲାଉ"
+  },
+  "chillies": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/CHILLIES.jpeg",
+    "hi": "मिर्च",
+    "or": "ଲଙ୍କା"
+  },
+  "pome- granate": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/POME- GRANATE.jpeg",
+    "hi": "अनार",
+    "or": "ଡାଲିମା"
+  },
+  "freshwater": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/freshwater.jpeg",
+    "hi": "ताजे पानी",
+    "or": "ମିଠା ପାଣି"
+  },
+  "general advisory": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/General advisory.webp",
+    "hi": "सामान्य सलाह",
+    "or": "ସାଧାରଣ ପରାମର୍ଶ"
+  },
+  "turmeric": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/TURMERIC.jpeg",
+    "hi": "हल्दी",
+    "or": "ହଳଦୀ"
+  },
+  "soybean": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/SOYBEAN.jpeg",
+    "hi": "सोयाबीन",
+    "or": "ସୋୟାବିନ"
+  },
+  "beans": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Beans.jpeg",
+    "hi": "सेम",
+    "or": "ବିନ"
+  },
+  "sunflower": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/SUNFLOWER.jpeg",
+    "hi": "सूरजमुखी",
+    "or": "ସୂର୍ଯ୍ୟମୁଖୀ"
+  },
+  "pig": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/pig.jpeg",
+    "hi": "सुअर",
+    "or": "ଘୁଷୁରି"
+  },
+  "tapioca": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/TAPIOCA.jpeg",
+    "hi": "साबूदाना",
+    "or": "ପାଳୁଅ"
+  },
+  "mustard": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/MUSTARD.jpeg",
+    "hi": "सरसों",
+    "or": "ସୋରିଷ"
+  },
+  "cow pea": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/COW PEA.jpeg",
+    "hi": "लोबिया",
+    "or": "ଝୁଡଙ୍ଗ"
+  },
+  "litchi": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/LITCHi.jpeg",
+    "hi": "लीची",
+    "or": "ଲିଚୁ"
+  },
+  "ragi": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/RAGI.jpeg",
+    "hi": "रागी",
+    "or": "ମାଣ୍ଡିଆ"
+  },
+  "mesta": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/MESTA.jpeg",
+    "hi": "मेंस्ता",
+    "or": "ଛଣି"
+  },
+  "groundnut": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/GROUNDNUT.jpeg",
+    "hi": "मूंगफली",
+    "or": "ଚିନାବାଦାମ"
+  },
+  "green gram": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/GREEN GRAM.jpeg",
+    "hi": "मूंग",
+    "or": "ମୁଗ"
+  },
+  "masoor": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Masoor.jpeg",
+    "hi": "मसूर",
+    "or": "ମସୁର"
+  },
+  "peas": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Peas.jpeg",
+    "hi": "मटर",
+    "or": "ମଟର"
+  },
+  "fish": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/fish.jpeg",
+    "hi": "मछली",
+    "or": "ମତ୍ସ୍ଯ"
+  },
+  "maize": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/MAIZE.jpeg",
+    "hi": "मक्का",
+    "or": "ମକା"
+  },
+  "buffalo": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/BUFFALO.jpeg",
+    "hi": "भैंस",
+    "or": "ମଇଁଷି"
+  },
+  "okra": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/okra.jpg",
+    "hi": "भिंडी",
+    "or": "ଭେଣ୍ଡି"
+  },
+  "brinjal": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Brinjal.jpeg",
+    "hi": "बैंगन",
+    "or": "ବାଇଗଣ"
+  },
+  "ber": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Ber.jpeg",
+    "hi": "बेर",
+    "or": "ବେର"
+  },
+  "pearl millet": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Pearl millet.jpeg",
+    "hi": "बाजरा",
+    "or": "ବାଜରା"
+  },
+  "duck": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/duck.jpeg",
+    "hi": "बतख",
+    "or": "ବତକ"
+  },
+  "goat": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/goat.jpeg",
+    "hi": "बकरी",
+    "or": "ଛେଳି"
+  },
+  "french bean": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/FRENCH BEAN.jpeg",
+    "hi": "फ्रेंच बीन",
+    "or": "ବିନ"
+  },
+  "cauliflower": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/CAULIFLOWER.jpeg",
+    "hi": "फूलगोभी",
+    "or": "ଫୁଲକୋବି"
+  },
+  "onion": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/ONION.jpeg",
+    "hi": "प्याज",
+    "or": "ପିଆଜ"
+  },
+  "mint": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Mint.jpeg",
+    "hi": "पुदीना/मेंथा",
+    "or": "ପୋଦିନା"
+  },
+  "papaya": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/PAPAYA.jpeg",
+    "hi": "पपीता",
+    "or": "ଅମୃତଭଣ୍ଡା"
+  },
+  "cabbage": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Cabbage.jpeg",
+    "hi": "पत्ता गोभी",
+    "or": "ବନ୍ଧାକୋବି"
+  },
+  "coconut": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/COCONUT.jpeg",
+    "hi": "नारियल",
+    "or": "ନଡିଆ"
+  },
+  "paddy": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/PADDY.jpeg",
+    "hi": "धान",
+    "or": "ଧାନ"
+  },
+  "seasame": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/SEASAME.jpeg",
+    "hi": "तिल",
+    "or": "ରାଶି"
+  },
+  "tomato": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/TOMATO.jpeg",
+    "hi": "टमाटर",
+    "or": "ଟମାଟୋ"
+  },
+  "jowar": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/JOWAR.jpeg",
+    "hi": "ज्वार",
+    "or": "ଜୱାର"
+  },
+  "jute": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/JUTE.jpeg",
+    "hi": "जूट",
+    "or": "ନଳିତା"
+  },
+  "cumin": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/CUMIN.jpeg",
+    "hi": "जीरा",
+    "or": "ଜୀରା"
+  },
+  "bengal gram": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Bengal Gram.jpeg",
+    "hi": "चना",
+    "or": "କାବୁଲି ବୁଟ"
+  },
+  "cluster beans": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/CLUSTER BEANS.jpeg",
+    "hi": "ग्वार फली",
+    "or": "ଗୁଆଁର"
+  },
+  "wheat": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/WHEAT.jpeg",
+    "hi": "गेहूँ",
+    "or": "ଗହମ"
+  },
+  "cow": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/cow.jpg",
+    "hi": "गाय",
+    "or": "ଗାଈ"
+  },
+  "sugarcane": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/SUGARCANE.jpeg",
+    "hi": "गन्ना",
+    "or": "ଆଖୁ"
+  },
+  "cucumber": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/CUCUMBER.jpeg",
+    "hi": "खीरा",
+    "or": "କାକୁଡି"
+  },
+  "citrus": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/CITRUS.jpeg",
+    "hi": "खट्टे फल",
+    "or": "ଲେମ୍ବୁ ଜାତୀୟ"
+  },
+  "banana": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/banana.jpeg",
+    "hi": "केला",
+    "or": "କଦଳୀ"
+  },
+  "chick pea": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/CHICK PEA.jpeg",
+    "hi": "काबुली चना",
+    "or": "କାବୁଲି ବୁଟ"
+  },
+  "cashew": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Cashew.jpeg",
+    "hi": "काजू",
+    "or": "କାଜୁବାଦାମ"
+  },
+  "bitter gourd": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Bitter Gourd.jpeg",
+    "hi": "करेला",
+    "or": "କଲରା"
+  },
+  "cotton": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/COTTON.jpeg",
+    "hi": "कपास",
+    "or": "କପା"
+  },
+  "cucurbits": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/CUCURBITS.jpeg",
+    "hi": "कद्दूवर्गीय फल",
+    "or": "କଖାରୁ ଜାତୀୟ"
+  },
+  "urad": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Urad.jpeg",
+    "hi": "उड़द",
+    "or": "ହରଡ"
+  },
+  "black gram": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Black Gram.jpeg",
+    "hi": "उड़द",
+    "or": "ବିରି ଓ ମୁଗ"
+  },
+  "potato": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/POTATO.jpeg",
+    "hi": "आलू",
+    "or": "ଆଳୁ"
+  },
+  "mango": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/MANGO.jpeg",
+    "hi": "आम",
+    "or": "ଆମ୍ବ"
+  },
+  "flaxseed": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Flaxseed.jpeg",
+    "hi": "अलसी",
+    "or": "ପେଶୀ"
+  },
+  "pigeon pea": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/PIGEON PEA.jpeg",
+    "hi": "अरहर",
+    "or": "ହରଡ ଡାଲି"
+  },
+  "arhar": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Arhar.jpeg",
+    "hi": "अरहर",
+    "or": "ହରଡ ଡାଲି"
+  },
+  "guava": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/GUAVA.jpeg",
+    "hi": "अमरूद",
+    "or": "ପିଜୁଳି"
+  },
+  "hen": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/HEN.jpeg",
+    "hi": "मुर्गी",
+    "or": "କୁକୁଡ଼"
+  }
+}

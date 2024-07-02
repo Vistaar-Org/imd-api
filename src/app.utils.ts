@@ -1,10 +1,27 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { format, addDays } from 'date-fns';
+import { format, addDays, parse } from 'date-fns';
 import { BadRequestException } from '@nestjs/common';
+import { IMDCityWeatherAPIObject } from './types/imd.types';
+import {
+  IMDFutureWeatherDetails,
+  SanitizedIMDWeather,
+} from './types/app.types';
+import { VisualCrossingCurrentConditionsObject } from './types/visual-crossing.types';
+
+export const WIND_DIRECTIONS = JSON.parse(
+  fs.readFileSync(path.join(__dirname, '/db/wind-directions.json'), {
+    encoding: 'utf-8',
+  }),
+);
+
+export const CROP_MAPPINGS = JSON.parse(
+  fs.readFileSync(path.join(__dirname, '/db/crop-translations.json'), {
+    encoding: 'utf-8',
+  }),
+);
 
 export enum CONDITIONS {
-  DEFAULT = 'default',
   SUNNY = 'Sunny',
   CLOUDY = 'Cloudy',
   LIGHT_RAIN = 'Light Rain',
@@ -98,6 +115,47 @@ export const calculateWeatherConditions = (
   return weather;
 };
 
+// This function will take wind direction in degrees and language and return the translated string
+export const getWindDirection = (windDirection: number, lang: string) => {
+  // windDirection value may not be present in the WIND_DIRECTIONS object, let say 30
+  // so we need to find the nearest value to the given windDirection
+  const keys = Object.keys(WIND_DIRECTIONS); // [0, 20, 50, 70, 90, 110, 140, 160, 180, 200, 230, 250, 270, 290, 320, 340, 360]
+  let nearestKey = keys[0]; // 0
+  let minDiff = Math.abs(windDirection - parseInt(nearestKey)); // 30
+  keys.forEach((key) => {
+    const diff = Math.abs(windDirection - parseInt(key));
+    if (diff < minDiff) {
+      minDiff = diff;
+      nearestKey = key;
+    }
+  });
+  windDirection = parseInt(nearestKey); // 20
+  return WIND_DIRECTIONS[windDirection][lang];
+};
+
+export const deduceWeatherCondition = (forecast: string): string => {
+  // forecast = "Generally cloudy sky with possibility of rain or Thunderstorm"
+
+  forecast = forecast.toLowerCase();
+  const keys: string[] = Object.keys(CONDITIONS);
+  const values: string[] = Object.values(CONDITIONS);
+
+  let condition: string = CONDITIONS.SUNNY;
+
+  for (let i = 0; i < keys.length; i++) {
+    // string to match in forecast
+    const conditionString = values[i].toLowerCase();
+    // create a regex to match the condition string in a case-insensitive manner
+    const regex = new RegExp(conditionString, 'gi');
+    // check if the forecast contains the condition
+    if (regex.test(forecast)) {
+      condition = values[i];
+    }
+  }
+  return condition; // Thunderstorm
+  // If CONDITIONS enum is prioritiwise ordered, then the last matching condition will be returned
+};
+
 /**
  * @description This function cleans out the IMD data and adds visual crossing as a fallback
  * in case the data is absent
@@ -114,9 +172,59 @@ export const calculateWeatherConditions = (
  * 2. Min Temp - Get from IMD -
  * 3. Forecast - Get from IMD -
  */
-const sanitizeIMDWeather = (data) => {
-  const { sevenDay, visualCrossing } = data;
-  // extract fields of relevance from this data.
+export const sanitizeIMDWeather = (data: {
+  imd: IMDCityWeatherAPIObject;
+  visualCrossing: VisualCrossingCurrentConditionsObject;
+}): SanitizedIMDWeather => {
+  const { imd, visualCrossing } = data;
+  // extract fields of relevance from visual crossing.
+  const sanitizedWeatherInfo: SanitizedIMDWeather = {
+    general: {
+      station: imd.Station_Name,
+      date: imd.Date,
+    },
+    current: {
+      temp: visualCrossing.temp,
+      cloudCover: visualCrossing.cloudcover,
+      humidity: imd.Relative_Humidity_at_0830,
+      windSpeed: visualCrossing.windspeed,
+      windDirection: visualCrossing.winddir,
+      conditions: imd.Todays_Forecast,
+    },
+    future: parseIMDFutureItems(imd),
+  };
+
+  return sanitizedWeatherInfo;
+};
+
+/**
+ * @description This function takes in the IMD `cityweather_loc` API input and parse it for future information
+ * @param station
+ * @returns
+ */
+export const parseIMDFutureItems = (
+  station: IMDCityWeatherAPIObject,
+): ReadonlyArray<IMDFutureWeatherDetails> => {
+  const baseDate = station.Date;
+  const items = [];
+  for (let dayOffset = 2; dayOffset <= 7; dayOffset++) {
+    const dayKeyMax = `Day_${dayOffset}_Max_Temp`;
+    const dayKeyMin = `Day_${dayOffset}_Min_temp`;
+    const dayKeyForecast = `Day_${dayOffset}_Forecast`;
+
+    if (station[dayKeyMax] && station[dayKeyMin] && station[dayKeyForecast]) {
+      const newDate = calculateDate(baseDate, dayOffset - 1);
+      const conditions = deduceWeatherCondition(station[dayKeyForecast]);
+      items.push({
+        date: newDate,
+        conditions,
+        temp_max: station[dayKeyMax],
+        temp_min: station[dayKeyMin],
+      });
+    }
+  }
+
+  return items;
 };
 
 export const getDistanceFromLatLonInKm = (lat1, lon1, lat2, lon2) => {
@@ -136,4 +244,23 @@ export const getDistanceFromLatLonInKm = (lat1, lon1, lat2, lon2) => {
 
 const deg2rad = (deg) => {
   return deg * (Math.PI / 180);
+};
+
+export const getParsedDate = (date) => {
+  const dateRegexes = [
+    /^\d{2}-\d{2}-\d{4}$/, // dd-mm-yyyy
+    /^\d{2}\/\d{2}\/\d{4}$/, // dd/mm/yyyy
+    /^\d{4}-\d{2}-\d{2}$/, // yyyy-mm-dd
+    /^\d{4}\/\d{2}\/\d{2}$/, // yyyy/mm/dd
+  ];
+
+  if (dateRegexes[0].test(date)) {
+    return parse(date, 'dd-mm-yyyy', new Date());
+  } else if (dateRegexes[1].test(date)) {
+    return parse(date, 'dd/mm/yyyy', new Date());
+  } else if (dateRegexes[2].test(date)) {
+    return parse(date, 'yyyy-mm-dd', new Date());
+  } else if (dateRegexes[3].test(date)) {
+    return parse(date, 'yyyy/mm/dd', new Date());
+  }
 };
