@@ -343,6 +343,11 @@
     "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/GUAVA.jpeg",
     "hi": "अमरूद",
     "or": "ପିଜୁଳି"
+    },
+  "sericulture": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/sericulture.jpg",
+    "hi": "रेशम उत्पादन",
+    "or": "ରେଶମ ପୋଷଣ"
   },
   "hen": {
     "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/HEN.jpeg",
