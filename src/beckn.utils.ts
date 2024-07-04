@@ -6,7 +6,7 @@ import {
   getParsedDate,
   getWindDirection,
 } from './app.utils';
-import { format, parse } from 'date-fns';
+import { format } from 'date-fns';
 import {
   IMDFutureWeatherDetails,
   SanitizedIMDWeather,
@@ -129,21 +129,23 @@ export const mapIMDItems = (sanitizedIMDData: SanitizedIMDWeather) => {
 export const mapAdvisoryData = (upcarData, provider) => {
   const items = [];
   // map general advisory
-  items.push({
-    category_ids: ['general_advisory'],
-    code: 'general',
-    descriptor: {
-      name: 'General Crop Advisory',
-      long_desc: upcarData.general_advisory,
-      images: [
-        {
-          url: CROP_IMAGES['general_advisory']
-            ? CROP_IMAGES['general_advisory']
-            : CROP_IMAGES['wheat'],
-        },
-      ],
-    },
-  });
+  if (upcarData.general_advisory) {
+    items.push({
+      category_ids: ['general_advisory'],
+      code: 'general',
+      descriptor: {
+        name: 'General Crop Advisory',
+        long_desc: upcarData.general_advisory,
+        images: [
+          {
+            url: CROP_IMAGES['general_advisory']
+              ? CROP_IMAGES['general_advisory']
+              : CROP_IMAGES['wheat'],
+          },
+        ],
+      },
+    });
+  }
   // map crop specific stuff
   Object.keys(upcarData.crops_data).forEach((key) => {
     items.push({
