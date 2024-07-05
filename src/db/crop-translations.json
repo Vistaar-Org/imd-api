@@ -354,17 +354,17 @@
     "hi": "मुर्गी",
     "or": "କୁକୁଡ଼"
   },
-  "Fisheries": {
+  "fisheries": {
     "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/fish.jpeg",
     "hi": "मत्स्य पालन",
     "or": "ମାଛ ଚାଷ"
       },
-  "Animal Husbandry": {
+  "animal husbandry": {
     "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/cow.jpg",
     "hi": "पशुपालन",
     "or": "ପଶୁପାଳନ"
           },
-  "Forestry": {
+  "forestry": {
     "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/General advisory.webp",
     "hi": "वानिकी",
     "or": "ବନ"
