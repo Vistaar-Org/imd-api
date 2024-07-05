@@ -63,11 +63,7 @@ export const sanitizeLatLong = (lat: string, long: string) => {
   };
 };
 
-export const getStationId = (
-  lat: string,
-  long: string,
-  dist: number,
-): string => {
+export const getStationId = (lat: string, long: string): string => {
   const map = JSON.parse(
     fs.readFileSync(path.join(__dirname + '/db/base.json'), {
       encoding: 'utf-8',

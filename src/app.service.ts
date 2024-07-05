@@ -7,9 +7,9 @@ import {
 import { ConfigService } from '@nestjs/config';
 import { CROP_MAPPINGS, getStationId, sanitizeIMDWeather } from './app.utils';
 import { mapIMDItems, mapAdvisoryData, mapOUATWeather } from './beckn.utils';
-import { firstValueFrom } from 'rxjs';
 import { generateContext } from './beckn.utils';
 import { PROVIDERS } from './constants/enums';
+import { IMD_CITY_WEATHER_INFO } from './app.constants';
 
 @Injectable()
 export class AppService {
@@ -64,26 +64,20 @@ export class AppService {
 
   private async getWeatherFromIMD(lat: string, long: string) {
     try {
-      const dist = this.configService.get<number>('IMD_MIN_STATION_DISTANCE');
-      const stationId = getStationId(lat, long, dist);
+      // const dist = this.configService.get<number>('IMD_MIN_STATION_DISTANCE');
+      const stationId = getStationId(lat, long);
       if (!stationId) {
         throw new InternalServerErrorException(
           'No IMD weather station found for the sent coordinates.',
         );
       }
-      const baseURL = this.configService.get<string>('IMD_BASE_URL');
-      const urls = [
-        `${baseURL}/api/cityweather_loc.php?id=${stationId}`,
+
+      const forecastData = IMD_CITY_WEATHER_INFO;
+      const visualCrossing = await this.httpService.axiosRef.get(
         `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${long}?unitGroup=metric&key=UFQNJT8FL927DT7HNQME9HWSL&contentType=json`,
-      ];
-
-      const apiCalls = urls.map((url: string) => {
-        return firstValueFrom(this.httpService.get(url));
-      });
-
-      const [forecastData, visualCrossing] = await Promise.all(apiCalls);
+      );
       return {
-        imd: forecastData.data[0],
+        imd: forecastData,
         visualCrossing: visualCrossing.data.currentConditions,
       };
     } catch (err) {
