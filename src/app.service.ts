@@ -54,11 +54,21 @@ export class AppService {
       ouatData.data['district'] = district;
       return ouatData.data;
     } else {
-      const ouatData = await this.httpService.axiosRef.get(
+      const urls = [
         ouatBaseURL + `/latest/${district}.json`,
-      );
-      ouatData.data['district'] = district;
-      return ouatData.data;
+        ouatBaseURL + `/latest/odia/${district}.json`,
+      ];
+      const apiCalls = urls.map((url: string) => {
+        return firstValueFrom(this.httpService.get(url));
+      });
+
+      const [englishData, odiaData] = await Promise.all(apiCalls);
+      // const ouatData = await this.httpService.axiosRef.get(
+      //   ouatBaseURL + `/latest/${district}.json`,
+      // );
+      englishData.data['district'] = district;
+      odiaData.data['district'] = district;
+      return { englishData: englishData.data, odiaData: odiaData.data };
     }
   }
 
@@ -168,9 +178,22 @@ export class AppService {
             `OUAT API is failing with the following error: ${ouatData['ERROR']}`,
           );
         }
-
-        ouatWeatherItems = mapOUATWeather(ouatData);
-        ouatAdvisoryItems = mapAdvisoryData(ouatData, 'ouat');
+        const englishData = ouatData.englishData;
+        const odiaData = ouatData.odiaData;
+        ouatWeatherItems = mapOUATWeather(englishData);
+        ouatAdvisoryItems = mapAdvisoryData(englishData, 'ouat');
+        const ouatAdvisoryOdiaItems = mapAdvisoryData(odiaData, 'ouat');
+        const odiaItems = ouatAdvisoryOdiaItems.items.map((item) => {
+          if (CROP_MAPPINGS[item.code]) {
+            item.descriptor.name = CROP_MAPPINGS[item.code].or;
+          }
+          item.category_ids.push('or_translated');
+          return item;
+        });
+        ouatAdvisoryItems.items.push(...odiaItems);
+        ouatAdvisoryItems.categories.push({
+          id: 'or_translated',
+        });
       } catch (err) {
         ouatData = undefined;
         console.log(err);
