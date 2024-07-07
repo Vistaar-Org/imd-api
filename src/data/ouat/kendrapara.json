@@ -1,93 +1,93 @@
 {
-   "weather_details": {
-      "03/07/2024": {
-         "rainfall": 4,
-         "t_max": 32,
-         "t_min": 25,
-         "rh_max": 65,
-         "rh_min": 50,
-         "wind_speed": 22,
-         "wind_direction": 249,
-         "cloud_cover": 8
-      },
-      "04/07/2024": {
-         "rainfall": 5,
-         "t_max": 33,
-         "t_min": 25,
-         "rh_max": 70,
-         "rh_min": 48,
-         "wind_speed": 18,
-         "wind_direction": 204,
-         "cloud_cover": 7
-      },
-      "05/07/2024": {
-         "rainfall": 5,
-         "t_max": 35,
-         "t_min": 26,
-         "rh_max": 71,
-         "rh_min": 51,
-         "wind_speed": 21,
-         "wind_direction": 204,
-         "cloud_cover": 7
-      },
-      "06/07/2024": {
-         "rainfall": 5,
-         "t_max": 35,
-         "t_min": 26,
-         "rh_max": 73,
-         "rh_min": 47,
-         "wind_speed": 16,
-         "wind_direction": 202,
-         "cloud_cover": 7
-      },
-      "07/07/2024": {
-         "rainfall": 5,
-         "t_max": 33,
-         "t_min": 26,
-         "rh_max": 73,
-         "rh_min": 49,
-         "wind_speed": 18,
-         "wind_direction": 208,
-         "cloud_cover": 7
-      }
-   },
-   "names_of_crops": [
-      "pulses",
-      "maize",
-      "vegetables",
-      "groundnut",
-      "fishery"
-   ],
-   "general_advisory": "Make provisions for drainage, harvest vegetables and fruit, repair water harvesting structures, use certified seeds for paddy, incorporate dhaincha green manuring crop, do not apply fertilizer & pesticides until clear weather.",
-   "crops_data": {
-      "pulses": {
-         "advisory": [
-            "Don’t keep standing water in paddy nursery."
-         ]
-      },
-      "maize": {
-         "advisory": [
-            "Seed rate for maize is 6-7kg/acre.",
-            "To avoid the infestation of Fall Army Worm, treat seeds with Cyantraniliprole19.8%+ Thiamethoxam 19.8% FS.",
-            "Keep row to row spacing at 60 cm and plant to plant at 20 cm."
-         ]
-      },
-      "vegetables": {
-         "advisory": [
-            "Harvest vegetables."
-         ]
-      },
-      "groundnut": {
-         "advisory": [
-            "Apply pre-emergence herbicide Oxyfluorfen 23.5 % EC.",
-            "Treat seeds with recommended species of Rhizobium bacterial culture."
-         ]
-      },
-      "fishery": {
-         "advisory": [
-            "Carp such as Rohu, Catla and Mrigal should be stocked in a certain ratio of 4:3:3."
-         ]
-      }
-   },
-   "date": ""
+  "weather_details": {
+    "03/07/2024": {
+      "rainfall": 4,
+      "t_max": 32,
+      "t_min": 25,
+      "rh_max": 65,
+      "rh_min": 50,
+      "wind_speed": 22,
+      "wind_direction": 249,
+      "cloud_cover": 8
+    },
+    "04/07/2024": {
+      "rainfall": 5,
+      "t_max": 33,
+      "t_min": 25,
+      "rh_max": 70,
+      "rh_min": 48,
+      "wind_speed": 18,
+      "wind_direction": 204,
+      "cloud_cover": 7
+    },
+    "05/07/2024": {
+      "rainfall": 5,
+      "t_max": 35,
+      "t_min": 26,
+      "rh_max": 71,
+      "rh_min": 51,
+      "wind_speed": 21,
+      "wind_direction": 204,
+      "cloud_cover": 7
+    },
+    "06/07/2024": {
+      "rainfall": 5,
+      "t_max": 35,
+      "t_min": 26,
+      "rh_max": 73,
+      "rh_min": 47,
+      "wind_speed": 16,
+      "wind_direction": 202,
+      "cloud_cover": 7
+    },
+    "07/07/2024": {
+      "rainfall": 5,
+      "t_max": 33,
+      "t_min": 26,
+      "rh_max": 73,
+      "rh_min": 49,
+      "wind_speed": 18,
+      "wind_direction": 208,
+      "cloud_cover": 7
+    }
+  },
+  "names_of_crops": [
+    "pulses",
+    "maize",
+    "vegetables",
+    "groundnut",
+    "fishery"
+  ],
+  "general_advisory": "Make provisions for drainage, harvest vegetables and fruit, repair water harvesting structures, use certified seeds for paddy, incorporate dhaincha green manuring crop, do not apply fertilizer & pesticides until clear weather.",
+  "crops_data": {
+    "pulses": {
+      "advisory": [
+        "Don’t keep standing water in paddy nursery."
+      ]
+    },
+    "maize": {
+      "advisory": [
+        "Seed rate for maize is 6-7kg/acre.",
+        "To avoid the infestation of Fall Army Worm, treat seeds with Cyantraniliprole19.8%+ Thiamethoxam 19.8% FS.",
+        "Keep row to row spacing at 60 cm and plant to plant at 20 cm."
+      ]
+    },
+    "vegetables": {
+      "advisory": [
+        "Harvest vegetables."
+      ]
+    },
+    "groundnut": {
+      "advisory": [
+        "Apply pre-emergence herbicide Oxyfluorfen 23.5 % EC.",
+        "Treat seeds with recommended species of Rhizobium bacterial culture."
+      ]
+    },
+    "fishery": {
+      "advisory": [
+        "Carp such as Rohu, Catla and Mrigal should be stocked in a certain ratio of 4:3:3."
+      ]
+    }
+  },
+  "date": ""
 }
