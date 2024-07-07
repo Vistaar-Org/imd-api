@@ -129,7 +129,7 @@ export const mapIMDItems = (sanitizedIMDData: SanitizedIMDWeather) => {
 export const mapAdvisoryData = (upcarData, provider) => {
   const items = [];
   // map general advisory
-  if (upcarData.general_advisory) {
+  if (upcarData?.general_advisory) {
     items.push({
       category_ids: ['general_advisory'],
       code: 'general',
