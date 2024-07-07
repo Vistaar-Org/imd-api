@@ -3,7 +3,7 @@ import {
   odishaDistricts,
   uttarPradeshDistricts,
   rajasthanDistricts,
-} from 'src/constants/coordinates';
+} from '../constants/coordinates';
 
 const hitUpTheURLs = async (coordinates) => {
   try {
@@ -19,6 +19,12 @@ const hitUpTheURLs = async (coordinates) => {
   }
 };
 
-[odishaDistricts, uttarPradeshDistricts, rajasthanDistricts].forEach(
-  async (_) => await hitUpTheURLs(_),
-);
+(async () => {
+  const promises = [
+    odishaDistricts,
+    uttarPradeshDistricts,
+    rajasthanDistricts,
+  ].map((_) => hitUpTheURLs(_));
+
+  await Promise.all(promises);
+})();

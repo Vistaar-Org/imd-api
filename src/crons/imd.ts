@@ -12,8 +12,8 @@ const parseData = (data) => {
 };
 
 (async () => {
-  // fetch IMD weather forecast
   try {
+    // fetch IMD weather forecast
     const url = `https://city-imd-gov.uat.bhasai.samagra.io/api/cityweather_loc.php`;
     const response = await axios.get(url);
     // parse respone and convert array to object
