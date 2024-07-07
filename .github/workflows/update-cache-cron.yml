@@ -1,4 +1,4 @@
-name: Download IMD Forecast
+name: Hit IMD_API for RJ, UP and OR
 
 on:
   push:

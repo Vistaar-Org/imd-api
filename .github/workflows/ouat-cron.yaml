@@ -1,4 +1,4 @@
-name: Download IMD Forecast
+name: Download OUAT Forecast
 
 on:
   push:
