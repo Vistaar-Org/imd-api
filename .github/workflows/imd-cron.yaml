@@ -1,15 +1,12 @@
-name: Run Python Script
+name: Download IMD Forecast
 
 on:
-  push:
-    branches:
-      - dev
   workflow_dispatch:
   schedule:
-    - cron: '0 */2 * * *' # Runs every 10 days
+    - cron: '0 */2 * * *' # Runs every 2 hours
 
 jobs:
-  run:
+  download-and-commit:
     runs-on: ubuntu-latest
 
     steps:
