@@ -1,6 +1,9 @@
 name: Download IMD Forecast
 
 on:
+  push:
+    branches:
+      - dev
   workflow_dispatch:
   schedule:
     - cron: '0 */2 * * *' # Runs every 2 hours
@@ -15,6 +18,9 @@ jobs:
 
       - name: Use Node.js 
         uses: actions/setup-node@v4
+
+      - name: Install Dependencies
+        run: yarn
 
       - name: Run the script
         run: npx ts-node src/crons/imd.ts
