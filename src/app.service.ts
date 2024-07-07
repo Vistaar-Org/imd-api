@@ -12,10 +12,12 @@ import { mapIMDItems, mapAdvisoryData, mapOUATWeather } from './beckn.utils';
 import { generateContext } from './beckn.utils';
 import { PROVIDERS } from './constants/enums';
 import { IMD_CITY_WEATHER_INFO } from './app.constants';
+import { ODISHA_DISTRICTS } from './constants/odisha-districts';
 
 @Injectable()
 export class AppService {
   private readonly logger: Logger;
+
   constructor(
     private readonly configService: ConfigService,
     private readonly httpService: HttpService,
@@ -27,55 +29,66 @@ export class AppService {
     return 'Hello World!';
   }
 
-  private async getDataFromOUAT(lat: string, long: string) {
-    let startTime = performance.now();
-    const geoIPBaseURL = this.configService.get<string>('GEOIP_BASE_URL');
-    const locData = await this.httpService.axiosRef.get(
-      geoIPBaseURL + `/georev?lat=${lat}&lon=${long}`,
-    );
-    let endTime = performance.now();
-    this.logger.verbose(
-      `Time taken to fetch georev from geoquery: ${endTime - startTime}`,
+  private async readMultipleJSONs(filePaths: ReadonlyArray<string>) {
+    const asynFileSystem = fs.promises;
+    const promises = filePaths.map((filePath) =>
+      asynFileSystem
+        .readFile(path.join(__dirname, `/data/${filePath}`), {
+          encoding: 'utf-8',
+        })
+        .then(JSON.parse),
     );
 
-    // figure out district
-    const district =
-      locData.data.state !== 'ODISHA'
-        ? 'khordha'
-        : locData.data.district.toLowerCase();
+    return await Promise.all(promises);
+  }
+
+  private async getDataFromOUAT(district: string) {
+    district = !ODISHA_DISTRICTS.includes(district.toLowerCase())
+      ? 'khordha'
+      : district.toLowerCase();
 
     // fetching data from OUAT
-    startTime = performance.now();
-    const ouatData = JSON.parse(
-      fs.readFileSync(
-        path.join(__dirname, `data/ouat/latest/${district}.json`),
-        {
-          encoding: 'utf-8',
-        },
-      ),
-    );
-    endTime = performance.now();
+    const startTime = performance.now();
+    const filePaths = [`ouat/${district}.json`, `ouat/odia/${district}.json`];
+    const [englishData, odiaData]: any[] =
+      await this.readMultipleJSONs(filePaths);
+    const endTime = performance.now();
     this.logger.verbose(
       `Time taken to read OUAT data JSON: ${endTime - startTime}`,
     );
-    ouatData.data['district'] = district;
-    return ouatData.data;
+    englishData['district'] = odiaData['district'] = district;
+    return { englishData, odiaData };
   }
 
   private async getWeatherFromIMD(lat: string, long: string) {
     try {
       // const dist = this.configService.get<number>('IMD_MIN_STATION_DISTANCE');
+      let startTime = performance.now();
       const stationId = getStationId(lat, long);
+      let endTime = performance.now();
+      this.logger.verbose(
+        `Time taken to get stationId from lat long: ${endTime - startTime}`,
+      );
       if (!stationId) {
         throw new InternalServerErrorException(
           'No IMD weather station found for the sent coordinates.',
         );
       }
-
-      const forecastData = IMD_CITY_WEATHER_INFO;
+      startTime = performance.now();
+      const forecastData = IMD_CITY_WEATHER_INFO[stationId];
+      endTime = performance.now();
+      this.logger.verbose(
+        `Time taken to get IMD data from JSON: ${endTime - startTime}`,
+      );
+      startTime = performance.now();
       const visualCrossing = await this.httpService.axiosRef.get(
         `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${long}?unitGroup=metric&key=UFQNJT8FL927DT7HNQME9HWSL&contentType=json`,
       );
+      endTime = performance.now();
+      this.logger.verbose(
+        `Time taken to get visual crossing data: ${endTime - startTime}`,
+      );
+
       return {
         imd: forecastData,
         visualCrossing: visualCrossing.data.currentConditions,
@@ -86,34 +99,26 @@ export class AppService {
   }
 
   async getAdvisoryFromUpcar() {
-    const upcarBaseURL = this.configService.get<string>('UPCAR_BASE_URL');
-
     try {
-      const upcarData = await this.httpService.axiosRef.get(
-        upcarBaseURL + '/latest.json',
+      const startTime = performance.now();
+      const filePaths = ['upcar/latest.json', 'upcar/latest_hindi.json'];
+      const [englishData, hindiData] = await this.readMultipleJSONs(filePaths);
+      const endTime = performance.now();
+      this.logger.verbose(
+        `Time taken to get upcar data: ${endTime - startTime}`,
       );
-
-      return upcarData.data;
+      return { englishData, hindiData };
     } catch (err) {
       this.logger.error('Error while fetching advisory data from UPCAR', err);
     }
   }
 
-  async getHindiAdvisoryFromUpcar() {
-    const upcarBaseURL = this.configService.get<string>('UPCAR_BASE_URL');
-
-    try {
-      const upcarData = await this.httpService.axiosRef.get(
-        upcarBaseURL + '/latest_hindi.json',
-      );
-
-      return upcarData.data;
-    } catch (err) {
-      this.logger.error('Error while fetching advisory data from UPCAR', err);
-    }
-  }
-
-  async getWeather(lat: string, long: string, provider: string) {
+  async getWeather(
+    lat: string,
+    long: string,
+    district: string,
+    provider?: string,
+  ) {
     if (!provider) provider = PROVIDERS.UPCAR;
     let imdItems = undefined,
       upcarItems = undefined,
@@ -121,21 +126,31 @@ export class AppService {
       ouatAdvisoryItems = undefined;
     // IMD Data
     try {
+      let startTime = performance.now();
       const imdData = await this.getWeatherFromIMD(lat, long);
+      let endTime = performance.now();
+      this.logger.verbose(
+        `Time taken to get weather data from IMD: ${endTime - startTime}`,
+      );
+      startTime = performance.now();
       const sanitizedIMDData = sanitizeIMDWeather(imdData);
+      endTime = performance.now();
+      this.logger.verbose(
+        `Time taken to sanitize IMD data: ${endTime - startTime}`,
+      );
       // console.log('imdData: ', imdData);
       imdItems = mapIMDItems(sanitizedIMDData);
     } catch (err) {
+      console.error(err);
       this.logger.error('Error fetching weather data from IMD', err);
     }
 
     // upcar data
     if (provider === PROVIDERS.UPCAR) {
       try {
-        const upcarData = await this.getAdvisoryFromUpcar();
-        upcarItems = mapAdvisoryData(upcarData, 'upcar');
-        const upcarHindiData = await this.getHindiAdvisoryFromUpcar();
-        const upcarHindiProvider = mapAdvisoryData(upcarHindiData, 'upcar');
+        const { englishData, hindiData } = await this.getAdvisoryFromUpcar();
+        upcarItems = mapAdvisoryData(englishData, 'upcar');
+        const upcarHindiProvider = mapAdvisoryData(hindiData, 'upcar');
         const hindiItems = upcarHindiProvider.items.map((item) => {
           if (CROP_MAPPINGS[item.code]) {
             item.descriptor.name = CROP_MAPPINGS[item.code].hi;
@@ -156,15 +171,28 @@ export class AppService {
     if (provider === PROVIDERS.OUAT) {
       // OUAT Data
       try {
-        ouatData = await this.getDataFromOUAT(lat, long);
+        ouatData = await this.getDataFromOUAT(district);
         if (ouatData['ERROR']) {
           throw new InternalServerErrorException(
             `OUAT API is failing with the following error: ${ouatData['ERROR']}`,
           );
         }
-
-        ouatWeatherItems = mapOUATWeather(ouatData);
-        ouatAdvisoryItems = mapAdvisoryData(ouatData, 'ouat');
+        const englishData = ouatData.englishData;
+        const odiaData = ouatData.odiaData;
+        ouatWeatherItems = mapOUATWeather(englishData);
+        ouatAdvisoryItems = mapAdvisoryData(englishData, 'ouat');
+        const ouatAdvisoryOdiaItems = mapAdvisoryData(odiaData, 'ouat');
+        const odiaItems = ouatAdvisoryOdiaItems.items.map((item) => {
+          if (CROP_MAPPINGS[item.code]) {
+            item.descriptor.name = CROP_MAPPINGS[item.code].or;
+          }
+          item.category_ids.push('or_translated');
+          return item;
+        });
+        ouatAdvisoryItems.items.push(...odiaItems);
+        ouatAdvisoryItems.categories.push({
+          id: 'or_translated',
+        });
       } catch (err) {
         ouatData = undefined;
         console.log(err);

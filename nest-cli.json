@@ -10,7 +10,7 @@
         "outDir": "dist"
       },
       {
-        "include": "data/*",
+        "include": "data/**/*",
         "outDir": "dist"
       },
       {
