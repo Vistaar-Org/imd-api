@@ -56,3 +56,16 @@ jobs:
           cache-to: type=gha,mode=max
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+  trigger-deploy:
+    needs: build-and-push
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Trigger Deploy Service Workflow
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        curl -X POST -H "Accept: application/vnd.github.v3+json" \
+        -H "Authorization: token $GITHUB_TOKEN" \
+        https://api.github.com/repos/Vistaar-Org/devops/actions/workflows/deploy.yaml/dispatches \
+        -d '{"ref":"main","inputs":{"environment":"dev","services":"imd_api"}}'
