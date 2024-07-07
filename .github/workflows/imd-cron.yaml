@@ -1,0 +1,28 @@
+name: Run Python Script
+
+on:
+  push:
+    branches:
+      - dev
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */2 * * *' # Runs every 10 days
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4.1.7
+
+      - name: Use Node.js 
+        uses: actions/setup-node@v4
+
+      - name: Run the script
+        run: npx ts-node src/crons/imd.ts
+
+      - name: Commit and Push
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore: update imd JSON'
