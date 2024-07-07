@@ -5,6 +5,8 @@ import {
   Logger,
 } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
+import * as fs from 'fs';
+import * as path from 'path';
 import { CROP_MAPPINGS, getStationId, sanitizeIMDWeather } from './app.utils';
 import { mapIMDItems, mapAdvisoryData, mapOUATWeather } from './beckn.utils';
 import { generateContext } from './beckn.utils';
@@ -26,16 +28,16 @@ export class AppService {
   }
 
   private async getDataFromOUAT(lat: string, long: string) {
+    let startTime = performance.now();
     const geoIPBaseURL = this.configService.get<string>('GEOIP_BASE_URL');
     const locData = await this.httpService.axiosRef.get(
       geoIPBaseURL + `/georev?lat=${lat}&lon=${long}`,
     );
+    let endTime = performance.now();
+    this.logger.verbose(
+      `Time taken to fetch georev from geoquery: ${endTime - startTime}`,
+    );
 
-    // if (locData.data.state !== 'ODISHA') {
-    //   throw new InternalServerErrorException(
-    //     'We only OUAT data only for the state of ODISHA right now.',
-    //   );
-    // }
     // figure out district
     const district =
       locData.data.state !== 'ODISHA'
@@ -43,23 +45,21 @@ export class AppService {
         : locData.data.district.toLowerCase();
 
     // fetching data from OUAT
-    const ouatBaseURL = this.configService.get<string>('OUAT_BASE_URL');
-    const enableOld = this.configService.get<string>('OUAT_ENABLE_OLD');
-
-    if (enableOld.trim() == 'true') {
-      const ouatData = await this.httpService.axiosRef.get(
-        ouatBaseURL + `/history/31-05-2024_${district}.json`,
-      );
-
-      ouatData.data['district'] = district;
-      return ouatData.data;
-    } else {
-      const ouatData = await this.httpService.axiosRef.get(
-        ouatBaseURL + `/latest/${district}.json`,
-      );
-      ouatData.data['district'] = district;
-      return ouatData.data;
-    }
+    startTime = performance.now();
+    const ouatData = JSON.parse(
+      fs.readFileSync(
+        path.join(__dirname, `data/ouat/latest/${district}.json`),
+        {
+          encoding: 'utf-8',
+        },
+      ),
+    );
+    endTime = performance.now();
+    this.logger.verbose(
+      `Time taken to read OUAT data JSON: ${endTime - startTime}`,
+    );
+    ouatData.data['district'] = district;
+    return ouatData.data;
   }
 
   private async getWeatherFromIMD(lat: string, long: string) {

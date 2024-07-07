@@ -6,7 +6,7 @@ import { sanitizeLatLong } from './app.utils';
 export class AppController {
   private readonly logger: Logger;
   constructor(private readonly appService: AppService) {
-    this.logger = new Logger();
+    this.logger = new Logger(AppController.name);
   }
 
   @Get()

@@ -10,7 +10,7 @@
         "outDir": "dist"
       },
       {
-        "include": "imd/*",
+        "include": "data/*",
         "outDir": "dist"
       },
       {

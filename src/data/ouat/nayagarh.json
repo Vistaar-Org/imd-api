@@ -1,0 +1,108 @@
+{
+   "weather_details": {
+      "03/04/2024": {
+         "rainfall": 0,
+         "t_max": 41,
+         "t_min": 26,
+         "rh_max": 46,
+         "rh_min": 11,
+         "wind_speed": 8,
+         "wind_direction": 288,
+         "cloud_cover": 0
+      },
+      "04/04/2024": {
+         "rainfall": 0,
+         "t_max": 41,
+         "t_min": 26,
+         "rh_max": 63,
+         "rh_min": 10,
+         "wind_speed": 7,
+         "wind_direction": 198,
+         "cloud_cover": 1
+      },
+      "05/04/2024": {
+         "rainfall": 0,
+         "t_max": 42,
+         "t_min": 27,
+         "rh_max": 53,
+         "rh_min": 16,
+         "wind_speed": 9,
+         "wind_direction": 207,
+         "cloud_cover": 1
+      },
+      "06/04/2024": {
+         "rainfall": 0,
+         "t_max": 42,
+         "t_min": 27,
+         "rh_max": 51,
+         "rh_min": 12,
+         "wind_speed": 9,
+         "wind_direction": 165,
+         "cloud_cover": 1
+      },
+      "07/04/2024": {
+         "rainfall": 0,
+         "t_max": 42,
+         "t_min": 27,
+         "rh_max": 35,
+         "rh_min": 8,
+         "wind_speed": 10,
+         "wind_direction": 202,
+         "cloud_cover": 2
+      }
+   },
+   "names_of_crops": [
+      "paddy",
+      "sugarcane",
+      "maize",
+      "tomato",
+      "brinjal",
+      "coconut",
+      "vegetables",
+      "ponds"
+   ],
+   "general_advisory": "In paddy crop, Panicle initiation, Panicle emergence, flowering and milking stages are critical stages. Water scarcity should be avoided. Cover the rows with dry leaves in Sugarcane. Apply sprinkler irrigation in maize crop. Spread polythene in irrigation channels. Apply Streptocyclin in tomato and brinjal.",
+   "crops_data": {
+      "paddy": {
+         "advisory": [
+            "Panicle initiation, Panicle emergence, flowering and milking stages are critical. Avoid water scarcity."
+         ]
+      },
+      "sugarcane": {
+         "advisory": [
+            "Irrigate frequently during hot months. Cut attacked shoots. Apply Fipronil 0.3% GR at first earthing up."
+         ]
+      },
+      "maize": {
+         "advisory": [
+            "High temperature increases water requirement. Irrigate timely and avoid stagnant water."
+         ]
+      },
+      "tomato": {
+         "advisory": [
+            "Apply 1g Streptocyclin in root zone to prevent wilting."
+         ]
+      },
+      "brinjal": {
+         "advisory": [
+            "Install pheromone traps. Spray neem-based pesticide. Go for chemical control if required."
+         ]
+      },
+      "coconut": {
+         "advisory": [
+            "Mulch coconut leaves around the tree to reduce water loss."
+         ]
+      },
+      "vegetables": {
+         "advisory": [
+            "Cover newly planted seedlings during the day."
+         ]
+      },
+      "ponds": {
+         "advisory": [
+            "Harvest fingerlings if water temperature rises. Ensure sufficient water depth."
+         ]
+      }
+   },
+   "date": "02-04-2024"
+}
