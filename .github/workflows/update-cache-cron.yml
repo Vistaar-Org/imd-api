@@ -1,31 +1,31 @@
-name: Hit IMD_API for RJ, UP and OR
+# name: Hit IMD_API for RJ, UP and OR
 
-on:
-  push:
-    branches:
-      - dev
-  workflow_dispatch:
-  schedule:
-    - cron: '0 */1 * * *' # Runs every 2 hours
+# on:
+#   push:
+#     branches:
+#       - dev
+#   workflow_dispatch:
+#   schedule:
+#     - cron: '0 */1 * * *' # Runs every 2 hours
 
-jobs:
-  download-and-commit:
-    runs-on: ubuntu-latest
+# jobs:
+#   download-and-commit:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4.1.7
+#     steps:
+#       - name: Checkout Repository
+#         uses: actions/checkout@v4.1.7
 
-      - name: Use Node.js 
-        uses: actions/setup-node@v4
+#       - name: Use Node.js 
+#         uses: actions/setup-node@v4
 
-      - name: Install Dependencies
-        run: yarn
+#       - name: Install Dependencies
+#         run: yarn
 
-      - name: Run the script
-        run: npx ts-node src/crons/cache.ts
+#       - name: Run the script
+#         run: npx ts-node src/crons/cache.ts
 
-      - name: Commit and Push
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: 'chore: update upcar JSON'
+#       - name: Commit and Push
+#         uses: stefanzweifel/git-auto-commit-action@v5
+#         with:
+#           commit_message: 'chore: update upcar JSON'
