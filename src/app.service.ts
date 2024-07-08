@@ -82,7 +82,7 @@ export class AppService {
       );
       startTime = performance.now();
       const visualCrossing = await this.httpService.axiosRef.get(
-        `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${long}?unitGroup=metric&key=UFQNJT8FL927DT7HNQME9HWSL&contentType=json`,
+        `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${long}?unitGroup=metric&key=BD7YU52NGHX9EDTQTYQ66DLSD&contentType=json`,
       );
       endTime = performance.now();
       this.logger.verbose(
