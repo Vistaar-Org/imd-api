@@ -36,7 +36,12 @@ export class AppController {
     @Body() body: any,
   ) {
     const { district } = body;
-    const res = await this.cacheManager.get(district);
+    if (!provider) {
+      provider = 'upcar';
+    }
+    const res = await this.cacheManager.get(
+      `${district.toLowerCase()}-${provider.toLowerCase()}`,
+    );
 
     if (res) {
       return res;
@@ -62,7 +67,11 @@ export class AppController {
     );
 
     // set the cache to invalidate at 1hrs
-    await this.cacheManager.set(district, result, 1000 * 60 * 60);
+    await this.cacheManager.set(
+      `${district.toLowerCase()}-${provider.toLowerCase()}`,
+      result,
+      1000 * 60 * 60,
+    );
     return result;
   }
 }
