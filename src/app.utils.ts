@@ -182,7 +182,7 @@ export const sanitizeIMDWeather = (data: {
     current: {
       temp: visualCrossing.temp,
       cloudCover: visualCrossing.cloudcover,
-      humidity: imd.Relative_Humidity_at_0830,
+      humidity: visualCrossing.humidity.toString(), //imd.Relative_Humidity_at_0830,
       windSpeed: visualCrossing.windspeed,
       windDirection: visualCrossing.winddir,
       conditions: imd.Todays_Forecast,
