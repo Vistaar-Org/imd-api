@@ -119,20 +119,20 @@
     "hi": "मूंग",
     "or": "ମୁଗ"
   },
-  "masoor": {
+  "pulses": {
     "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Masoor.jpeg",
-    "hi": "मसूर",
-    "or": "ମସୁର"
+    "hi": "दालें",
+    "or": "ଡାଲି"
   },
   "peas": {
     "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Peas.jpeg",
     "hi": "मटर",
     "or": "ମଟର"
   },
-  "fish": {
+  "fishery": {
     "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/fish.jpeg",
-    "hi": "मछली",
-    "or": "ମତ୍ସ୍ଯ"
+    "hi": "मत्स्य पालन",
+    "or": "ମାଛ ଚାଷ"
   },
   "maize": {
     "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/MAIZE.jpeg",
