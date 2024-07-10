@@ -176,8 +176,8 @@ export const sanitizeIMDWeather = (data: {
   // extract fields of relevance from visual crossing.
   const sanitizedWeatherInfo: SanitizedIMDWeather = {
     general: {
-      station: imd.Station_Name,
-      date: imd.Date,
+      station: imd?.Station_Name,
+      date: imd?.Date,
     },
     current: {
       temp: visualCrossing.temp,
@@ -185,7 +185,7 @@ export const sanitizeIMDWeather = (data: {
       humidity: visualCrossing.humidity.toString(), //imd.Relative_Humidity_at_0830,
       windSpeed: visualCrossing.windspeed,
       windDirection: visualCrossing.winddir,
-      conditions: imd.Todays_Forecast,
+      conditions: imd?.Todays_Forecast,
     },
     future: parseIMDFutureItems(imd),
   };

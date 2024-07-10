@@ -12,6 +12,12 @@ import { sanitizeLatLong } from './app.utils';
 import { CentroidInterceptor } from './centroid.interceptor';
 import { CACHE_MANAGER } from '@nestjs/cache-manager';
 import { Cache } from 'cache-manager';
+import { ApiQuery, ApiResponse } from '@nestjs/swagger';
+
+enum PROVIDER {
+  UPCAR = 'upcar',
+  OUAT = 'ouat',
+}
 @Controller()
 @UseInterceptors(new CentroidInterceptor())
 export class AppController {
@@ -29,6 +35,19 @@ export class AppController {
   }
 
   @Get('advisory')
+  @ApiQuery({
+    name: 'latitude',
+    type: String,
+  })
+  @ApiQuery({
+    name: 'longitude',
+    type: String,
+  })
+  @ApiQuery({
+    name: 'provider',
+    enum: PROVIDER,
+  })
+  @ApiResponse({})
   async getWeather(
     @Query('latitude') latiude: string,
     @Query('longitude') longitude: string,
@@ -73,5 +92,11 @@ export class AppController {
       1000 * 60 * 60,
     );
     return result;
+  }
+
+  @Get('clear-cache')
+  async clearCache() {
+    await this.cacheManager.reset();
+    return 'Cache Cleared';
   }
 }

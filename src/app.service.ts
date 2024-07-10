@@ -13,6 +13,7 @@ import { generateContext } from './beckn.utils';
 import { PROVIDERS } from './constants/enums';
 import { IMD_CITY_WEATHER_INFO } from './app.constants';
 import { ODISHA_DISTRICTS } from './constants/odisha-districts';
+import { format } from 'date-fns';
 
 @Injectable()
 export class AppService {
@@ -133,6 +134,13 @@ export class AppService {
         `Time taken to get weather data from IMD: ${endTime - startTime}`,
       );
       startTime = performance.now();
+      if (!imdData.imd) {
+        imdData.imd = {
+          Station_Name: district,
+          date: format(new Date(Date.now()), 'yyyy-MM-dd'),
+          Todays_Forecast: imdData.visualCrossing.conditions,
+        };
+      }
       const sanitizedIMDData = sanitizeIMDWeather(imdData);
       endTime = performance.now();
       this.logger.verbose(
