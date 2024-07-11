@@ -24,9 +24,15 @@ export class CentroidInterceptor implements NestInterceptor {
     next: CallHandler,
   ): Promise<Observable<any>> {
     // Your interceptor logic here
+    this.logger.verbose('this interceptor was called.');
     const request = context.switchToHttp().getRequest();
+    // if(request.body) {
+    //   const latitude
+    // }
     const { latitude, longitude } = request.query;
-
+    if (!latitude || !longitude) {
+      return next.handle();
+    }
     // call the georev service
     const startTime = performance.now();
     const district = await this.getDistrict(latitude, longitude);
@@ -60,17 +66,6 @@ export class CentroidInterceptor implements NestInterceptor {
       throw new InternalServerErrorException(
         'Error occurred while reading the geoip database',
       );
-    }
-  }
-
-  private async getCentroid(district: string) {
-    try {
-      const resp = await this.httpService.axiosRef.get(
-        `https://geoip.samagra.io/location/DISTRICT/centroid?query=${district}`,
-      );
-      return resp.data;
-    } catch (err) {
-      this.logger.error('Error occurred while reading the geoip database', err);
     }
   }
 }

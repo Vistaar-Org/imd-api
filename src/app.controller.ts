@@ -3,8 +3,11 @@ import {
   Controller,
   Get,
   Inject,
+  InternalServerErrorException,
   Logger,
+  Post,
   Query,
+  Res,
   UseInterceptors,
 } from '@nestjs/common';
 import { AppService } from './app.service';
@@ -13,20 +16,39 @@ import { CentroidInterceptor } from './centroid.interceptor';
 import { CACHE_MANAGER } from '@nestjs/cache-manager';
 import { Cache } from 'cache-manager';
 import { ApiQuery, ApiResponse } from '@nestjs/swagger';
+import { v4 as uuidv4 } from 'uuid';
+import { Response } from 'express';
+import { HttpService } from '@nestjs/axios';
+import { createAuthorizationHeader } from './auth-builder';
+import { lastValueFrom } from 'rxjs';
 
 enum PROVIDER {
   UPCAR = 'upcar',
   OUAT = 'ouat',
 }
 @Controller()
-@UseInterceptors(new CentroidInterceptor())
 export class AppController {
   private readonly logger: Logger;
   constructor(
     @Inject(CACHE_MANAGER) private cacheManager: Cache,
     private readonly appService: AppService,
+    private readonly httpService: HttpService,
   ) {
     this.logger = new Logger(AppController.name);
+  }
+
+  private async getDistrict(lat: string, lon: string): Promise<any> {
+    try {
+      const resp = await this.httpService.axiosRef.get(
+        `https://geoip.samagra.io/georev?lat=${lat}&lon=${lon}`,
+      );
+      return resp.data.district;
+    } catch (err) {
+      this.logger.error('Error occurred while reading the geoip database', err);
+      throw new InternalServerErrorException(
+        'Error occurred while reading the geoip database',
+      );
+    }
   }
 
   @Get()
@@ -54,10 +76,12 @@ export class AppController {
     @Query('provider') provider: string,
     @Body() body: any,
   ) {
-    const { district } = body;
+    const district = await this.getDistrict(latiude, longitude);
+
     if (!provider) {
       provider = 'upcar';
     }
+
     const res = await this.cacheManager.get(
       `${district.toLowerCase()}-${provider.toLowerCase()}`,
     );
@@ -98,5 +122,47 @@ export class AppController {
   async clearCache() {
     await this.cacheManager.reset();
     return 'Cache Cleared';
+  }
+
+  @Post('/search')
+  async getSearch(@Res() res: Response, @Body() body: any) {
+    console.log('request on post route.');
+    res.status(200).json({
+      message: {
+        ack: {
+          status: 'ACK',
+        },
+      },
+    });
+
+    const { gps, district } = body.message.intent.location;
+    const [lat, long] = gps.split(', ');
+    const resp = await this.appService.getWeather(lat, long, district);
+    resp.context = body.context;
+    resp.context.action = 'on_search';
+    // resp.context.message_id = uuidv4();
+
+    // FORWARD THE REQUEST
+    const authHeader = await createAuthorizationHeader(resp).then((res) => {
+      console.log(res);
+      return res;
+    });
+    const requestOptions = {
+      headers: {
+        'Content-Type': 'application/json',
+        authorization: authHeader,
+      },
+      withCredentials: true,
+      mode: 'cors',
+    };
+    console.log('calling request forwarder');
+    await lastValueFrom(
+      this.httpService.post(
+        resp.context.bap_uri + '/on_search',
+        resp,
+        requestOptions,
+      ),
+    );
+    console.log('auth header: ', authHeader);
   }
 }
