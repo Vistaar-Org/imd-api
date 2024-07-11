@@ -75,12 +75,14 @@ export class AppController {
     if (!provider) {
       provider = 'upcar';
     }
-    const res = await this.cacheManager.get(
-      `${district.toLowerCase()}-${provider.toLowerCase()}`,
-    );
 
-    if (res) {
-      return res;
+    if (district && provider) {
+      const res = await this.cacheManager.get(
+        `${district.toLowerCase()}-${provider.toLowerCase()}`,
+      );
+      if (res) {
+        return res;
+      }
     }
 
     this.logger.log(

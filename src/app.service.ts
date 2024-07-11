@@ -14,6 +14,7 @@ import { PROVIDERS } from './constants/enums';
 import { IMD_CITY_WEATHER_INFO } from './app.constants';
 import { ODISHA_DISTRICTS } from './constants/odisha-districts';
 import { format } from 'date-fns';
+import { DUMMY_WEATHER } from './constants/responses';
 
 @Injectable()
 export class AppService {
@@ -214,7 +215,7 @@ export class AppService {
       message: {
         catalog: {
           providers: [
-            imdItems ? imdItems : undefined,
+            imdItems ? imdItems : DUMMY_WEATHER,
             ouatWeatherItems ? ouatWeatherItems : undefined,
             upcarItems ? upcarItems : undefined,
             ouatAdvisoryItems ? ouatAdvisoryItems : undefined,
