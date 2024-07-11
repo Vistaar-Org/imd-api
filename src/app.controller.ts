@@ -3,6 +3,7 @@ import {
   Controller,
   Get,
   Inject,
+  InternalServerErrorException,
   Logger,
   Query,
   UseInterceptors,
@@ -13,20 +14,36 @@ import { CentroidInterceptor } from './centroid.interceptor';
 import { CACHE_MANAGER } from '@nestjs/cache-manager';
 import { Cache } from 'cache-manager';
 import { ApiQuery, ApiResponse } from '@nestjs/swagger';
+import { HttpService } from '@nestjs/axios';
 
 enum PROVIDER {
   UPCAR = 'upcar',
   OUAT = 'ouat',
 }
 @Controller()
-@UseInterceptors(new CentroidInterceptor())
+// @UseInterceptors(new CentroidInterceptor())
 export class AppController {
   private readonly logger: Logger;
   constructor(
     @Inject(CACHE_MANAGER) private cacheManager: Cache,
     private readonly appService: AppService,
+    private readonly httpService: HttpService,
   ) {
     this.logger = new Logger(AppController.name);
+  }
+
+  private async getDistrict(lat: string, lon: string): Promise<any> {
+    try {
+      const resp = await this.httpService.axiosRef.get(
+        `https://geoip.samagra.io/georev?lat=${lat}&lon=${lon}`,
+      );
+      return resp.data.district;
+    } catch (err) {
+      this.logger.error('Error occurred while reading the geoip database', err);
+      throw new InternalServerErrorException(
+        'Error occurred while reading the geoip database',
+      );
+    }
   }
 
   @Get()
@@ -52,9 +69,9 @@ export class AppController {
     @Query('latitude') latiude: string,
     @Query('longitude') longitude: string,
     @Query('provider') provider: string,
-    @Body() body: any,
+    // @Body() body: any,
   ) {
-    const { district } = body;
+    const district = await this.getDistrict(latiude, longitude);
     if (!provider) {
       provider = 'upcar';
     }
