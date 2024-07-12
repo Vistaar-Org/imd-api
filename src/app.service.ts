@@ -91,6 +91,7 @@ export class AppService {
         `Time taken to get visual crossing data: ${endTime - startTime}`,
       );
 
+      console.log('forecast data: ', forecastData);
       return {
         imd: forecastData,
         visualCrossing: visualCrossing.data.currentConditions,
@@ -130,6 +131,7 @@ export class AppService {
     try {
       let startTime = performance.now();
       const imdData = await this.getWeatherFromIMD(lat, long);
+      console.log('imdData: ', imdData);
       let endTime = performance.now();
       this.logger.verbose(
         `Time taken to get weather data from IMD: ${endTime - startTime}`,
@@ -142,7 +144,11 @@ export class AppService {
           Todays_Forecast: imdData.visualCrossing.conditions,
         };
       }
+      console.log('imdData after if: ', imdData);
+
       const sanitizedIMDData = sanitizeIMDWeather(imdData);
+      console.log('sanitizedIMDData: ', sanitizedIMDData);
+
       endTime = performance.now();
       this.logger.verbose(
         `Time taken to sanitize IMD data: ${endTime - startTime}`,

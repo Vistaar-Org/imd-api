@@ -81,10 +81,16 @@ export class AppController {
         `${district.toLowerCase()}-${provider.toLowerCase()}`,
       );
       if (res) {
+        this.logger.log(
+          'hitting cache to respond for district ' +
+            district +
+            ' provider ' +
+            provider,
+        );
         return res;
       }
     }
-
+    //
     this.logger.log(
       `Received latitude: ${latiude} and longitude: ${longitude}`,
     );

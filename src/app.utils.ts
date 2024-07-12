@@ -87,6 +87,7 @@ export const getStationId = (lat: string, long: string): string => {
       }
     });
   }
+  console.log('code: ', code);
   return code;
 };
 
@@ -207,6 +208,18 @@ export const parseIMDFutureItems = (
     const dayKeyMax = `Day_${dayOffset}_Max_Temp`;
     const dayKeyMin = `Day_${dayOffset}_Min_temp`;
     const dayKeyForecast = `Day_${dayOffset}_Forecast`;
+    if(!station[dayKeyMax]) {
+      station[dayKeyMax] = 'NA';
+    } 
+    
+    if(!station[dayKeyMin]) {
+      station[dayKeyMin] = 'NA';
+    } 
+
+    if(!station[dayKeyForecast]) {
+      station[dayKeyForecast] = '--';
+    } 
+    
 
     if (station[dayKeyMax] && station[dayKeyMin] && station[dayKeyForecast]) {
       const newDate = calculateDate(baseDate, dayOffset - 1);
