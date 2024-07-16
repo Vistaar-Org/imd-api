@@ -52,14 +52,12 @@
     }
   },
   "names_of_crops": [
-    "kharif paddy",
+    "paddy",
     "pulses",
-    "oilseeds",
     "cotton",
     "maize",
     "ragi",
     "vegetables",
-    "spices",
     "groundnut",
     "arhar",
     "papaya",
@@ -67,7 +65,7 @@
   ],
   "general_advisory": "Keep rain water in the main rice field by bunding for timely puddling and transplanting. Cover the vegetable nursery with polythene to protect it from heavy rain and make drainage arrangement. In early planted maize and Jute apply nitrogen fertilizer after receding of rain. Make provisions for drainage, where kharif maize or pulses etc. have been sown. If the Sugarcane crop is 4-5 months old than wrapping and propping should be done for medium and long duration varieties to keeps the cane erects.",
   "crops_data": {
-    "kharif paddy": {
+    "paddy": {
       "advisory": [
         "Broadcasting of Kharif paddy is under progress.",
         "Raising of paddy nursery is going on."
@@ -76,11 +74,6 @@
     "pulses": {
       "advisory": [
         "Sowing of Non paddy crops like Pulses is in progress."
-      ]
-    },
-    "oilseeds": {
-      "advisory": [
-        "Sowing of Non paddy crops like Oilseeds is in progress."
       ]
     },
     "cotton": {
@@ -103,11 +96,6 @@
       "advisory": [
         "Sowing of Non paddy crops like Vegetables is in progress.",
         "Cover vegetable nursery with polythene to protect from heavy rain."
-      ]
-    },
-    "spices": {
-      "advisory": [
-        "Sowing of Non paddy crops like Spices is in progress."
       ]
     },
     "groundnut": {
