@@ -1,16 +1,13 @@
 import {
-  Body,
   Controller,
   Get,
   Inject,
   InternalServerErrorException,
   Logger,
   Query,
-  UseInterceptors,
 } from '@nestjs/common';
 import { AppService } from './app.service';
 import { sanitizeLatLong } from './app.utils';
-import { CentroidInterceptor } from './centroid.interceptor';
 import { CACHE_MANAGER } from '@nestjs/cache-manager';
 import { Cache } from 'cache-manager';
 import { ApiQuery, ApiResponse } from '@nestjs/swagger';

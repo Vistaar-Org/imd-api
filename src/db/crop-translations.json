@@ -343,7 +343,7 @@
     "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/GUAVA.jpeg",
     "hi": "अमरूद",
     "or": "ପିଜୁଳି"
-    },
+  },
   "sericulture": {
     "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/sericulture.jpg",
     "hi": "रेशम उत्पादन",
@@ -358,15 +358,29 @@
     "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/fish.jpeg",
     "hi": "मत्स्य पालन",
     "or": "ମାଛ ଚାଷ"
-      },
+  },
   "animal husbandry": {
     "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/cow.jpg",
     "hi": "पशुपालन",
     "or": "ପଶୁପାଳନ"
-          },
+  },
   "forestry": {
     "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/forestry.jpg",
     "hi": "वानिकी",
     "or": "ବନ"
+  },
+  "general": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/General advisory.webp"
+  },
+  "General Crop Advisory": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/General advisory.webp"
+  },
+  "fish": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/fish.jpeg",
+    "hi": "मछली",
+    "or": "ମାଛ"
+  },
+  "masoor": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Masoor.jpeg"
   }
 }

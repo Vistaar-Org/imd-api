@@ -1,5 +1,5 @@
 import {
-  CROP_IMAGES,
+  CROP_MAPPINGS,
   WEATHER_DATA,
   calculateWeatherConditions,
   deduceWeatherCondition,
@@ -138,9 +138,9 @@ export const mapAdvisoryData = (upcarData, provider) => {
         long_desc: upcarData.general_advisory,
         images: [
           {
-            url: CROP_IMAGES['general_advisory']
-              ? CROP_IMAGES['general_advisory']
-              : CROP_IMAGES['wheat'],
+            url: CROP_MAPPINGS['general_advisory']?.link
+              ? CROP_MAPPINGS['general_advisory']?.link
+              : CROP_MAPPINGS['wheat']?.link,
           },
         ],
       },
@@ -156,9 +156,9 @@ export const mapAdvisoryData = (upcarData, provider) => {
         long_desc: upcarData.crops_data[key].advisory.join('\n'),
         images: [
           {
-            url: CROP_IMAGES[key.toLowerCase()]
-              ? CROP_IMAGES[key.toLowerCase()]
-              : CROP_IMAGES['wheat'],
+            url: CROP_MAPPINGS[key.toLowerCase()]?.link
+              ? CROP_MAPPINGS[key.toLowerCase()]?.link
+              : CROP_MAPPINGS['wheat']?.link,
           },
         ],
       },

@@ -36,12 +36,6 @@ export const WEATHER_DATA = JSON.parse(
   }),
 );
 
-export const CROP_IMAGES = JSON.parse(
-  fs.readFileSync(path.join(__dirname + '/db/crops.json'), {
-    encoding: 'utf-8',
-  }),
-);
-
 export const calculateDate = (baseDate: string, daysToAdd: number): string => {
   const date = new Date(baseDate);
   const newDate = addDays(date, daysToAdd);
@@ -208,18 +202,17 @@ export const parseIMDFutureItems = (
     const dayKeyMax = `Day_${dayOffset}_Max_Temp`;
     const dayKeyMin = `Day_${dayOffset}_Min_temp`;
     const dayKeyForecast = `Day_${dayOffset}_Forecast`;
-    if(!station[dayKeyMax]) {
+    if (!station[dayKeyMax]) {
       station[dayKeyMax] = 'NA';
-    } 
-    
-    if(!station[dayKeyMin]) {
-      station[dayKeyMin] = 'NA';
-    } 
+    }
 
-    if(!station[dayKeyForecast]) {
+    if (!station[dayKeyMin]) {
+      station[dayKeyMin] = 'NA';
+    }
+
+    if (!station[dayKeyForecast]) {
       station[dayKeyForecast] = '--';
-    } 
-    
+    }
 
     if (station[dayKeyMax] && station[dayKeyMin] && station[dayKeyForecast]) {
       const newDate = calculateDate(baseDate, dayOffset - 1);
