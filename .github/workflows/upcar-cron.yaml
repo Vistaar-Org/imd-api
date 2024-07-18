@@ -1,9 +1,6 @@
 name: Download UPCAR Forecast
 
 on:
-  push:
-    branches:
-      - dev
   workflow_dispatch:
   schedule:
     - cron: '0 0 */10 * *' # Runs every 2 hours
