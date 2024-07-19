@@ -89,10 +89,10 @@ export class AppService {
       startTime = performance.now();
       let visualCrossing;
       try {
-       visualCrossing = await this.httpService.axiosRef.get(
-        `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${long}?unitGroup=metric&key=BD7YU52NGHX9EDTQTYQ66DLSD&contentType=json`,
-      );
-      } catch(err) {
+        visualCrossing = await this.httpService.axiosRef.get(
+          `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${long}?unitGroup=metric&key=BD7YU52NGHX9EDTQTYQ66DLSD&contentType=json`,
+        );
+      } catch (err) {
         console.error('error fetching visual crossing data: ', err);
       }
       endTime = performance.now();
