@@ -77,15 +77,24 @@ export class AppService {
         );
       }
       startTime = performance.now();
-      const forecastData = IMD_CITY_WEATHER_INFO[stationId];
+      let forecastData = IMD_CITY_WEATHER_INFO[stationId];
+      if (!forecastData) {
+        forecastData =
+          IMD_CITY_WEATHER_INFO[Object.keys(IMD_CITY_WEATHER_INFO)[0]];
+      }
       endTime = performance.now();
       this.logger.verbose(
         `Time taken to get IMD data from JSON: ${endTime - startTime}`,
       );
       startTime = performance.now();
-      const visualCrossing = await this.httpService.axiosRef.get(
+      let visualCrossing;
+      try {
+       visualCrossing = await this.httpService.axiosRef.get(
         `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${long}?unitGroup=metric&key=BD7YU52NGHX9EDTQTYQ66DLSD&contentType=json`,
       );
+      } catch(err) {
+        console.error('error fetching visual crossing data: ', err);
+      }
       endTime = performance.now();
       this.logger.verbose(
         `Time taken to get visual crossing data: ${endTime - startTime}`,

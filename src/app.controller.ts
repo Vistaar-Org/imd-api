@@ -92,7 +92,16 @@ export class AppController {
       `Received latitude: ${latiude} and longitude: ${longitude}`,
     );
 
-    const sanitizedParams = sanitizeLatLong(latiude, longitude);
+    let sanitizedParams = {
+      latitude: latiude,
+      longitude,
+    };
+    try {
+      sanitizedParams = sanitizeLatLong(latiude, longitude);
+    } catch (err) {
+      console.error('error setting sanitized lat long');
+    }
+
     latiude = sanitizedParams.latitude;
     longitude = sanitizedParams.longitude;
 

@@ -1,7 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { format, addDays, parse } from 'date-fns';
-import { BadRequestException } from '@nestjs/common';
 import { IMDCityWeatherAPIObject } from './types/imd.types';
 import {
   IMDFutureWeatherDetails,
@@ -37,18 +36,21 @@ export const WEATHER_DATA = JSON.parse(
 );
 
 export const calculateDate = (baseDate: string, daysToAdd: number): string => {
+  console.log('baseDate: ', baseDate);
   const date = new Date(baseDate);
   const newDate = addDays(date, daysToAdd);
   return format(newDate, 'yyyy-MM-dd');
 };
 
 export const sanitizeLatLong = (lat: string, long: string) => {
-  const [latSplit, longSplit] = [lat?.split('.')[1], long?.split('.')[1]];
+  let [latSplit, longSplit] = [lat?.split('.')[1], long?.split('.')[1]];
 
   if (!lat || !long || latSplit.length < 4 || longSplit.length < 4) {
-    throw new BadRequestException(
-      'Make sure your coordinates are valid to only 4 decimal places.',
-    );
+    latSplit += '0000';
+    longSplit += '0000';
+    // throw new BadRequestException(
+    //   'Make sure your coordinates are valid to only 4 decimal places.',
+    // );
   }
 
   return {
@@ -196,7 +198,10 @@ export const sanitizeIMDWeather = (data: {
 export const parseIMDFutureItems = (
   station: IMDCityWeatherAPIObject,
 ): ReadonlyArray<IMDFutureWeatherDetails> => {
-  const baseDate = station.Date;
+  console.log('=====STATION=======');
+  console.log(station);
+  const baseDate =
+    station.Date || (station as any).date || new Date().toDateString();
   const items = [];
   for (let dayOffset = 2; dayOffset <= 7; dayOffset++) {
     const dayKeyMax = `Day_${dayOffset}_Max_Temp`;
