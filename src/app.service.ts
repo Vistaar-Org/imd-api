@@ -137,10 +137,16 @@ export class AppService {
         `Time taken to get weather data from IMD: ${endTime - startTime}`,
       );
       startTime = performance.now();
+      let date = new Date(Date.now()).toDateString();
+      try {
+        date = format(new Date(Date.now()), 'yyyy-MM-dd');
+      } catch (err) {
+        console.error('error in formatting date: ', err);
+      }
       if (!imdData.imd) {
         imdData.imd = {
           Station_Name: district,
-          date: format(new Date(Date.now()), 'yyyy-MM-dd'),
+          date: date,
           Todays_Forecast: imdData.visualCrossing.conditions,
         };
       }
