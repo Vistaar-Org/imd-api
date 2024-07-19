@@ -254,6 +254,7 @@ const deg2rad = (deg) => {
 };
 
 export const getParsedDate = (date) => {
+  console.log('input date: ', date);
   const dateRegexes = [
     /^\d{2}-\d{2}-\d{4}$/, // dd-mm-yyyy
     /^\d{2}\/\d{2}\/\d{4}$/, // dd/mm/yyyy
@@ -262,12 +263,15 @@ export const getParsedDate = (date) => {
   ];
 
   if (dateRegexes[0].test(date)) {
-    return parse(date, 'dd-mm-yyyy', new Date());
+    const splitDate: string[] = date.split('-');
+    return splitDate.reverse().join('-');
   } else if (dateRegexes[1].test(date)) {
-    return parse(date, 'dd/mm/yyyy', new Date());
-  } else if (dateRegexes[2].test(date)) {
-    return parse(date, 'yyyy-mm-dd', new Date());
+    const splitDate: string[] = date.split('/');
+    return splitDate.reverse().join('-');
   } else if (dateRegexes[3].test(date)) {
-    return parse(date, 'yyyy/mm/dd', new Date());
+    const splitDate: string[] = date.split('/');
+    return splitDate.reverse().join('-');
   }
+
+  return date;
 };
