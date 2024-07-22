@@ -138,8 +138,8 @@ export const mapAdvisoryData = (upcarData, provider) => {
         long_desc: upcarData.general_advisory,
         images: [
           {
-            url: CROP_MAPPINGS['general_advisory']?.link
-              ? CROP_MAPPINGS['general_advisory']?.link
+            url: CROP_MAPPINGS['general']?.link
+              ? CROP_MAPPINGS['general']?.link
               : CROP_MAPPINGS['wheat']?.link,
           },
         ],

@@ -369,12 +369,7 @@
     "hi": "वानिकी",
     "or": "ବନ"
   },
-  "general_advisory": {
-    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/General advisory.webp",
-    "hi": "सामान्य फसल परामर्शी",
-    "or": "ସାଧାରଣ ଫସଲ ପରାମର୍ଶ"
-  },
-  "General Crop Advisory": {
+  "general": {
     "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/General advisory.webp",
     "hi": "सामान्य फसल परामर्शी",
     "or": "ସାଧାରଣ ଫସଲ ପରାମର୍ଶ"
