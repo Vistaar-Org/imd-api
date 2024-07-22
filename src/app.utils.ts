@@ -1,6 +1,6 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { format, addDays, parse } from 'date-fns';
+import { format, addDays } from 'date-fns';
 import { IMDCityWeatherAPIObject } from './types/imd.types';
 import {
   IMDFutureWeatherDetails,
@@ -41,6 +41,27 @@ export const calculateDate = (baseDate: string, daysToAdd: number): string => {
   const newDate = addDays(date, daysToAdd);
   return format(newDate, 'yyyy-MM-dd');
 };
+
+function compareDateToToday(dateString) {
+  // Convert the input date string to a Date object
+  const inputDate = new Date(dateString);
+
+  // Get today's date
+  const today = new Date();
+
+  // Set the hours, minutes, seconds, and milliseconds to zero for accurate date comparison
+  today.setHours(0, 0, 0, 0);
+  inputDate.setHours(0, 0, 0, 0);
+
+  // Compare the dates
+  if (inputDate < today) {
+    return -1;
+  } else if (inputDate > today) {
+    return 1;
+  } else {
+    return 0;
+  }
+}
 
 export const sanitizeLatLong = (lat: string, long: string) => {
   let [latSplit, longSplit] = [lat?.split('.')[1], long?.split('.')[1]];
@@ -168,13 +189,15 @@ export const deduceWeatherCondition = (forecast: string): string => {
 export const sanitizeIMDWeather = (data: {
   imd: IMDCityWeatherAPIObject;
   visualCrossing: VisualCrossingCurrentConditionsObject;
+  future: ReadonlyArray<VisualCrossingCurrentConditionsObject>;
 }): SanitizedIMDWeather => {
-  const { imd, visualCrossing } = data;
+  const { imd, visualCrossing, future } = data;
   // extract fields of relevance from visual crossing.
+  const date = new Date(Date.now()).toISOString().split('T')[0];
   const sanitizedWeatherInfo: SanitizedIMDWeather = {
     general: {
       station: imd?.Station_Name,
-      date: imd?.Date,
+      date: date,
     },
     current: {
       temp: visualCrossing.temp,
@@ -182,9 +205,9 @@ export const sanitizeIMDWeather = (data: {
       humidity: visualCrossing.humidity.toString(), //imd.Relative_Humidity_at_0830,
       windSpeed: visualCrossing.windspeed,
       windDirection: visualCrossing.winddir,
-      conditions: imd?.Todays_Forecast,
+      conditions: imd?.Todays_Forecast ?? visualCrossing.conditions,
     },
-    future: parseIMDFutureItems(imd),
+    future: parseIMDFutureItems(imd, future),
   };
 
   return sanitizedWeatherInfo;
@@ -197,37 +220,59 @@ export const sanitizeIMDWeather = (data: {
  */
 export const parseIMDFutureItems = (
   station: IMDCityWeatherAPIObject,
+  future: ReadonlyArray<VisualCrossingCurrentConditionsObject>,
 ): ReadonlyArray<IMDFutureWeatherDetails> => {
   console.log('=====STATION=======');
   console.log(station);
   const baseDate =
     station.Date || (station as any).date || new Date().toDateString();
+  // comparing baseDate to today's date
+  const compareDate = compareDateToToday(baseDate);
   const items = [];
-  for (let dayOffset = 2; dayOffset <= 7; dayOffset++) {
-    const dayKeyMax = `Day_${dayOffset}_Max_Temp`;
-    const dayKeyMin = `Day_${dayOffset}_Min_temp`;
-    const dayKeyForecast = `Day_${dayOffset}_Forecast`;
-    if (!station[dayKeyMax]) {
-      station[dayKeyMax] = 'NA';
-    }
-
-    if (!station[dayKeyMin]) {
-      station[dayKeyMin] = 'NA';
-    }
-
-    if (!station[dayKeyForecast]) {
-      station[dayKeyForecast] = '--';
-    }
-
-    if (station[dayKeyMax] && station[dayKeyMin] && station[dayKeyForecast]) {
-      const newDate = calculateDate(baseDate, dayOffset - 1);
-      const conditions = deduceWeatherCondition(station[dayKeyForecast]);
+  console.log('compareDate: ', compareDate);
+  if (compareDate !== 0) {
+    // use visual crossing
+    console.log(
+      'IMD Data outdated hence fetching future data from visual crossing.',
+    );
+    future.forEach((item: VisualCrossingCurrentConditionsObject) => {
+      const conditions = deduceWeatherCondition(item.conditions);
       items.push({
-        date: newDate,
+        date: item.datetime,
         conditions,
-        temp_max: station[dayKeyMax],
-        temp_min: station[dayKeyMin],
+        temp_max: (item as any).tempmax,
+        temp_min: (item as any).tempmin,
       });
+    });
+  } else {
+    for (let dayOffset = 2; dayOffset <= 5; dayOffset++) {
+      const dayKeyMax = `Day_${dayOffset}_Max_Temp`;
+      const dayKeyMin = `Day_${dayOffset}_Min_temp`;
+      const dayKeyForecast = `Day_${dayOffset}_Forecast`;
+      const newDate = calculateDate(baseDate, dayOffset - 1);
+
+      if (station[dayKeyMax] && station[dayKeyMin] && station[dayKeyForecast]) {
+        const conditions = deduceWeatherCondition(station[dayKeyForecast]);
+        items.push({
+          date: newDate,
+          conditions,
+          temp_max: station[dayKeyMax],
+          temp_min: station[dayKeyMin],
+        });
+      } else {
+        // fall back to Visual Crossing
+        console.log(
+          'IMD Data has nulls for future hence fetching future data from visual crossing.',
+        );
+        const item = future[dayOffset - 2];
+        const conditions = deduceWeatherCondition(item.conditions);
+        items.push({
+          date: item.datetime,
+          conditions,
+          temp_max: (item as any).tempmax,
+          temp_min: (item as any).tempmin,
+        });
+      }
     }
   }
 

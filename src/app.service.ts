@@ -104,6 +104,7 @@ export class AppService {
       return {
         imd: forecastData,
         visualCrossing: visualCrossing.data.currentConditions,
+        future: visualCrossing.data.days.slice(1, 5),
       };
     } catch (err) {
       this.logger.error('Error resolving API Calls', err);

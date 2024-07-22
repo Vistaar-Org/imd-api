@@ -34,7 +34,7 @@ export type VisualCrossingCurrentConditionsObject = {
   solarradiation: number;
   solarenergy: number;
   uvindex: number;
-  conditions: number;
+  conditions: string;
   icon: number;
   stations: ReadonlyArray<string>;
   source: number;
