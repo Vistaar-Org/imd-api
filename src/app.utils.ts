@@ -42,7 +42,7 @@ export const calculateDate = (baseDate: string, daysToAdd: number): string => {
   return format(newDate, 'yyyy-MM-dd');
 };
 
-function compareDateToToday(dateString) {
+export function compareDateToToday(dateString) {
   // Convert the input date string to a Date object
   const inputDate = new Date(dateString);
 

@@ -2,6 +2,7 @@ import {
   CROP_MAPPINGS,
   WEATHER_DATA,
   calculateWeatherConditions,
+  compareDateToToday,
   deduceWeatherCondition,
   getParsedDate,
   getWindDirection,
@@ -189,54 +190,101 @@ export const mapOUATWeather = (ouatWeatherData) => {
     const cloudCover = parseFloat(station.cloud_cover);
     const rainfall = parseFloat(station.rainfall);
     const conditions = calculateWeatherConditions(cloudCover, 0, rainfall);
-
-    items.push({
-      descriptor: {
-        images: [
-          {
-            url: WEATHER_DATA[conditions].image_day,
-            type: 'image_day',
-          },
-          {
-            url: WEATHER_DATA[conditions].image_night,
-            type: 'image_night',
-          },
-          {
-            url: WEATHER_DATA[conditions].icon,
-            type: 'icon',
-          },
-        ],
-      },
-      time: {
-        label: 'Future Date of Forecast',
-        timestamp: format(parsedDate, 'yyyy-MM-dd'),
-      },
-      location_ids: [ouatWeatherData.district],
-      category_ids: ['future_weather'], // TODO: Turn this into an enum
-      tags: {
-        rainfall: station.rainfall,
-        temp_max: station.t_max,
-        temp_min: station.t_min,
-        conditions_hi: WEATHER_DATA[conditions].hi_translated,
-        conditions_or: WEATHER_DATA[conditions].or_translated,
-        conditions: conditions, // Not available in OUAT data
-        temp: (parseFloat(station.t_max) + parseFloat(station.t_min)) / 2, // Not available in OUAT data
-        humidity: 'NA', // Not available in OUAT data
-        winddir: station.wind_direction, // Not available in OUAT data
-        windspeed: station.wind_speed, // Not available in OUAT data
-        rh_max: station.rh_max, // Not available in OUAT data
-        rh_min: station.rh_min, // Not available in OUAT data
-        wind_speed: 'NA', // Not available in OUAT data
-        wind_direction: 'NA', // Not available in OUAT data
-        cloud_cover: station.cloud_cover, // Not available in OUAT data
-      },
-    });
+    const compareDate = compareDateToToday(parsedDate);
+    if (compareDate > 0) {
+      items.push({
+        descriptor: {
+          images: [
+            {
+              url: WEATHER_DATA[conditions].image_day,
+              type: 'image_day',
+            },
+            {
+              url: WEATHER_DATA[conditions].image_night,
+              type: 'image_night',
+            },
+            {
+              url: WEATHER_DATA[conditions].icon,
+              type: 'icon',
+            },
+          ],
+        },
+        time: {
+          label: 'Future Date of Forecast',
+          timestamp: format(parsedDate, 'yyyy-MM-dd'),
+        },
+        location_ids: [ouatWeatherData.district],
+        category_ids: ['future_weather'], // TODO: Turn this into an enum
+        tags: {
+          rainfall: station.rainfall,
+          temp_max: station.t_max,
+          temp_min: station.t_min,
+          conditions_hi: WEATHER_DATA[conditions].hi_translated,
+          conditions_or: WEATHER_DATA[conditions].or_translated,
+          conditions: conditions, // Not available in OUAT data
+          temp: (parseFloat(station.t_max) + parseFloat(station.t_min)) / 2, // Not available in OUAT data
+          humidity: 'NA', // Not available in OUAT data
+          winddir: station.wind_direction, // Not available in OUAT data
+          windspeed: station.wind_speed, // Not available in OUAT data
+          rh_max: station.rh_max, // Not available in OUAT data
+          rh_min: station.rh_min, // Not available in OUAT data
+          wind_speed: 'NA', // Not available in OUAT data
+          wind_direction: 'NA', // Not available in OUAT data
+          cloud_cover: station.cloud_cover, // Not available in OUAT data
+        },
+      });
+    } else if (compareDate == 0) {
+      items.push({
+        descriptor: {
+          images: [
+            {
+              url: WEATHER_DATA[conditions].image_day,
+              type: 'image_day',
+            },
+            {
+              url: WEATHER_DATA[conditions].image_night,
+              type: 'image_night',
+            },
+            {
+              url: WEATHER_DATA[conditions].icon,
+              type: 'icon',
+            },
+          ],
+        },
+        time: {
+          label: 'Date of Forecast',
+          timestamp: format(parsedDate, 'yyyy-MM-dd'),
+        },
+        location_ids: [ouatWeatherData.district],
+        category_ids: ['current_weather'], // TODO: Turn this into an enum
+        tags: {
+          rainfall: station.rainfall,
+          temp_max: station.t_max,
+          temp_min: station.t_min,
+          conditions_hi: WEATHER_DATA[conditions].hi_translated,
+          conditions_or: WEATHER_DATA[conditions].or_translated,
+          conditions: conditions, // Not available in OUAT data
+          temp: (parseFloat(station.t_max) + parseFloat(station.t_min)) / 2, // Not available in OUAT data
+          humidity: 'NA', // Not available in OUAT data
+          winddir: station.wind_direction, // Not available in OUAT data
+          windspeed: station.wind_speed, // Not available in OUAT data
+          rh_max: station.rh_max, // Not available in OUAT data
+          rh_min: station.rh_min, // Not available in OUAT data
+          wind_speed: 'NA', // Not available in OUAT data
+          wind_direction: 'NA', // Not available in OUAT data
+          cloud_cover: station.cloud_cover, // Not available in OUAT data
+        },
+      });
+    }
   });
 
   return {
     id: 'ouat', // TODO: Turn this into an enum,
     category_id: 'weather_provider',
     categories: [
+      {
+        id: 'current_weather',
+      },
       {
         id: 'future_weather',
       },
