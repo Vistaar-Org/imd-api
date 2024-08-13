@@ -7,3 +7,9 @@ export const IMD_CITY_WEATHER_INFO: IMDCityWeatherAPIObject = JSON.parse(
     encoding: 'utf-8',
   }),
 ) as IMDCityWeatherAPIObject;
+
+export const OUAT_ORIA_DISTRICTS = JSON.parse(
+  fs.readFileSync(path.join(__dirname, 'db/ouat-oria.json'), {
+    encoding: 'utf-8',
+  }),
+);

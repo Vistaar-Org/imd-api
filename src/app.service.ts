@@ -11,7 +11,7 @@ import { CROP_MAPPINGS, getStationId, sanitizeIMDWeather } from './app.utils';
 import { mapIMDItems, mapAdvisoryData, mapOUATWeather } from './beckn.utils';
 import { generateContext } from './beckn.utils';
 import { PROVIDERS } from './constants/enums';
-import { IMD_CITY_WEATHER_INFO } from './app.constants';
+import { IMD_CITY_WEATHER_INFO, OUAT_ORIA_DISTRICTS } from './app.constants';
 import { ODISHA_DISTRICTS } from './constants/odisha-districts';
 import { format } from 'date-fns';
 import { DUMMY_WEATHER } from './constants/responses';
@@ -58,7 +58,8 @@ export class AppService {
     this.logger.verbose(
       `Time taken to read OUAT data JSON: ${endTime - startTime}`,
     );
-    englishData['district'] = odiaData['district'] = district;
+    englishData['district'] = district;
+    odiaData['district'] = OUAT_ORIA_DISTRICTS[district];
     return { englishData, odiaData };
   }
 
