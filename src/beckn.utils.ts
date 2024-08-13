@@ -58,7 +58,11 @@ export const mapIMDItems = (sanitizedIMDData: SanitizedIMDWeather) => {
       label: 'Date of Observation',
       timestamp: sanitizedIMDData.general.date,
     },
-    locations_ids: [sanitizedIMDData.general.station],
+    locations_ids: [
+      sanitizedIMDData.general.station,
+      sanitizedIMDData.general.station_hindi,
+      sanitizedIMDData.general.station_oria,
+    ],
     category_ids: [WEATHER_CATEGORY_IDS.CURRENT_WEATHER],
     tags: {
       conditions: conditions,
@@ -100,7 +104,11 @@ export const mapIMDItems = (sanitizedIMDData: SanitizedIMDWeather) => {
         ],
       },
       time: { label: 'Future Date of Forecast', timestamp: item.date },
-      location_ids: [sanitizedIMDData.general.station],
+      location_ids: [
+        sanitizedIMDData.general.station,
+        sanitizedIMDData.general.station_hindi,
+        sanitizedIMDData.general.station_oria,
+      ],
       category_ids: [WEATHER_CATEGORY_IDS.FUTURE_WEATHER],
       tags: {
         temp_max: item.temp_max,

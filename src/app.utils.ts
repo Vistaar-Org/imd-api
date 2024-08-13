@@ -20,6 +20,18 @@ export const CROP_MAPPINGS = JSON.parse(
   }),
 );
 
+export const STATION_NAME_HIN = JSON.parse(
+  fs.readFileSync(path.join(__dirname, '/db/imd-hindi.json'), {
+    encoding: 'utf-8',
+  }),
+);
+
+export const STATION_NAME_OR = JSON.parse(
+  fs.readFileSync(path.join(__dirname, '/db/imd-oria.json'), {
+    encoding: 'utf-8',
+  }),
+);
+
 export enum CONDITIONS {
   SUNNY = 'Sunny',
   CLOUDY = 'Cloudy',
@@ -197,6 +209,8 @@ export const sanitizeIMDWeather = (data: {
   const sanitizedWeatherInfo: SanitizedIMDWeather = {
     general: {
       station: imd?.Station_Name,
+      station_hindi: STATION_NAME_HIN[imd?.Station_Code],
+      station_oria: STATION_NAME_OR[imd?.Station_Code],
       date: date,
     },
     current: {

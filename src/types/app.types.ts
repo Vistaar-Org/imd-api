@@ -1,6 +1,8 @@
 export type SanitizedIMDWeather = {
   general: {
     station: string;
+    station_hindi: string;
+    station_oria: string;
     date: string;
   };
   current: IMDCurrentDayWeatherDetails;
