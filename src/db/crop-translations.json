@@ -214,6 +214,11 @@
     "hi": "धान",
     "or": "ଧାନ"
   },
+  "rice": {
+    "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/PADDY.jpeg",
+    "hi": "धान",
+    "or": "ଧାନ"
+  },
   "seasame": {
     "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/SEASAME.jpeg",
     "hi": "तिल",
@@ -304,7 +309,7 @@
     "hi": "कद्दूवर्गीय फल",
     "or": "କଖାରୁ ଜାତୀୟ"
   },
-  "urad": {
+  "urad and moong": {
     "link": "https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Urad.jpeg",
     "hi": "उड़द",
     "or": "ହରଡ"
