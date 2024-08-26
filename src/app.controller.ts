@@ -34,6 +34,7 @@ export class AppController {
       const resp = await this.httpService.axiosRef.get(
         `https://geoip.samagra.io/georev?lat=${lat}&lon=${lon}`,
       );
+      console.log('district from geoip: ', resp.data.district);
       return resp.data.district;
     } catch (err) {
       this.logger.error('Error occurred while reading the geoip database', err);
@@ -66,7 +67,6 @@ export class AppController {
     @Query('latitude') latiude: string,
     @Query('longitude') longitude: string,
     @Query('provider') provider: string,
-    // @Body() body: any,
   ) {
     const district = await this.getDistrict(latiude, longitude);
     if (!provider) {

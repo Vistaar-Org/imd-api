@@ -87,8 +87,8 @@ export const sanitizeLatLong = (lat: string, long: string) => {
   }
 
   return {
-    latitude: lat.slice(0, 7),
-    longitude: long.slice(0, 7),
+    latitude: lat,
+    longitude: long,
   };
 };
 
