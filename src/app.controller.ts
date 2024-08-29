@@ -12,11 +12,13 @@ import { CACHE_MANAGER } from '@nestjs/cache-manager';
 import { Cache } from 'cache-manager';
 import { ApiQuery, ApiResponse } from '@nestjs/swagger';
 import { HttpService } from '@nestjs/axios';
+import { WEATHER_PROVIDERS } from './constants/enums';
 
 enum PROVIDER {
   UPCAR = 'upcar',
   OUAT = 'ouat',
 }
+
 @Controller()
 // @UseInterceptors(new CentroidInterceptor())
 export class AppController {
@@ -62,11 +64,16 @@ export class AppController {
     name: 'provider',
     enum: PROVIDER,
   })
+  @ApiQuery({
+    name: 'weather',
+    enum: WEATHER_PROVIDERS,
+  })
   @ApiResponse({})
   async getWeather(
     @Query('latitude') latiude: string,
     @Query('longitude') longitude: string,
     @Query('provider') provider: string,
+    @Query('weather') weather: string,
   ) {
     const district = await this.getDistrict(latiude, longitude);
     if (!provider) {
@@ -114,6 +121,7 @@ export class AppController {
       longitude,
       district,
       provider,
+      weather,
     );
 
     // set the cache to invalidate at 1hrs
