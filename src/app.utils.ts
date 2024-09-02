@@ -7,6 +7,7 @@ import {
   SanitizedIMDWeather,
 } from './types/app.types';
 import { VisualCrossingCurrentConditionsObject } from './types/visual-crossing.types';
+import { RAJKISAN_DISTRICTS } from './app.constants';
 
 export const WIND_DIRECTIONS = JSON.parse(
   fs.readFileSync(path.join(__dirname, '/db/wind-directions.json'), {
@@ -120,6 +121,39 @@ export const getStationId = (lat: string, long: string): string => {
   return code;
 };
 
+export const getRajaiStationId = (
+  lat: string,
+  long: string,
+): { eng: string; hin: string } => {
+  const stations = JSON.parse(
+    fs.readFileSync(path.join(__dirname + '/data/rajkisan/locations.json'), {
+      encoding: 'utf-8',
+    }),
+  );
+
+  // calc minimum distance between the given lat long and the station lat long using the lat long distance calc function in this file
+  let minDist = Math.pow(10, 1000);
+  let stationName = { eng: '', hin: '' };
+  const keys = Object.keys(stations);
+  for (let i = 0; i < keys.length; i++) {
+    const station = stations[keys[i]];
+    const dist = getDistanceFromLatLonInKm(
+      lat,
+      long,
+      station.latitude,
+      station.longitude,
+    );
+    if (dist < minDist) {
+      console.log('dist: ', dist);
+      minDist = dist;
+      stationName = { eng: station.eng, hin: station.hin };
+      console.log('code: ', stationName);
+    }
+  }
+
+  return stationName;
+};
+
 export const calculateWeatherConditions = (
   cloudCover = 0,
   windSpeed = 0,
@@ -218,6 +252,37 @@ export const sanitizeIMDWeather = (data: {
       cloudCover: visualCrossing.cloudcover,
       humidity: visualCrossing.humidity.toString(), //imd.Relative_Humidity_at_0830,
       windSpeed: visualCrossing.windspeed,
+      windDirection: visualCrossing.winddir,
+      conditions: imd?.Todays_Forecast ?? visualCrossing.conditions,
+    },
+    future: parseIMDFutureItems(imd, future),
+  };
+
+  return sanitizedWeatherInfo;
+};
+
+export const sanitizeRAJAIWeather = (data: {
+  imd: any;
+  visualCrossing: VisualCrossingCurrentConditionsObject;
+  future: ReadonlyArray<VisualCrossingCurrentConditionsObject>;
+}): SanitizedIMDWeather => {
+  const { imd, visualCrossing, future } = data;
+  // extract fields of relevance from visual crossing.
+  const date = new Date(Date.now()).toISOString().split('T')[0];
+  const sanitizedWeatherInfo: SanitizedIMDWeather = {
+    general: {
+      station: imd?.Station_Name,
+      station_hindi: RAJKISAN_DISTRICTS[imd?.Station_Name.toLowerCase()].hin,
+      station_oria: '',
+      date: date,
+    },
+    current: {
+      temp: visualCrossing.temp,
+      cloudCover: imd.cloud_cover ? imd.cloud_cover : visualCrossing.cloudcover,
+      humidity: imd.humidity
+        ? imd.humidity
+        : visualCrossing.humidity.toString(), //imd.Relative_Humidity_at_0830,
+      windSpeed: imd.wind_speed ? imd.wind_speed : visualCrossing.windspeed,
       windDirection: visualCrossing.winddir,
       conditions: imd?.Todays_Forecast ?? visualCrossing.conditions,
     },

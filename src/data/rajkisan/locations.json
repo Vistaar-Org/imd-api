@@ -1,0 +1,200 @@
+{
+  "sawaimadhopur": {
+    "eng": "sawaimadhopur",
+    "hin": "सवाईमाधोपुर",
+    "latitude": 26.0227,
+    "longitude": 76.3441
+  },
+  "kota": {
+    "eng": "kota",
+    "hin": "कोटा",
+    "latitude": 25.2138,
+    "longitude": 75.8648
+  },
+  "nagaur": {
+    "eng": "nagaur",
+    "hin": "नागौर",
+    "latitude": 27.202,
+    "longitude": 73.7409
+  },
+  "pali": {
+    "eng": "pali",
+    "hin": "पाली",
+    "latitude": 25.7725,
+    "longitude": 73.3234
+  },
+  "sikar": {
+    "eng": "sikar",
+    "hin": "सीकर",
+    "latitude": 27.6094,
+    "longitude": 75.139
+  },
+  "sirohi": {
+    "eng": "sirohi",
+    "hin": "सिरोही",
+    "latitude": 24.885,
+    "longitude": 72.8578
+  },
+  "tonk": {
+    "eng": "tonk",
+    "hin": "टोंक",
+    "latitude": 26.1666,
+    "longitude": 75.7885
+  },
+  "udaipur": {
+    "eng": "udaipur",
+    "hin": "उदयपुर",
+    "latitude": 24.5854,
+    "longitude": 73.7125
+  },
+  "chitorgarh": {
+    "eng": "chitorgarh",
+    "hin": "चितौड़गढ़",
+    "latitude": 24.8887,
+    "longitude": 74.6269
+  },
+  "jalore": {
+    "eng": "jalore",
+    "hin": "जालौर",
+    "latitude": 25.3456,
+    "longitude": 72.6151
+  },
+  "dhaulpur": {
+    "eng": "dhaulpur",
+    "hin": "धौलपुर",
+    "latitude": 26.6927,
+    "longitude": 77.8999
+  },
+  "jaisalmer": {
+    "eng": "jaisalmer",
+    "hin": "जैसलमेर",
+    "latitude": 26.9157,
+    "longitude": 70.9083
+  },
+  "jhunjhunu": {
+    "eng": "jhunjhunu",
+    "hin": "झुंझुनू",
+    "latitude": 28.1308,
+    "longitude": 75.3994
+  },
+  "pratapgarh": {
+    "eng": "pratapgarh",
+    "hin": "प्रतापगढ़",
+    "latitude": 24.0306,
+    "longitude": 74.781
+  },
+  "rajsamand": {
+    "eng": "rajsamand",
+    "hin": "राजसमंद",
+    "latitude": 25.0717,
+    "longitude": 73.8834
+  },
+  "karauli": {
+    "eng": "karauli",
+    "hin": "करौली",
+    "latitude": 26.4983,
+    "longitude": 77.0276
+  },
+  "jodhpur": {
+    "eng": "jodhpur",
+    "hin": "जोधपुर",
+    "latitude": 26.2389,
+    "longitude": 73.0243
+  },
+  "jhalawar": {
+    "eng": "jhalawar",
+    "hin": "झालावाड़",
+    "latitude": 24.5967,
+    "longitude": 76.165
+  },
+  "ajmer": {
+    "eng": "ajmer",
+    "hin": "अजमेर",
+    "latitude": 26.4499,
+    "longitude": 74.6399
+  },
+  "alwar": {
+    "eng": "alwar",
+    "hin": "अलवर",
+    "latitude": 27.553,
+    "longitude": 76.6346
+  },
+  "banswara": {
+    "eng": "banswara",
+    "hin": "बांसवाड़ा",
+    "latitude": 23.546,
+    "longitude": 74.4336
+  },
+  "baran": {
+    "eng": "baran",
+    "hin": "बारां",
+    "latitude": 25.1006,
+    "longitude": 76.5132
+  },
+  "barmer": {
+    "eng": "barmer",
+    "hin": "बाड़मेर",
+    "latitude": 25.7507,
+    "longitude": 71.3951
+  },
+  "bharatpur": {
+    "eng": "bharatpur",
+    "hin": "भरतपुर",
+    "latitude": 27.2173,
+    "longitude": 77.4895
+  },
+  "bhilwara": {
+    "eng": "bhilwara",
+    "hin": "भीलवाड़ा",
+    "latitude": 25.3462,
+    "longitude": 74.6369
+  },
+  "bikaner": {
+    "eng": "bikaner",
+    "hin": "बीकानेर",
+    "latitude": 28.0229,
+    "longitude": 73.3119
+  },
+  "bundi": {
+    "eng": "bundi",
+    "hin": "बूंदी",
+    "latitude": 25.4305,
+    "longitude": 75.6499
+  },
+  "jaipur": {
+    "eng": "jaipur",
+    "hin": "जयपुर",
+    "latitude": 26.9124,
+    "longitude": 75.7873
+  },
+  "hanumangarh": {
+    "eng": "hanumangarh",
+    "hin": "हनुमानगढ़",
+    "latitude": 29.5815,
+    "longitude": 74.3294
+  },
+  "ganganagar": {
+    "eng": "ganganagar",
+    "hin": "गंगानगर",
+    "latitude": 29.9201,
+    "longitude": 73.876
+  },
+  "dungarpur": {
+    "eng": "dungarpur",
+    "hin": "डूंगरपुर",
+    "latitude": 23.8436,
+    "longitude": 73.7145
+  },
+  "dausa": {
+    "eng": "dausa",
+    "hin": "दौसा",
+    "latitude": 26.8948,
+    "longitude": 76.3357
+  },
+  "churu": {
+    "eng": "churu",
+    "hin": "चूरू",
+    "latitude": 28.3042,
+    "longitude": 74.9672
+  }
+}

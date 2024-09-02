@@ -14,15 +14,15 @@ export const DUMMY_WEATHER = {
       descriptor: {
         images: [
           {
-            url: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Sunny.svg',
+            url: 'https://cdn-api.bhasai-dev.k8s.bhasai.samagra.io/vistaar/public/Sunny.svg',
             type: 'image_day',
           },
           {
-            url: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/Weather card ( Night ).svg',
+            url: 'https://cdn-api.bhasai-dev.k8s.bhasai.samagra.io/vistaar/public/Weather card ( Night ).svg',
             type: 'image_night',
           },
           {
-            url: 'https://cdn-api.dev.bhasai.samagra.io/vistaar/public/sun.svg',
+            url: 'https://cdn-api.bhasai-dev.k8s.bhasai.samagra.io/vistaar/public/sun.svg',
             type: 'icon',
           },
         ],

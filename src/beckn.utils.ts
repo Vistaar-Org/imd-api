@@ -13,6 +13,7 @@ import {
   SanitizedIMDWeather,
 } from './types/app.types';
 import { WEATHER_CATEGORY_IDS } from './constants/enums';
+import { RAJKMAI_WEATHER_INFO } from './app.constants';
 
 export const generateContext = () => {
   return {
