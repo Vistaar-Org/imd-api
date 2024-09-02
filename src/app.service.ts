@@ -7,11 +7,21 @@ import {
 import { ConfigService } from '@nestjs/config';
 import * as fs from 'fs';
 import * as path from 'path';
-import { CROP_MAPPINGS, getStationId, sanitizeIMDWeather } from './app.utils';
+import {
+  CROP_MAPPINGS,
+  getRajaiStationId,
+  getStationId,
+  sanitizeIMDWeather,
+  sanitizeRAJAIWeather,
+} from './app.utils';
 import { mapIMDItems, mapAdvisoryData, mapOUATWeather } from './beckn.utils';
 import { generateContext } from './beckn.utils';
-import { PROVIDERS } from './constants/enums';
-import { IMD_CITY_WEATHER_INFO, OUAT_ORIA_DISTRICTS } from './app.constants';
+import { ADVISORY_PROVIDERS, WEATHER_PROVIDERS } from './constants/enums';
+import {
+  IMD_CITY_WEATHER_INFO,
+  OUAT_ORIA_DISTRICTS,
+  RAJKMAI_WEATHER_INFO,
+} from './app.constants';
 import { ODISHA_DISTRICTS } from './constants/odisha-districts';
 import { format } from 'date-fns';
 import { DUMMY_WEATHER } from './constants/responses';
@@ -112,6 +122,53 @@ export class AppService {
     }
   }
 
+  async getWeatherFromRajKisan(lat: string, long: string) {
+    try {
+      let startTime = performance.now();
+      let stationName = getRajaiStationId(lat, long);
+      let endTime = performance.now();
+      this.logger.verbose(
+        `Time taken to get stationId from lat long: ${endTime - startTime}`,
+      );
+
+      if (!stationName) {
+        stationName = { eng: 'jaipur', hin: 'जयपुर' };
+      }
+
+      startTime = performance.now();
+      let forecastData = RAJKMAI_WEATHER_INFO[stationName.eng];
+      if (!forecastData) {
+        forecastData = RAJKMAI_WEATHER_INFO['jaipur'];
+      }
+      endTime = performance.now();
+      this.logger.verbose(
+        `Time taken to get Rajkmai data from JSON: ${endTime - startTime}`,
+      );
+      startTime = performance.now();
+      let visualCrossing;
+      try {
+        visualCrossing = await this.httpService.axiosRef.get(
+          `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${long}?unitGroup=metric&key=BD7YU52NGHX9EDTQTYQ66DLSD&contentType=json`,
+        );
+      } catch (err) {
+        console.error('error fetching visual crossing data: ', err);
+      }
+      endTime = performance.now();
+      this.logger.verbose(
+        `Time taken to get visual crossing data: ${endTime - startTime}`,
+      );
+
+      console.log('forecast data: ', forecastData);
+      return {
+        imd: forecastData,
+        visualCrossing: visualCrossing.data.currentConditions,
+        future: visualCrossing.data.days.slice(1, 5),
+      };
+    } catch (err) {
+      this.logger.error('Error resolving API Calls', err);
+    }
+  }
+
   async getAdvisoryFromUpcar() {
     try {
       const startTime = performance.now();
@@ -132,53 +189,97 @@ export class AppService {
     long: string,
     district: string,
     provider?: string,
+    weatherProvider?: string,
   ) {
-    if (!provider) provider = PROVIDERS.UPCAR;
+    console.log('weather provider: ', weatherProvider);
+    if (!provider) provider = ADVISORY_PROVIDERS.UPCAR;
+    if (!weatherProvider) weatherProvider = WEATHER_PROVIDERS.IMD;
     let imdItems = undefined,
       upcarItems = undefined,
+      rajaiItems = undefined,
       ouatWeatherItems = undefined,
       ouatAdvisoryItems = undefined;
-    // IMD Data
-    try {
-      let startTime = performance.now();
-      const imdData = await this.getWeatherFromIMD(lat, long);
-      // console.log('imdData: ', imdData);
-      let endTime = performance.now();
-      this.logger.verbose(
-        `Time taken to get weather data from IMD: ${endTime - startTime}`,
-      );
-      startTime = performance.now();
-      let date = new Date(Date.now()).toDateString();
+
+    // RAJAI Data
+    if (weatherProvider === WEATHER_PROVIDERS.RAJAI) {
+      console.log('====== INSIDE RAJAI WEATHER PROVIDER ======');
       try {
-        date = format(new Date(Date.now()), 'yyyy-MM-dd');
+        let startTime = performance.now();
+        const rajaiData = await this.getWeatherFromRajKisan(lat, long);
+        console.log('rajai-data: ', rajaiData);
+        let endTime = performance.now();
+        this.logger.verbose(
+          `Time taken to get weather data from Rajkmai: ${endTime - startTime}`,
+        );
+        startTime = performance.now();
+        let date = new Date(Date.now()).toDateString();
+        try {
+          date = format(new Date(Date.now()), 'yyyy-MM-dd');
+        } catch (err) {
+          console.error('error in formatting date: ', err);
+        }
+        if (!rajaiData.imd) {
+          rajaiData.imd = {
+            Station_Name: district,
+            date: date,
+            Todays_Forecast: rajaiData.visualCrossing.conditions,
+          };
+        }
+
+        const sanitizedRAJAIData = sanitizeRAJAIWeather(rajaiData);
+        endTime = performance.now();
+        this.logger.verbose(
+          `Time taken to sanitize RAJAI data: ${endTime - startTime}`,
+        );
+        console.log('sanitized rajkmai Data: ', sanitizedRAJAIData);
+        rajaiItems = mapIMDItems(sanitizedRAJAIData);
       } catch (err) {
-        console.error('error in formatting date: ', err);
+        console.error(err);
+        this.logger.error('Error fetching weather data from IMD', err);
       }
-      if (!imdData.imd) {
-        imdData.imd = {
-          Station_Name: district,
-          date: date,
-          Todays_Forecast: imdData.visualCrossing.conditions,
-        };
-      }
-      // console.log('imdData after if: ', imdData);
-
-      const sanitizedIMDData = sanitizeIMDWeather(imdData);
-      // console.log('sanitizedIMDData: ', sanitizedIMDData);
-
-      endTime = performance.now();
-      this.logger.verbose(
-        `Time taken to sanitize IMD data: ${endTime - startTime}`,
-      );
-      // console.log('imdData: ', imdData);
-      imdItems = mapIMDItems(sanitizedIMDData);
-    } catch (err) {
-      console.error(err);
-      this.logger.error('Error fetching weather data from IMD', err);
     }
+    // IMD Data
+    if (weatherProvider === WEATHER_PROVIDERS.IMD) {
+      try {
+        let startTime = performance.now();
+        const imdData = await this.getWeatherFromIMD(lat, long);
+        // console.log('imdData: ', imdData);
+        let endTime = performance.now();
+        this.logger.verbose(
+          `Time taken to get weather data from IMD: ${endTime - startTime}`,
+        );
+        startTime = performance.now();
+        let date = new Date(Date.now()).toDateString();
+        try {
+          date = format(new Date(Date.now()), 'yyyy-MM-dd');
+        } catch (err) {
+          console.error('error in formatting date: ', err);
+        }
+        if (!imdData.imd) {
+          imdData.imd = {
+            Station_Name: district,
+            date: date,
+            Todays_Forecast: imdData.visualCrossing.conditions,
+          };
+        }
+        // console.log('imdData after if: ', imdData);
 
+        const sanitizedIMDData = sanitizeIMDWeather(imdData);
+        // console.log('sanitizedIMDData: ', sanitizedIMDData);
+
+        endTime = performance.now();
+        this.logger.verbose(
+          `Time taken to sanitize IMD data: ${endTime - startTime}`,
+        );
+        // console.log('imdData: ', imdData);
+        imdItems = mapIMDItems(sanitizedIMDData);
+      } catch (err) {
+        console.error(err);
+        this.logger.error('Error fetching weather data from IMD', err);
+      }
+    }
     // upcar data
-    if (provider === PROVIDERS.UPCAR) {
+    if (provider === ADVISORY_PROVIDERS.UPCAR) {
       try {
         const { englishData, hindiData } = await this.getAdvisoryFromUpcar();
         upcarItems = mapAdvisoryData(englishData, 'upcar');
@@ -200,7 +301,7 @@ export class AppService {
     }
 
     let ouatData = undefined;
-    if (provider === PROVIDERS.OUAT) {
+    if (provider === ADVISORY_PROVIDERS.OUAT) {
       // OUAT Data
       try {
         ouatData = await this.getDataFromOUAT(district);
@@ -238,7 +339,7 @@ export class AppService {
       message: {
         catalog: {
           providers: [
-            imdItems ? imdItems : DUMMY_WEATHER,
+            rajaiItems ? rajaiItems : imdItems ? imdItems : DUMMY_WEATHER,
             ouatWeatherItems ? ouatWeatherItems : undefined,
             upcarItems ? upcarItems : undefined,
             ouatAdvisoryItems ? ouatAdvisoryItems : undefined,
