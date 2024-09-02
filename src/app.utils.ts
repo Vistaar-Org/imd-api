@@ -269,10 +269,12 @@ export const sanitizeRAJAIWeather = (data: {
   const { imd, visualCrossing, future } = data;
   // extract fields of relevance from visual crossing.
   const date = new Date(Date.now()).toISOString().split('T')[0];
+  console.log('+++++imd+++++++++', imd);
   const sanitizedWeatherInfo: SanitizedIMDWeather = {
     general: {
       station: imd?.Station_Name,
-      station_hindi: RAJKISAN_DISTRICTS[imd?.Station_Name.toLowerCase()].hin,
+      station_hindi:
+        RAJKISAN_DISTRICTS[imd[0]?.district_name?.toLowerCase()].hin,
       station_oria: '',
       date: date,
     },

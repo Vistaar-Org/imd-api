@@ -220,7 +220,7 @@ export class AppService {
         }
         if (!rajaiData.imd) {
           rajaiData.imd = {
-            Station_Name: district,
+            district_name: district,
             date: date,
             Todays_Forecast: rajaiData.visualCrossing.conditions,
           };
