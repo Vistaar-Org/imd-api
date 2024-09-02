@@ -58,7 +58,7 @@ export const mapIMDItems = (sanitizedIMDData: SanitizedIMDWeather) => {
       label: 'Date of Observation',
       timestamp: sanitizedIMDData.general.date,
     },
-    locations_ids: [
+    location_ids: [
       sanitizedIMDData.general.station,
       sanitizedIMDData.general.station_hindi,
       sanitizedIMDData.general.station_oria,

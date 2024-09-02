@@ -116,6 +116,43 @@ export class AppController {
       provider,
     );
 
+    // fix the district name
+    const district_hindi = await this.appService.transliterate(
+      district,
+      'en',
+      'hi',
+    );
+
+    const district_oria = await this.appService.transliterate(
+      district,
+      'en',
+      'or',
+    );
+
+    const augmentedProviders = result.message.catalog.providers.map(
+      (provider) => {
+        if (provider.category_id === 'weather_provider') {
+          const newItems = provider.items.map((item) => {
+            if (item.location_ids) {
+              const location_ids = [district, district_hindi, district_oria];
+              const newItem = item;
+              item['location_ids'] = location_ids;
+              return newItem;
+            }
+
+            return item;
+          });
+
+          const newProvider = provider;
+          newProvider['items'] = newItems;
+          return newProvider;
+        }
+        return provider;
+      },
+    );
+
+    result.message.catalog.providers = augmentedProviders;
+
     // set the cache to invalidate at 1hrs
     await this.cacheManager.set(
       `${district.toLowerCase()}-${provider.toLowerCase()}`,

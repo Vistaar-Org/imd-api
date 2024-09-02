@@ -247,4 +247,28 @@ export class AppService {
       },
     };
   }
+
+  async transliterate(
+    str: string,
+    inputLang: string,
+    outputLang: string,
+  ): Promise<string> {
+    try {
+      const resp = await this.httpService.axiosRef.post(
+        'https://ai-tools-proxy.bhasai-dev.k8s.bhasai.samagra.io/transliterate',
+        {
+          inputLanguage: inputLang,
+          outputLanguage: outputLang,
+          input: str,
+          provider: 'bhashini',
+        },
+      );
+      return resp.data.suggestions[0] as string;
+    } catch (err) {
+      this.logger.error('Error while transliterating', err);
+      throw new InternalServerErrorException(
+        `Error while transliterating: ${err}`,
+      );
+    }
+  }
 }

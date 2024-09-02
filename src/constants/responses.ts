@@ -30,7 +30,7 @@ export const DUMMY_WEATHER = {
       time: {
         label: 'Date of Observation',
       },
-      locations_ids: ['NA'],
+      location_ids: ['NA'],
       category_ids: ['current_weather'],
       tags: {
         conditions: 'NA',
