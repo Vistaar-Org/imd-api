@@ -233,6 +233,7 @@ export class AppService {
         );
         console.log('sanitized rajkmai Data: ', sanitizedRAJAIData);
         rajaiItems = mapIMDItems(sanitizedRAJAIData);
+        rajaiItems.id = 'Raj Kisan APIs';
       } catch (err) {
         console.error(err);
         this.logger.error('Error fetching weather data from IMD', err);
