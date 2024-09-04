@@ -141,6 +141,13 @@ export class AppController {
       (provider) => {
         if (provider.category_id === 'weather_provider') {
           const newItems = provider.items.map((item) => {
+            if (item.locations_ids) {
+              const locations_ids = [district, district_hindi, district_oria];
+              const newItem = item;
+              item['locations_ids'] = locations_ids;
+              return newItem;
+            }
+
             if (item.location_ids) {
               const location_ids = [district, district_hindi, district_oria];
               const newItem = item;
