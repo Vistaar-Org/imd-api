@@ -80,16 +80,22 @@ export class AppController {
       provider = 'upcar';
     }
 
-    if (district && provider) {
+    if (!weather) {
+      weather = 'imd';
+    }
+
+    if (district && provider && weather) {
       const res = await this.cacheManager.get(
-        `${district.toLowerCase()}-${provider.toLowerCase()}`,
+        `${district.toLowerCase()}-${provider.toLowerCase()}-${weather.toLowerCase()}`,
       );
       if (res) {
         this.logger.log(
           'hitting cache to respond for district ' +
             district +
             ' provider ' +
-            provider,
+            provider +
+            ' weather ' +
+            weather,
         );
         return res;
       }
@@ -170,7 +176,7 @@ export class AppController {
 
     // set the cache to invalidate at 1hrs
     await this.cacheManager.set(
-      `${district.toLowerCase()}-${provider.toLowerCase()}`,
+      `${district.toLowerCase()}-${provider.toLowerCase()}-${weather.toLowerCase()}`,
       result,
       1000 * 60 * 60,
     );
