@@ -130,18 +130,20 @@ export class AppController {
       weather,
     );
 
-    // fix the district name
-    const district_hindi = await this.appService.transliterate(
-      district,
-      'en',
-      'hi',
-    );
+    let district_hindi = district,
+      district_oria = district;
+    try {
+      // fix the district name
+      district_hindi = await this.appService.transliterate(
+        district,
+        'en',
+        'hi',
+      );
 
-    const district_oria = await this.appService.transliterate(
-      district,
-      'en',
-      'or',
-    );
+      district_oria = await this.appService.transliterate(district, 'en', 'or');
+    } catch (err) {
+      this.logger.error('Error occurred while getting weather data', err);
+    }
 
     const augmentedProviders = result.message.catalog.providers.map(
       (provider) => {
