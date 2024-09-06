@@ -148,11 +148,12 @@ export class AppService {
       let visualCrossing;
       try {
         visualCrossing = await this.httpService.axiosRef.get(
-          `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${long}?unitGroup=metric&key=BD7YU52NGHX9EDTQTYQ66DLSD&contentType=json`,
+          `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${long}?unitGroup=metric&key=FYA5W38EYLSF7BXB768J22F9B&contentType=json`,
         );
       } catch (err) {
         console.error('error fetching visual crossing data: ', err);
       }
+      console.log('visual crossing data: ', visualCrossing.data);
       endTime = performance.now();
       this.logger.verbose(
         `Time taken to get visual crossing data: ${endTime - startTime}`,
@@ -218,7 +219,7 @@ export class AppService {
         } catch (err) {
           console.error('error in formatting date: ', err);
         }
-        if (!rajaiData.imd) {
+        if (!rajaiData || !rajaiData.imd) {
           rajaiData.imd = {
             district_name: district,
             date: date,
