@@ -101,7 +101,7 @@ export class AppService {
       let visualCrossing;
       try {
         visualCrossing = await this.httpService.axiosRef.get(
-          `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${long}?unitGroup=metric&key=FYA5W38EYLSF7BXB768J22F9B&contentType=json`,
+          `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${long}?unitGroup=metric&key=DK34QYLLWYWRKMXGCXPFFP6SR&contentType=json`,
         );
       } catch (err) {
         console.error('error fetching visual crossing data: ', err);
@@ -148,7 +148,7 @@ export class AppService {
       let visualCrossing;
       try {
         visualCrossing = await this.httpService.axiosRef.get(
-          `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${long}?unitGroup=metric&key=FYA5W38EYLSF7BXB768J22F9B&contentType=json`,
+          `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${long}?unitGroup=metric&key=DK34QYLLWYWRKMXGCXPFFP6SR&contentType=json`,
         );
       } catch (err) {
         console.error('error fetching visual crossing data: ', err);

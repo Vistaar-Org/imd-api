@@ -180,7 +180,7 @@ export class AppController {
     await this.cacheManager.set(
       `${district.toLowerCase()}-${provider.toLowerCase()}-${weather.toLowerCase()}`,
       result,
-      1000 * 60 * 60,
+      1000 * 60 * 60 * 4,
     );
     return result;
   }
