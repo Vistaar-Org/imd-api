@@ -1,108 +1,102 @@
 {
   "weather_details": {
-    "2024-07-20": {
-      "rainfall": 20,
-      "t_max": 31,
-      "t_min": 25,
-      "rh_max": 90,
-      "rh_min": 65,
-      "wind_speed": 15,
+    "2024-09-07": {
+      "rainfall": 10,
+      "t_max": 33,
+      "t_min": 27,
+      "rh_max": 85,
+      "rh_min": 57,
+      "wind_speed": 8,
+      "wind_direction": 90,
+      "cloud_cover": 7
+    },
+    "2024-09-08": {
+      "rainfall": 15,
+      "t_max": 32,
+      "t_min": 27,
+      "rh_max": 93,
+      "rh_min": 66,
+      "wind_speed": 9,
       "wind_direction": 72,
-      "cloud_cover": 8
+      "cloud_cover": 7
     },
-    "2024-07-21": {
-      "rainfall": 15,
-      "t_max": 32,
-      "t_min": 25,
+    "2024-09-09": {
+      "rainfall": 25,
+      "t_max": 30,
+      "t_min": 26,
       "rh_max": 91,
-      "rh_min": 62,
-      "wind_speed": 12,
+      "rh_min": 66,
+      "wind_speed": 8,
       "wind_direction": 112,
+      "cloud_cover": 7
+    },
+    "2024-09-10": {
+      "rainfall": 20,
+      "t_max": 30,
+      "t_min": 26,
+      "rh_max": 92,
+      "rh_min": 63,
+      "wind_speed": 7,
+      "wind_direction": 79,
       "cloud_cover": 8
     },
-    "2024-07-22": {
-      "rainfall": 10,
-      "t_max": 33,
-      "t_min": 25,
-      "rh_max": 86,
-      "rh_min": 58,
-      "wind_speed": 10,
-      "wind_direction": 158,
-      "cloud_cover": 7
-    },
-    "2024-07-23": {
-      "rainfall": 15,
-      "t_max": 33,
-      "t_min": 26,
-      "rh_max": 82,
-      "rh_min": 60,
-      "wind_speed": 14,
-      "wind_direction": 238,
-      "cloud_cover": 7
-    },
-    "2024-07-24": {
+    "2024-09-11": {
       "rainfall": 10,
       "t_max": 32,
       "t_min": 26,
-      "rh_max": 83,
-      "rh_min": 61,
-      "wind_speed": 20,
-      "wind_direction": 248,
-      "cloud_cover": 8
+      "rh_max": 90,
+      "rh_min": 64,
+      "wind_speed": 7,
+      "wind_direction": 270,
+      "cloud_cover": 7
     }
   },
   "names_of_crops": [
     "rice",
-    "groundnut",
-    "maize",
-    "pigeon pea",
-    "okra",
+    "finger millet",
+    "pumpkin",
+    "menacinakahi",
+    "chilli",
     "brinjal",
-    "goat",
-    "fresh water"
+    "chicken"
   ],
-  "general_advisory": "For one-acre area of paddy transplanting 400 m2 (10 Decimal) size of land is required for nursery raising. Before sowing, paddy seeds should be treated with Trichoderma powder formulation@10g/kg of seeds or any other seed treating chemicals like Thiram 75% @ 3 gm or Captan 50% @ 3 gm per kg of seeds procured from the Government approved agencies. Go for non-paddy crops in the upland to avoid terminal drought. Intercropping of cereals+pulses/oilseeds is recommended. Go for early sowing/transplanting as for as possible to complete these by mid-August. Go for medium duration rice varieties in medium land. Go for line sowing of rice followed by early beaushaning and weeding. This will avoid the rainfall required for transplanting, and over -aged seedlings if transplanted late. Drain out excess moisture from the non-paddy crops, make proper drainage channel and keep the channel open.",
+  "general_advisory": "As per extended range of forecast received from IMD, fairly widespread rain/thundershower is very likely over districts of Odisha during the week-1 (6th - 12th September , 2024) with isolated heavy rainfall very likely in the districts of South Odisha on 6th Sept; isolated heavy to very heavy rainfall very likely in the districts of South Odisha on 7th Sept; isolated heavy to very heavy rainfall very likely in the districts of Central Odisha on 8th Sept, heavy rainfall very likely over the districts of north Odisha on 9th and 10th Sept. Scattered to fairly widespread rain/thundershower very likely in the district of Odisha state during week 2 (13th - 19th September , 2024). In view of five days weather forecast received from IMD, farmers are advised to withhold application of fertilizers and plant protection chemicals for the time being. Apply balanced and appropriate fertilizers according to crop's growth stage. Avoid excess nitrogen as it promotes excessive vegetative growth and increase water demand. Always consider an integrated approach of preventive measures together with biological treatment if available to protect the crop from pests. Extensive insecticide use can lead to resistance in the pest. To prevent this, ensure proper rotation between insecticides and use mixtures. Please make sure before applying urea in the field you should complete weed control operations and drain out access water from the field.",
   "crops_data": {
     "rice": {
       "advisory": [
-        "In assured irrigated areas select the land for wet bed nursery close to source of irrigation water with good drainage facilities. It is advisable to follow community nursery approach at village level. Divide nursery area into smaller plots of 1.5-metre-long, 10 cm height and convenient length. Irrigation channels of size 30 cm in width should be made along the beds for irrigation/drainage. Sprouted Seeds should be sown @ 40-50 g/ m2 area ofCrop (Stage) Crop Specific Advisory seed bed by line sowing with 5 cm gap between each line or direct broadcasting and put dried compost over seeds."
+        "The crop is at active tillering stage. After receding of rain water , the low temperature below 280C and relative humidity more than 70% favours infestation of Swarming caterpillar and Yellow stem borer in rice. To manage Swarming caterpillar , first removes the weeds from the field and bunds. If crop is in Beushaning stage then complete Beushaning immediately . When the ETL  reaches ‚1 damaged tiller/hill or ‚2 larvae/ m2, spray Chlorpyriphos 50 % + Cypermethrin 5 % E.C @ 400-ml/acre or Quinalphos 20% E.C. + Cypermethrin 3% E.C. @ 400-ml/acre or or Lambda Cyhalothrin 5% EC @ 300 ml/acre during afternoon hours. To manage stem borer in paddy at early stage of crop, apply Cartap Hydrochloride 4 % G @ 8-kg/acre or Chlorantraniliprole 0.4 % GR @ 4-kg/acre or Imidacloprid 0.3% GR @ 6-kg/acre by mixing it with sand at 1:1 ratio."
       ]
     },
-    "groundnut": {
+    "finger millet": {
       "advisory": [
-        "In groundnut, apply well powdered Gypsum @ 100 kg/acre and incorporate into the soil along with the basal fertilizers, this will improve number of pods and pod filling. If pre-emer gence herbicide is not applied during sowing than to manage weeds in Groundnut crop post emer gence application of herbicide like Imazethapyr 10 % SL  @ 300-ml/acre or Quizalofop-Ethyl 5 % EC @ 400-ml/acre should be applied at 15-DAS by mixing it in 200 litre of water . For better peg formation in groundnut crop hoeing and earthing up should be done at 20-25 DAS."
+        "There is chance of leaf spot and leaf blight disease in finger millet crop. Brown lesions appear on the young leaves. Severely af fected seedlings may be killed. Dark brown spots appear on the leaves of grown up plants. The leaves give blightening appearance. Break down of neck occur and ears hang down from the plant. To control this diseases spray Mancozeb 63%WP+Carbendazim 12% @400 gm/acre. To spray the fungicide 200-litre of water per acre is required."
       ]
     },
-    "maize": {
+    "pumpkin": {
       "advisory": [
-        "Seed rate for maize is 6-7kg/acre.T o avoid the infestation of Fall Army Worm, treat 1-kg seeds with 4-ml Cyantraniliprole19.8%+ Thiamethoxam 19.8% FS. Keep row to row spacing at 60 cm and plant to plant at 20 cm. To maintain optimum plant population, use seed drill for sowing or sow the seeds behind the plough. Apply 55 kg of DAP  and 22-kg of potash as basal fertilizer . For chemical control of weeds in Maize, spray Atrazine 50 % W.P herbicide @ 800 g /acre by mixing it in 200 litres of water within 1-2 DAS."
+        "Rainy and humid weather , high morning RH (>85%) & water saturated soil favours Downy Mildew disease in cucurbit vegetables. To manage Downy Mildew disease in cucurbits spray Metalaxyl @ 2-gram/litre or Azoxystrobin @ 1-gram/litre or Copper oxychloride 50 % WP @ 3-gram/litre twice in 10 days intervals."
       ]
     },
-    "pigeon pea": {
+    "menacinakahi": {
       "advisory": [
-        "Some improved varieties of Arhar are PRG-235, PRG 176, VL ARHAR-1, T- Arhar etc. For line sowing the recommended seed rate for early maturing varieties is 8 kg whereas for late maturing varieties it is 6 kg. Land should be ploughed 3-4 times by cultivator to get fine tilth followed by land levelling. Apply 2 tonne of well decomposed FYM during final land preparation. Seed treatment can be done with Carbendazim 50 % WP @ 2- gram/ kg of seeds or Carboxin 37.5 % + Thiram 37.5% D.S WP. Treat the seeds with recommended species of Rhizobium bacterial culture @ 20 gram/kg of seeds before 1 hour of sowing. The gap between chemical seed treatment and Rhizobium treatment should be at least 7 days."
+        "Chilli crop is at seedling stage. High soil moisture & moderate soil temperature (<28°C), high RH, high rainfall and poor drainage during this rainy season may cause damping of f disease. Drench the soil with Mancozeb @ 3g/ltr or foliar spray with Metalaxyl @ 2g/ltr or Metalaxyl+Mancozeb @ 3g/ltr ."
       ]
     },
-    "okra": {
+    "chilli": {
       "advisory": [
-        "The seed rate for HYV  okra is 4 -kg/acre whereas for hybrid the seed rate is 1.5 kg/acre. For providing resistance against infestation of sucking pests at early stage of crop, treat the seed with imidacloprid."
+        "Chilli crop is at seedling stage. High soil moisture & moderate soil temperature (<28°C), high RH, high rainfall and poor drainage during this rainy season may cause damping of f disease. Drench the soil with Mancozeb @ 3g/ltr or foliar spray with Metalaxyl @ 2g/ltr or Metalaxyl+Mancozeb @ 3g/ltr ."
       ]
     },
     "brinjal": {
       "advisory": [
-        "For cultivation of an acre of brinjal crop 200g of improved variety and 80g of hybrid seed is required.Some important varieties of Brinjal are Utkal tarini, Utkal Madhuri, Safed moti, VNR Long Purple, Akshita, VNR B5, Vairabi, Borigumma round etc. Ten days before sowing in the nursery bed 20kg of completely decomposed FYM should be well mixed with the soil. Seed treatment can be done with Carbendazim 50 % WP @ 2g/ kg of seeds or Carboxin 37.5 % + Thiram 37.5% D.S WP @ 3-gm/kg of seeds. After about 6 hours of seed treatment sow the seeds at 2.5 x 5cm at a depth of 1cm. After sowing, drench the soil with a mixture of 2-g Carbendazim. Cover the nurseryHorticultur e (Stage) Horticultur e Specific Advisory bed with paddy straw or dried leaves for better germination. Dust Chlorpyriphos powder around the nursery bed to avoid the ants. 4 weeks old seedlings should be transplanted in the main field."
+        "Brinjal is at flowering to fruiting stage. After receding of rainfall and there is chance of increasing in day & night temperature and morning relative humidity more than 70% favours Shoot and fruit borer in Brinjal. To manage the pest, remove the af fected terminal shoot showing bore holes and the affected fruits. To manage this insect, install 8 nos. of pheromone trap having Leucin Lure per acre. Use chemical control if there is 4% withering of terminal shoot or 14% fruits infested with borers. For chemical control spray Emamectin Benzoate 5% SG @ 80-gram/ acre or Chlorantraniliprole 18.5 % SC @80-ml/acre or Spinetoram 1 1.7 % SC @ 200-ml /acre. There should be a gap of 7-10 days between pesticide application and harvest. Use any of the above insecticides alternately at 15-days interval."
       ]
     },
-    "goat": {
+    "chicken": {
       "advisory": [
-        "By using sand over the floor we can keep the floor dry so that the animals are kept free from dif ferent diseases. The speciality of this shed is the floor is made of bricks and cement and sand from river is spread over it by a thickness of 4-6 inches. The sand soaks the urine so that the animals can sleep over it comfortably . It is also easier to clean the faecal material over the sand floor . To keep the sand dry it is stirred upside down in 15-20 days interval. The floor space requirement for kid is 0.5, for adult 1.2, for buck andpregnant female 2 square metre floor space is necessary which is suitable for every type of shed."
-      ]
-    },
-    "fresh water": {
-      "advisory": [
-        "Carp such as Rohu, Catla and Mrigal, which grow rapidly , should be stocked in a certain ratio of 4:3:3 to increase the benefits. Generally , a density of 5,000 fingerlings/ha is kept as a standard stocking. Groundnut oil cake and rice bran is given in same ratio @ 5% of the total biomass of stocking material. Cow dung, urea and super phosphate should be applied to increase pond quality . In 8-10 months, fishes attain their marketable size."
+        "Bird flu is a viral disease of poultry . It spreads through contaminated feathers, saliva, droppings of birds. Sometimes it can spread from af fected birds to human beings. During this time please clean poultry houses every day and change the feed and water of poultry birds frequently . Don' t throw the dead poultry birds here and there. Please bury them by wearing gloves and masks and sanitise the place with bleaching powder . Don' t bring poultry birds or eggs to home from the af fected area."
       ]
     }
   },
-  "date": "19-07-2024"
+  "date": "06-09-2024"
 }

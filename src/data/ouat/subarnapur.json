@@ -1,95 +1,95 @@
 {
   "weather_details": {
-    "20-07-2024": {
-      "rainfall": 10,
-      "t_max": 31,
-      "t_min": 24,
-      "rh_max": 87,
-      "rh_min": 46,
-      "wind_speed": 10,
-      "wind_direction": 63,
-      "cloud_cover": 7
-    },
-    "21-07-2024": {
-      "rainfall": 15,
-      "t_max": 31,
-      "t_min": 24,
-      "rh_max": 83,
-      "rh_min": 49,
-      "wind_speed": 11,
+    "07-09-2024": {
+      "rainfall": 4,
+      "t_max": 34,
+      "t_min": 25,
+      "rh_max": 84,
+      "rh_min": 50,
+      "wind_speed": 7,
       "wind_direction": 202,
-      "cloud_cover": 7
-    },
-    "22-07-2024": {
-      "rainfall": 10,
-      "t_max": 32,
-      "t_min": 25,
-      "rh_max": 81,
-      "rh_min": 57,
-      "wind_speed": 17,
-      "wind_direction": 238,
-      "cloud_cover": 7
-    },
-    "23-07-2024": {
-      "rainfall": 5,
-      "t_max": 32,
-      "t_min": 25,
-      "rh_max": 80,
-      "rh_min": 63,
-      "wind_speed": 22,
-      "wind_direction": 248,
       "cloud_cover": 6
     },
-    "24-07-2024": {
-      "rainfall": 5,
+    "08-09-2024": {
+      "rainfall": 6,
       "t_max": 33,
-      "t_min": 26,
-      "rh_max": 78,
-      "rh_min": 55,
-      "wind_speed": 23,
+      "t_min": 25,
+      "rh_max": 89,
+      "rh_min": 54,
+      "wind_speed": 6,
+      "wind_direction": 289,
+      "cloud_cover": 7
+    },
+    "09-09-2024": {
+      "rainfall": 20,
+      "t_max": 31,
+      "t_min": 24,
+      "rh_max": 94,
+      "rh_min": 65,
+      "wind_speed": 11,
       "wind_direction": 248,
-      "cloud_cover": 6
+      "cloud_cover": 8
+    },
+    "10-09-2024": {
+      "rainfall": 25,
+      "t_max": 30,
+      "t_min": 24,
+      "rh_max": 92,
+      "rh_min": 66,
+      "wind_speed": 14,
+      "wind_direction": 252,
+      "cloud_cover": 8
+    },
+    "11-09-2024": {
+      "rainfall": 20,
+      "t_max": 30,
+      "t_min": 25,
+      "rh_max": 92,
+      "rh_min": 69,
+      "wind_speed": 15,
+      "wind_direction": 248,
+      "cloud_cover": 7
     }
   },
   "names_of_crops": [
     "rice",
-    "maize",
+    "cotton",
     "vegetable crops",
-    "animal husbandry"
+    "banana",
+    "cow/buffalo"
   ],
-  "general_advisory": "As there is a chance of occurrence of light to moderate rainfall along with heavy rainfall in one or two places in upcoming days so, farmers are advised to avoid irrigation as well as spraying operation during that period and should wait some days for transplanting of rice and planting of fruit and vegetable crops. Looking to the high wind speed condition make provisions to support the crops.",
+  "general_advisory": "There is a chance of occurrence of light to moderate rainfall along with heavy rainfall in one or two places with thunderstorm and lightning in upcoming days so farmers are advised to wait some days for irrigation and spraying operation should be conducted before that and keep their animal away from any electrical equipment. Prevailing weather condition is favourable for various diseases and sucking insect pest attack in different crops so its regular monitoring should be advised.",
   "crops_data": {
     "rice": {
       "advisory": [
-        "Nursery sowing should be completed by end of 2nd fortnight of July.",
-        "Main field land preparation should be done by puddling the field twice at 7-10 days intervals and land leveling for uniform crop stand.",
-        "For high yielding varieties apply appropriate basal dose of fertilizers.",
-        "Transplanting of seedlings should be done at recommended spacing.",
-        "Store rainwater to be utilized during dry spells."
+        "In case of no rainfall condition, farmers should apply one irrigation at this stage to maintain 5 cm water level in rice field.",
+        "Disease Management: After rainfall, there may be a chance of infestation of sheath blight and sheath rot disease in rice field so to control these diseases farmers should spray Trifloxystrobin 25% + Tebuconazole 50% WG @ 80 g or, Propiconazole 25% @ 200 ml or, Hexaconazole 5 % SC @ 250 ml in 200 litres of water per acre. Repeat the spray at 7-10 days’ interval. In-case of brown spot, spraying of Propiconazole 25 EC @ 1ml or Mancozeb 75 WP or Carbendazim 64% + Mancozeb 8% 75WP @ 1.5 g per litre of water should be advised.",
+        "Pest Management: Keep 3 pheromone traps per acre of rice field for monitoring the stem borer and leaf folder infestations. Whenever the number of male moths/trap reaches 4 or 5, apply Azadirachtin 0.15% EC @ 800 ml/acre or, Chlorantraniliprole 0.4% GR @ 4 kg/acre mixing with sand at 1:1 Gramin Krishi Mausam Sewa India Meteorological Department Orissa University of Agriculture and Technology RRTTS, Chiplima, Sambalpur. Cloudy weather along with high humidity favour the gall midge attack in rice field and mostly observed in late sown crop. Previous weather condition was favourable for the incidence of this insect due to which an onion leaf or silver shoot like structure are formed so for its control farmers should spray thiamethoxam 25% WG @ 40g or Fipronil 5% SC @ 400 ml or Chloropyriphos 20 EC @ 500 ml in 200 liter water per acre in clear and calm weather condition."
       ]
     },
-    "maize": {
+    "cotton": {
       "advisory": [
-        "Ideal sowing time for kharif maize is from June 20 to end of July.",
-        "Pre-sow seed treatment with fungicides and insecticides is recommended.",
-        "Keep a check on weed growth with manual hoeing and herbicide application.",
-        "Delay any spraying operations due to upcoming rainfall forecast."
+        "To control the flower drop in cotton crop, application of Planofix @ 90 ml in 200 liters of water per acre after 60 -65 days after sowing of seed.",
+        "To control sucking insect pest (Aphid, Thrips etc.) attack in cotton crop, application of Neem based pesticide like Neem oil @ 600 -800 ml + 200g detergent powder per acre by mixing with 200 liters of water should be advised at 30 -45 days crop stage under clear weather.",
+        "At the initial stage of flowering, farmers should avoid any chemical application in cotton crop."
       ]
     },
     "vegetable crops": {
       "advisory": [
-        "Start raised bed nursery preparation with proper drainage system for kharif vegetable crops.",
-        "Avoid planting and intercultural operations during heavy rainfall periods.",
-        "Ensure proper drainage to avoid waterlogging."
+        "If sucking insect pest attack is noticed, then spraying of thiamethoxam @ 0.2 g or imidacloprid @ 0.33 ml per liter of water should be advised.",
+        "For controlling some diseases like wilt, root rot etc. farmers should use Carbendazim @ 2g or copper oxicloride @ 3ml per liter of water under no rainfall condition."
       ]
     },
-    "animal husbandry": {
+    "banana": {
       "advisory": [
-        "Deworming and vaccination of animals against infectious diseases is crucial during the rainy season.",
-        "Provide clean drinking water to animals and avoid exposure to flowing rainwater.",
-        "Ensure animals are kept in safe places during adverse weather conditions."
+        "Prevailing weather condition is favourable for thrip attack in Banana plant so at the initial stage cover or wrap the bundle with a jute bag, area should be weed free and use 15 -20 no. of blue sticky card per acre should be advised to control this insect. For chemical control, spraying of Diafenthiuron 50% WP @ 2g per liter (twice at 15 days interval) should be advised."
+      ]
+    },
+    "cow/buffalo": {
+      "advisory": [
+        "Mastitis disease is also observed in some animals at present condition due to which milk production and quality may hamper, so some preventive as well as control measures like pre and post dipping with antiseptic liquids, proper sanitation, preventing wet floor surface, feeding during and just after milking to avoid sitting of animals before closure of teat sphincters, lime application on the resting floor, provide a mixture of 2 lemons and 200g sugar in one liter water at morning and evening hours etc. should be taken to control this disease. Fresh water availability should be ensured in the farm."
       ]
     }
   },
-  "date": "19-07-2024"
+  "date": "06-09-2024"
 }

@@ -1,132 +1,138 @@
 {
   "weather_details": {
-    "20/07/2024": {
-      "rainfall": 10,
+    "07/09/2024": {
+      "rainfall": 12,
       "t_max": 34,
       "t_min": 25,
-      "rh_max": 85,
-      "rh_min": 45,
-      "wind_speed": 16,
-      "wind_direction": 68,
-      "cloud_cover": 7
-    },
-    "21/07/2024": {
-      "rainfall": 15,
-      "t_max": 33,
-      "t_min": 25,
-      "rh_max": 90,
-      "rh_min": 52,
-      "wind_speed": 10,
-      "wind_direction": 103,
-      "cloud_cover": 7
-    },
-    "22/07/2024": {
-      "rainfall": 10,
-      "t_max": 33,
-      "t_min": 26,
-      "rh_max": 89,
-      "rh_min": 55,
-      "wind_speed": 9,
-      "wind_direction": 117,
+      "rh_max": 88,
+      "rh_min": 54,
+      "wind_speed": 7,
+      "wind_direction": 101,
       "cloud_cover": 6
     },
-    "23/07/2024": {
-      "rainfall": 10,
-      "t_max": 34,
-      "t_min": 26,
-      "rh_max": 85,
-      "rh_min": 65,
-      "wind_speed": 18,
-      "wind_direction": 248,
-      "cloud_cover": 7
-    },
-    "24/07/2024": {
-      "rainfall": 10,
+    "08/09/2024": {
+      "rainfall": 15,
       "t_max": 34,
       "t_min": 25,
-      "rh_max": 84,
-      "rh_min": 62,
-      "wind_speed": 21,
-      "wind_direction": 248,
+      "rh_max": 93,
+      "rh_min": 60,
+      "wind_speed": 8,
+      "wind_direction": 90,
+      "cloud_cover": 7
+    },
+    "09/09/2024": {
+      "rainfall": 30,
+      "t_max": 32,
+      "t_min": 24,
+      "rh_max": 90,
+      "rh_min": 59,
+      "wind_speed": 7,
+      "wind_direction": 150,
       "cloud_cover": 8
+    },
+    "10/09/2024": {
+      "rainfall": 35,
+      "t_max": 30,
+      "t_min": 24,
+      "rh_max": 93,
+      "rh_min": 57,
+      "wind_speed": 6,
+      "wind_direction": 225,
+      "cloud_cover": 8
+    },
+    "11/09/2024": {
+      "rainfall": 25,
+      "t_max": 30,
+      "t_min": 23,
+      "rh_max": 93,
+      "rh_min": 70,
+      "wind_speed": 8,
+      "wind_direction": 249,
+      "cloud_cover": 7
     }
   },
   "names_of_crops": [
     "paddy",
-    "kharif pulses",
-    "arhar",
+    "pulses",
+    "direct sown paddy",
     "ragi",
+    "sesamum",
     "maize",
     "groundnut",
-    "ginger",
     "turmeric",
+    "mango",
     "vegetables",
-    "yam"
+    "papaya",
+    "pisciculture",
+    "livestock"
   ],
-  "general_advisory": "Start sowing kharif crops when the monsoon gives a cumulative rainfall of more than 70 mm.",
+  "general_advisory": "Due to forecast of light to moderate rainfall, farmers are advised not to apply fertilizer and chemicals during this period. Strengthen the bunds of paddy fields and check for any rat holes or leakage. Keep the bund clean to avoid insect multiplication.",
   "crops_data": {
     "paddy": {
       "advisory": [
-        "Prepare well cultivated dry bed for nursery",
-        "Sow seeds in lines and cover with soil",
-        "Apply urea for 10 decimal area",
-        "Field preparation and fill rat holes"
+        "After rain, go for applying Nitrogen @ 12-16 kg/acre as per the variety."
       ]
     },
-    "kharif pulses": {
+    "pulses": {
       "advisory": [
-        "Treat seeds with Rhizobium",
-        "Treat with Carbedazim before sowing",
-        "Choose good varieties like IP -02-14, OUM -11-5, Pant -19, PDM -54"
+        "After rain, there is a chance of mealy bug attack, to manage this spray Dimethoate @ 2 ml/liter of water."
       ]
     },
-    "arhar": {
+    "direct sown paddy": {
       "advisory": [
-        "Choose quality seeds like Upas -120, ICPl 86012, Pusa Arhar",
-        "Go for early to medium duration Arhar"
+        "Maintain 2 inches of water till grand growth stage. Go for regular survey for any insect pest infestation."
       ]
     },
     "ragi": {
       "advisory": [
-        "Choose good varieties like Arjuna, Kalua, Sriprava",
-        "Prepare the land and sow seeds after good rainfall"
+        "After rain, go for intercultivation and top dress with 12 kg Nitrogen/ac."
+      ]
+    },
+    "sesamum": {
+      "advisory": [
+        "In upland, go for sowing sesamum. Good varieties are Amrit, GT 10, Kanak, Kalika, Prachi @ 2-3 kg/acre. Go for line sowing at spacing 30cm X 10cm. At final land preparation, apply basal fertilizer dose @ 6 kg Nitrogen, 8 kg Phosphorus, and 8 kg potash per acre."
       ]
     },
     "maize": {
       "advisory": [
-        "Choose good varieties like Kalinga Maize, Prabal",
-        "Apply basal dose of NPK after land preparation"
+        "Due to weather, there is a chance of Aphids in Maize. To manage this, apply Dimethoate @ 2 ml/liter of water."
       ]
     },
     "groundnut": {
       "advisory": [
-        "Choose good varieties like Dharani, Smruti, Kadri -6, Kalinga groundnut",
-        "Treat seeds with Vitavax power and Rhizobium culture",
-        "Apply FYM, gypsum, and NPK during final land preparation"
-      ]
-    },
-    "ginger": {
-      "advisory": [
-        "Drain excess water from the field"
+        "Due to weather, Leaf blight disease is seen. To manage this, spray Mancozeb @ 4 ml/liter of water."
       ]
     },
     "turmeric": {
       "advisory": [
-        "Drain excess water from the field"
+        "Keep provision of drainage of excess water."
+      ]
+    },
+    "mango": {
+      "advisory": [
+        "Provide staking to the newly planted saplings to avoid wind damage. Go for intercropping with pulses in newly developed orchard."
       ]
     },
     "vegetables": {
       "advisory": [
-        "Use pheromone traps or Neem based pesticides for Brinjal fruit & Shoot Borer",
-        "Go for off-season vegetables like Cauliflower"
+        "Due to weather, there is a chance of Brinjal Fruit & Shoot Borer attack. To manage this, apply T. chilonis @ 20000 per acre."
       ]
     },
-    "yam": {
+    "papaya": {
       "advisory": [
-        "Seed rate is 8-10 q/ac",
-        "Prepare well pulverized field for planting"
+        "After rainfall, drench Carbendazim or Mancozeb @ 2 g/l of water near the root zone to avoid any type of fungal diseases."
+      ]
+    },
+    "pisciculture": {
+      "advisory": [
+        "Provide regular feeding @ 0.35% of body mass."
+      ]
+    },
+    "livestock": {
+      "advisory": [
+        "Provide mineral mixture to increase milk productivity in animals."
       ]
     }
   },
-  "date": "19-07-2024"
+  "date": "06-09-2024"
 }
