@@ -1,84 +1,114 @@
 {
   "weather_details": {
-    "2024-07-20": {
-      "rainfall": 40,
-      "t_max": 29,
-      "t_min": 24,
-      "rh_max": 91,
-      "rh_min": 73,
-      "wind_speed": 4,
-      "wind_direction": 242,
-      "cloud_cover": 8
-    },
-    "2024-07-21": {
-      "rainfall": 20,
-      "t_max": 30,
-      "t_min": 24,
-      "rh_max": 92,
-      "rh_min": 72,
-      "wind_speed": 6,
-      "wind_direction": 244,
-      "cloud_cover": 8
-    },
-    "2024-07-22": {
+    "2024-09-07": {
       "rainfall": 10,
-      "t_max": 31,
+      "t_max": 35,
       "t_min": 25,
-      "rh_max": 92,
-      "rh_min": 78,
-      "wind_speed": 9,
-      "wind_direction": 249,
+      "rh_max": 93,
+      "rh_min": 67,
+      "wind_speed": 5,
+      "wind_direction": 288,
       "cloud_cover": 7
     },
-    "2024-07-23": {
-      "rainfall": 5,
-      "t_max": 32,
-      "t_min": 25,
-      "rh_max": 87,
-      "rh_min": 69,
-      "wind_speed": 14,
-      "wind_direction": 249,
-      "cloud_cover": 7
-    },
-    "2024-07-24": {
-      "rainfall": 5,
+    "2024-09-08": {
+      "rainfall": 15,
       "t_max": 33,
       "t_min": 25,
-      "rh_max": 87,
-      "rh_min": 64,
-      "wind_speed": 14,
-      "wind_direction": 248,
-      "cloud_cover": 6
+      "rh_max": 93,
+      "rh_min": 68,
+      "wind_speed": 6,
+      "wind_direction": 288,
+      "cloud_cover": 8
+    },
+    "2024-09-09": {
+      "rainfall": 25,
+      "t_max": 31,
+      "t_min": 24,
+      "rh_max": 95,
+      "rh_min": 76,
+      "wind_speed": 7,
+      "wind_direction": 291,
+      "cloud_cover": 8
+    },
+    "2024-09-10": {
+      "rainfall": 15,
+      "t_max": 33,
+      "t_min": 24,
+      "rh_max": 93,
+      "rh_min": 76,
+      "wind_speed": 8,
+      "wind_direction": 292,
+      "cloud_cover": 8
+    },
+    "2024-09-1": {
+      "rainfall": 10,
+      "t_max": 34,
+      "t_min": 25,
+      "rh_max": 90,
+      "rh_min": 69,
+      "wind_speed": 10,
+      "wind_direction": 291,
+      "cloud_cover": 7
     }
   },
   "names_of_crops": [
+    "maize",
     "rice",
-    "horticultrue",
-    "fishieries",
-    "poultry"
+    "finger millet",
+    "cotton",
+    "papaya",
+    "brinjal",
+    "cow",
+    "common fish",
+    "chicken"
   ],
-  "general_advisory": "In transplanted rice at the time of final main field preparation, apply 0.8 ton/acre of well decomposed FYM. For high yielding varieties apply 44kg of DAP+33KG OF MOP or 22kg of Urea+125 kg SSP+33 kg of MOP as basal dose at the time of last puddling, go for application of pre-emergence weedicide like Butachlor 1kg/ha.",
+  "general_advisory": "According to the weather forecast, light to moderate rain is expected with generally cloudy sky. Temperature ranges from 31.0°C to 35.0°C for maximum and 24.0°C to 25.0°C for minimum. Relative humidity varies from 90% to 95% in the morning and 67% to 76% in the afternoon.",
   "crops_data": {
+    "maize": {
+      "advisory": [
+        "To manage fall armyworm pest, use biopesticide Beauveria bassiana or chemical sprays like Emamectin Benzoate, Spinetoram, or Chlorantraniliprole"
+      ]
+    },
     "rice": {
       "advisory": [
-        "The district has received normal rainfall in the previous month. The direct seeded rice is at 3-4 week stage, The district is going to receive light to medium rainfall in coming five day. Go for Beushaning as enough standing water (7-10cm) will be available. Go for top dressing of 36 kg of urea/acre as top dressing."
+        "To manage Blast disease, use Hexaconazole, Azoxystrobin + Difenoconazole, or Tebuconazole + Trifloxystrobin"
       ]
     },
-    "horticultrue": {
+    "finger millet": {
       "advisory": [
-        "There are chances for guava to be infested by fruit rot. Rain or irrigation water must not allow standing near basin of plant. Prune the infected plant part and spray Blitax 3g/1lt of water repeat it after 20 days of fruit set and continue till maturity. The fallen rotten and mummified guava must be collected and buried.(Go for application when weather is clear)"
+        "To manage Pink stem borer, use Trichogramma chilonis card, Bacillus thuringiensis, or Metarhizium anisopilae"
       ]
     },
-    "fishieries": {
+    "cotton": {
       "advisory": [
-        "make sure to weed out the weeds and kill all the predatory fish before adding fingerlings to the pond. 7-8 days before adding fingerlings, add 120-140 k.g bleaching powder per 1 acre of pond."
+        "To manage Aphids and Jassids, use neem-based pesticide or chemicals like Flonicamid, Thiamethoxam, or Dinotefuran"
       ]
     },
-    "poultry": {
+    "papaya": {
       "advisory": [
-        "In rainy season chicken might experience Coccidiosis, give Coccidiostat in chicken feed with recommendation of nearest veterinary expert."
+        "To manage Mealy bug infestation, use neem-based pesticide Azadiractin or Profenophos"
+      ]
+    },
+    "brinjal": {
+      "advisory": [
+        "To manage Shoot and fruit borer, remove affected terminals and fruits, use pheromone traps, and alternate chemical sprays like Emamectin Benzoate, Chlorantraniliprole, or Spinetoram"
+      ]
+    },
+    "cow": {
+      "advisory": [
+        "Provide concentrate to dairy animals due to high moisture content in grasses during rainy days"
+      ]
+    },
+    "common fish": {
+      "advisory": [
+        "Feed groundnut oil cake and rice bran, add vitamin and mineral mixture, regularly check pH and water temperature, apply lime and cow dung for pond purification"
+      ]
+    },
+    "chicken": {
+      "advisory": [
+        "Prevent bird flu by maintaining cleanliness, changing feed and water frequently, and proper disposal of affected birds"
       ]
     }
   },
-  "date": "19-07-2024"
+  "date": "06-09-2024"
 }

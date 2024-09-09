@@ -1,116 +1,96 @@
 {
   "weather_details": {
-    "20/07/2024": {
-      "rainfall": 30,
-      "t_max": 32,
-      "t_min": 26,
-      "rh_max": 89,
-      "rh_min": 65,
-      "wind_speed": 11,
-      "wind_direction": 99,
-      "cloud_cover": 8
-    },
-    "21/07/2024": {
-      "rainfall": 15,
+    "07/09/2024": {
+      "rainfall": 25,
       "t_max": 33,
       "t_min": 26,
       "rh_max": 85,
       "rh_min": 61,
-      "wind_speed": 12,
-      "wind_direction": 155,
+      "wind_speed": 10,
+      "wind_direction": 330,
+      "cloud_cover": 7
+    },
+    "08/09/2024": {
+      "rainfall": 30,
+      "t_max": 30,
+      "t_min": 25,
+      "rh_max": 90,
+      "rh_min": 63,
+      "wind_speed": 10,
+      "wind_direction": 202,
       "cloud_cover": 8
     },
-    "22/07/2024": {
+    "09/09/2024": {
+      "rainfall": 35,
+      "t_max": 29,
+      "t_min": 24,
+      "rh_max": 90,
+      "rh_min": 68,
+      "wind_speed": 9,
+      "wind_direction": 338,
+      "cloud_cover": 8
+    },
+    "10/09/2024": {
+      "rainfall": 25,
+      "t_max": 29,
+      "t_min": 25,
+      "rh_max": 87,
+      "rh_min": 63,
+      "wind_speed": 11,
+      "wind_direction": 288,
+      "cloud_cover": 8
+    },
+    "11/09/2024": {
       "rainfall": 10,
-      "t_max": 34,
-      "t_min": 27,
-      "rh_max": 83,
+      "t_max": 31,
+      "t_min": 26,
+      "rh_max": 86,
       "rh_min": 67,
-      "wind_speed": 13,
-      "wind_direction": 243,
+      "wind_speed": 12,
+      "wind_direction": 252,
       "cloud_cover": 7
-    },
-    "23/07/2024": {
-      "rainfall": 5,
-      "t_max": 34,
-      "t_min": 27,
-      "rh_max": 78,
-      "rh_min": 67,
-      "wind_speed": 18,
-      "wind_direction": 248,
-      "cloud_cover": 7
-    },
-    "24/07/2024": {
-      "rainfall": 5,
-      "t_max": 33,
-      "t_min": 27,
-      "rh_max": 79,
-      "rh_min": 57,
-      "wind_speed": 21,
-      "wind_direction": 248,
-      "cloud_cover": 6
     }
   },
   "names_of_crops": [
+    "paddy",
     "maize",
     "vegetables",
-    "sugarcane",
-    "paddy",
-    "black gram",
-    "green gram",
-    "brinjal",
+    "tomato",
     "papaya",
-    "coconut"
+    "banana"
   ],
-  "general_advisory": "In low land, go for transplanting of 21 days rice seedlings in the main field. Keep rain water in the main rice field by bunding for timely puddling and transplanting...",
+  "general_advisory": "Khordha district is likely to receive light to moderate rainfall for the next five days. Keeping rainfall forecast in mind farmers are advised not to do any type of spray and do proper drainage management in pulse crops and vegetable nurseries. After rainfall recedes apply top dressing of fertilizers either in transplanted or direct seeded rice. In case of transplanted rice in low/ medium land where top dressing of urea has not been applied, spray 2% urea after rainfall. There are chances of appearance of iron toxicity symptoms like lesser tillering, yellowing of leaves and stunted growth due to stagnant water. In such cases drain out stagnant water and apply 10-kg of MOP and 10-kg of Zinc Sulphate 21% per acre. Due to the prevailing cloudy weather associated with high humidity, regular monitoring for occurrence of insects and diseases in crops is highly recommended.",
   "crops_data": {
+    "paddy": {
+      "advisory": [
+        "Tillering to Panicle Initiation Swarming Caterpillar - After receding of rain water there is chance of infestation of Swarming Caterpillar. To manage this spray Chlorpyriphos 50 % + Cypermethrin 5 % EC @ 400-ml/acre or Lambda-cyhalothrin @ 400-ml/acre."
+      ]
+    },
     "maize": {
       "advisory": [
-        "Cover the vegetable nursery with polythene to protect it from heavy rain and make drainage arrangement.",
-        "Make provisions for drainage, where maize etc. have been sown."
+        "Vegetative Fall Army Worm - Rainfall after a dry spell may aggravate infestation of fall army worm in maize. To manage the pest spray biopesticide Beauveria bassiana @ 1200-gram/acre by mixing in 200- litre of water. Dust mixture of sand, soil and wooden ash inside the leaf whorl so that the caterpillars cannot feed on the leaves. To manage the pest chemically , spray Emamectin Benzoate 5 % S.G@ 80- gram/acre or Spinetoram 11.7% S.C @ 100-ml/acre or Chlorantraniliprole 18.5% S.C @ 80-ml/acre. 200 litre of water per acre is required to spray the insecticide."
       ]
     },
     "vegetables": {
       "advisory": [
-        "Cover the vegetable nursery with polythene to protect it from heavy rain and make drainage arrangement."
+        "Nursery Damping off disease - There are chances of damping off disease in vegetable nursery like tomato, brinjal, chilli. To manage it drench nursery bed with 2- gram Captan/litre of water or 2.5-gram Copper Oxychloride/litre of water."
       ]
     },
-    "sugarcane": {
+    "tomato": {
       "advisory": [
-        "To manage mealy Bug in sugarcane crop spray Imidacloprid 17.8 % SL @ 60- ml/acre or Thiamethoxam 25 % WG @ 40-gram/acre or Profenophos 50 % EC @ 400-ml/acre by mixing it in 200 litre of water."
-      ]
-    },
-    "paddy": {
-      "advisory": [
-        "Transplanting Apply 35 kg DAP, 27 kg Potash and 8 kg Urea per acre during last puddling. For sandy soil apply 35 kg DAP, 15 kg Potash and 8 kg Urea per acre during last puddling. Transplanting of 20-25 days old seedlings should be done at a spacing of 20x15 cm, plant 2-3 seedlings per hill for high yielding varieties..."
-      ]
-    },
-    "black gram": {
-      "advisory": [
-        "Keep seed rate for black gram and green gram is 10 kg per acre. Go for seed treatment before Sowing. Treat the seeds with Carbendazim 50% WP @ 2- gram/ kg of seeds or Carboxin 37.5 % + Thiram 37.5% D.S @ 3-gram/ kg of seeds one week before sowing..."
-      ]
-    },
-    "green gram": {
-      "advisory": [
-        "Keep seed rate for black gram and green gram is 10 kg per acre. Go for seed treatment before Sowing. Treat the seeds with Carbendazim 50% WP @ 2- gram/ kg of seeds or Carboxin 37.5 % + Thiram 37.5% D.S @ 3-gram/ kg of seeds one week before sowing..."
-      ]
-    },
-    "brinjal": {
-      "advisory": [
-        "Those farmers who have already transplanted brinjal in main field should apply 30-kg of Urea and 20-kg  of MOP per acre after hoeing and weeding at 30 DAT. Rest 30 -kg of urea should be applied as last top-dressing fertilizer at 45 DAT."
+        "September is the optimum time for nursery raising of tomato. Grow resistant varieties like BT-2, BT-10, BT-12, Niladri, Sadabahar, Madhuri, Maharathi, Rasmi, Naveen, etc."
       ]
     },
     "papaya": {
       "advisory": [
-        "Now the weather is optimum for planting of Papaya. HYV for papaya are Honeydew, Coorg honey dew, CO-1, CO-2, Pusa delicious, Pusa majesty and Pusa giant. Plant the seedling at 2.5 x 2.5 meter distance and 0.5 x 0.5 x 0.5 meter pit. Disease resistance and Tissue culture seedling should be use."
+        "To control papaya Crown rot Spray Copper Oxychloride @3 g/litre of water or Carbendazim @1 g/lit or Thiophanate Methyl @1 g/lit at 15 days interval."
       ]
     },
-    "coconut": {
+    "banana": {
       "advisory": [
-        "For controlling rugose spiralling whitefly, Spray starch solution @100-gram/10-litre of water to remove the heavy sooty mould deposition on the leaves of infested plants. Use yellow sticky traps...",
-        "For chemical control spray Spinosad 45 % SC @ 4-ml/ 10-litre of water or Emamectin Benzoate 5% SG @ 4-gram/ 10-litre of water."
+        "Leaf spot or Sigatoka - Provide drainage. Give staking to plants. For sigatoka disease, spray Mancozeb 75% WP (@ 400-g or Zineb 75% WP @ 400g or Carbendazim 12% + Mancozeb 63% WP @ 400g per acre with 200 liter of water as a precautionary measures."
       ]
     }
   },
-  "date": "19-07-2024"
+  "date": "06-09-2024"
 }

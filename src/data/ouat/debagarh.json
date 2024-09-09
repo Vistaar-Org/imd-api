@@ -1,53 +1,53 @@
 {
   "weather_details": {
-    "20/07/2024": {
+    "07/09/2024": {
+      "rainfall": 6,
+      "t_max": 31,
+      "t_min": 25,
+      "rh_max": 88,
+      "rh_min": 50,
+      "wind_speed": 7,
+      "wind_direction": 135,
+      "cloud_cover": 6
+    },
+    "08/09/2024": {
+      "rainfall": 10,
+      "t_max": 30,
+      "t_min": 24,
+      "rh_max": 92,
+      "rh_min": 56,
+      "wind_speed": 6,
+      "wind_direction": 30,
+      "cloud_cover": 7
+    },
+    "09/09/2024": {
+      "rainfall": 12,
+      "t_max": 29,
+      "t_min": 23,
+      "rh_max": 92,
+      "rh_min": 56,
+      "wind_speed": 5,
+      "wind_direction": 195,
+      "cloud_cover": 8
+    },
+    "10/09/2024": {
+      "rainfall": 25,
+      "t_max": 29,
+      "t_min": 23,
+      "rh_max": 95,
+      "rh_min": 54,
+      "wind_speed": 7,
+      "wind_direction": 245,
+      "cloud_cover": 8
+    },
+    "11/09/2024": {
       "rainfall": 15,
-      "t_max": 29,
-      "t_min": 24,
-      "rh_max": 89,
-      "rh_min": 45,
-      "wind_speed": 11,
-      "wind_direction": 68,
-      "cloud_cover": 8
-    },
-    "21/07/2024": {
-      "rainfall": 10,
-      "t_max": 29,
-      "t_min": 24,
-      "rh_max": 91,
-      "rh_min": 49,
-      "wind_speed": 8,
-      "wind_direction": 112,
-      "cloud_cover": 8
-    },
-    "22/07/2024": {
-      "rainfall": 7,
       "t_max": 30,
-      "t_min": 25,
-      "rh_max": 89,
-      "rh_min": 51,
-      "wind_speed": 8,
-      "wind_direction": 240,
-      "cloud_cover": 7
-    },
-    "23/07/2024": {
-      "rainfall": 10,
-      "t_max": 30,
-      "t_min": 25,
-      "rh_max": 85,
-      "rh_min": 64,
-      "wind_speed": 17,
-      "wind_direction": 248,
-      "cloud_cover": 7
-    },
-    "24/07/2024": {
-      "rainfall": 10,
-      "t_max": 29,
       "t_min": 24,
-      "rh_max": 87,
-      "rh_min": 59,
-      "wind_speed": 19,
-      "wind_direction": 248,
+      "rh_max": 95,
+      "rh_min": 69,
+      "wind_speed": 9,
+      "wind_direction": 252,
       "cloud_cover": 8
     }
   },
@@ -55,60 +55,79 @@
     "paddy",
     "pulses",
     "arhar",
+    "turmeric",
     "ragi",
     "maize",
     "groundnut",
-    "ginger",
-    "turmeric",
-    "vegetables"
+    "papaya",
+    "mango",
+    "vegetables",
+    "pisciculture",
+    "livestock"
   ],
-  "general_advisory": "Start sowing kharif crops when the monsoon gives a cumulative rainfall of more than 70 mm. Choose the variety according to land type and available resources. Change certified seeds after three years. Test own seeds for germination before sowing. Incorporate Dhaincha seeds @ 10kg/ac for soil conditioning.",
+  "general_advisory": "Due to forecast of light to moderate rainfall, farmers are advised not to apply fertilizer & chemicals. Strengthen bunds of paddy fields and check for any rat holes or leakage. After rain, trim and clean bunds to avoid insect multiplication.",
   "crops_data": {
     "paddy": {
       "advisory": [
-        "Prepare well-cultivated dry beds for paddy transplantation. Sow seeds in beds with FYM. Apply urea for seedling growth."
+        "Regular monitoring of the crop for incidence of pests and diseases should be done.",
+        "Apply Cartap hydrocloride 50SP @ 400g/acre or Fipronil 5 SC @ 400ml/acre after rain."
       ]
     },
     "pulses": {
       "advisory": [
-        "Treat seeds with Rhizobium and Carbendazim before sowing. Use good varieties like IP-02-14, OUM-11-5, Pant-19."
+        "After rain, there is a chance of insect pest attack. Survey regularly and take action by consulting department personnel."
       ]
     },
     "arhar": {
       "advisory": [
-        "Choose quality seeds like Upas-120, ICPl 86012, Pusa Arhar. Prefer early to medium duration varieties."
-      ]
-    },
-    "ragi": {
-      "advisory": [
-        "Choose good varieties like Arjuna, Kalua, Sriprava for sowing after good rainfall."
-      ]
-    },
-    "maize": {
-      "advisory": [
-        "Choose varieties like Kalinga Maize, Prabal for sowing. Apply nitrogenous fertilizers after land preparation."
-      ]
-    },
-    "groundnut": {
-      "advisory": [
-        "Select varieties like Dharani, Smruti, Kadri-6 for sowing. Treat seeds with Vitavax power and Rhizobium."
-      ]
-    },
-    "ginger": {
-      "advisory": [
-        "Ensure proper drainage of excess water for planting ginger."
+        "Go for intercultivation. Consult Gramin Krishi Mausam Sewa for advice."
       ]
     },
     "turmeric": {
       "advisory": [
-        "Ensure proper drainage of excess water for planting turmeric."
+        "Go for intercultural operation and apply 26kg urea per acre at 45 days after planting. Apply mulching @ 2t/acre."
+      ]
+    },
+    "ragi": {
+      "advisory": [
+        "Do not allow water to remain stagnant in the field."
+      ]
+    },
+    "maize": {
+      "advisory": [
+        "Due to weather conditions, there is a chance of Aphids in Maize. Apply Dimethoate @ 2ml/liter of water to manage."
+      ]
+    },
+    "groundnut": {
+      "advisory": [
+        "Due to weather, Tikka disease is seen. Manage by spraying Carbendazim @ 2g/liter of water."
+      ]
+    },
+    "papaya": {
+      "advisory": [
+        "Do not allow water stagnation near the root zone to avoid fungal diseases. Drench Carbendazim or Mancozeb @ 2g/lt of water."
+      ]
+    },
+    "mango": {
+      "advisory": [
+        "Do not allow rainwater to remain stagnant near the base of the plant. Provide stakings to new saplings to prevent wind damage."
       ]
     },
     "vegetables": {
       "advisory": [
-        "Use pheromone traps or neem-based pesticides for insect control in vegetables."
+        "To manage Thrips population in chili, spray Imidachloprid or Dimethoate @ 2ml/lt of water."
+      ]
+    },
+    "pisciculture": {
+      "advisory": [
+        "Provide regular feeding @ 0.35 of body mass."
+      ]
+    },
+    "livestock": {
+      "advisory": [
+        "Provide clean drinking water to poultry and take preventive action against diseases with help from department personnel."
       ]
     }
   },
-  "date": "19-07-2024"
+  "date": "06-09-2024"
 }

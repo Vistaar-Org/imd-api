@@ -1,95 +1,95 @@
 {
   "weather_details": {
-    "20-07-2024": {
-      "rainfall": 15,
-      "t_max": 30,
-      "t_min": 21,
-      "rh_max": 90,
-      "rh_min": 55,
-      "wind_speed": 8,
-      "wind_direction": 63,
-      "cloud_cover": 8
-    },
-    "21-07-2024": {
-      "rainfall": 15,
-      "t_max": 32,
-      "t_min": 21,
-      "rh_max": 87,
-      "rh_min": 58,
-      "wind_speed": 9,
-      "wind_direction": 243,
+    "07-09-2024": {
+      "rainfall": 10,
+      "t_max": 34,
+      "t_min": 23,
+      "rh_max": 85,
+      "rh_min": 52,
+      "wind_speed": 7,
+      "wind_direction": 75,
       "cloud_cover": 6
     },
-    "22-07-2024": {
-      "rainfall": 10,
-      "t_max": 33,
-      "t_min": 23,
-      "rh_max": 84,
-      "rh_min": 63,
-      "wind_speed": 14,
-      "wind_direction": 243,
-      "cloud_cover": 7
-    },
-    "23-07-2024": {
-      "rainfall": 5,
-      "t_max": 33,
-      "t_min": 24,
-      "rh_max": 81,
-      "rh_min": 62,
-      "wind_speed": 21,
+    "08-09-2024": {
+      "rainfall": 15,
+      "t_max": 32,
+      "t_min": 22,
+      "rh_max": 90,
+      "rh_min": 57,
+      "wind_speed": 6,
       "wind_direction": 248,
       "cloud_cover": 7
     },
-    "24-07-2024": {
-      "rainfall": 5,
-      "t_max": 33,
-      "t_min": 24,
-      "rh_max": 78,
-      "rh_min": 55,
-      "wind_speed": 22,
+    "09-09-2024": {
+      "rainfall": 25,
+      "t_max": 30,
+      "t_min": 22,
+      "rh_max": 95,
+      "rh_min": 67,
+      "wind_speed": 9,
+      "wind_direction": 250,
+      "cloud_cover": 8
+    },
+    "10-09-2024": {
+      "rainfall": 20,
+      "t_max": 29,
+      "t_min": 20,
+      "rh_max": 92,
+      "rh_min": 65,
+      "wind_speed": 12,
+      "wind_direction": 252,
+      "cloud_cover": 8
+    },
+    "11-09-2024": {
+      "rainfall": 15,
+      "t_max": 31,
+      "t_min": 20,
+      "rh_max": 92,
+      "rh_min": 66,
+      "wind_speed": 14,
       "wind_direction": 248,
       "cloud_cover": 7
     }
   },
   "names_of_crops": [
     "rice",
-    "maize",
+    "cotton",
     "vegetable crops",
-    "animal husbandry"
+    "banana",
+    "cow/buffalo"
   ],
-  "general_advisory": "As there is a chance of occurrence of light to moderate rainfall, farmers are advised to avoid irrigation and spraying operations, and wait for some days for transplanting of rice and planting of fruit and vegetable crops. Prepare to support the crops against high wind speeds.",
+  "general_advisory": "There is a chance of occurrence of light to moderate rainfall along with heavy rainfall in one or two places with thunderstorm and lightning in upcoming days so farmers are advised to wait some days for irrigation and spraying operation should be conducted before that and keep their animal away from any electrical equipment. Prevailing weather condition is favourable for various diseases and sucking insect pest attack in different crops so its regular monitoring should be advised.",
   "crops_data": {
     "rice": {
       "advisory": [
-        "Nursery sowing should be completed by end of 2nd fortnight of July.",
-        "Main field land preparation should be done by puddling the field twice at 7-10 days intervals and land leveling for uniform crop stand.",
-        "Transplanting of 25-30 days old seedlings should be done at a spacing of 20 x 15 cm at shallow depth.",
-        "Farmers are advised to store rainwater by making broad and elevated bunds."
+        "In case of no rainfall condition, farmers should apply one irrigation at this stage to maintain 5 cm water level in rice field.",
+        "Disease Management: After rainfall, there may be a chance of infestation of sheath blight and sheath rot disease in rice field. To control these diseases, farmers should spray Trifloxystrobin 25% + Tebuconazole 50% WG @ 80 g or other recommended substances.",
+        "Pest Management: Keep pheromone traps per acre of rice field for monitoring the stem borer and leaf folder infestations. Apply recommended pesticides when necessary."
       ]
     },
-    "maize": {
+    "cotton": {
       "advisory": [
-        "Ideal sowing time is June 20 to end of July for kharif maize.",
-        "Before sowing, treat seeds with fungicides and insecticides to protect from diseases and pests.",
-        "Manual hoeing at 15 and 30 DAS for good weed control.",
-        "Wait before conducting spraying and intercultural operations due to upcoming rainfall forecast."
+        "To control the flower drop in cotton crop, application of Planofix @ 90 ml in 200 liters of water per acre after 60-65 days after sowing of seed.",
+        "To control sucking insect pest attack in cotton crop, application of Neem based pesticide like Neem oil @ 600-800 ml + 200g detergent powder per acre by mixing with water should be advised at the appropriate crop stage.",
+        "At the initial stage of flowering, farmers should avoid any chemical application in cotton crop."
       ]
     },
     "vegetable crops": {
       "advisory": [
-        "Start raised bed nursery preparation for kharif vegetable crops with proper drainage system.",
-        "Avoid planting and intercultural operations during heavy rainfall periods.",
-        "Make provision to drain out excess water from the field."
+        "If sucking insect pest attack is noticed, then spraying of thiamethoxam @ 0.2 g or imidacloprid @ 0.33 ml per liter of water should be advised.",
+        "For controlling diseases like wilt, root rot, etc., farmers should use Carbendazim @ 2g or copper oxicloride @ 3ml per liter of water under no rainfall conditions."
       ]
     },
-    "animal husbandry": {
+    "banana": {
       "advisory": [
-        "Deworm and vaccinate animals against infectious diseases due to increased humidity during the rainy season.",
-        "Keep animals in safe places in sheds and avoid grazing in open areas during a warning period.",
-        "Provide clean drinking water to animals and prevent mixing of flowing rainwater into water sources.",
-        "Avoid direct entry of rainwater into the shed."
+        "Prevailing weather condition is favourable for thrip attack in Banana plant so at the initial stage cover or wrap the bundle with a jute bag, area should be weed-free and use blue sticky cards per acre should be advised to control this insect. For chemical control, spraying of Diafenthiuron 50% WP @ 2g per liter should be advised."
+      ]
+    },
+    "cow/buffalo": {
+      "advisory": [
+        "Mastitis disease is observed in some animals at present condition, so preventative and control measures should be taken to control this disease. Freshwater availability should be ensured in the farm."
       ]
     }
   },
-  "date": "19-07-2024"
+  "date": "06-09-2024"
 }

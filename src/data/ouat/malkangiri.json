@@ -1,27 +1,37 @@
 {
   "weather_details": {
-    "15.07.2024": {
-      "rainfall": 13,
-      "t_max": 29,
+    "02.09.2024": {
+      "rainfall": 4,
+      "t_max": 33,
       "t_min": 25,
+      "rh_max": 0,
+      "rh_min": 77,
+      "wind_speed": 0,
+      "wind_direction": 0,
+      "cloud_cover": 0
+    },
+    "03.09.2024": {
+      "rainfall": 0,
+      "t_max": 32,
+      "t_min": 26,
       "rh_max": 0,
       "rh_min": 0,
       "wind_speed": 0,
       "wind_direction": 0,
       "cloud_cover": 0
     },
-    "16.07.2024": {
-      "rainfall": 5,
-      "t_max": 29,
-      "t_min": 25,
+    "04.09.2024": {
+      "rainfall": 11,
+      "t_max": 31,
+      "t_min": 26,
       "rh_max": 0,
       "rh_min": 0,
       "wind_speed": 0,
       "wind_direction": 0,
       "cloud_cover": 0
     },
-    "17.07.2024": {
-      "rainfall": 25,
+    "05.09.2024": {
+      "rainfall": 18,
       "t_max": 31,
       "t_min": 25,
       "rh_max": 0,
@@ -30,49 +40,130 @@
       "wind_direction": 0,
       "cloud_cover": 0
     },
-    "18.07.2024": {
-      "rainfall": 1,
-      "t_max": 30,
-      "t_min": 25,
-      "rh_max": 0,
-      "rh_min": 0,
-      "wind_speed": 0,
-      "wind_direction": 0,
-      "cloud_cover": 0
+    "07-09-2024": {
+      "rainfall": 25,
+      "t_max": 28,
+      "t_min": 24,
+      "rh_max": 98,
+      "rh_min": 77,
+      "wind_speed": 7,
+      "wind_direction": 249,
+      "cloud_cover": 8
+    },
+    "08-09-2024": {
+      "rainfall": 40,
+      "t_max": 28,
+      "t_min": 23,
+      "rh_max": 97,
+      "rh_min": 82,
+      "wind_speed": 8,
+      "wind_direction": 249,
+      "cloud_cover": 8
+    },
+    "09-09-2024": {
+      "rainfall": 45,
+      "t_max": 28,
+      "t_min": 22,
+      "rh_max": 98,
+      "rh_min": 94,
+      "wind_speed": 8,
+      "wind_direction": 246,
+      "cloud_cover": 8
+    },
+    "10-09-2024": {
+      "rainfall": 35,
+      "t_max": 27,
+      "t_min": 22,
+      "rh_max": 98,
+      "rh_min": 91,
+      "wind_speed": 8,
+      "wind_direction": 243,
+      "cloud_cover": 8
+    },
+    "11-09-2024": {
+      "rainfall": 15,
+      "t_max": 29,
+      "t_min": 23,
+      "rh_max": 97,
+      "rh_min": 86,
+      "wind_speed": 9,
+      "wind_direction": 248,
+      "cloud_cover": 8
     }
   },
   "names_of_crops": [
     "rice",
     "maize",
+    "kharif groundnut",
     "ragi",
-    "tomato"
+    "brinjal",
+    "cucumber",
+    "tomato",
+    "cattles",
+    "goat & sheep",
+    "poultry"
   ],
-  "general_advisory": "Rainfall is expected during next five days, spray only when sky becomes clear and use sticker to the spray solution. Farmers are advised to do proper arrangement for storing rainwater at one portion in the field. This water can be used for irrigation in the crops during the dry spell. Due to high humidity possibilities of pest and disease buildup in already sown crop. Take plant protection measures depending on the crop and weather condition.",
+  "general_advisory": "Rainfall is expected during next five days, spray only when sky becomes clear and use sticker to the spray solution. Farmers are advised to do proper arrangement for storing rain water at one portion in the field. This water can be used for irrigation in the crops during dry spell. Due to high humidity possibilities of pest and disease build up in already sown crop. Take plant protection measures depending on the crop and weather condition. Make proper drainage system in non -paddy crop field for removing of excess water.",
   "crops_data": {
     "rice": {
       "advisory": [
-        "Collect hybrid or high yielding varieties of paddy with resistance to diseases and insect pests as per the land situations of the farmers from the nearby dealers.",
-        "Farmers are advised for sowing of dhanicha seeds @ 10 kg/acre prior to the transplanting of paddy so that the dhanicha crop will be 3-4 weeks old at the time of transplanting of rice. Apply phosphatic fertilizer in the dhanicha fields required for paddy cultivation.",
-        "Transplant 15-25 days seedling. Treat the nursery seedlings or root dip uprooted seedlings in the solution of neem oil @ 5ml/litre of water and metalaxyl + mancozeb @ 1.25 g/litre of water."
+        "Keep the rice plots weed free.",
+        "Apply low quantity of Nitrogen fertilizer to reduce the blast disease.",
+        "Spray chlorantraniliprole @ 6 ml /15 liter of water to control the steam borer.",
+        "Spray Imidachloprid @ 0.6 ml / liter of water to control the BPH.",
+        "Complete the transplanting. Use 4 -5 seedlings / hill in age old seedlings with closed spacing."
       ]
     },
     "maize": {
       "advisory": [
-        "Complete the sowing of 10 Kg Maize hybrid seed per acre with the spacing of 60 cm row to row and 20-25cm between plants.",
-        "Spray Atrazine @ 1Kg /acre within 2 days of sowing to control the weeds in the maize field."
+        "Develop better drainage system to avoid water logging condition due to excess rainfall."
+      ]
+    },
+    "kharif groundnut": {
+      "advisory": [
+        "Prepare the field and raise Kharif groundnut of high yielding varieties. Treat the seeds with Trichoderma viridae (10 gm.), Pseudomonas fluorescence (10 gm.) and Rhizobium culture (20 gm.) per kg of seed before sowing."
       ]
     },
     "ragi": {
       "advisory": [
-        "This is the optimum time for direct sowing ragi. Sow the seeds @ 4 kg/acre in line at 22.5 cm apart. Apply 35 kg DAP and 17 kg MoP per acre at the time of sowing. Before sowing, seeds should be treated with Carboxin 37.5%+Thiram 37.5% DS @ 2 g/kg seed.",
-        "Sow 4Kg seeds of Arjun, Kalua, Bharabi, etc. high yielding ragi varieties per acre."
+        "In case of line sown and broadcasted crop apply 13 kg urea/acre at 35 -40 days after sowing. In case of transplanted crop apply 26 kg urea/acre at 20 days after transplanting.",
+        "If blast incidence observed in ragi spray Zineb 75% WP @ 2 g/litre of water or Tricyclazole 75% WP @ 1 g/litre of water  when sky becomes clear."
+      ]
+    },
+    "brinjal": {
+      "advisory": [
+        "Transplant 25 -35 days old seedlings in the main field.",
+        "Make necessary drainage channels to prevent water logging condition.",
+        "Identify and fill gaps in the main field to maintain plant population.",
+        "Wilting in brinjal can be managed by spraying Tabuconazole @ 1 g/lt."
+      ]
+    },
+    "cucumber": {
+      "advisory": [
+        "There is a chance of downy mildew attack in cucumber. If observe spray Metalaxyl 8% + Mancozeb 64% @ 2 g/litre of water in sunny days."
       ]
     },
     "tomato": {
       "advisory": [
-        "If bacterial wilting observes in tomato, apply Plantomycin @ 1.0 g and Copper Oxychloride @ 2 g/litre of water."
+        "In upland well drained soil complete the nursery sowing for tomato. Use high yielding varieties @ 150 -200 g seed/acre. Use low cost polythene cover above the nursery to avoid the seedlings from excess rainfall."
+      ]
+    },
+    "cattles": {
+      "advisory": [
+        "Ticks and Flies multiplied rapidly during rainy season. Ticks suck blood from cattle and induce anaemic and death. Ticks harbor, multiply and spread of haemoprotozoan diseases. Fly is also induces nuisance, irritation, humpsore and cases educes production and reproduction performances.",
+        "Animal farms should be disinfected regularly with the use of suitable disinfectant."
+      ]
+    },
+    "goat & sheep": {
+      "advisory": [
+        "Keep dry fodder and straw ready at home for sheep and goat in rainy season and ensure the practice of flushing to give balanced concentrate to sheep and goat one month prior to kidding and lambing."
+      ]
+    },
+    "poultry": {
+      "advisory": [
+        "Please ensure filling of holes and crevices of poultry house in rainy days otherwise that will facilitate the entry of snakes and reptiles, which may kill the birds."
       ]
     }
   },
-  "date": "19-07-2024"
+  "date": "06-09-2024"
 }

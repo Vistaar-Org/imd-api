@@ -1,107 +1,187 @@
 {
   "weather_details": {
-    "20-07-2024": {
-      "rainfall": 45,
-      "t_max": 28,
-      "t_min": 18,
-      "rh_max": 92,
-      "rh_min": 71,
+    "02-09-2024": {
+      "rainfall": 2,
+      "t_max": 31,
+      "t_min": 20,
+      "rh_max": 0,
+      "rh_min": 0,
+      "wind_speed": 0,
+      "wind_direction": 0,
+      "cloud_cover": 0
+    },
+    "03-09-2024": {
+      "rainfall": 0,
+      "t_max": 31,
+      "t_min": 21,
+      "rh_max": 0,
+      "rh_min": 0,
+      "wind_speed": 0,
+      "wind_direction": 0,
+      "cloud_cover": 0
+    },
+    "04-09-2024": {
+      "rainfall": 4,
+      "t_max": 31,
+      "t_min": 20,
+      "rh_max": 0,
+      "rh_min": 0,
+      "wind_speed": 0,
+      "wind_direction": 0,
+      "cloud_cover": 0
+    },
+    "05-09-2024": {
+      "rainfall": 20,
+      "t_max": 31,
+      "t_min": 20,
+      "rh_max": 0,
+      "rh_min": 0,
+      "wind_speed": 0,
+      "wind_direction": 0,
+      "cloud_cover": 0
+    },
+    "07-09-2024": {
+      "rainfall": 25,
+      "t_max": 29,
+      "t_min": 20,
+      "rh_max": 95,
+      "rh_min": 74,
+      "wind_speed": 8,
+      "wind_direction": 251,
+      "cloud_cover": 7
+    },
+    "08-09-2024": {
+      "rainfall": 30,
+      "t_max": 29,
+      "t_min": 19,
+      "rh_max": 94,
+      "rh_min": 79,
       "wind_speed": 11,
       "wind_direction": 252,
       "cloud_cover": 8
     },
-    "21-07-2024": {
-      "rainfall": 40,
-      "t_max": 27,
+    "09-09-2024": {
+      "rainfall": 35,
+      "t_max": 29,
       "t_min": 18,
-      "rh_max": 91,
-      "rh_min": 83,
-      "wind_speed": 16,
-      "wind_direction": 248,
+      "rh_max": 93,
+      "rh_min": 84,
+      "wind_speed": 14,
+      "wind_direction": 257,
       "cloud_cover": 8
     },
-    "22-07-2024": {
-      "rainfall": 15,
-      "t_max": 29,
+    "10-09-2024": {
+      "rainfall": 25,
+      "t_max": 30,
+      "t_min": 18,
+      "rh_max": 93,
+      "rh_min": 82,
+      "wind_speed": 16,
+      "wind_direction": 252,
+      "cloud_cover": 8
+    },
+    "11-09-2024": {
+      "rainfall": 10,
+      "t_max": 30,
       "t_min": 19,
       "rh_max": 91,
-      "rh_min": 85,
+      "rh_min": 81,
       "wind_speed": 17,
-      "wind_direction": 248,
-      "cloud_cover": 7
-    },
-    "23-07-2024": {
-      "rainfall": 10,
-      "t_max": 31,
-      "t_min": 20,
-      "rh_max": 90,
-      "rh_min": 84,
-      "wind_speed": 20,
-      "wind_direction": 248,
-      "cloud_cover": 7
-    },
-    "24-07-2024": {
-      "rainfall": 10,
-      "t_max": 31,
-      "t_min": 21,
-      "rh_max": 89,
-      "rh_min": 79,
-      "wind_speed": 20,
-      "wind_direction": 248,
+      "wind_direction": 252,
       "cloud_cover": 7
     }
   },
   "names_of_crops": [
     "rice",
     "maize",
+    "kharif groundnut",
     "ragi",
-    "tomato",
     "brinjal",
+    "cucumber",
     "ginger",
-    "turmeric"
+    "black pepper",
+    "turmeric",
+    "coffee",
+    "goat & sheep",
+    "poultry"
   ],
-  "general_advisory": "Rainfall is expected during the next five days, spray only when the sky becomes clear and use a sticker for the spray solution. Farmers are advised to do proper arrangement for storing rainwater in the field. Take plant protection measures depending on the crop and weather conditions due to high humidity.",
+  "general_advisory": "Rainfall is expected during next five days. Farmers are advised to do proper arrangement for storing rainwater at one portion in the field. Due to high humidity, possibilities of pest and disease buildup in already sown crop. Make proper drainage systems in non-paddy crop fields for removing excess water.",
   "crops_data": {
     "rice": {
       "advisory": [
-        "Collect hybrid or high yielding varieties of paddy with resistance to diseases and insect pests.",
-        "Apply phosphatic fertilizer in the dhaincha fields required for paddy cultivation.",
-        "Transplant seedlings 15-25 days old."
+        "Keep the rice plots weed-free.",
+        "Apply low quantity of Nitrogen fertilizer to reduce the blast disease.",
+        "Spray chlorantraniliprole @ 6 ml /15 liter of water to control the stem borer.",
+        "Spray Imidachloprid @ 0.6 ml / liter of water to control the BPH.",
+        "Complete the transplanting. Use 4 -5 seedlings / hill in age-old seedlings with closed spacing."
       ]
     },
     "maize": {
       "advisory": [
-        "Complete sowing of 10 Kg Maize hybrid seed per acre with appropriate spacing.",
-        "Spray Atrazine within 2 days of sowing to control weeds."
+        "Develop a better drainage system to avoid water logging conditions due to excess rainfall.",
+        "Root and stalk rot may observe in maize field, to control it spray Validamycin 3% L @ 2 ml/litre of water or Carbendazim 50% WP @ 1.5 g/litre of water."
+      ]
+    },
+    "kharif groundnut": {
+      "advisory": [
+        "Prepare the field and raise Kharif groundnut of high yielding varieties.",
+        "Treat the seeds with Trichoderma viridae, Pseudomonas fluorescence, and Rhizobium culture per kg of seed before sowing."
       ]
     },
     "ragi": {
       "advisory": [
-        "Sow seeds in line at appropriate spacing and apply fertilizers at sowing.",
-        "Treat seeds before sowing with recommended pesticides."
-      ]
-    },
-    "tomato": {
-      "advisory": [
-        "Apply specified pesticides in case of bacterial wilting."
+        "Condition is favorable for blast incidence in ragi, if observed spray Zineb 75% WP @ 2 g/litre of water or Tricyclazole 75% WP @ 1 g/litre of water when the sky becomes clear."
       ]
     },
     "brinjal": {
       "advisory": [
-        "Control fruit and shoot borer with neem-based pesticides.",
-        "Manage fruit rot infestation with recommended sprays."
+        "Transplant 25-35 days old seedlings in the main field.",
+        "Make necessary drainage channels to prevent water-logging conditions.",
+        "Identify and fill gaps in the main field to maintain plant population.",
+        "Wilting in brinjal can be managed by spraying Tabuconazole @ 1 g/lt."
+      ]
+    },
+    "cucumber": {
+      "advisory": [
+        "There is a chance of downy mildew attack in cucumber. If observed spray Metalaxyl 8% + Mancozeb 64% @ 2 g/litre of water on sunny days."
       ]
     },
     "ginger": {
       "advisory": [
-        "Perform 1st weeding and top dressing with specified fertilizers."
+        "Go for weeding and apply urea per acre at 45 days after planting and apply mulching.",
+        "To manage soft rot disease of ginger, apply Tagmycin or Neem oil.",
+        "Bacterial wilt once noticed in the field all beds should be drenched with Bordeaux mixture 1% or copper oxychloride 0.2%."
+      ]
+    },
+    "black pepper": {
+      "advisory": [
+        "If Leaf gall and thrips occur, spray Monocrotophos, Dimethoate, Chlorpyriphos, or neem oil three rounds at monthly intervals starting from new flush formation."
       ]
     },
     "turmeric": {
       "advisory": [
-        "Perform 1st weeding and top dressing with specified fertilizers."
+        "Go for weeding and apply urea per acre at 45 days after planting and apply mulching.",
+        "To manage Rhizome rot disease of turmeric, apply Tagmycin or Neem oil."
+      ]
+    },
+    "coffee": {
+      "advisory": [
+        "Maintain/creating optimum shade.",
+        "Borer infested plants should be thoroughly traced, uprooted burnt to avoid economic loss during the subsequent years.",
+        "Installation of pheromone traps @ 25 / ha, if the incidence is high.",
+        "Pad with chlorpyriphos 25% EC @ 5 ml by making a window in the stem at 5 cm x 5 cm and fill it with absorbent cotton dipped in insecticide solution and close it."
+      ]
+    },
+    "goat & sheep": {
+      "advisory": [
+        "Keep dry fodder and straw ready at home for sheep and goat in rainy season and ensure the practice of flushing to give balanced concentrate to sheep and goat one month prior to kidding and lambing."
+      ]
+    },
+    "poultry": {
+      "advisory": [
+        "Please ensure filling of holes and crevices of poultry house in rainy days otherwise that will facilitate the entry of snakes and reptiles, which may kill the birds."
       ]
     }
   },
-  "date": "19-07-2024"
+  "date": "06-09-2024"
 }

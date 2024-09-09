@@ -1,147 +1,89 @@
 {
   "weather_details": {
-    "20-07-2024": {
-      "rainfall": 10,
-      "t_max": 31,
-      "t_min": 25,
-      "rh_max": 87,
-      "rh_min": 70,
-      "wind_speed": 16,
-      "wind_direction": 103,
+    "07-09-2024": {
+      "rainfall": 15,
+      "t_max": 35,
+      "t_min": 26,
+      "rh_max": 83,
+      "rh_min": 61,
+      "wind_speed": 12,
+      "wind_direction": 105,
       "cloud_cover": 7
     },
-    "21-07-2024": {
-      "rainfall": 10,
+    "08-09-2024": {
+      "rainfall": 20,
       "t_max": 33,
+      "t_min": 26,
+      "rh_max": 88,
+      "rh_min": 69,
+      "wind_speed": 14,
+      "wind_direction": 72,
+      "cloud_cover": 8
+    },
+    "09-09-2024": {
+      "rainfall": 20,
+      "t_max": 30,
+      "t_min": 25,
+      "rh_max": 87,
+      "rh_min": 69,
+      "wind_speed": 12,
+      "wind_direction": 112,
+      "cloud_cover": 8
+    },
+    "10-09-2024": {
+      "rainfall": 10,
+      "t_max": 30,
+      "t_min": 25,
+      "rh_max": 88,
+      "rh_min": 67,
+      "wind_speed": 9,
+      "wind_direction": 75,
+      "cloud_cover": 7
+    },
+    "11-09-2024": {
+      "rainfall": 6,
+      "t_max": 31,
       "t_min": 26,
       "rh_max": 87,
       "rh_min": 67,
-      "wind_speed": 15,
-      "wind_direction": 135,
-      "cloud_cover": 7
-    },
-    "22-07-2024": {
-      "rainfall": 5,
-      "t_max": 33,
-      "t_min": 26,
-      "rh_max": 82,
-      "rh_min": 63,
-      "wind_speed": 14,
-      "wind_direction": 180,
-      "cloud_cover": 7
-    },
-    "23-07-2024": {
-      "rainfall": 15,
-      "t_max": 33,
-      "t_min": 25,
-      "rh_max": 77,
-      "rh_min": 60,
-      "wind_speed": 20,
-      "wind_direction": 238,
-      "cloud_cover": 8
-    },
-    "24-07-2024": {
-      "rainfall": 15,
-      "t_max": 32,
-      "t_min": 25,
-      "rh_max": 80,
-      "rh_min": 60,
-      "wind_speed": 25,
-      "wind_direction": 248,
-      "cloud_cover": 8
+      "wind_speed": 8,
+      "wind_direction": 270,
+      "cloud_cover": 6
     }
   },
   "names_of_crops": [
     "rice",
     "jute",
     "sugarcane",
-    "brinjal",
-    "okra",
-    "chilli",
-    "cowpea",
-    "cucurbits",
-    "carp",
-    "rohu",
-    "catla",
-    "mrigal"
+    "vegetables"
   ],
-  "general_advisory": "Drain out excess water from rice nurseries & jute field. Postpone irrigation, intercultural operations & fertilizer application to the standing crops in upcoming 3 days. Farmers are advised to initiate transplanting of paddy by using rain water/canal water & farm pond or any other nearby water sources.",
+  "general_advisory": "As per IMD, district will receive Light to moderate rain with isolated thunderstorm in some places, so farmers are advised to go for necessary irrigation of water & drain out excess water from low land. Due to prevailing cloudy weather associated with high humidity, farmers are advised to monitor the incidence of Yellow Stem Borer, Leaf folder & Incidence of BLB & Blast disease in rice crop. Farmers are advised to complete top dressing of urea 35kg/acre as soon as possible. Avoid spraying pesticide & herbicide during rainy hours.",
   "crops_data": {
     "rice": {
       "advisory": [
-        "Considering the anticipated rainfall farmer should start transplanting of rice after nursery treatment with Granular insecticide like Cartap hydrochloride (4G) @ 100 grams/1 decimal nursery or Fipronil 0.3 g @ 100g/1 decimal nursery area seven days before uprooting of seedlings.",
-        "Under the prevailing weather condition blast & BLB incidence are observed in rice. Spray Tricyclazole @ 1gm/lit of water along with Plantomycin @ 1gm/lit of water to minimize the disease incidence.",
-        "Plant 2 to 3 seedlings/hill at shallow depth in erect manner with spacing of 20 X 15cm for long duration and 20 X 10cm for medium duration varieties.",
-        "Apply pre-emergence weedicide Bensulfuron methyl+Pretilachlor@10kg/ha or Pyrazosulfuron ethyl @20g a.i./ha at 3 to 4 days after transplanting (DAT) with mixing 25kg dry sand."
+        "Infestation of leaf folder will increase after the rain. Apply Cartap hydrochloride @ 400g/acre or Lambada cyhalothrin 4.9 CS @ 300ml/acre or Flubendiamide 20WG 50g/acre in 200 litres of water recommended.",
+        "To manage Bacterial Leaf Blight, organically mix 20-kg of fresh cow dung with 200 litres of water. Filter it with fine cloth and spray the solution in one acre. To manage this disease chemically, spray 200-gram Plantomycin along with Copper Oxy Chloride 50% WP @ 600-gram/acre.",
+        "As the crop is in tillering stage maintain 2-3 cm of standing water in field. Apply 35 kg Urea/acre as top dressing after weed management in paddy field."
       ]
     },
     "jute": {
       "advisory": [
-        "Recent rain will increase weed population in jute, to control grass weeds apply Quizalfop-pethyl @2ml/litre of water.",
-        "Current rainy weather is favourable for attack of insect pest like semilooper, Bihari hair caterpillar and other foliage feeders. To control these insects, spray Lamba cyhalothrin 4.9CS @ 250 ml/acre."
+        "As the crop is in maturity stage and approaching for harvesting, clear the nearby retting area and store the rainwater."
       ]
     },
     "sugarcane": {
       "advisory": [
-        "Wrapping and propping should be done when the crop becomes 4-5 months old in medium and late duration varieties.",
-        "To control early shot borer in sugarcane foliar spray of Fipronil 5SC @400 ml/acre is advised."
+        "To manage Red Rot disease in Sugarcane, spray Carbendazim 12%+ Mancozeb 63 % WP @ 400-gram/acre or Metalaxyl 8% + Mancozeb 64% @ 400-gram/acre by mixing it in 200-litre of water."
       ]
     },
-    "brinjal": {
+    "vegetables": {
       "advisory": [
-        "To control Fruit and shoot borer in Brinjal and Okra Spray Neem based pesticide 1500ppm @600ml/acre at initial stages. If the pests continue ETL, go for alternate spray of Spinosad 45% SC @70ml/acre and Emamectin benzoate @80g/acre at 15 days interval.",
-        "For preventing wilt, other fungal & bacterial diseases in main field spraying of Tebuconazole @1 ml/li of water along with Plantomycin @1g/li of water before 7 days of transplanting as nursery treatment recommended."
-      ]
-    },
-    "okra": {
-      "advisory": [
-        "To control Fruit and shoot borer in Brinjal and Okra Spray Neem based pesticide 1500ppm @600ml/acre at initial stages. If the pests continue ETL, go for alternate spray of Spinosad 45% SC @70ml/acre and Emamectin benzoate @80g/acre at 15 days interval.",
-        "For preventing wilt, other fungal & bacterial diseases in main field spraying of Tebuconazole @1 ml/li of water along with Plantomycin @1g/li of water before 7 days of transplanting as nursery treatment recommended."
-      ]
-    },
-    "chilli": {
-      "advisory": [
-        "To control sucking pest in Chilli, Okra, Cowpea & Cucurbits spraying of Thiametoxam 25g @70 g/acre or imidacloprid @80 ml/acre may be recommended."
-      ]
-    },
-    "cowpea": {
-      "advisory": [
-        "To control sucking pest in Chilli, Okra, Cowpea & Cucurbits spraying of Thiametoxam 25g @70 g/acre or imidacloprid @80 ml/acre may be recommended."
-      ]
-    },
-    "cucurbits": {
-      "advisory": [
-        "To control sucking pest in Chilli, Okra, Cowpea & Cucurbits spraying of Thiametoxam 25g @70 g/acre or imidacloprid @80 ml/acre may be recommended."
-      ]
-    },
-    "carp": {
-      "advisory": [
-        "Carp such as Rohu, Catla, and Mrigal, which grow rapidly, should be stocked in a certain ratio of 4:3:3 to increase the benefits.",
-        "Generally, a density of 5,000 fingerlings/ha is kept as a standard stocking.",
-        "Groundnut oil cake and rice bran is given in the same ratio @ 5% of the total biomass of stocking material. Cow dung, urea, and super phosphate should be applied to increase pond quality. In 8-10 months, fishes attain their marketable size."
-      ]
-    },
-    "rohu": {
-      "advisory": [
-        "Carp such as Rohu, Catla, and Mrigal, which grow rapidly, should be stocked in a certain ratio of 4:3:3 to increase the benefits.",
-        "Generally, a density of 5,000 fingerlings/ha is kept as a standard stocking.",
-        "Groundnut oil cake and rice bran is given in the same ratio @ 5% of the total biomass of stocking material. Cow dung, urea, and super phosphate should be applied to increase pond quality. In 8-10 months, fishes attain their marketable size."
-      ]
-    },
-    "catla": {
-      "advisory": [
-        "Carp such as Rohu, Catla, and Mrigal, which grow rapidly, should be stocked in a certain ratio of 4:3:3 to increase the benefits.",
-        "Generally, a density of 5,000 fingerlings/ha is kept as a standard stocking.",
-        "Groundnut oil cake and rice bran is given in the same ratio @ 5% of the total biomass of stocking material. Cow dung, urea, and super phosphate should be applied to increase pond quality. In 8-10 months, fishes attain their marketable size."
-      ]
-    },
-    "mrigal": {
-      "advisory": [
-        "Carp such as Rohu, Catla, and Mrigal, which grow rapidly, should be stocked in a certain ratio of 4:3:3 to increase the benefits.",
-        "Generally, a density of 5,000 fingerlings/ha is kept as a standard stocking.",
-        "Groundnut oil cake and rice bran is given in the same ratio @ 5% of the total biomass of stocking material. Cow dung, urea, and super phosphate should be applied to increase pond quality. In 8-10 months, fishes attain their marketable size."
+        "Yellow vein mosaic virus in okra transmits through whitefly. Spray Methyl demeton 25 EC @ 1.6 ml or Thiomethoxam 25 WG @ 2 gm/lt of water to manage it.",
+        "To manage Thrips population in chili, spray Imidachloprid or Dimethoate @ 2ml/lt of water.",
+        "To control different viral & phytoplasma diseases in Bitter gourd, Cucumber, and Pumpkin apply 120 ml Abamectin or 30 g Fipronil 80 WG per acre.",
+        "To control Fruit and shoot borer in Brinjal, Spray Neem based pesticide 1500ppm @600ml/acre at initial stages. If the pests continue ETL, go for alternate spray of Spinosad 45% SC @70ml/acre and Emamectin benzoate @ 80 g /acre at 15 days interval."
       ]
     }
   },
-  "date": "19-07-2024"
+  "date": "06-09-2024"
 }
