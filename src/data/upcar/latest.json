@@ -1,137 +1,112 @@
 {
   "names_of_crops": [
-    "rice",
-    "wheat",
+    "paddy",
     "maize",
-    "arhar",
-    "urad and moong",
+    "soybean",
     "sesame",
     "sugarcane",
-    "pulses",
-    "vegetables",
-    "mushroom",
+    "groundnut",
+    "tur",
+    "urd-moong",
+    "toria",
+    "vegetable",
     "horticulture",
     "animal husbandry",
     "fisheries",
     "sericulture",
     "forestry"
   ],
-  "general_advisory": "In the current scenario of weather in the state, farmers have to manage their agriculture for the next two weeks. The following recommendations are made: - Make good use of irrigation sources in areas of low rainfall for life-saving irrigation. In view of the possibility of less rainfall in the coming week, importance should be given to the cultivation of 'Sri Anna' such as sorghum, millet, ragi, semolina, cowpea, etc. Cultivation of these crops can also protect them from the vagaries of weather. Do not allow waterlogging in pulses and oilseeds crops in western Uttar Pradesh, make proper drainage arrangements. All the farmers should make this program successful by planting trees in their areas and unused land under the Brother-Sister Tree Plantation Program. At present, vaccination against mumps is being done free of cost which will continue till 3rd July. This facility is available free of cost at veterinary clinics. Vaccination against Foot and Mouth Disease (FMD) is being done free of cost in 60 districts from 45 July to 30 August. Medicines for this are available free of cost at veterinary clinics. Fish seed of fish species Katla, Rohu, Nain, Silver carp and Grass carp are present in U.P. Fish. Development is available at Corporation and private sector hatcheries. Hence, contact the District Fisheries Office. Collect fish seeds.",
+  "general_advisory": "In the present context of weather in the state, farmers are given the following tips for agricultural management for the next two weeks: - Maintain sufficient moisture for proper plant growth in areas of low rainfall, especially in the case of paddy stubble and wheat formation, so that cracks do not form in the soil. Paddy crop suffers more damage from weeds in the early stages (20-30 days). Pay special attention to weed control. For weed control, do weeding and use a pedicider as much as possible; if not controlled, use herbicides as recommended. Excessive temperature and humidity in the environment will lead to diseases and pests in the crops, hence eco-friendly measures for pest control such as photosynthesis, bird percher, pheromone traps, trichogramma, and diseases. Use Trichoderma for control. In water-logged areas, top dressing of paddy should be done after mixing one-fourth cow dung manure in soil twice the amount of urea and keeping it for 24 hours before top dressing. By doing this, the yerria will not be destroyed by the leak. Natural and organic farming should be promoted, agrochemicals should be used on scientific advice only as recommended.",
   "crops_data": {
-    "rice": {
+    "paddy": {
       "advisory": [
-        "For cultivating basmati rice varieties like Pusa Basmati-1509, Pusa Basmati-1, Pusa-1121, Pusa-1692, etc., in Western Uttar Pradesh, transplant them between 30th June and 15th July. Ensure the seedlings are 20 to 25 days old, transplant at a distance of 20x15 cm, and apply Carbendazim at 1 gram per liter of water before transplanting to prevent disease.",
-        "Weed control can be done using a weedicide like Butachlor at 3 to 5 days after transplanting.",
-        "Maintain cleanliness of the field by removing the water weed carefully.",
-        "For pest control, spray Thiomethoxam at 10 gm per liter of water 18 to 21 days after transplanting.",
-        "If the leaves turn yellow, spray Urea at the rate of 500-700 grams per 100 liters of water.",
-        "In case of a waterlogged area, control the weeds by hand or with a weedicide containing 20% salt solution.",
-        "Ensure a good harvest by following proper irrigation and weed control practices."
-      ]
-    },
-    "wheat": {
-      "advisory": [
-        "Advanced cluster varieties of millets such as Dhanashakti, ICMB-55, W, C. Sow C-75, N.D.F.B-3 (Narendra Fodder Millet-3), Raj-7 and complex varieties 86M-84, ICMH-45, Pusa-322 and Pusa-23."
+        "Paddy cultivation",
+        "Do the first topdressing on the 25-30 day after 0 seedlings and the second topdressing on the 45-50 day with urea for one-fourth of the remaining amount of nitrogen. Particular care should be taken to ensure that sufficient moisture is available in the field when top-dressing urea. For control of 0 hybrid, broadleaf, and moth weeds, Bispiribac sodium 40% SC0.20 was taken in moist conditions on the 20-22 day after planting. It is per. 500 L. Dissolve in water and strain."
       ]
     },
     "maize": {
       "advisory": [
-        "Topdressing of 75 kg / ha urea and ensuring drainage when plants reach knee height (on 30-35 day) in maize after weeding and deworming of previously sown maize.",
-        "Atrazine for weed control in maize 800 L at 2 kg / ha within 2 days of sowing. Mix it in water and strain.",
-        "On the outbreak of the fall armyworm in Makakke. For effective control of 0 to 20% damage, chlorantraniliprole 8. 5% SC0.4 was found. 0. 3 ml of water or spinosad per litre. Water or thiamethoxam at the rate of 2. 6% + lambdacyhalothin at the rate of 9. 5% .5 ml per litre of water should be sprayed."
+        "Maize cultivation",
+        "* Give one-fourth of the total recommended amount of nitrogen as top dressing on the day after maize sowing (silking stage). Stem borer in maize. Carbofuran 3g 20 kg in the presence of 0 dead cabbage. or dimethoate 30% EC 4.0 L. It is per. Or cunnalfas 25 per cent e.c. 50 l. This is the copy. Sprinkle by dissolving in boiling / 500-600 litre water."
       ]
     },
-    "arhar": {
+    "soybean": {
       "advisory": [
-        "For better production, grow varieties like Narendra Arhar 2, Malviya 13, Rajeshwer 2, Malviya Vijeta, Pusa 9 (Bahra), etc., before the rainy season. If seeds are not available, use Rhizobium culture to treat the seeds and apply fungicide before sowing.",
-        "Follow proper irrigation practices, especially during flowering and pod development stages.",
-        "Apply 4 grams of Trichoderma and 1 gram of Carbendazim per kg of seed before sowing.",
-        "Ensure good weed control and irrigation practices."
-      ]
-    },
-    "urad and moong": {
-      "advisory": [
-        "Use varieties like Azad Urad 1, Azad Urad 2, Shekhar 1, Shekhar 2, Pant Urad 31, etc., for cultivation.",
-        "Weed control is crucial. Apply herbicides before and after sowing.",
-        "Use proper seed treatment and irrigation practices for a good harvest.",
-        "Cultivate varieties like SML 668, PDM 84-139, PS 16, etc., for better yield.",
-        "Ensure proper seed treatment and weed control.",
-        "Apply fungicides and herbicides as necessary."
+        "Soybean cultivation",
+        "In case of outbreak of leaf borer insect, sap and girdle beetle in soybean crop, spray Caenulfas 25EC 4.5 litres or Ethion 50EC 4.5 litres diluted in 500 litres of water."
       ]
     },
     "sesame": {
       "advisory": [
-        "Grow varieties like Pragati, Shekhar, RT 78, etc., for better yield.",
-        "Ensure proper seed treatment and irrigation practices."
+        "Sesame cultivation",
+        "In case of infestation of hives in sesame seeds (Vihara hairy caterpillar), destroy the eggs in the initial stage by breaking them along with the leaves and putting them in kerosene-containing water or spray by dissolving quinalphas 25EC in 5 litres of water."
       ]
     },
     "sugarcane": {
       "advisory": [
-        "In order to save the sugarcane sown in the autumn season from falling in the monsoon season, offer sugarcane greetings and offer soil to the sugarcane roots.",
-        "For the first congratulation, when the sugarcane is about 5 feet, tie each clump in the sugarcane lines at a height of 2 feet with the dry leaves at the bottom.",
-        "Egg clusters should be removed and destroyed if there is an outbreak of pyrilla in sugarcane. The crop environment should provide protection to Epiricania melanoleuca, a parasite of the pyrilla pest. For chemical control, cunalphos is 25% EC2L / ha. Dissolved in 800 to 4000 litres of water or chlorpyrifos 20% e.c. 4. 5 litres / ha. Spraying should be done by dissolving in 800 to 000 litres of water.",
-        "Copper oxychloride 0. 2 percent or carbendazim 0. 4 percent for the control of pokka boing disease.",
-        "Make a solution and sprinkle on the leaves.",
-        "When symptoms of reddening disease appear on the anterior portion of the middle vein of sugarcane leaves, uproot and destroy the plants. Drench the uprooted area with thiophenate methyl 0. 2%.",
-        "Prophenophos 40% + Cypher 4% 750 ml to 625 l for protection against sucker mites. Make a solution in water and sprinkle it on the leaves.",
-        "Carbofuran is 3% granular at 30 kcal / kg in the event of a rodent infestation in sugarcane. Use in conditions of appropriate humidity near the roots of plants at a rate of.",
-        "Survey-demonstration work is being done by the sugarcane department in which species, area, pedi / plant related information should be recorded."
+        "Sugarcane cultivation",
+        "Plant trichocards containing 50,000 Trichogramma eggs at 8 to 10 sites per hectare for biological control of pests. Cut the cards into pieces and attach them to the lower surface of the strips. Repeat this at 10-day intervals."
       ]
     },
-    "pulses": {
+    "groundnut": {
       "advisory": [
-        "Late maturing varieties of pigeon pea like Narendra pigeon pea-2, Malviya-3 (Miracle), Rajendra pigeon pea-2, Malviya Vikas, Pusa-9 (Bahar), Azad, Narendra pigeon pea. If you have not sown Amar, Bahar, IPA-206, IPA-5-2 yet, then sow the rams as soon as possible.",
-        "One kg if the seeds are not treated before sowing. 2 g of seeds. Therum, treat with one gram of carbendazim or 4 grams of trichoderma + one gram of carboxin. Before sowing, treat the seeds with a specific rhizobium culture of pigeon pea."
+        "Groundnut cultivation",
+        "On the 30-35 day after sowing groundnut, do weed control by doing another weeding and keep on doing light tillage. Do not weed during pegging. Irrigation must be done during if there are drought conditions. Peanuts are prone to severe rot and ticks, so be careful."
       ]
     },
-    "vegetables": {
+    "tur": {
       "advisory": [
-        "If kharif crops are not sown, cucumber, bitter gourd, bottle gourd, bitter gourd, pumpkin, lady's finger, rice and radish can be sown.",
-        "There is still time for okra to be sown in the kharif (rainy) season. Its seed rate is 0 - 2 kg. It is per. And for hybrid varieties, 5 - 8 kg seed is sufficient.",
-        "Chloroantraniliprole chemical to protect brinjal crop from stem and fruit borer insect. Got 0. Dissolve the amount in a liter of water and spray at 40-5 day intervals.",
-        "Spray a solution of thiophenate methyl with 1. 00 to 4. 50 ml quantity / l water at an interval of 45 days to prevent phimopsis blight infestation in brinjal crop. Spray the fruits after plucking and do the next plucking after 5 days."
+        "Tur cultivation 0 In case of delay in sowing due to floods or incessant rains in eastern Uttar Pradesh, first of September."
       ]
     },
-    "mushroom": {
+    "urd-moong": {
       "advisory": [
-        "For farmers producing mushrooms, prepare the field for August month by end of this month.",
-        "For information on mushroom production, contact Dr. S.K. Vishwas, Professor, Plant Pathology Department, Chandra Shekhar Azad University of Agriculture and Technology, Kanpur (Mobile: 9452252504), or Narendra Dev University of Agriculture and Technology, Ayodhya, and the Plant Pathology Department, Uttar Pradesh."
+        "Urd-Moong cultivation",
+        "The farmers who have not been able to sow Urad yet due to some reasons, they should complete the sowing of Shekhar-4, Shekhar-2 and Shekhar-3 in this month."
+      ]
+    },
+    "toria": {
+      "advisory": [
+        "Toria cultivation",
+        "Make advance arrangements for seeds of varieties Ta-9, PT-303 recommended for entire UP, Type-36 recommended for Bhavani Central UP and PT-30 recommended for Terai region so that it can be sown in the first fortnight of September."
+      ]
+    },
+    "vegetable": {
+      "advisory": [
+        "Vegetable cultivation",
+        "Sow cabbage, medium-sized cauliflower, capsicum, tomatoes, etc. in the nursery for sowing and transplant the pre-sown seedlings."
       ]
     },
     "horticulture": {
       "advisory": [
-        "Plant tissue cultured disease resistant G-9 species for new banana plantations.",
-        "Cut off the remaining buds in the banana, leaving one sword leaf and stacking (support) in the fruit plants.",
-        "Farmers who want to plant new gardens of mango, guava, litchi, amla, jackfruit, lemon, jamun, plum, banana, papaya should plant them.",
-        "Spray a solution of copper oxychloride 33 g or streptocycline 600 mg per liter of water into the lemon to prevent canker disease."
+        "horticulture",
+        "Make proper drainage arrangements in the gardens. Complete the plantation of new orchards of progressive varieties of mango, guava, amla, litchi and lemon as soon as possible and replace the plants that have died due to some reason in the previously planted orchards. Potatoes, chillies, tomatoes, cauliflower and gladiolus can be grown as intercrops for higher returns in the first 10 years of a mango orchard."
       ]
     },
     "animal husbandry": {
       "advisory": [
-        "Do not feed the animals with water collected in the pond holes, otherwise the possibility of internal parasites will increase. When feeding green fodder to animals, make sure that the fodder is always washed and fed so that the soil is more susceptible to internal parasite eggs or larvae.",
-        "Kharif is the time for sowing fodder crops, so all the cattle rearers / farmers should prepare the field well and sow improved variety of fodder seeds.",
-        "The Mobile Veterinary Unit Scheme is being operated by the Department to provide veterinary treatment at the doorsteps of farmers / cattle rearers. To take advantage of this scheme, all the farmers / cattle rearers can call the toll fee helpline no. You can take advantage of the plan by contacting -962."
+        "Animal husbandry",
+        "Currently, vaccination for Foot and Mouth Disease (FMD) and Broomelosis is being done in all the veterinary hospitals till 30th August. Ensure vaccination in animals. Protect small animals such as sheep and goats from waterlogged areas. Sheep gain weight due to being soaked in water and are unable to sit up, which weakens their leg muscles and increases their risk of pneumonia."
       ]
     },
     "fisheries": {
       "advisory": [
-        "For fish growth, supplements should be used at 4 to 2 percent of the weight of the fish. The fish should be fed at a fixed time.",
-        "Hunting is prohibited in the reservoir / rivulets till 3rd August.",
-        "During the rainy season, it is necessary to eradicate the aquatic plants of the pond. This plant absorbs the nutrients available in the pond and releases the fish.",
-        "While monitoring the acidity of the pond soil, high acidity soil was treated with cow dung (20 to 30 tonnes per hectare). ) or control by adding 5 tons per hectare of gypsum.",
-        "Thai mugur fish farming is prohibited. Don't follow it."
+        "Fisheries",
+        "silk",
+        "Fish seeds of katla, rohu, nain, silver carp and grass carp are available at all hatcheries and departmental fish farms. Fishermen should store fish seeds in their ponds. Use lime in the pond for water quality. From the point of view of fertilization, lime is suitable for use at 250 km / ha. This fish is also helpful in disease control."
       ]
     },
     "sericulture": {
       "advisory": [
-        "Use cow dung manure and NPK after weeding, mulching and cleaning grass and other weeds in mulberry plantations / plantations. Aeri pest management work is to start in the second week of December, for this spray castor seeds so that leaves can be obtained on time. In tussar silkworm rearing, insect rearing of the first crop Ampatia has started. Hence, it is advisable for the insect keepers / farmers to take good care of the tussar silkworm and use nylon nets in pest management."
+        "Farmers interested in sericulture should contact their nearest sericulture officer. Get information by contacting the person in charge and perform pest control.",
+        "Mulberry monsoon crop is starting from the first week of September and Eri monsoon crop from the second week of September. For this, the insect keeper should complete all the necessary preparations such as purification, etc. in time. The pest management building and equipment should be disinfected by spraying 2% formalin solution and after disinfection, the pest management building should be closed for 24 hours."
       ]
     },
     "forestry": {
       "advisory": [
-        "Prepare germination beds in the nursery and sow the seeds of mango, gulmohar, mahua, jackfruit, jamun, kanji, neem, etc. early. Implant the sprouted plants in root trainers / bags."
+        "Forestry 0 Complete the plantation work as soon as possible."
       ]
     }
   },
-  "date": "25-07-2024"
+  "date": "22-08-2024"
 }
