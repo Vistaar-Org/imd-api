@@ -390,6 +390,28 @@
     "or": "ମସ୍ରୁମ୍"
   },
   "masoor": {
-    "link": "https://cdn-api.bhasai-dev.k8s.bhasai.samagra.io/vistaar/public/Masoor.jpeg"
+    "link": "https://cdn-api.bhasai-dev.k8s.bhasai.samagra.io/vistaar/public/Masoor.jpeg",
+    "hi": "मसूर",
+    "or": "ମସୁର"
+  },
+  "tur": {
+    "link": "https://cdn-api.bhasai-dev.k8s.bhasai.samagra.io/vistaar/public/Tur_daal.jpg",
+    "hi": "तूर",
+    "or": "ତୁର"
+  },
+  "urd-moong": {
+    "link": "https://cdn-api.bhasai-dev.k8s.bhasai.samagra.io/vistaar/public/Moong_whole.jpeg",
+    "hi": "उर्द-मूंग",
+    "or": "ହରଡ-ମୁଗ"
+  },
+  "toria": {
+    "link": "https://cdn-api.bhasai-dev.k8s.bhasai.samagra.io/vistaar/public/Tori.jpg",
+    "hi": "तोरिया",
+    "or": "ତୋରିଆ"
+  },
+  "vegetable": {
+    "link": "https://cdn-api.bhasai-dev.k8s.bhasai.samagra.io/vistaar/public/Vegetables.jpg",
+    "hi": "सब्जी",
+    "or": "ସବ୍ଜି"
   }
 }
