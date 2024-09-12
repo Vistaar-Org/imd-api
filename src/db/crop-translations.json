@@ -413,5 +413,10 @@
     "link": "https://cdn-api.bhasai-dev.k8s.bhasai.samagra.io/vistaar/public/Vegetables.jpg",
     "hi": "सब्जी",
     "or": "ସବ୍ଜି"
+  },
+  "oilseeds": {
+    "link": "https://cdn-api.bhasai-dev.k8s.bhasai.samagra.io/vistaar/public/oilseeds.jpg",
+    "hi": "तिलहन",
+    "or": "ତିଳହନ"
   }
 }
