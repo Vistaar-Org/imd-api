@@ -1,99 +1,98 @@
 {
-   "names_of_crops": [
-      "paddy",
-      "vegetables",
-      "maize",
-      "pulses",
-      "sugarcane",
-      "oilseeds",
-      "soybean",
-      "sesame",
-      "pigeon pea",
-      "animal husbandry"
-   ],
-   "general_advisory": "Excessive temperature and humidity in the environment will lead to diseases and pests in crops, so use eco-friendly pest control measures such as photosynthesis, bird percher, pheromone traps, trichogramma, and trichoderma for disease control. Maintain sufficient moisture for proper plant growth in areas of low rainfall, especially in the case of paddy stubble and wheat formation, so that cracks do not form in the soil. Vegetable growers in areas that have not received adequate rainfall are advised to grow spinach, radish, carrot, turnip, beetroot, fenugreek, coriander, etc. for good yield even in short duration and less water. Natural and organic farming should be promoted, agrochemicals should be used on scientific advice only as recommended. Give intravenous and external anti-parasitic drugs to animals on the advice of a veterinarian. Early potato sowing will start from 45th September, so remove the potato from the cold storage and treat it.",
-   "crops_data": {
-      "paddy": {
-         "advisory": [
-            "Do a second top dressing with the remaining amount of nitrogen on the 45-50 day after planting. Particular care should be taken to ensure that sufficient moisture is available in the field when top-dressing urea.",
-            "Bifenthrin 0% EC500 was found in 0 rice for the control of stress borer, leaf wrap, bunca pest, and hispa. It is per. Or spray Cunolfos 25% EC50 litre 500 litre water solution or Karatap Hydrochloride 4G 48 kg. Mixing the gram quantity with sand or urea gives 3 to 5 C. Soak in lukewarm water.",
-            "\"On occurrence of khaira disease due to zinc deficiency of paddy, 05 to 40 kg. Spray a solution of zinc sulphate and 2% urea per hectare.",
-            "500 gm of copper oxychloride and 45 gm of streptocycline per hectare in case of symptoms of leaf scorch in 0 paddy. Sprinkle by making a solution at the rate of water.",
-            "The current weather is favorable for sheath blight, so hexaconazole should be applied to 5. 0 E.C. when outbreaks appear. 0 lit. Take the quantity 500-750. Dissolve in water and strain.",
-            "The current climate is favourable for brown spot disease, so in the event of an outbreak, Macozeb is 75% W, PH. Or 2. 0 kg of 75% w.p. Volume 500-750 lit. Dissolve in water and strain.",
-            "In the Basmati group of rice varieties, if symptoms of the disease appear, uproot the plants and press them into the soil and spray Carbendazim in a solution of 50% w.p.g per litre of water."
-         ]
-      },
-      "vegetables": {
-         "advisory": [
-            "Chloroantraniliprole chemical to protect the brinjal crop from stem and fruiting pests. Got 0. Dissolve the amount in a liter of water and spray at 40-45 day intervals.",
-            "Spray a solution of thiophenate methyl with 1. 00 to 4. 50 ml quantity / l water at an interval of 45 days to prevent phimopsis blight infestation in brinjal crop. Spray the fruits after plucking and do the next plucking after 45 days.",
-            "Make drainage arrangements in turmeric and ginger and use nitrogen as recommended.",
-            "Sow cabbage, medium-sized cauliflower, capsicum, tomatoes, etc. in the nursery for sowing and transplant the pre-sown seedlings.",
-            "Finish the transplantation of parwal boll-bearing vines as soon as possible.",
-            "Plant the bulbs of the recommended species of sweet potato so that the bulbs can be harvested in time.",
-            "Plant the prepared seeds of brinjal and chillies on the beds.",
-            "In the event of an outbreak of viral diseases in vegetable crops, remove the affected plants from the field, burn them or bury them in the soil and spray the recommended intravenous insecticides.",
-            "Before sowing potatoes, take 7 to 10 seeds out of the cold storage and spread them in a shady place and separate them by sorting out the seed pods which are seedless (unfertilized), cut, cut, rotten and if the seeds stored in the cold storage have sprouted then also remove them because if such seeds are sown then the sprouts will dry up and perish and it will take more time for them to germinate again in the field. Place the harvested seeds in baskets or sacks for a week for the potatoes to germinate.",
-            "If the seed potato has not been treated before storing it in the cold storage, then immediately after removing it from the cold storage, treat it in 3% solution of boric acid for 30 minutes and dry it in a shady place and keep it in baskets or sacks for germination. Do not treat sprouted seed potatoes.",
-            "The sowing time of early potato varieties like Kufri Chandramukhi and Kufri Bahar has started from 15th September, so farmers should arrange agnim seeds."
-         ]
-      },
-      "maize": {
-         "advisory": [
-            "Carbofuran 3g 20 kg in case of 40 dead hives of stem borer in maize. or dimethoate 30% EC 1.0 l. It is per. Or Qnalfas 25 per cent EC4. 50 lire. This is the copy. Sprinkle by dissolving in a liter of water.",
-            "For organic pest control, attach Trichogramma egg-containing trichocards at the rate of 50000 per acre on the lower surface of the leaves twice at an interval of 5-6 days.",
-            "Chlorantraniliprole 8. 5% SC. 0. 4 was found for effective control in case of 0 to 20% damage in case of outbreak of fall armyworm in maize. 0. 3 ml of water or spinosad per litre. Water or thiamethoxamine at the rate of 2. 6% + lambda cyhalosine at the rate of 9. 5% .5 ml per litre of water should be sprayed."
-         ]
-      },
-      "pulses": {
-         "advisory": [
-            "Imammectin Bezoate 80g for control of whitefly, ticks and suckers in urad and moong. And spray thiamethoxam at the rate of 200 ml per acre by dissolving it in 200 litres of water."
-         ]
-      },
-      "sugarcane": {
-         "advisory": [
-            "The time for autumn sugarcane sowing is approaching, so new disease-resistant sugarcane varieties such as Co. S. 43235, Co. Lakh. 44204, Ko. 45023, K.S.H. 7234, K.S. 78234, Ko. Lakh. 16202, Ko. Secure only seed sugarcane of approved varieties for the state S. 76233 etc.",
-            "Get the seeds only from authorized places like Sugarcane Research Institute, Sugarcane Development Council's Plantation, Seed Sugarcane Grower Farmer, etc.",
-            "In case the field is not vacant for autumn sowing, prepare a nursery by STP and poly tray method and plant the plants when the field is empty.",
-            "Plant trichocards containing 50,000 Trichogramma eggs at 8-10 locations per hectare for biological control of pests. Cut the cards into pieces and attach them to the lower surface of the strips. Repeat this action at 0-day intervals.",
-            "\"Enclosure of fields affected by red rot disease so that infected irrigation water does not affect healthy crops.\" Remove and destroy the clump / bud affected by red rot disease and treat the uprooted area with trichoderma and drenching of methyl 0. 2 percent for protection.",
-            "Low rainfall areas often experience outbreaks of pyrilla, so in the absence of parasites (Epiricania melanoleuca), quinalphus 25% solution is 0.8 L. It is per. 625 L. Add to water and stir.",
+  "names_of_crops": [
+     "paddy",
+     "vegetables",
+     "maize",
+     "pulses",
+     "sugarcane",
+     "oilseeds",
+     "soybean",
+     "sesame",
+     "pigeon pea",
+     "animal husbandry"
+  ],
+  "general_advisory": "Excessive temperature and humidity in the environment will lead to diseases and pests in crops, so use eco-friendly pest control measures such as photosynthesis, bird percher, pheromone traps, trichogramma, and trichoderma for disease control. Maintain sufficient moisture for proper plant growth in areas of low rainfall, especially in the case of paddy stubble and wheat formation, so that cracks do not form in the soil. Vegetable growers in areas that have not received adequate rainfall are advised to grow spinach, radish, carrot, turnip, beetroot, fenugreek, coriander, etc. for good yield even in short duration and less water. Natural and organic farming should be promoted, agrochemicals should be used on scientific advice only as recommended. Give intravenous and external anti-parasitic drugs to animals on the advice of a veterinarian. Early potato sowing will start from 45th September, so remove the potato from the cold storage and treat it.",
+  "crops_data": {
+     "paddy": {
+        "advisory": [
+           "Do a second top dressing with the remaining amount of nitrogen on the 45-50 day after planting. Particular care should be taken to ensure that sufficient moisture is available in the field when top-dressing urea.",
+           "Bifenthrin EC500 was found in rice for the control of stress borer, leaf wrap, bunca pest, and hispa. Spray Cunolfos 25% EC50 Hydrochloride 48 kg. Mixing the gram quantity with sand or urea gives 3 to 5 C. Soak in lukewarm water.",
+           "\"On occurrence of khaira disease due to zinc deficiency of paddy, 0.5 to 40 kg - Spray a solution of zinc sulphate and 2% urea per hectare.",
+           "500 gm of copper oxychloride and 45 gm of streptocycline per hectare in case of symptoms of leaf scorch in 0 paddy. Sprinkle by making a solution at the rate of water.",
+           "The current weather is favorable for sheath blight, so hexaconazole should be applied when outbreaks appear. Dissolve in water and strain.",
+           "The current climate is favorable for brown spot disease, so in the event of an outbreak, Macozeb is to be dissolved in water and strained.",
+           "In the Basmati group of rice varieties, if symptoms of the disease appear, uproot the plants and press them into the soil and spray Carbendazim in a solution of 50% w.p.g per litre of water."
+        ]
+     },
+     "vegetables": {
+        "advisory": [
+           "Chloroantraniliprole chemical to protect the brinjal crop from stem and fruiting pests. Got 0. Dissolve the amount in a liter of water and spray at 40-45 day intervals.",
+           "Spray a solution of thiophanate methyl with l water at an interval of 45 days to prevent phomopsis blight infestation in brinjal crop. Spray the fruits after plucking and do the next plucking after 45 days.",
+           "Make drainage arrangements in turmeric and ginger and use nitrogen as recommended.",
+           "Sow cabbage, medium-sized cauliflower, capsicum, tomatoes, etc. in the nursery for sowing and transplant the pre-sown seedlings.",
+           "Finish the transplantation of parwal boll-bearing vines as soon as possible.",
+           "Plant the bulbs of the recommended species of sweet potato so that the bulbs can be harvested in time.",
+           "Plant the prepared seeds of brinjal and chillies on the beds.",
+           "In the event of an outbreak of viral diseases in vegetable crops, remove the affected plants from the field, burn them or bury them in the soil and spray the recommended intravenous insecticides.",
+           "Before sowing potatoes, take 7 to 10 seeds out of the cold storage and spread them in a shady place and separate them by sorting out the seed pods which are seedless (unfertilized), cut, cut, rotten and if the seeds stored in the cold storage have sprouted then also remove them because if such seeds are sown then the sprouts will dry up and perish and it will take more time for them to germinate again in the field. Place the harvested seeds in baskets or sacks for a week for the potatoes to germinate.",
+           "If the seed potato has not been treated before storing it in the cold storage, then immediately after removing it from the cold storage, treat it in 3% solution of boric acid for 30 minutes and dry it in a shady place and keep it in baskets or sacks for germination. Do not treat sprouted seed potatoes.",
+           "The sowing time of early potato varieties like Kufri Chandramukhi and Kufri Bahar has started from 15th September, so farmers should arrange seeds."
+        ]
+     },
+     "maize": {
+        "advisory": [
+           "Carbofuran 3g 20 kg in case of 40 dead hives of stem borer in maize. or dimethoate 30% EC. Sprinkle by dissolving in a liter of water.",
+           "Chlorantraniliprole 8. 5% SC. 0. 4 was found for effective control in case of 0 to 20% damage in case of outbreak of fall armyworm in maize. 0. 3 ml of water or spinosad per litre. Water or thiamethoxamine at the rate of 2. 6% + lambda cyhalosine at the rate of 9. 5% .5 ml per litre of water should be sprayed."
+        ]
+     },
+     "pulses": {
+        "advisory": [
+           "Imammectin Bezoate for control of whitefly, ticks and suckers in urad and moong. And spray thiamethoxam at the rate of 200 ml per acre by dissolving it in 200 litres of water."
+        ]
+     },
+     "sugarcane": {
+        "advisory": [
+           "The time for autumn sugarcane sowing is approaching, so new disease-resistant sugarcane varieties such as Co. S. 43235, Co. Lakh. 44204, Ko. 45023, K.S.H. 7234, K.S. 78234, Ko. Lakh. 16202, Ko. Secure only seed sugarcane of approved varieties for the state S. 76233 etc.",
+           "Get the seeds only from authorized places like Sugarcane Research Institute, Sugarcane Development Council's Plantation, Seed Sugarcane Grower Farmer, etc.",
+           "In case the field is not vacant for autumn sowing, prepare a nursery by STP and poly tray method and plant the plants when the field is empty.",
+            "Enclosure of fields affected by red rot disease so that infected irrigation water does not affect healthy crops.",
+            "Remove and destroy the clump / bud affected by red rot disease and treat the uprooted area with trichoderma and drenching of methyl 0. 2 percent for protection.",
+           "Low rainfall areas often experience outbreaks of pyrilla, so in the absence of parasites (Epiricania melanoleuca), quinalphos 25% solution is 0.8 L.",
             "Prepare nursery with single bud / bud chip method of sugarcane.",
-            "Accept new membership in the Sugarcane Committee online. Check the cane raw calendar (pre-calendar) and make corrections if there are errors."
-         ]
-      },
-      "oilseeds": {
-         "advisory": [
-            "Peanuts are prone to severe rot and ticks, so be careful. Mancozeb or Carbendazim 50 WP 225 g / ha on standing crop on outbreak. Or jineb 75% soluble powder 2.5 kg. Or 3 litres of germ 27% liquid or 2 kg of germ 80%. Dissolve 2 - 3 drops in 500 to 600 litres of water at an interval of 40 days.",
-            "To manage white silt in groundnut, add chlorpyrifos to the standing crop at the rate of 20 EC4 litres per hectare either in the roots or through irrigation.",
-            "This season is favourable for tikka disease (leaf spot). Thus, on the appearance of the disease infection, macozeb or carbendazim 50% WP 225 g / ha or ZINEB 75% soluble powder 2.5 kg / ha. 2 / kg per hectare or 80% germination. Dissolve 2 to 3 drops of K in 500-600 litres of water at 10-day intervals."
-         ]
-      },
-      "soybean": {
-         "advisory": [
-            "\"In case of infestation of leaf-cutting insects, sap suckers and girdle weevils in soybean crop, spray Caenulfas 25EC 4.5 litres or Ethion 50EC 5 litres diluted in 500 litres of water."
-         ]
-      },
-      "sesame": {
-         "advisory": [
-            "In case of infestation of hives in sesame seeds (Vihara hairy caterpillar), destroy the eggs in the initial stage by breaking the eggs / hives along with the leaves and putting them in kerosene-containing water or spray by dissolving quinalphas 25EC in 4. 5 litres of water."
-         ]
-      },
-      "pigeon pea": {
-         "advisory": [
-            "\"In eastern Uttar Pradesh, in case of delay in sowing due to floods or incessant rains, Bahar and PDA can be sown as pure crops in the first fortnight of September, but the distance from row to row should not exceed 30 ° C. m. and seed quantity 20 to 25 kg. R. Per He. Use at the rate of.",
-            "Dimethoate 30 EC 4 litre or imidacloprid 7. 8 SL 200 was found in pigeon pea when leaf wrap infestation was observed. It is per. Spray at a rate of."
-         ]
-      },
-      "animal husbandry": {
-         "advisory": [
-            "To prevent cows from moving into waterlogged areas and preventing foot rot, add lime to their enclosures and wash hoofs and floors with a one percent solution of potassium permanganate.",
-            "Keep small animals such as sheep and goats from getting wet in the water, which increases the risk of pneumonia.",
-            "Take special care of the animals you currently care for. The placenta of an animal as soon as it is born. Tie with a thread at 5 to 2 inches, cut with a new blade and use tincture iodine.",
-            "Wash and feed the green fodder so that the parasite does not enter the animal along with the fodder."
-         ]
-      }
-   },
-   "date": "05-09-2024"
+           "Accept new membership in the Sugarcane Committee online. Check the cane raw calendar (pre-calendar) and make corrections if there are errors."
+        ]
+     },
+     "oilseeds": {
+        "advisory": [
+           "Peanuts are prone to severe rot and ticks, so be careful. Mancozeb or Carbendazim 50 WP 225 g / ha on standing crop on outbreak. Or jineb 75% soluble powder 2.5 kg. Or 3 litres of germ 27% liquid or 2 kg of germ 80%. Dissolve 2 - 3 drops in 500 to 600 litres of water at an interval of 40 days.",
+           "To manage white silt in groundnut, add chlorpyrifos to the standing crop at the rate of 20 EC4 litres per hectare either in the roots or through irrigation.",
+           "This season is favourable for tikka disease (leaf spot). Thus, on the appearance of the disease infection, macozeb or carbendazim 50% WP 225 g / ha or ZINEB 75% soluble powder 2.5 kg / ha. 2 / kg per hectare or 80% germination. Dissolve 2 to 3 drops of K in 500-600 litres of water at 10-day intervals."
+        ]
+     },
+     "soybean": {
+        "advisory": [
+           "\"In case of infestation of leaf-cutting insects, sap suckers and girdle weevils in soybean crop, spray Caenulfas 25EC 4.5 litres or Ethion 50EC 5 litres diluted in 500 litres of water."
+        ]
+     },
+     "sesame": {
+        "advisory": [
+           "In case of infestation of hives in sesame seeds (Vihara hairy caterpillar), destroy the eggs in the initial stage by breaking the eggs / hives along with the leaves and putting them in kerosene-containing water"
+        ]
+     },
+     "pigeon pea": {
+        "advisory": [
+           "\"In eastern Uttar Pradesh, in case of delay in sowing due to floods or incessant rains, Bahar and PDA can be sown as pure crops in the first fortnight of September, but the distance from row to row should not exceed 30 ° C. m. and seed quantity 20 to 25 kg. R. Per He. Use at the rate of.",
+           "Dimethoate 30 EC 4 litre or imidacloprid 7. 8 SL 200 in pigeon pea when leaf wrap infestation was observed. It is per."
+        ]
+     },
+     "animal husbandry": {
+        "advisory": [
+           "To prevent cows from moving into waterlogged areas and preventing foot rot, add lime to their enclosures and wash hoofs and floors with a one percent solution of potassium permanganate.",
+           "Keep small animals such as sheep and goats from getting wet in the water, which increases the risk of pneumonia.",
+           "Take special care of the animals you currently care for. The placenta of an animal as soon as it is born - Tie with a thread at 5 to 2 inches, cut with a new blade and use tincture iodine.",
+           "Wash and feed the green fodder so that the parasite does not enter the animal along with the fodder."
+        ]
+     }
+  },
+  "date": "05-09-2024"
 }
