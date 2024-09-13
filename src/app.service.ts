@@ -185,6 +185,24 @@ export class AppService {
     }
   }
 
+  async getAdvisoryFromRajai() {
+    try {
+      const startTime = performance.now();
+      const filePaths = [
+        'rajkisan-advisory/latest.json',
+        'rajkisan-advisory/latest_hindi.json',
+      ];
+      const [englishData, hindiData] = await this.readMultipleJSONs(filePaths);
+      const endTime = performance.now();
+      this.logger.verbose(
+        `Time taken to get upcar data: ${endTime - startTime}`,
+      );
+      return { englishData, hindiData };
+    } catch (err) {
+      this.logger.error('Error while fetching advisory data from UPCAR', err);
+    }
+  }
+
   async getWeather(
     lat: string,
     long: string,
@@ -302,6 +320,7 @@ export class AppService {
       }
     }
 
+    // ouat data
     let ouatData = undefined;
     if (provider === ADVISORY_PROVIDERS.OUAT) {
       // OUAT Data
@@ -335,7 +354,30 @@ export class AppService {
         this.logger.warn('skipped adding data from OUAT');
       }
     }
-    // const mapped = transformIMDDataToBeckn(imdData.sevenDay);
+
+    // RAJAI data
+    let rajaiAdvisory = undefined;
+    if (provider === ADVISORY_PROVIDERS.RAJAI) {
+      try {
+        const { englishData, hindiData } = await this.getAdvisoryFromRajai();
+        rajaiAdvisory = mapAdvisoryData(englishData, 'rajai');
+        const upcarHindiProvider = mapAdvisoryData(hindiData, 'rajai');
+        const hindiItems = upcarHindiProvider.items.map((item) => {
+          if (CROP_MAPPINGS[item.code]) {
+            item.descriptor.name = CROP_MAPPINGS[item.code].hi;
+          }
+          item.category_ids.push('hi_translated');
+          return item;
+        });
+        rajaiAdvisory.items.push(...hindiItems);
+        rajaiAdvisory.categories.push({
+          id: 'hi_translated',
+        });
+      } catch (err) {
+        this.logger.error('Error fetching advisory data from RJAI', err);
+      }
+    }
+
     return {
       context: generateContext(),
       message: {
@@ -345,6 +387,7 @@ export class AppService {
             ouatWeatherItems ? ouatWeatherItems : undefined,
             upcarItems ? upcarItems : undefined,
             ouatAdvisoryItems ? ouatAdvisoryItems : undefined,
+            rajaiAdvisory ? rajaiAdvisory : undefined,
           ].filter((item) => item != undefined),
         },
       },
