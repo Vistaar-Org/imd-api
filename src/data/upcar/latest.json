@@ -4,12 +4,11 @@
     "vegetables",
     "maize",
     "pulses",
-    "sugarcane",
-    "oilseeds",
-    "soybean",
-    "sesame",
-    "pigeon pea",
-    "animal husbandry"
+    "horticulture",
+    "animal husbandry",
+    "fisheries",
+    "sericulture",
+    "forestry"
   ],
   "general_advisory": "Excessive temperature and humidity in the environment will lead to diseases and pests in crops, so use eco-friendly pest control measures such as photosynthesis, bird percher, pheromone traps, trichogramma, and trichoderma for disease control. Maintain sufficient moisture for proper plant growth in areas of low rainfall, especially in the case of paddy stubble and wheat formation, so that cracks do not form in the soil. Vegetable growers in areas that have not received adequate rainfall are advised to grow spinach, radish, carrot, turnip, beetroot, fenugreek, coriander, etc. for good yield even in short duration and less water. Natural and organic farming should be promoted, agrochemicals should be used on scientific advice only as recommended. Give intravenous and external anti-parasitic drugs to animals on the advice of a veterinarian. Early potato sowing will start from 45th September, so remove the potato from the cold storage and treat it.",
   "crops_data": {
@@ -33,10 +32,7 @@
         "Finish the transplantation of parwal boll-bearing vines as soon as possible.",
         "Plant the bulbs of the recommended species of sweet potato so that the bulbs can be harvested in time.",
         "Plant the prepared seeds of brinjal and chillies on the beds.",
-        "In the event of an outbreak of viral diseases in vegetable crops, remove the affected plants from the field, burn them or bury them in the soil and spray the recommended intravenous insecticides.",
-        "Before sowing potatoes, take 7 to 10 seeds out of the cold storage and spread them in a shady place and separate them by sorting out the seed pods which are seedless (unfertilized), cut, cut, rotten and if the seeds stored in the cold storage have sprouted then also remove them because if such seeds are sown then the sprouts will dry up and perish and it will take more time for them to germinate again in the field. Place the harvested seeds in baskets or sacks for a week for the potatoes to germinate.",
-        "If the seed potato has not been treated before storing it in the cold storage, then immediately after removing it from the cold storage, treat it in 3% solution of boric acid for 30 minutes and dry it in a shady place and keep it in baskets or sacks for germination. Do not treat sprouted seed potatoes.",
-        "The sowing time of early potato varieties like Kufri Chandramukhi and Kufri Bahar has started from 15th September, so farmers should arrange agnim seeds."
+        "In the event of an outbreak of viral diseases in vegetable crops, remove the affected plants from the field, burn them or bury them in the soil and spray the recommended intravenous insecticides."
       ]
     },
     "maize": {
@@ -51,39 +47,16 @@
         "Imammectin Bezoate 80g for control of whitefly, ticks and suckers in urad and moong. And spray thiamethoxam at the rate of 200 ml per acre by dissolving it in 200 litres of water."
       ]
     },
-    "sugarcane": {
+    "horticulture": {
       "advisory": [
-        "The time for autumn sugarcane sowing is approaching, so new disease-resistant sugarcane varieties such as Co. S. 43235, Co. Lakh. 44204, Ko. 45023, K.S.H. 7234, K.S. 78234, Ko. Lakh. 16202, Ko. Secure only seed sugarcane of approved varieties for the state S. 76233 etc.",
-        "Get the seeds only from authorized places like Sugarcane Research Institute, Sugarcane Development Council's Plantation, Seed Sugarcane Grower Farmer, etc.",
-        "In case the field is not vacant for autumn sowing, prepare a nursery by STP and poly tray method and plant the plants when the field is empty.",
-        "Plant trichocards containing 50,000 Trichogramma eggs at 8-10 locations per hectare for biological control of pests. Cut the cards into pieces and attach them to the lower surface of the strips. Repeat this action at 0-day intervals.",
-        "\"Enclosure of fields affected by red rot disease so that infected irrigation water does not affect healthy crops.\" Remove and destroy the clump / bud affected by red rot disease and treat the uprooted area with trichoderma and drenching of methyl 0. 2 percent for protection.",
-        "Low rainfall areas often experience outbreaks of pyrilla, so in the absence of parasites (Epiricania melanoleuca), quinalphus 25% solution is 0.8 L. It is per. 625 L. Add to water and stir.",
-        "Prepare nursery with single bud / bud chip method of sugarcane.",
-        "Accept new membership in the Sugarcane Committee online. Check the cane raw calendar (pre-calendar) and make corrections if there are errors."
-      ]
-    },
-    "oilseeds": {
-      "advisory": [
-        "Peanuts are prone to severe rot and ticks, so be careful. Mancozeb or Carbendazim 50 WP 225 g / ha on standing crop on outbreak. Or jineb 75% soluble powder 2.5 kg. Or 3 litres of germ 27% liquid or 2 kg of germ 80%. Dissolve 2 - 3 drops in 500 to 600 litres of water at an interval of 40 days.",
-        "To manage white silt in groundnut, add chlorpyrifos to the standing crop at the rate of 20 EC4 litres per hectare either in the roots or through irrigation.",
-        "This season is favourable for tikka disease (leaf spot). Thus, on the appearance of the disease infection, macozeb or carbendazim 50% WP 225 g / ha or ZINEB 75% soluble powder 2.5 kg / ha. 2 / kg per hectare or 80% germination. Dissolve 2 to 3 drops of K in 500-600 litres of water at 10-day intervals."
-      ]
-    },
-    "soybean": {
-      "advisory": [
-        "\"In case of infestation of leaf-cutting insects, sap suckers and girdle weevils in soybean crop, spray Caenulfas 25EC 4.5 litres or Ethion 50EC 5 litres diluted in 500 litres of water."
-      ]
-    },
-    "sesame": {
-      "advisory": [
-        "In case of infestation of hives in sesame seeds (Vihara hairy caterpillar), destroy the eggs in the initial stage by breaking the eggs / hives along with the leaves and putting them in kerosene-containing water or spray by dissolving quinalphas 25EC in 4. 5 litres of water."
-      ]
-    },
-    "pigeon pea": {
-      "advisory": [
-        "\"In eastern Uttar Pradesh, in case of delay in sowing due to floods or incessant rains, Bahar and PDA can be sown as pure crops in the first fortnight of September, but the distance from row to row should not exceed 30 ° C. m. and seed quantity 20 to 25 kg. R. Per He. Use at the rate of.",
-        "Dimethoate 30 EC 4 litre or imidacloprid 7. 8 SL 200 was found in pigeon pea when leaf wrap infestation was observed. It is per. Spray at a rate of."
+        "Cut off the remaining buds, leaving a sword leaf in the banana and stacking (support) in the fruit plants.",
+        "Spray copper oxychloride (6 to 8 grams per liter of water) and apply the recommended amount of fertilizers to the plates to control the foliage and anthracnose disease in bananas.",
+        "Bananas are infested with beetles in the current season for which monocrotophos (. Spray 25 ml per litre of water) or add carbofuran at the rate of 3 to 4 gm per plant in the sieve and in the soil.",
+        "In new orchards of mango, guava, amla, litchi, and lemon, replace plants that have died for some reason with new ones. Potatoes, chillies, tomatoes, cauliflower and gladiolus can be grown as intercrops for higher returns in the first 0 years of the mango orchard.",
+        "Spray dimethoate at the rate of 2 ml / l or cunulfas at the rate of 2 ml / l at an interval of 45 days for the prevention of branch knot pests and tent caterpillars.",
+        "Spray copper oxychloride (3 g / l water) to control red rust and anthracnose in mangoes.",
+        "Spray amla with borax (6 gm per litre of water) to prevent yeast infection.",
+        "Spray a solution of copper oxychloride 3 gm or streptocycline 600 mg per litre of water in lemon to prevent canker disease."
       ]
     },
     "animal husbandry": {
@@ -92,6 +65,25 @@
         "Keep small animals such as sheep and goats from getting wet in the water, which increases the risk of pneumonia.",
         "Take special care of the animals you currently care for. The placenta of an animal as soon as it is born. Tie with a thread at 5 to 2 inches, cut with a new blade and use tincture iodine.",
         "Wash and feed the green fodder so that the parasite does not enter the animal along with the fodder."
+      ]
+    },
+    "fisheries": {
+      "advisory": [
+        "Fish seeds of katla, rohu, nain species and fish seeds of silver carp and grass carp fish species are currently available in the UP Fisheries Development Corporation and private sector, so fish farmers should contact the district office and collect fish seeds. This is the best time to stock fish.",
+        "For fish growth, supplements should be used at 4 to 2 percent of the weight of the fish. Fish should be fed in one place for as long as possible.",
+        "During the rainy season, it is necessary to eradicate the aquatic plants of the pond. This plant exploits the nutrients available in the pond."
+      ]
+    },
+    "sericulture": {
+      "advisory": [
+        "Since pest management of monsoon commercial crops is in progress in the mulberry sector, it is advisable for the pest controllers to spray Vetter or RKO on the pests 30 minutes before the first feeding after the pests come out of the molt to prevent pest infestation. Maintain the required temperature and humidity.",
+        "Correctly spread the silkworms in the insecticide tray and clean the silkworms by transferring them to another tray using a cleaning net.",
+        "Autumn crop mulberry silk puzzle is going to start between 20th to 25th September, for this purpose, pest control buildings, equipment like insect control trays, insect control racks, chopping boards, cleaning net feeding stands, etc. should be sanitized with 5% bleaching powder solution or 1% chlorine dioxide (Sanitech) and the pest control building should be cleaned carefully by mixing 200 grams of bleaching powder in 40 kg lime solution."
+      ]
+    },
+    "forestry": {
+      "advisory": [
+        "Gap filling should be done in place of the plants that have died after plantation."
       ]
     }
   },
