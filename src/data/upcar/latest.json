@@ -4,6 +4,7 @@
     "vegetables",
     "maize",
     "pulses",
+    "wheat",
     "horticulture",
     "animal husbandry",
     "fisheries",
@@ -16,7 +17,7 @@
       "advisory": [
         "Do a second top dressing with the remaining amount of nitrogen on the 45-50 day after planting. Particular care should be taken to ensure that sufficient moisture is available in the field when top-dressing urea.",
         "Bifenthrin 0% EC500 was found in 0 rice for the control of stress borer, leaf wrap, bunca pest, and hispa. It is per. Or spray Cunolfos 25% EC50 litre 500 litre water solution or Karatap Hydrochloride 4G 48 kg. Mixing the gram quantity with sand or urea gives 3 to 5 C. Soak in lukewarm water.",
-        "\"On occurrence of khaira disease due to zinc deficiency of paddy, 05 to 40 kg. Spray a solution of zinc sulphate and 2% urea per hectare.",
+        "On occurrence of khaira disease due to zinc deficiency of paddy, 05 to 40 kg. Spray a solution of zinc sulphate and 2% urea per hectare.",
         "500 gm of copper oxychloride and 45 gm of streptocycline per hectare in case of symptoms of leaf scorch in 0 paddy. Sprinkle by making a solution at the rate of water.",
         "The current weather is favorable for sheath blight, so hexaconazole should be applied to 5. 0 E.C. when outbreaks appear. 0 lit. Take the quantity 500-750. Dissolve in water and strain.",
         "The current climate is favourable for brown spot disease, so in the event of an outbreak, Macozeb is 75% W, PH. Or 2. 0 kg of 75% w.p. Volume 500-750 lit. Dissolve in water and strain.",
@@ -32,7 +33,8 @@
         "Finish the transplantation of parwal boll-bearing vines as soon as possible.",
         "Plant the bulbs of the recommended species of sweet potato so that the bulbs can be harvested in time.",
         "Plant the prepared seeds of brinjal and chillies on the beds.",
-        "In the event of an outbreak of viral diseases in vegetable crops, remove the affected plants from the field, burn them or bury them in the soil and spray the recommended intravenous insecticides."
+        "In the event of an outbreak of viral diseases in vegetable crops, remove the affected plants from the field, burn them or bury them in the soil and spray the recommended intravenous insecticides.",
+        "Before sowing potatoes, take 7 to 10 seeds out of the cold storage and spread them in a shady place and separate them by sorting out the seed pods which are seedless (unfertilized), cut, cut, rotten and if the seeds stored in the cold storage have sprouted then also remove them because if such seeds are sown then the sprouts will dry up and perish and it will take more time for them to germinate again in the field."
       ]
     },
     "maize": {
@@ -47,6 +49,13 @@
         "Imammectin Bezoate 80g for control of whitefly, ticks and suckers in urad and moong. And spray thiamethoxam at the rate of 200 ml per acre by dissolving it in 200 litres of water."
       ]
     },
+    "wheat": {
+      "advisory": [
+        "Peanuts are prone to severe rot and ticks, so be careful. Mancozeb or Carbendazim 50 WP 225 g / ha on standing crop on outbreak. Or jineb 75% soluble powder 2.5 kg. Or 3 litres of germ 27% liquid or 2 kg of germ 80%. Dissolve 2 - 3 drops in 500 to 600 litres of water at an interval of 40 days.",
+        "To manage white silt in groundnut, add chlorpyrifos to the standing crop at the rate of 20 EC4 litres per hectare either in the roots or through irrigation.",
+        "This season is favourable for tikka disease (leaf spot). Thus, on the appearance of the disease infection, macozeb or carbendazim 50% WP 225 g / ha or ZINEB 75% soluble powder 2.5 kg / ha. 2 / kg per hectare or 80% germination. Dissolve 2 to 3 drops of K in 500-600 litres of water at 10-day intervals."
+      ]
+    },
     "horticulture": {
       "advisory": [
         "Cut off the remaining buds, leaving a sword leaf in the banana and stacking (support) in the fruit plants.",
@@ -55,16 +64,14 @@
         "In new orchards of mango, guava, amla, litchi, and lemon, replace plants that have died for some reason with new ones. Potatoes, chillies, tomatoes, cauliflower and gladiolus can be grown as intercrops for higher returns in the first 0 years of the mango orchard.",
         "Spray dimethoate at the rate of 2 ml / l or cunulfas at the rate of 2 ml / l at an interval of 45 days for the prevention of branch knot pests and tent caterpillars.",
         "Spray copper oxychloride (3 g / l water) to control red rust and anthracnose in mangoes.",
-        "Spray amla with borax (6 gm per litre of water) to prevent yeast infection.",
-        "Spray a solution of copper oxychloride 3 gm or streptocycline 600 mg per litre of water in lemon to prevent canker disease."
+        "Spray amla with borax (6 gm per litre of water) to prevent yeast infection."
       ]
     },
     "animal husbandry": {
       "advisory": [
         "To prevent cows from moving into waterlogged areas and preventing foot rot, add lime to their enclosures and wash hoofs and floors with a one percent solution of potassium permanganate.",
         "Keep small animals such as sheep and goats from getting wet in the water, which increases the risk of pneumonia.",
-        "Take special care of the animals you currently care for. The placenta of an animal as soon as it is born. Tie with a thread at 5 to 2 inches, cut with a new blade and use tincture iodine.",
-        "Wash and feed the green fodder so that the parasite does not enter the animal along with the fodder."
+        "Take special care of the animals you currently care for. The placenta of an animal as soon as it is born. Tie with a thread at 5 to 2 inches, cut with a new blade and use tincture iodine."
       ]
     },
     "fisheries": {
