@@ -14,7 +14,7 @@
         "outDir": "dist"
       },
       {
-        "include": "station_map.json",
+        "include": "base.json",
         "outDir": "dist"
       },
       {

@@ -82,6 +82,9 @@ export const sanitizeLatLong = (lat: string, long: string) => {
   if (!lat || !long || latSplit.length < 4 || longSplit.length < 4) {
     latSplit += '0000';
     longSplit += '0000';
+    // throw new BadRequestException(
+    //   'Make sure your coordinates are valid to only 4 decimal places.',
+    // );
   }
 
   return {
@@ -92,7 +95,7 @@ export const sanitizeLatLong = (lat: string, long: string) => {
 
 export const getStationId = (lat: string, long: string): string => {
   const map = JSON.parse(
-    fs.readFileSync(path.join(__dirname + '/db/station_map.json'), {
+    fs.readFileSync(path.join(__dirname + '/db/base.json'), {
       encoding: 'utf-8',
     }),
   );
@@ -231,10 +234,10 @@ export const deduceWeatherCondition = (forecast: string): string => {
  */
 export const sanitizeIMDWeather = (data: {
   imd: IMDCityWeatherAPIObject;
-  // visualCrossing: VisualCrossingCurrentConditionsObject | any;
+  visualCrossing: VisualCrossingCurrentConditionsObject;
   future: ReadonlyArray<VisualCrossingCurrentConditionsObject>;
 }): SanitizedIMDWeather => {
-  const { imd, future } = data;
+  const { imd, visualCrossing, future } = data;
   // extract fields of relevance from visual crossing.
   const date = new Date(Date.now()).toISOString().split('T')[0];
   const sanitizedWeatherInfo: SanitizedIMDWeather = {
@@ -245,18 +248,14 @@ export const sanitizeIMDWeather = (data: {
       date: date,
     },
     current: {
-      temp:
-        ((parseInt(imd.Today_Max_temp) ?? 0) +
-          (parseInt(imd.Today_Min_temp) ?? 0)) /
-        2,
-      cloudCover: 0,
-      humidity: imd.Relative_Humidity_at_1730,
-      windSpeed: 0,
-      windDirection: 0,
-      conditions: imd?.Todays_Forecast,
+      temp: visualCrossing.temp,
+      cloudCover: visualCrossing.cloudcover,
+      humidity: visualCrossing.humidity.toString(), //imd.Relative_Humidity_at_0830,
+      windSpeed: visualCrossing.windspeed,
+      windDirection: visualCrossing.winddir,
+      conditions: imd?.Todays_Forecast ?? visualCrossing.conditions,
     },
-    // future: parseIMDFutureItems(imd, future),
-    future: parseIMDFutureItems(imd),
+    future: parseIMDFutureItems(imd, future),
   };
 
   return sanitizedWeatherInfo;
@@ -289,8 +288,7 @@ export const sanitizeRAJAIWeather = (data: {
       windDirection: visualCrossing.winddir,
       conditions: imd?.Todays_Forecast ?? visualCrossing.conditions,
     },
-    // future: parseIMDFutureItems(imd, future),
-    future: parseIMDFutureItems(imd),
+    future: parseIMDFutureItems(imd, future),
   };
 
   return sanitizedWeatherInfo;
@@ -303,58 +301,61 @@ export const sanitizeRAJAIWeather = (data: {
  */
 export const parseIMDFutureItems = (
   station: IMDCityWeatherAPIObject,
-  // future: ReadonlyArray<VisualCrossingCurrentConditionsObject>,
+  future: ReadonlyArray<VisualCrossingCurrentConditionsObject>,
 ): ReadonlyArray<IMDFutureWeatherDetails> => {
+  console.log('=====STATION=======');
+  console.log(station);
   const baseDate =
     station.Date || (station as any).date || new Date().toDateString();
   // comparing baseDate to today's date
-  // const compareDate = compareDateToToday(baseDate);
+  const compareDate = compareDateToToday(baseDate);
   const items = [];
-  // if (compareDate !== 0) {
-  //   // use visual crossing
-  //   console.log(
-  //     'IMD Data outdated hence fetching future data from visual crossing.',
-  //   );
-  //   future.forEach((item: VisualCrossingCurrentConditionsObject) => {
-  //     const conditions = deduceWeatherCondition(item.conditions);
-  //     items.push({
-  //       date: item.datetime,
-  //       conditions,
-  //       temp_max: (item as any).tempmax,
-  //       temp_min: (item as any).tempmin,
-  //     });
-  //   });
-  // } else {
-  for (let dayOffset = 2; dayOffset <= 5; dayOffset++) {
-    const dayKeyMax = `Day_${dayOffset}_Max_Temp`;
-    const dayKeyMin = `Day_${dayOffset}_Min_temp`;
-    const dayKeyForecast = `Day_${dayOffset}_Forecast`;
-    const newDate = calculateDate(baseDate, dayOffset - 1);
-
-    // if (station[dayKeyMax] && station[dayKeyMin] && station[dayKeyForecast]) {
-    const conditions = deduceWeatherCondition(station[dayKeyForecast]);
-    items.push({
-      date: newDate,
-      conditions,
-      temp_max: station[dayKeyMax],
-      temp_min: station[dayKeyMin],
+  console.log('compareDate: ', compareDate);
+  if (compareDate !== 0) {
+    // use visual crossing
+    console.log(
+      'IMD Data outdated hence fetching future data from visual crossing.',
+    );
+    future.forEach((item: VisualCrossingCurrentConditionsObject) => {
+      const conditions = deduceWeatherCondition(item.conditions);
+      items.push({
+        date: item.datetime,
+        conditions,
+        temp_max: (item as any).tempmax,
+        temp_min: (item as any).tempmin,
+      });
     });
-    // } else {
-    //   // fall back to Visual Crossing
-    //   console.log(
-    //     'IMD Data has nulls for future hence fetching future data from visual crossing.',
-    //   );
-    //   const item = future[dayOffset - 2];
-    //   const conditions = deduceWeatherCondition(item.conditions);
-    //   items.push({
-    //     date: item.datetime,
-    //     conditions,
-    //     temp_max: (item as any).tempmax,
-    //     temp_min: (item as any).tempmin,
-    //   });
-    // }
+  } else {
+    for (let dayOffset = 2; dayOffset <= 5; dayOffset++) {
+      const dayKeyMax = `Day_${dayOffset}_Max_Temp`;
+      const dayKeyMin = `Day_${dayOffset}_Min_temp`;
+      const dayKeyForecast = `Day_${dayOffset}_Forecast`;
+      const newDate = calculateDate(baseDate, dayOffset - 1);
+
+      if (station[dayKeyMax] && station[dayKeyMin] && station[dayKeyForecast]) {
+        const conditions = deduceWeatherCondition(station[dayKeyForecast]);
+        items.push({
+          date: newDate,
+          conditions,
+          temp_max: station[dayKeyMax],
+          temp_min: station[dayKeyMin],
+        });
+      } else {
+        // fall back to Visual Crossing
+        console.log(
+          'IMD Data has nulls for future hence fetching future data from visual crossing.',
+        );
+        const item = future[dayOffset - 2];
+        const conditions = deduceWeatherCondition(item.conditions);
+        items.push({
+          date: item.datetime,
+          conditions,
+          temp_max: (item as any).tempmax,
+          temp_min: (item as any).tempmin,
+        });
+      }
+    }
   }
-  // }
 
   return items;
 };
@@ -366,9 +367,9 @@ export const getDistanceFromLatLonInKm = (lat1, lon1, lat2, lon2) => {
   const a =
     Math.sin(dLat / 2) * Math.sin(dLat / 2) +
     Math.cos(deg2rad(lat1)) *
-    Math.cos(deg2rad(lat2)) *
-    Math.sin(dLon / 2) *
-    Math.sin(dLon / 2);
+      Math.cos(deg2rad(lat2)) *
+      Math.sin(dLon / 2) *
+      Math.sin(dLon / 2);
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
   const d = R * c; // Distance in km
   return d;
@@ -400,17 +401,3 @@ export const getParsedDate = (date) => {
 
   return date;
 };
-
-
-export const readMultipleJSONs = async (filePaths: ReadonlyArray<string>) => {
-  const asynFileSystem = fs.promises;
-  const promises = filePaths.map((filePath) =>
-    asynFileSystem
-      .readFile(path.join(__dirname, `/data/${filePath}`), {
-        encoding: 'utf-8',
-      })
-      .then(JSON.parse),
-  );
-
-  return await Promise.all(promises);
-}
