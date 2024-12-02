@@ -18,5 +18,5 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false
   },
-  "include": ["src/**/*", "./base.json"]
+  "include": ["src/**/*", "./station_map.json"]
 }

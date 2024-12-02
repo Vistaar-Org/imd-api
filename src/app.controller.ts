@@ -1,9 +1,11 @@
 import {
+  Body,
   Controller,
   Get,
   Inject,
   InternalServerErrorException,
   Logger,
+  Post,
   Query,
 } from '@nestjs/common';
 import { AppService } from './app.service';
@@ -13,6 +15,12 @@ import { Cache } from 'cache-manager';
 import { ApiQuery, ApiResponse } from '@nestjs/swagger';
 import { HttpService } from '@nestjs/axios';
 import { WEATHER_PROVIDERS } from './constants/enums';
+import { generateContext } from './beckn.utils';
+import { IMDWeatherService } from './providers/weather/imd/imd.service';
+import { OUATWeatherService } from './providers/weather/ouat/ouat.service';
+import { UPCARAdvisoryService } from './providers/advisory/upcar/upcar.service';
+import { OUATAdvisoryService } from './providers/advisory/ouat/ouat.service';
+import { DUMMY_WEATHER } from './constants/responses';
 
 enum PROVIDER {
   UPCAR = 'upcar',
@@ -20,13 +28,16 @@ enum PROVIDER {
 }
 
 @Controller()
-// @UseInterceptors(new CentroidInterceptor())
 export class AppController {
   private readonly logger: Logger;
   constructor(
     @Inject(CACHE_MANAGER) private cacheManager: Cache,
     private readonly appService: AppService,
     private readonly httpService: HttpService,
+    private readonly IMDWeatherService: IMDWeatherService,
+    private readonly OUATWeatherService: OUATWeatherService,
+    private readonly UPCARAdvisoryService: UPCARAdvisoryService,
+    private readonly OUATAdvisoryService: OUATAdvisoryService,
   ) {
     this.logger = new Logger(AppController.name);
   }
@@ -36,7 +47,7 @@ export class AppController {
       const resp = await this.httpService.axiosRef.get(
         `https://geoip.samagra.io/georev?lat=${lat}&lon=${lon}`,
       );
-      console.log('district from geoip: ', resp.data.district);
+      this.logger.log(`district from geoip: ${resp.data.district}`);
       return resp.data.district;
     } catch (err) {
       this.logger.error('Error occurred while reading the geoip database', err);
@@ -49,6 +60,12 @@ export class AppController {
   @Get()
   getHello(): string {
     return this.appService.getHello();
+  }
+
+  @Get('clear-cache')
+  async clearCache() {
+    await this.cacheManager.reset();
+    return 'Cache Cleared';
   }
 
   @Get('advisory')
@@ -70,19 +87,20 @@ export class AppController {
   })
   @ApiResponse({})
   async getWeather(
-    @Query('latitude') latiude: string,
+    @Query('latitude') latitude: string,
     @Query('longitude') longitude: string,
     @Query('provider') provider: string,
     @Query('weather') weather: string,
   ) {
-    const district = await this.getDistrict(latiude, longitude);
-    if (!provider) {
-      provider = 'upcar';
-    }
+    this.logger.log(
+      `Received latitude: ${latitude} and longitude: ${longitude}`,
+    );
+    const district = await this.getDistrict(latitude, longitude);
+    // setting default advisory provider to UPCAR
+    if (!provider) provider = 'upcar';
+    // setting default weather provider to IMD
+    if (!weather) weather = 'imd';
 
-    if (!weather) {
-      weather = 'imd';
-    }
 
     if (district && provider && weather) {
       const res = await this.cacheManager.get(
@@ -90,45 +108,72 @@ export class AppController {
       );
       if (res) {
         this.logger.log(
-          'hitting cache to respond for district ' +
-            district +
-            ' provider ' +
-            provider +
-            ' weather ' +
-            weather,
+          `hitting cache to respond for district ${district} provider ${provider} weather ${weather}`,
         );
         return res;
       }
     }
-    //
-    this.logger.log(
-      `Received latitude: ${latiude} and longitude: ${longitude}`,
-    );
 
     let sanitizedParams = {
-      latitude: latiude,
+      latitude,
       longitude,
     };
+
     try {
-      sanitizedParams = sanitizeLatLong(latiude, longitude);
+      sanitizedParams = sanitizeLatLong(latitude, longitude);
     } catch (err) {
       console.error('error setting sanitized lat long');
     }
 
-    latiude = sanitizedParams.latitude;
+    latitude = sanitizedParams.latitude;
     longitude = sanitizedParams.longitude;
 
     this.logger.log(
-      `Sanitized latitude: ${latiude} and longitude: ${longitude}`,
+      `Sanitized latitude: ${latitude} and longitude: ${longitude}`,
     );
 
-    const result = await this.appService.getWeather(
-      latiude,
-      longitude,
-      district,
-      provider,
-      weather,
-    );
+    let weatherItems = undefined;
+    let advisoryItems = undefined;
+
+    // get weather items
+    switch (weather) {
+      case WEATHER_PROVIDERS.IMD:
+        weatherItems = await this.IMDWeatherService.getWeather(latitude, longitude);
+        break;
+      case WEATHER_PROVIDERS.OUAT:
+        weatherItems = await this.OUATWeatherService.getWeather(district);
+        break;
+      default:
+        weatherItems = await this.IMDWeatherService.getWeather(latitude, longitude);
+        break;
+    }
+
+    if (!weatherItems) weatherItems = DUMMY_WEATHER;
+
+    switch (provider) {
+      case PROVIDER.UPCAR:
+        advisoryItems = await this.UPCARAdvisoryService.getAdvisory();
+        break;
+      case PROVIDER.OUAT:
+        advisoryItems = await this.OUATAdvisoryService.getAdvisory(district);
+        break;
+      default:
+        advisoryItems = await this.UPCARAdvisoryService.getAdvisory();
+        break;
+    }
+
+
+    const result = {
+      context: generateContext(),
+      message: {
+        catalog: {
+          providers: [
+            weatherItems,
+            advisoryItems,
+          ].filter((item) => item != undefined),
+        },
+      },
+    }
 
     let district_hindi = district,
       district_oria = district;
@@ -185,9 +230,23 @@ export class AppController {
     return result;
   }
 
-  @Get('clear-cache')
-  async clearCache() {
-    await this.cacheManager.reset();
-    return 'Cache Cleared';
+  @Get('crops')
+  getCrops() {
+    return this.appService.getCrops();
+  }
+
+  @Post('crops')
+  updateCrops(@Body() data: any) {
+    return this.appService.updateCrops(data);
+  }
+
+  @Get('conditions')
+  getConditions() {
+    return this.appService.getConditions();
+  }
+
+  @Post('conditions')
+  updateConditions(@Body() data: any) {
+    return this.appService.updateConditions(data);
   }
 }

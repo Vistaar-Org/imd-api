@@ -6,7 +6,7 @@ export type SanitizedIMDWeather = {
     date: string;
   };
   current: IMDCurrentDayWeatherDetails;
-  future: ReadonlyArray<IMDFutureWeatherDetails>;
+  future?: ReadonlyArray<IMDFutureWeatherDetails>;
 };
 
 export type IMDCurrentDayWeatherDetails = {

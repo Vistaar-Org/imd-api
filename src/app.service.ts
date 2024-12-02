@@ -25,6 +25,7 @@ import {
 import { ODISHA_DISTRICTS } from './constants/odisha-districts';
 import { format } from 'date-fns';
 import { DUMMY_WEATHER } from './constants/responses';
+import { MinIOService } from './minio/minio.service';
 
 @Injectable()
 export class AppService {
@@ -33,6 +34,7 @@ export class AppService {
   constructor(
     private readonly configService: ConfigService,
     private readonly httpService: HttpService,
+    private readonly minioService: MinIOService,
   ) {
     this.logger = new Logger(AppService.name);
   }
@@ -75,7 +77,6 @@ export class AppService {
 
   private async getWeatherFromIMD(lat: string, long: string) {
     try {
-      // const dist = this.configService.get<number>('IMD_MIN_STATION_DISTANCE');
       let startTime = performance.now();
       const stationId = getStationId(lat, long);
       let endTime = performance.now();
@@ -97,25 +98,25 @@ export class AppService {
       this.logger.verbose(
         `Time taken to get IMD data from JSON: ${endTime - startTime}`,
       );
-      startTime = performance.now();
-      let visualCrossing;
-      try {
-        visualCrossing = await this.httpService.axiosRef.get(
-          `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${long}?unitGroup=metric&key=DK34QYLLWYWRKMXGCXPFFP6SR&contentType=json`,
-        );
-      } catch (err) {
-        console.error('error fetching visual crossing data: ', err);
-      }
-      endTime = performance.now();
-      this.logger.verbose(
-        `Time taken to get visual crossing data: ${endTime - startTime}`,
-      );
+      // startTime = performance.now();
+      // let visualCrossing;
+      // try {
+      //   visualCrossing = await this.httpService.axiosRef.get(
+      //     `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${lat}%2C${long}?unitGroup=metric&key=DK34QYLLWYWRKMXGCXPFFP6SR&contentType=json`,
+      //   );
+      // } catch (err) {
+      //   console.error('error fetching visual crossing data: ', err);
+      // }
+      // endTime = performance.now();
+      // this.logger.verbose(
+      //   `Time taken to get visual crossing data: ${endTime - startTime}`,
+      // );
 
       // console.log('forecast data: ', forecastData);
       return {
         imd: forecastData,
-        visualCrossing: visualCrossing.data.currentConditions,
-        future: visualCrossing.data.days.slice(1, 5),
+        visualCrossing: {},
+        future: [],
       };
     } catch (err) {
       this.logger.error('Error resolving API Calls', err);
@@ -210,7 +211,6 @@ export class AppService {
     provider?: string,
     weatherProvider?: string,
   ) {
-    console.log('weather provider: ', weatherProvider);
     if (!provider) provider = ADVISORY_PROVIDERS.UPCAR;
     if (!weatherProvider) weatherProvider = WEATHER_PROVIDERS.IMD;
     let imdItems = undefined,
@@ -275,13 +275,13 @@ export class AppService {
         } catch (err) {
           console.error('error in formatting date: ', err);
         }
-        if (!imdData.imd) {
-          imdData.imd = {
-            Station_Name: district,
-            date: date,
-            Todays_Forecast: imdData.visualCrossing.conditions,
-          };
-        }
+        // if (!imdData.imd) {
+        //   imdData.imd = {
+        //     Station_Name: district,
+        //     date: date,
+        //     Todays_Forecast: imdData.visualCrossing.conditions,
+        //   };
+        // }
         // console.log('imdData after if: ', imdData);
 
         const sanitizedIMDData = sanitizeIMDWeather(imdData);
@@ -416,5 +416,25 @@ export class AppService {
         `Error while transliterating: ${err}`,
       );
     }
+  }
+
+  updateCrops(data: any) {
+    fs.writeFileSync(path.join(__dirname, `db/crop-translations.json`), JSON.stringify(data, null, 2));
+    this.minioService.uploadFile('vistaar', `crop-translations.json`, Buffer.from(JSON.stringify(data, null, 2)), 'application/json');
+    return { message: 'Crops updated successfully' };
+  }
+
+  updateConditions(data: any) {
+    fs.writeFileSync(path.join(__dirname, `db/conditions.json`), JSON.stringify(data, null, 2));
+    this.minioService.uploadFile('vistaar', `conditions.json`, Buffer.from(JSON.stringify(data, null, 2)), 'application/json');
+    return { message: 'Conditions updated successfully' };
+  }
+
+  getConditions() {
+    return JSON.parse(fs.readFileSync(path.join(__dirname, `db/conditions.json`), 'utf-8'));
+  }
+
+  getCrops() {
+    return JSON.parse(fs.readFileSync(path.join(__dirname, `db/crop-translations.json`), 'utf-8'));
   }
 }
