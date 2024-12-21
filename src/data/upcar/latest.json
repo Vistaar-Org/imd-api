@@ -3,97 +3,38 @@
     "wheat",
     "maize",
     "sugarcane",
-    "oilseeds",
-    "pulses",
-    "vegetables",
-    "horticulture",
-    "animal husbandry",
-    "fisheries"
+    "oilseeds"
   ],
-  "general_advisory": "In the current scenario of weather in the state, farmers have to manage their agriculture for the next two weeks. The following recommendations are made: - Weather-wise, the temperature is favourable for sowing wheat in irrigated conditions, so sow on a war footing. Use Xerotil Fertidryl to inject fertilizer at the right depth at the time of late wheat sowing and for low-cost row sowing. Spray mancozeb / propineb / carbendazim fungicide 2. 0 to 2. 5 kg in 000 litres of water for the prevention of scorching disease in potato crop. Farms that have had outbreaks of the disease contain 2 to 2.5 copies of any of the fungicides cyamoxenil + mancozeb or metallaxyl + mancozeb. Spray at an interval of 5 days at the rate of (000 litres of water). A GIS based National Pest Surveillance System (54? $) mobile app for targeted pests / crop combinations using latest 4? / 5?, technology has been developed by the Government of India. The OS can be downloaded by typing 147 in the Play Store. The app can capture information about the spread of the epidemic, pest / disease identification, pest hot spots, etc., so that farmers can get timely expert advice for pest disease management, economic damage level-based decision-making, etc.",
+  "general_advisory": "In the current scenario of weather in the state, farmers have to manage their agriculture for the next two weeks. The following recommendations are made: -\n- Maintain moisture in the fields to protect crops from excessive cold or frost.\n- Select late-sown recommended varieties for wheat sowing.\n- Use appropriate fungicides for disease prevention in potato crops.",
   "crops_data": {
     "wheat": {
       "advisory": [
-        "Wheat must be lightly irrigated the day after sowing (in the fresh root stage). Lightly irrigate the first 25-30 day, especially in the fallow land.",
-        "Sowing wheat in December reduces wheat yield by 3 to 4 ku / ha. Sowing wheat with seed drill / happy seeder can save fertilizers and seeds.",
-        "Recommended varieties for Bundelkhand region of the state are K-66, K-37, DL- 803-3, Raj-555, HI-838, HI-8498, K-907, W. Sow H-47, GW-273, GW-322, HD-3237, HD-3365.",
-        "Late sown recommended varieties of wheat viz. K-9423 (Advanced Ploughing), K-7903 (Ploughing), HI. 563, D.B.W. Sow seeds of -07, HD-38, HI62, PBW-833, PBW-77, and HD-3059 etc. by 5th December.",
-        "Heat-tolerant recommended varieties of K-0307 (Shatabdi), DBW-87, HD-3293, DBW-90 (E) and WB-90 (E) to be sown in irrigated condition in changing climatic conditions. Sow the -05.",
-        "For control of broadleaf weeds 2 - 4D, sodium salt is 625 gm per 80%. Or 2 - 4D methyl amine salt of 58% SL per 1. 25 litres. The quantity should be sprayed 30 to 35 days after sowing by making a solution in about 500 to 600 water.",
-        "For the control of hybrid leafy weeds such as wheat and wild oats, the herbicide sulfosulfurane is prepared by dissolving 33 g (2. 5 units) of 75% WG in 300 litres of water or isoproterone in 75% WG. P.K. 25 per kg. Make a solution of 500 to 600 litres of water and spray after 1 day of sowing."
+        "The recommended late sown varieties of wheat are K-9423, K-7903, HI 563, DBW-07, HD-38, HI. 62, PBW-833, PBW-77, HD-3059, HD-327, etc.",
+        "Increase seed rate of wheat by 25% for sowing in December.",
+        "Top dress one-fourth of the recommended nitrogen amount for unirrigated wheat crops.",
+        "First light irrigation must be done 20-25 days after wheat sowing."
       ]
     },
     "maize": {
       "advisory": [
-        "Weeding should be done 20-25 and 40-45 days after sowing of Rabi maize or atrazine 50% WP. from. The 5 kg quantity ranges from 500 to 600 litres. Dissolve in water and spray after sowing and before setting.",
-        "The first irrigation should be done 25 to 30 days after the sowing of Rabi maize."
+        "Weeding should be done 20-25 and 40-45 days after sowing of Rabi maize.",
+        "First irrigate the Rabi maize 25 to 30 days after sowing."
       ]
     },
     "sugarcane": {
       "advisory": [
-        "Make sure to do weeding and irrigation at the time of intercropping with autumn sugarcane.",
-        "Irrigation should be done as per requirement after the accumulation of sugarcane in the autumn season.",
-        "While supplying sugarcane to sugar mills, cut the sugarcane from the ground surface.",
-        "Harvest the sugarcane only when the SMS of the supply ticket arrives on your mobile.",
-        "Supply clean and fresh sugarcane so that you get the right weight of sugarcane.",
-        "Sow any other crop after harvesting sugarcane in a field affected by red rot disease."
+        "Pour cow dung manure / pressmead in the second or third packet.",
+        "Do not burn the stubble, use it as mulch in sugarcane fields.",
+        "Harvest sugarcane only when SMS of the supply ticket arrives on mobile."
       ]
     },
     "oilseeds": {
       "advisory": [
-        "On the 7th, the crop is weeded two 25-30 and 40-45 days later, yielding a higher yield.",
-        "Pruning / distillation of thicker plants than required in mustard 5-20 Days after sowing or before first irrigation. 0 - 5 cm should be paid."
-      ]
-    },
-    "pulses": {
-      "advisory": [
-        "Delayed sowing of gram must be done by the first week of December.",
-        "For late sowing of chickpea, the recommended varieties of Kabuli chickpea are Phule Vikram (G-0808), GLK-2827, GNG-969 (K. ) and the recommended variety of desi chana i.e. IPC- 2005-62, IPC. - Complete the sowing of GNG-2207 (Awadh) at the earliest.",
-        "Control weeds from time-sown crops of chickpea, pea, and lentil by weeding and irrigating as needed."
-      ]
-    },
-    "vegetables": {
-      "advisory": [
-        "Spray neem seed kernel extract mixed with 5 ml / 0 litre of water at 0 to 5 days interval during flowering stage in cabbage crops for pest management.",
-        "Chlorantraniliprole in cauliflower and cabbage in case of diamond black moth infestation. Spray 0 ml of the chemical per litre of water as a solution.",
-        "Weeding and mulching and stacking of seedlings in tomato crop under proper soil moisture conditions. Spray mancozeb at a rate of 0.2% (2 g / l) to protect the crop from scorching disease.",
-        "To protect the crop from pests, use insecticides such as Beauveria vesiana (fungus) in a solution of 3 to 5 grams per liter of water.",
-        "If the sowing of garlic has not been done yet then definitely complete it. Weeding and irrigating the previously sown garlic crop.",
-        "Sprinkle dimethoate solution in chillies / tomatoes / ml / litre of water to prevent whitefly.",
-        "Spray 3 to 5 gm of Beauveria vesiana (fungus) or 0.5 to 0.75 ml of Flubendamide solution per litre of water for prevention of shoot and fruit borer pest in eggplant crop."
-      ]
-    },
-    "horticulture": {
-      "advisory": [
-        "In order to prevent gujiya pest in mango from climbing the plants, in the month of December, about 40 cm above the ground, a thin layer of soil is applied around the trunk of the tree and a thick white polythene 25 to 400 gauge is applied. Wrap a meter wide bandage and tie it with a twine. If the number of gujiya pests is high, each tree should have a chlorpyrifos (.) 5%) 250 gm The gujiya pest can be controlled by mulching around the stem and adding to the soil.",
-        "Destroy the shoot gall maker and tent caterpillar-infested branches in mangoes on pruning and use lambdasai halodhan for control. Sprinkle 5 to 2 ml of water to make a solution.",
-        "In mango, if there is a problem of dieback disease / rot in the branches, use 200 to 400 grams of copper sulphate per tree near the roots of the plants and spray foil by dissolving thiophenate methyl ml chemical per liter of water.",
-        "Use 50-60 gm urea and 00-25 gm muriate of potash per plant in bananas and irrigate at an interval of 0 days.",
-        "To prevent guava blisters, first clean the blisters with a thin wire or a bicycle stick, soak in dichlorvos cotton and fill the blisters with a wet mud paste to control them."
-      ]
-    },
-    "animal husbandry": {
-      "advisory": [
-        "For mushroom production, farmers can contact the District Horticulture Officer, Superintendent Government Parks, Government Mushroom Training Centre, Aliganj, Lucknow, Horticultural Experiment and Training Centre, Basti and Krishi Vigyan Kendras or agricultural universities.",
-        "Foot and mouth disease (FMD) vaccination is being carried out free of cost in 5 districts of Western Uttar Pradesh till 4th December.",
-        "Take special care of animals that are weaning during the current season.",
-        "Make sure to feed green fodder to the animals.",
-        "Seeds of oats and berseem are available in the divisional areas at a fixed price and hence can be procured by the cattle rearers / farmers.",
-        "Under the Additional Fodder Development Programme, all the districts of the state are covered during the Rabi season.",
-        "Berseem certified fodder seed mini kits are being provided free of cost to the cattle rearers / farmers.",
-        "Pt. Deen Dayal Upadhyaya Mela is being organized in the villages of Mandal / District and Development Block in which free medical treatment, medicines and seminars are also being organized. The Mobile Veterinary Unit Scheme is being operated by the Department to provide veterinary treatment at the doorsteps of farmers / cattle rearers. To take advantage of this scheme, all the farmers / cattle rearers can call the toll-free helpline no. You can take advantage of the plan by contacting -962."
-      ]
-    },
-    "fisheries": {
-      "advisory": [
-        "If the water in the pond is too green, stop using lime and chemical fertilizers and add 800g. Use copper sulphate by dissolving it in water.",
-        "Use supplements for fish in the pond no more than .8% of the fish's body weight.",
-        "Use soil probiotics at the rate of 400 grams per acre to maintain the quality of the soil in the pond.",
-        "400 gm per acre to protect the fish from infection. Use potassium permanganate or a water sanitizer at a tax rate of 500 ml per acre.",
-        "If the water in the pond is too green, stop using lime and chemical fertilizers and dissolve 800 grams of copper sulphate in the water.",
-        "If the pangasius fish is small (not saleable), the depth of the pond water should be kept 8 to 0 feet to protect it from the cold. Boring water in the middle of the pond for the whole winter season till night."
+        "Distance from plant to plant by distillation in mustard / mustard is 25 to 30 cm.",
+        "Lightly irrigate when moisture is low.",
+        "For control of major pests of mustard, use Dimethoate 30% E.C."
       ]
     }
   },
-  "date": "28-11-2024"
+  "date": "12-12-2024"
 }
