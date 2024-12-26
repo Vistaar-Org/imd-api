@@ -1,11 +1,20 @@
-import { Injectable, InternalServerErrorException, Logger } from "@nestjs/common";
-import { getDistanceFromLatLonInKm, sanitizeIMDWeather } from "../../../app.utils";
+import {
+  Injectable,
+  InternalServerErrorException,
+  Logger,
+} from '@nestjs/common';
+import {
+  getDistanceFromLatLonInKm,
+  sanitizeIMDWeather,
+} from '../../../app.utils';
 import * as fs from 'fs';
 import * as path from 'path';
 import { format } from 'date-fns';
 import { IMD_CITY_WEATHER_INFO } from '../../../app.constants';
 import { mapIMDItems } from '../../../beckn.utils';
 import { DUMMY_WEATHER } from '../../../constants/responses';
+import axios from 'axios';
+import { IMDCityWeatherCurrentAPIObject } from 'src/types/imd.types';
 
 @Injectable()
 export class IMDWeatherService {
@@ -16,9 +25,12 @@ export class IMDWeatherService {
   private getStationId(lat: string, long: string): string {
     const map = JSON.parse(
       // TODO: Move this to constants
-      fs.readFileSync(path.join(__dirname + '../../../../db/station_map.json'), {
-        encoding: 'utf-8',
-      }),
+      fs.readFileSync(
+        path.join(__dirname + '../../../../db/station_map.json'),
+        {
+          encoding: 'utf-8',
+        },
+      ),
     );
     const latLongStr = lat + '-' + long;
     let code = map[latLongStr]?.code;
@@ -36,9 +48,11 @@ export class IMDWeatherService {
         }
       });
     }
-    this.logger.verbose(`Station Code: ${code} has been found for lat: ${lat} and long: ${long}`);
+    this.logger.verbose(
+      `Station Code: ${code} has been found for lat: ${lat} and long: ${long}`,
+    );
     return code;
-  };
+  }
 
   private async fetchWeatherData(lat: string, long: string) {
     try {
@@ -53,6 +67,12 @@ export class IMDWeatherService {
           'No IMD weather station found for the sent coordinates.',
         );
       }
+      let currentData = {};
+      try {
+        const url = `https://provider-reverse-proxy.uat.bhasai.samagra.io/imd/current_wx_api.php?id=${stationId}`;
+        currentData = await axios.get(url);
+      } catch (err) {}
+
       startTime = performance.now();
       let forecastData = IMD_CITY_WEATHER_INFO[stationId];
       if (!forecastData) {
@@ -65,7 +85,7 @@ export class IMDWeatherService {
       );
 
       return {
-        imd: forecastData,
+        imd: { forecastData, currentData: currentData['data'][0] },
         visualCrossing: {},
         future: [],
       };
@@ -79,6 +99,7 @@ export class IMDWeatherService {
       let startTime = performance.now();
       const imdData = await this.fetchWeatherData(latitude, longitude);
       let endTime = performance.now();
+
       this.logger.verbose(
         `Time taken to get weather data from IMD: ${endTime - startTime}`,
       );
@@ -90,7 +111,13 @@ export class IMDWeatherService {
         this.logger.error('error in formatting date: ', err);
       }
 
-      const sanitizedIMDData = sanitizeIMDWeather(imdData);
+      const sanitizedIMDData = sanitizeIMDWeather({
+        imd: {
+          imdFuture: imdData.imd.forecastData,
+          imdCurrent: imdData.imd.currentData,
+        },
+        future: imdData.future,
+      });
       endTime = performance.now();
       this.logger.verbose(
         `Time taken to sanitize IMD data: ${endTime - startTime}`,

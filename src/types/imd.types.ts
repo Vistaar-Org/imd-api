@@ -43,3 +43,23 @@ export type IMDCityWeatherAPIObject = {
   Latitude: string;
   Longitude: string;
 };
+
+export type IMDCityWeatherCurrentAPIObject = {
+  'Station Id': string;
+  Station: string;
+  'Date of Observation': string;
+  Time: string;
+  'Mean Sea Level Pressure': string;
+  'Wind Direction': number;
+  'Wind Speed KMPH': number;
+  Temperature: string;
+  'Weather Code': string;
+  Nebulosity: string;
+  Humidity: string;
+  'Last 24 hrs Rainfall': string;
+  'Feel Like': string;
+  Sunrise: string;
+  Sunset: string;
+  Moonrise: string;
+  Moonset: string;
+};

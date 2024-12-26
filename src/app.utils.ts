@@ -1,7 +1,10 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { format, addDays } from 'date-fns';
-import { IMDCityWeatherAPIObject } from './types/imd.types';
+import {
+  IMDCityWeatherAPIObject,
+  IMDCityWeatherCurrentAPIObject,
+} from './types/imd.types';
 import {
   IMDFutureWeatherDetails,
   SanitizedIMDWeather,
@@ -230,33 +233,38 @@ export const deduceWeatherCondition = (forecast: string): string => {
  * 3. Forecast - Get from IMD -
  */
 export const sanitizeIMDWeather = (data: {
-  imd: IMDCityWeatherAPIObject;
+  imd: {
+    imdFuture: IMDCityWeatherAPIObject;
+    imdCurrent: IMDCityWeatherCurrentAPIObject;
+  };
   // visualCrossing: VisualCrossingCurrentConditionsObject | any;
   future: ReadonlyArray<VisualCrossingCurrentConditionsObject>;
 }): SanitizedIMDWeather => {
   const { imd, future } = data;
+  console.log('imdFuture: ', future);
   // extract fields of relevance from visual crossing.
   const date = new Date(Date.now()).toISOString().split('T')[0];
   const sanitizedWeatherInfo: SanitizedIMDWeather = {
     general: {
-      station: imd?.Station_Name,
-      station_hindi: STATION_NAME_HIN[imd?.Station_Code],
-      station_oria: STATION_NAME_OR[imd?.Station_Code],
+      station: imd?.imdFuture.Station_Name,
+      station_hindi: STATION_NAME_HIN[imd?.imdFuture.Station_Code],
+      station_oria: STATION_NAME_OR[imd?.imdFuture.Station_Code],
       date: date,
     },
     current: {
       temp:
-        ((parseInt(imd.Today_Max_temp) ?? 0) +
-          (parseInt(imd.Today_Min_temp) ?? 0)) /
-        2,
-      cloudCover: 0,
-      humidity: imd.Relative_Humidity_at_1730,
-      windSpeed: 0,
-      windDirection: 0,
-      conditions: imd?.Todays_Forecast,
+        parseInt(imd.imdCurrent.Temperature) ??
+        ((parseInt(imd.imdFuture.Today_Max_temp) ?? 0) +
+          (parseInt(imd.imdFuture.Today_Min_temp) ?? 0)) /
+          2,
+      cloudCover: parseInt(imd.imdCurrent.Nebulosity) ?? 0,
+      humidity: imd.imdFuture.Relative_Humidity_at_1730,
+      windSpeed: imd.imdCurrent['Wind Speed KMPH'] ?? 0,
+      windDirection: imd.imdCurrent['Wind Direction'],
+      conditions: imd?.imdFuture.Todays_Forecast,
     },
     // future: parseIMDFutureItems(imd, future),
-    future: parseIMDFutureItems(imd),
+    future: parseIMDFutureItems(imd.imdFuture),
   };
 
   return sanitizedWeatherInfo;
@@ -366,9 +374,9 @@ export const getDistanceFromLatLonInKm = (lat1, lon1, lat2, lon2) => {
   const a =
     Math.sin(dLat / 2) * Math.sin(dLat / 2) +
     Math.cos(deg2rad(lat1)) *
-    Math.cos(deg2rad(lat2)) *
-    Math.sin(dLon / 2) *
-    Math.sin(dLon / 2);
+      Math.cos(deg2rad(lat2)) *
+      Math.sin(dLon / 2) *
+      Math.sin(dLon / 2);
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
   const d = R * c; // Distance in km
   return d;
@@ -401,7 +409,6 @@ export const getParsedDate = (date) => {
   return date;
 };
 
-
 export const readMultipleJSONs = async (filePaths: ReadonlyArray<string>) => {
   const asynFileSystem = fs.promises;
   const promises = filePaths.map((filePath) =>
@@ -413,4 +420,4 @@ export const readMultipleJSONs = async (filePaths: ReadonlyArray<string>) => {
   );
 
   return await Promise.all(promises);
-}
+};
