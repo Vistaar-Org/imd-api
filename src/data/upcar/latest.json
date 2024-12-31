@@ -1,40 +1,63 @@
 {
   "names_of_crops": [
     "wheat",
+    "paddy",
     "maize",
+    "pigeon pea",
+    "soybean",
     "sugarcane",
     "oilseeds"
   ],
-  "general_advisory": "In the current scenario of weather in the state, farmers have to manage their agriculture for the next two weeks. The following recommendations are made: -\n- Maintain moisture in the fields to protect crops from excessive cold or frost.\n- Select late-sown recommended varieties for wheat sowing.\n- Use appropriate fungicides for disease prevention in potato crops.",
+  "general_advisory": "In the current scenario of weather in the state, farmers have to manage their agriculture for the next two weeks. The following recommendations are made: -\n- At present, there is a time for only late sowing varieties of wheat, so choose the recommended varieties for sowing very late.\n- Rye / mustard is flowering (flowering stage), so never use any agrotechnical chemicals in the crop.\n- The weather is favorable for the infestation of honeybees in oilseed crops, so treat as recommended.\n- The current weather is cloudy. Therefore, there may be an outbreak of purulent scabies in potatoes. Therefore, in the event of an outbreak, spray mancozeb / propineb / ridomil (0.%) fungicide diluted with 2. 0 to 2. 5 kg 000 litres of water for prevention of scabies. Farms that have had outbreaks of the disease contain 2 to 2.5 copies of any fungicide cyamoxenil + mancozeb or metallaxyl + 4. Spray at an interval of 5 days at the rate of (000 litres of water)",
   "crops_data": {
     "wheat": {
       "advisory": [
-        "The recommended late sown varieties of wheat are K-9423, K-7903, HI 563, DBW-07, HD-38, HI. 62, PBW-833, PBW-77, HD-3059, HD-327, etc.",
-        "Increase seed rate of wheat by 25% for sowing in December.",
-        "Top dress one-fourth of the recommended nitrogen amount for unirrigated wheat crops.",
-        "First light irrigation must be done 20-25 days after wheat sowing."
+        "For late sowing of wheat, sow the regionally recommended varieties like HD-327, HI62, W, R-544, K-7903 (Halna) and K-9423 (Advanced Halna) PBW-833 etc. by 5th January.",
+        "When sowing wheat late, increase the seed rate of wheat by 25% (25 kg / ha) above normal and choose late varieties.",
+        "Irrigate 0 wheat at intervals of 20 to 25 days. Topdressing half the amount of nitrogen remaining after the first irrigation of wheat and half the amount remaining after the second irrigation.",
+        "5 kg if the plants show signs of zinc deficiency around the first irrigation between 0 and 1 day of wheat sowing. Zinc sulphate and 2.5 kg. Boiled lime water (2.5 kg). Soak the lime in 0 litres of water in the evening and strain the water the next day."
+      ]
+    },
+    "paddy": {
+      "advisory": [
+        "This crop should be irrigated before it begins to flower. Never irrigate during flowering."
       ]
     },
     "maize": {
       "advisory": [
-        "Weeding should be done 20-25 and 40-45 days after sowing of Rabi maize.",
-        "First irrigate the Rabi maize 25 to 30 days after sowing."
+        "Second irrigation should be done in the Rabi maize crop sown since 0 C and topdressing of one fourth amount of nitrogen should be done in the condition of proper moisture.",
+        "Conditions are favorable for fall armyworm in 0 maize, so chemical control is effective in cases of 0 to 20% damage. For its protection, chloroantraniliprole 8.5% SC0.5m is used. L per litre of water or Imamectin Benzoate 0. 4 g per litre of water or Thiomethoxam 2. 6% + Lambda hydrochlorine 9. 5% 0. 5 ml. Spray the solution at the rate of l per liter of water."
+      ]
+    },
+    "pigeon pea": {
+      "advisory": [
+        "The pigeon pea crop is in its flowering stage at this time, so be on the lookout for diseases."
+      ]
+    },
+    "soybean": {
+      "advisory": [
+        "Dimethoate 30% EC for control of leaf miner (leaf caterpillar pest) of mustard / mustard.",
+        "or Chlorpyrifos of 20% EC. The volume is per liter. Sprinkle by dissolving in 600 to 700 liters of water at a rate of.",
+        "Dimethoate 30% EC0L for control of major pests of mustard / mustard, pheasant and painted bug. or Dichlorvos 76% EC 500 ml. L. or imidacloprid 7. 8% SL, 250 ml. Dissolve the liquid in 500 to 600 litres of water. Spray at a rate of. For the control of Alternaria leaf spot, white ochre Tulsita disease, 2 kg of Macozeb 75 wp. Or 2. 0 kg of 75% w.p. Or 2. 0 kg of jerm 80% WP. or 3. 0 kg of copper oxychloride 50% w.p. The quantity should be approximately 600-750 litres per hectare of water."
       ]
     },
     "sugarcane": {
       "advisory": [
-        "Pour cow dung manure / pressmead in the second or third packet.",
-        "Do not burn the stubble, use it as mulch in sugarcane fields.",
-        "Harvest sugarcane only when SMS of the supply ticket arrives on mobile."
+        "Harvest the sugarcane at par with the land.",
+        "Use fertilizer after irrigation in inter crops as per requirement.",
+        "There is relatively less leakage in the trunks of sugarcane harvested in winter. After irrigation, when the oats come, 0 ton / ha is obtained to obtain a good leakage. Add fresh thyme and stir well to coat."
       ]
     },
     "oilseeds": {
       "advisory": [
-        "Distance from plant to plant by distillation in mustard / mustard is 25 to 30 cm.",
-        "Lightly irrigate when moisture is low.",
-        "For control of major pests of mustard, use Dimethoate 30% E.C."
+        "At present, the water temperature is less than 20 degrees, so cow dung manure and chemicals in the pond",
+        "Stop using fertilizers. Feed the fish supplements as needed.",
+        "40-50 kg / acre to protect fish from fungal and parasitic infections in changing climates.",
+        "Sprinkle salt at the rate and also with food according to 5 to 6 g / kg of food.",
+        "Feed the fish 7 to 0 days a month.",
+        "Run the nets at intervals of 5 days during the cold season in the pond containing carp fish."
       ]
     }
   },
-  "date": "12-12-2024"
+  "date": "26-12-2024"
 }
