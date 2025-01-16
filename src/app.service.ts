@@ -419,22 +419,45 @@ export class AppService {
   }
 
   updateCrops(data: any) {
-    fs.writeFileSync(path.join(__dirname, `db/crop-translations.json`), JSON.stringify(data, null, 2));
-    this.minioService.uploadFile('vistaar', `crop-translations.json`, Buffer.from(JSON.stringify(data, null, 2)), 'application/json');
+    fs.writeFileSync(
+      path.join(__dirname, `db/crop-translations.json`),
+      JSON.stringify(data, null, 2),
+    );
+    this.minioService.uploadFile(
+      'vistaar',
+      `crop-translations.json`,
+      Buffer.from(JSON.stringify(data, null, 2)),
+      'application/json',
+    );
     return { message: 'Crops updated successfully' };
   }
 
   updateConditions(data: any) {
-    fs.writeFileSync(path.join(__dirname, `db/conditions.json`), JSON.stringify(data, null, 2));
-    this.minioService.uploadFile('vistaar', `conditions.json`, Buffer.from(JSON.stringify(data, null, 2)), 'application/json');
+    fs.writeFileSync(
+      path.join(__dirname, `db/conditions.json`),
+      JSON.stringify(data, null, 2),
+    );
+    this.minioService.uploadFile(
+      'vistaar',
+      `conditions.json`,
+      Buffer.from(JSON.stringify(data, null, 2)),
+      'application/json',
+    );
     return { message: 'Conditions updated successfully' };
   }
 
   getConditions() {
-    return JSON.parse(fs.readFileSync(path.join(__dirname, `db/conditions.json`), 'utf-8'));
+    return JSON.parse(
+      fs.readFileSync(path.join(__dirname, `db/conditions.json`), 'utf-8'),
+    );
   }
 
   getCrops() {
-    return JSON.parse(fs.readFileSync(path.join(__dirname, `db/crop-translations.json`), 'utf-8'));
+    return JSON.parse(
+      fs.readFileSync(
+        path.join(__dirname, `db/crop-translations.json`),
+        'utf-8',
+      ),
+    );
   }
 }

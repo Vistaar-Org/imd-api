@@ -1,10 +1,21 @@
-import { Body, Controller, Get, Injectable, Logger, Post, Query } from "@nestjs/common";
-import { UPCARAdvisoryService } from "./upcar.service";
+import {
+  Body,
+  Controller,
+  Get,
+  Injectable,
+  Logger,
+  Post,
+  Query,
+} from '@nestjs/common';
+import { UPCARAdvisoryService } from './upcar.service';
 
 @Injectable()
 @Controller('upcar')
 export class UPCARAdvisoryController {
-  constructor(private readonly UPCARAdvisoryService: UPCARAdvisoryService, private readonly logger: Logger) {
+  constructor(
+    private readonly UPCARAdvisoryService: UPCARAdvisoryService,
+    private readonly logger: Logger,
+  ) {
     this.logger = new Logger(UPCARAdvisoryController.name);
   }
 

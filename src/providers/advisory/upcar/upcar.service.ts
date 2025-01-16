@@ -1,13 +1,16 @@
-import { Injectable, Logger } from "@nestjs/common";
-import { CROP_MAPPINGS, readMultipleJSONs } from "../../../app.utils";
-import { mapAdvisoryData } from "../../../beckn.utils";
+import { Injectable, Logger } from '@nestjs/common';
+import { CROP_MAPPINGS, readMultipleJSONs } from '../../../app.utils';
+import { mapAdvisoryData } from '../../../beckn.utils';
 import * as fs from 'fs';
 import * as path from 'path';
-import { MinIOService } from "src/minio/minio.service";
+import { MinIOService } from 'src/minio/minio.service';
 
 @Injectable()
 export class UPCARAdvisoryService {
-  constructor(private readonly logger: Logger, private readonly minioService: MinIOService) {}
+  constructor(
+    private readonly logger: Logger,
+    private readonly minioService: MinIOService,
+  ) {}
 
   /**
    * Fetches advisory data from UPCAR
@@ -34,7 +37,8 @@ export class UPCARAdvisoryService {
    */
   async getAdvisory() {
     try {
-      const { englishData, hindiData } = await this.fetchAdvisoryDataFromUPCAR();
+      const { englishData, hindiData } =
+        await this.fetchAdvisoryDataFromUPCAR();
       const upcarItems = mapAdvisoryData(englishData, 'upcar');
       const upcarHindiProvider = mapAdvisoryData(hindiData, 'upcar');
       const hindiItems = upcarHindiProvider.items.map((item) => {
@@ -65,13 +69,21 @@ export class UPCARAdvisoryService {
     // TODO: Use update functions to update advisory data
     let folderPath = '';
     if (lang === 'hi') {
-      folderPath = path.join(__dirname, `../../../data/upcar/latest_hindi.json`);
+      folderPath = path.join(
+        __dirname,
+        `../../../data/upcar/latest_hindi.json`,
+      );
     } else {
       folderPath = path.join(__dirname, `../../../data/upcar/latest.json`);
     }
     fs.writeFileSync(folderPath, JSON.stringify(data, null, 2));
     // uploading file to minio
-    this.minioService.uploadFile('vistaar', `upcar/${folderPath.split('/').pop()}`, Buffer.from(JSON.stringify(data, null, 2)), 'application/json');
+    this.minioService.uploadFile(
+      'vistaar',
+      `upcar/${folderPath.split('/').pop()}`,
+      Buffer.from(JSON.stringify(data, null, 2)),
+      'application/json',
+    );
     return { message: 'Advisory updated successfully' };
   }
 }

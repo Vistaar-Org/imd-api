@@ -101,7 +101,6 @@ export class AppController {
     // setting default weather provider to IMD
     if (!weather) weather = 'imd';
 
-
     if (district && provider && weather) {
       const res = await this.cacheManager.get(
         `${district.toLowerCase()}-${provider.toLowerCase()}-${weather.toLowerCase()}`,
@@ -138,13 +137,19 @@ export class AppController {
     // get weather items
     switch (weather) {
       case WEATHER_PROVIDERS.IMD:
-        weatherItems = await this.IMDWeatherService.getWeather(latitude, longitude);
+        weatherItems = await this.IMDWeatherService.getWeather(
+          latitude,
+          longitude,
+        );
         break;
       case WEATHER_PROVIDERS.OUAT:
         weatherItems = await this.OUATWeatherService.getWeather(district);
         break;
       default:
-        weatherItems = await this.IMDWeatherService.getWeather(latitude, longitude);
+        weatherItems = await this.IMDWeatherService.getWeather(
+          latitude,
+          longitude,
+        );
         break;
     }
 
@@ -162,18 +167,16 @@ export class AppController {
         break;
     }
 
-
     const result = {
       context: generateContext(),
       message: {
         catalog: {
-          providers: [
-            weatherItems,
-            advisoryItems,
-          ].filter((item) => item != undefined),
+          providers: [weatherItems, advisoryItems].filter(
+            (item) => item != undefined,
+          ),
         },
       },
-    }
+    };
 
     let district_hindi = district,
       district_oria = district;
